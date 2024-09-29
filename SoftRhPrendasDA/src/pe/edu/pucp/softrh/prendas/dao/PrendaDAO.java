@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package pe.edu.pucp.softrh.prendas.dao;
 
@@ -8,12 +8,12 @@ package pe.edu.pucp.softrh.prendas.dao;
  *
  * @author Fabián
  */
-public class PrendaDAO {
+public interface PrendaDAO {
     public Integer insertar(Prenda prenda);
     
-    public Integer actualizarPorId(Integer id, Prenda prendaModificada);
+    public Integer modificar(Prenda prendaModificada);
     
-    public Integer eliminar(Integer id);
+    public Integer eliminar(Prenda prenda);
     
     public ArrayList<Prenda> obtenerTodos();
     
