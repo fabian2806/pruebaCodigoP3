@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
 package pe.edu.pucp.softrh.prendas.model;
 
@@ -8,6 +8,6 @@ package pe.edu.pucp.softrh.prendas.model;
  *
  * @author Fabián
  */
-public class NewClass {
-    
+public enum TipoPrenda {
+    Polo, Pantalon, Polera, Camisa, Casaca;
 }
