@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.DAOImplementacion;
-import pe.edu.pucp.softrh.prendas.dao.PrendaDAO;
+import pe.edu.pucp.softrh.prendas.dao.messi;
 import pe.edu.pucp.softrh.prendas.modelo.Prenda;
 
 public class PrendaDAOImplementacion extends DAOImplementacion implements PrendaDAO{
@@ -21,7 +21,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion implements Prenda
     }
     //Especificacion de la tabla  
     @Override
-    protected ArrayList<String> obtenerListaDeAtributos() {
+    protected ArrayList<String> obtenerListaDeAtributosInsertar() {
         ArrayList<String> atributos = new ArrayList<>();
         
         atributos.add("idPrenda");
@@ -41,7 +41,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion implements Prenda
     }
 
     @Override
-    protected ArrayList<String> obtenerListaDeValores() {
+    protected ArrayList<String> obtenerListaDeValoresInsertar() {
         ArrayList<String> valores = new ArrayList<>();
         
         valores.add(this.prenda.getId().toString());
@@ -67,16 +67,15 @@ public class PrendaDAOImplementacion extends DAOImplementacion implements Prenda
     } 
     //Actualizar
     @Override
-    public Integer actualizarPorId(Integer id, Prenda prendaModificada) {
-        String whereClausula = "idPrenda = " + id.toString();
+    public Integer modificar(Prenda prendaModificada) {
         this.prenda = prendaModificada; 
-        return super.actualizar(whereClausula);
+        return super.actualizar();
     }
     //Eliminar
     @Override
-    public Integer eliminar(Integer id) {
-        String whereClausula = "idPrenda = " + id.toString();
-        return super.eliminar(whereClausula);
+    public Integer eliminar(Prenda prenda) {
+        this.prenda = prenda;
+        return super.eliminar();
     }
     //Seleccionar todos
     @Override
