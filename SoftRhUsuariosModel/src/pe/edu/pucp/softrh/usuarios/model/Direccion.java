@@ -1,8 +1,8 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
 public class Direccion {
-	private static int id = 1;
-	private int idDireccion;
+	private static Integer id = 1;
+	private Integer idDireccion;
 	private String calle;
 	private String numero;
 	private String distrito;
@@ -10,12 +10,12 @@ public class Direccion {
 	private String departamento;
 	private String codigoPostal;
 	private String referencia;
-	private boolean activo;
+	private Boolean activo;
 	private Cliente cliente;
 
 	public Direccion(){};
 
-	public Direccion(String calle, String numero, String distrito, String provincia, String departamento, String codigoPostal, String referencia, boolean activo, Cliente cliente) {
+	public Direccion(String calle, String numero, String distrito, String provincia, String departamento, String codigoPostal, String referencia, Boolean activo, Cliente cliente) {
 		this.calle = calle;
 		this.numero = numero;
 		this.distrito = distrito;
@@ -27,11 +27,11 @@ public class Direccion {
 		this.cliente = cliente;
 	}
 
-	public int getIdDireccion() {
+	public Integer getIdDireccion() {
 		return idDireccion;
 	}
 
-	public void setIdDireccion(int idDireccion) {
+	public void setIdDireccion(Integer idDireccion) {
 		this.idDireccion = idDireccion;
 	}
 
@@ -91,11 +91,11 @@ public class Direccion {
 		this.referencia = referencia;
 	}
 
-	public boolean isActivo() {
+	public Boolean isActivo() {
 		return activo;
 	}
 
-	public void setActivo(boolean activo) {
+	public void setActivo(Boolean activo) {
 		this.activo = activo;
 	}
 

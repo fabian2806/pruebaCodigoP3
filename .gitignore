@@ -3,3 +3,8 @@
 /SoftRhDBManager/build/
 /SoftRhPrendasDA/build/
 /SoftRhPrendasBO/build/
+/SoftRhUsuariosModel/build/
+/SoftRhUsuariosModel/dist/
+/SoftRhDBManager/dist/
+/SoftRhUsuariosBO/build/
+/SoftRhUsuariosDA/build/
