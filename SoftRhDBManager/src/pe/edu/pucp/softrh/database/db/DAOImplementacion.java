@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
-import java.util.logging.Level; 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.config.DBManager;
 
@@ -27,42 +27,43 @@ public abstract class DAOImplementacion<T> {
         this.conexion = DBManager.obtenerInstancia().obtenerConexion();
         this.conexion.setAutoCommit(false);
     }
-    
+
     protected void cerrarConexion() throws SQLException{
         if (this.conexion != null){
             this.conexion.close();
         }
     }
-    
+
     protected void comitarTransaccion() throws SQLException{
         this.conexion.commit();
     }
-    
+
     protected void rollbackTransaccion() throws SQLException{
         if (this.conexion != null){
             this.conexion.rollback();
         }
     }
-    
+
     protected Integer ejecutarModificacionesEnBD(String sql, ArrayList<Object> valores) throws SQLException{
         statement = conexion.prepareStatement(sql);
         //System.out.println("FLAKO ES: " + sql);
         asignarValores(statement, valores);
-        return statement.executeUpdate(sql);
+        return statement.executeUpdate();
     }
-    
+
     protected ResultSet ejecutarConsultaEnBD(String sql, ArrayList<Object> valores) throws SQLException{
         statement = conexion.prepareStatement(sql);
         //System.out.println("FLAKO ES: " + sql);
         asignarValores(statement, valores);
-        return statement.executeQuery(sql);
+        return statement.executeQuery();
     }
-    //Especificacion de la tabla    
+
+    //Especificacion de la tabla
     protected abstract ArrayList<String> obtenerListaDeAtributosInsertar();
     protected abstract ArrayList<String> obtenerListaDeAtributosModificar();
     protected abstract ArrayList<String> obtenerListaDeAtributosEliminar();
     protected abstract ArrayList<String> obtenerListaDeAtributosListarTodos();
-    
+
     protected abstract ArrayList<Object> obtenerListaDeValoresInsertar();
     protected abstract ArrayList<Object> obtenerListaDeValoresModificar();
     protected abstract ArrayList<Object> obtenerListaDeValoresEliminar();
@@ -70,7 +71,7 @@ public abstract class DAOImplementacion<T> {
     //Insertar
     public Integer insertar(){
         Integer resultado = 0;
-        
+
         try{
             iniciarTransaccion();
             String sql = generarSQLParaInsertar();
@@ -91,10 +92,10 @@ public abstract class DAOImplementacion<T> {
                 Logger.getLogger(DAOImplementacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
         return resultado;
     }
-    
+
     protected void asignarValores(PreparedStatement ps, ArrayList<Object> valores) throws SQLException{
         int i=1;
         for (Object valor : valores){
@@ -113,13 +114,13 @@ public abstract class DAOImplementacion<T> {
             i++;
         }
     }
-    
+
     protected String generarSQLParaInsertar(){
         String sql = "";
         ArrayList<String> atributos;
-        
+
         atributos = obtenerListaDeAtributosInsertar();
-        
+
         sql += "INSERT INTO " + tabla + " (";
         for (int i=0; i<atributos.size(); i++){
             sql += atributos.get(i);
@@ -133,14 +134,14 @@ public abstract class DAOImplementacion<T> {
                 sql += ",";
         }
         sql += ")";
-        
+
         return sql;
     }
-    
+
     //Actualizar
     public Integer modificar(){
         Integer resultado = 0;
-        
+
         try{
             iniciarTransaccion();
             String sql = generarSQLParaModificar();
@@ -161,32 +162,32 @@ public abstract class DAOImplementacion<T> {
                 Logger.getLogger(DAOImplementacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
         return resultado;
     }
-    
+
     protected String generarSQLParaModificar(){
         String sql = "";
         ArrayList<String> atributos;
-        
+
         atributos = obtenerListaDeAtributosModificar();
-        
+
         sql += "UPDATE " + tabla + " SET ";
-        for (int i=0; i<atributos.size(); i++){
+        for (int i=0; i<atributos.size() - 1; i++){
             sql += atributos.get(i) + " = ?";
-            if (i+1 < atributos.size())
+            if (i+1 < atributos.size() - 1)
                 sql += ",";
         }
-        sql += "WHERE " + atributos.get(0) + " = ?";
-        
+        sql += " WHERE " + atributos.get(atributos.size()-1) + " = ?";
+
         return sql;
     }
-    
+
     //Eliminar
     public Integer eliminar()
     {
         Integer resultado = 0;
-        
+
         try{
             iniciarTransaccion();
             String sql = generarSQLParaEliminar();
@@ -207,23 +208,23 @@ public abstract class DAOImplementacion<T> {
                 Logger.getLogger(DAOImplementacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
         return resultado;
     }
-    
+
     protected String generarSQLParaEliminar(){
         String sql = "";
         ArrayList<String> atributos;
-        
+
         atributos = obtenerListaDeAtributosEliminar();
-        
+
         sql += "UPDATE " + tabla + " SET " + atributos.get(0) + " = 0 WHERE " + atributos.get(1) + " = ?" ;
-        
+
         //sql += "DELETE FROM " + tabla + " WHERE " + atributos.get(0) + " = ?";
-        
+
         return sql;
     }
-    
+
     //Seleccionar todos
     public ArrayList<T> listarTodos(){
         try{
@@ -236,13 +237,13 @@ public abstract class DAOImplementacion<T> {
         ArrayList<T> variable = new ArrayList<T>();
         return variable;
     }
-    
+
     protected String generarSQLParaListarTodos(){
         String sql = "";
         ArrayList<String> atributos;
-        
+
         atributos = obtenerListaDeAtributosListarTodos();
-        
+
         sql += "SELECT ";
         for (int i=0; i<atributos.size(); i++){
             sql += atributos.get(i);
@@ -250,16 +251,16 @@ public abstract class DAOImplementacion<T> {
                 sql += ",";
         }
         sql = " FROM " + tabla + " WHERE activo = 1" ;
-        
+
         return sql;
     }
-    
+
     public T obtenerPorId(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
     protected String generarSQLParaObtenerPorId(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
 }
