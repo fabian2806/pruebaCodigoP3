@@ -6,8 +6,8 @@ package pe.edu.pucp.softrh.compras.model;
 
 /**
  *
- * @author Fabián
+ * @author JP
  */
-public class NewClass {
-    
+public enum Estado {
+    Registrado,Procesado,Anulado,Entregado,Pagado;
 }
