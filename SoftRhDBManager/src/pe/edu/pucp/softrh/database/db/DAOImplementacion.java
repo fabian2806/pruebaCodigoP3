@@ -45,14 +45,14 @@ public abstract class DAOImplementacion {
     }
     
     protected Integer ejecutarModificacionesEnBD(String sql, ArrayList<Object> valores) throws SQLException{
-        statement = conexion.preparedStatement(sql);
+        statement = conexion.prepareStatement(sql);
         //System.out.println("FLAKO ES: " + sql);
         asignarValores(statement, valores);
         return statement.executeUpdate(sql);
     }
     
     protected ResultSet ejecutarConsultaEnBD(String sql, ArrayList<Object> valores) throws SQLException{
-        statement = conexion.preparedStatement(sql);
+        statement = conexion.prepareStatement(sql);
         //System.out.println("FLAKO ES: " + sql);
         asignarValores(statement, valores);
         return statement.executeQuery(sql);
@@ -95,7 +95,7 @@ public abstract class DAOImplementacion {
         return resultado;
     }
     
-    protected void asignarValores(PreparedStatement ps, ArrayList<Object> valores){
+    protected void asignarValores(PreparedStatement ps, ArrayList<Object> valores) throws SQLException{
         int i=1;
         for (Object valor : valores){
             if (valor instanceof String){

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.DAOImplementacion;
+import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PromocionDAO;
 import pe.edu.pucp.softrh.prendas.model.Promocion;
 
@@ -118,21 +119,25 @@ public class PromocionDAOImplementacion extends DAOImplementacion implements Pro
         return new ArrayList<>(); //vacio necesariamente
     }
     
+    @Override
     public Integer insertar(Promocion promocion){
         this.promocion = promocion;
         return super.insertar();
     }
     
+    @Override
     public Integer modificar(Promocion promocionModificada){
         this.promocion = promocionModificada;
         return super.modificar();
     }
     
+    @Override
     public Integer eliminar(Promocion promocion){
         this.promocion = promocion;
         return super.eliminar();
     }
     
+    @Override
     public ArrayList<Promocion> listarTodos(){
         return super.listarTodos();
     }
