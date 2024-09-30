@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.config.DBManager;
 
-public abstract class DAOImplementacion {
+public abstract class DAOImplementacion<T> {
     protected String tabla;
     protected Connection conexion;
     protected PreparedStatement statement;
@@ -225,7 +225,7 @@ public abstract class DAOImplementacion {
     }
     
     //Seleccionar todos
-    public void listarTodos(){
+    public ArrayList<T> listarTodos(){
         try{
             iniciarTransaccion();
             String sql = generarSQLParaListarTodos();
@@ -233,6 +233,8 @@ public abstract class DAOImplementacion {
         } catch (SQLException ex){
             Logger.getLogger(DAOImplementacion.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ArrayList<T> variable = new ArrayList<T>();
+        return variable;
     }
     
     protected String generarSQLParaListarTodos(){
@@ -252,7 +254,7 @@ public abstract class DAOImplementacion {
         return sql;
     }
     
-    public Integer obtenerPorId(){
+    public T obtenerPorId(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
