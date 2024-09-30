@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Cupon {
-	private static int id = 1;
-	private int idCupon;
+	private static Integer id = 1;
+	private Integer idCupon;
 	private String codigo;
 	private String descripcion;
 	private Date fechaInicio;
 	private Date fechaFin;
-	private boolean usado;
-	private boolean activo;
+	private Boolean usado;
+	private Boolean activo;
 	private ArrayList<Cliente> clientes;
 
-	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, boolean usado, boolean activo) {
+	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Boolean usado, Boolean activo) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.fechaInicio = fechaInicio;
@@ -24,7 +24,7 @@ public class Cupon {
 		this.clientes = new ArrayList<>();
 	}
 
-	public int getIdCupon() {
+	public Integer getIdCupon() {
 		return idCupon;
 	}
 
@@ -64,7 +64,7 @@ public class Cupon {
 		this.fechaFin = fechaFin;
 	}
 
-	public boolean isUsado() {
+	public Boolean isUsado() {
 		return usado;
 	}
 
@@ -72,7 +72,7 @@ public class Cupon {
 		this.usado = usado;
 	}
 
-	public boolean isActivo() {
+	public Boolean isActivo() {
 		return activo;
 	}
 

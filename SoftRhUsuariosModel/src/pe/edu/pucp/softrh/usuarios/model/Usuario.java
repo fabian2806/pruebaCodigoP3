@@ -1,14 +1,14 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
 public abstract class Usuario {
-	protected static int id = 1;
-	protected int idUsuario;
+	protected static Integer id = 1;
+	protected Integer idUsuario;
 	protected String dni;
 	protected String nombres;
 	protected String apellidos;
 	protected String correo;
 	protected String contrasenha;
-	protected boolean activo;
+	protected Boolean activo;
 
 	public Usuario(){}
 
