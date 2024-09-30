@@ -4,16 +4,21 @@
  */
 package pe.edu.pucp.softrh.prendas.bo;
 
-/**
- *
- * @author Fabián
- */
+import java.util.ArrayList;
+import java.util.Date;
+import pe.edu.pucp.softrh.prendas.dao.PromocionDAO;
+import pe.edu.pucp.softrh.prendas.daoimp.PromocionDAOImplementacion;
+import pe.edu.pucp.softrh.prendas.model.Prenda;
+import pe.edu.pucp.softrh.prendas.model.Promocion;
+import pe.edu.pucp.softrh.prendas.model.TipoPromocion;
+
+
 public class PromocionBO {
     
     private PromocionDAO promocionDAO;
     
     public PromocionBO(){
-        this.PromocionDAO = new PromocionDAOImplementacion();
+        this.promocionDAO = new PromocionDAOImplementacion();
     }
 
     public Integer insertar(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, 
@@ -31,8 +36,8 @@ public class PromocionBO {
         return this.promocionDAO.eliminar(promocion);
     }
     
-    public ArrayList<Promocion> obtenerTodos() {
-        return this.promocionDAO.obtenerTodos();
+    public ArrayList<Promocion> listarTodos() {
+        return this.promocionDAO.listarTodos();
     }
     
     public Promocion obtenerPorId(String idPromocion) {

@@ -4,6 +4,9 @@
  */
 package pe.edu.pucp.softrh.prendas.dao;
 
+import java.util.ArrayList;
+import pe.edu.pucp.softrh.prendas.model.Prenda;
+
 /**
  *
  * @author Fabián
@@ -15,7 +18,7 @@ public interface PrendaDAO {
     
     public Integer eliminar(Prenda prenda);
     
-    public ArrayList<Prenda> obtenerTodos();
+    public ArrayList<Prenda> listarTodos();
     
     public Prenda obtenerPorId(String idPrenda);
 }

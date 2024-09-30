@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.DAOImplementacion;
+import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PrendaDAO;
+import pe.edu.pucp.softrh.prendas.model.Prenda;
 import pe.edu.pucp.softrh.prendas.modelo.Prenda;
 
 public class PrendaDAOImplementacion extends DAOImplementacion implements PrendaDAO{
@@ -141,7 +143,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion implements Prenda
     @Override
     public Integer modificar(Prenda prendaModificada) {
         this.prenda = prendaModificada; 
-        return super.actualizar();
+        return super.modificar();
     }
     
     @Override
@@ -151,7 +153,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion implements Prenda
     }
     
     @Override
-    public ArrayList<Prenda> obtenerTodos() {
+    public ArrayList<Prenda> listarTodos() {
         return super.listarTodos();
     }
     
