@@ -8,21 +8,21 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Promocion {
-    private static int id=1;
-    private int idPromocion;
+    private static Integer id=1;
+    private Integer idPromocion;
     private String nombre;
     private String descripcion;
-    private double valorDescuento;
+    private Double valorDescuento;
     private TipoPromocion tipo;
     private Date fechaInicio;
     private Date fechaFin;
-    private int idTrabajador;
+    private Integer idTrabajador;
     private ArrayList<Prenda> prendas;
-    private boolean activo;
+    private Boolean activo;
 
-    public Promocion(String nombre, String descripcion, double valorDescuento,
+    public Promocion(String nombre, String descripcion, Double valorDescuento,
             TipoPromocion tipo, Date fechaInicio, Date fechaFin,
-            int idTrabajador, Prenda prenda, boolean activo){
+            Integer idTrabajador, Prenda prenda, Boolean activo){
         this.idPromocion = id;
         this.nombre = nombre;
         this.descripcion = descripcion;

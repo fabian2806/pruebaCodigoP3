@@ -42,69 +42,67 @@ public class Prenda {
     }
 
     public Integer getId() {
-            return idPrenda;
+        return idPrenda;
     }
 
     public void setId(Integer idPrenda) {
-            this.idPrenda = idPrenda;
+        this.idPrenda = idPrenda;
     }
 
     public String getNombre() {
-            return nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-            this.nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
-            return descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-            this.descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public TipoPrenda getTipo() {
-            return tipo;
+        return tipo;
     }
 
     public void setTipo(TipoPrenda tipo) {
-
-            this.tipo = tipo;
+        this.tipo = tipo;
     }
 
     public String getImagen() {
-            return imagen;
-
+        return imagen;
     }
 
     public void setImagen(String imagen) {
-            this.imagen = imagen;
+        this.imagen = imagen;
     }
 
     public Talla getTalla() {
-            return talla;
+        return talla;
     }
 
     public void setTalla(Talla talla) {
-            this.talla = talla;
+        this.talla = talla;
     }
 
     public Genero getGenero() {
-            return genero;
+        return genero;
     }
 
     public void setGenero(Genero genero) {
-            this.genero = genero;
+        this.genero = genero;
     }
 
     public String getColor() {
-            return color;
+        return color;
     }
 
     public void setColor(String color) {
-            this.color = color;
+        this.color = color;
     }
 
     public Double getPrecio() {
@@ -141,10 +139,9 @@ public class Prenda {
 
     public void aplicarPromocion(Promocion promocion){
         promociones.add(promocion);
-		if (promocion.isActivo() == true){
+        if (promocion.isActivo() == true){
             if (promocion.getTipo() == TipoPromocion.Porcentaje){
-                this.precio = this.precio - 
-                        (this.precio * promocion.getValorDescuento() / 100);
+                this.precio = this.precio - (this.precio * promocion.getValorDescuento() / 100);
             }
             else if (promocion.getTipo() == TipoPromocion.MontoFijo){
                 this.precio = this.precio - promocion.getValorDescuento();

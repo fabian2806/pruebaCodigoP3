@@ -63,10 +63,10 @@ public abstract class DAOImplementacion {
     protected abstract ArrayList<String> obtenerListaDeAtributosEliminar();
     protected abstract ArrayList<String> obtenerListaDeAtributosListarTodos();
     
-    protected abstract ArrayList<String> obtenerListaDeValoresInsertar();
-    protected abstract ArrayList<String> obtenerListaDeValoresModificar();
-    protected abstract ArrayList<String> obtenerListaDeValoresEliminar();
-    protected abstract ArrayList<String> obtenerListaDeValoresListarTodos();
+    protected abstract ArrayList<Object> obtenerListaDeValoresInsertar();
+    protected abstract ArrayList<Object> obtenerListaDeValoresModificar();
+    protected abstract ArrayList<Object> obtenerListaDeValoresEliminar();
+    protected abstract ArrayList<Object> obtenerListaDeValoresListarTodos();
     //Insertar
     public Integer insertar(){
         Integer resultado = 0;
@@ -110,6 +110,7 @@ public abstract class DAOImplementacion {
             else if (valor instanceof Boolean){
                 ps.setBoolean(i, (Boolean)valor);
             }
+            i++;
         }
     }
     
@@ -134,52 +135,7 @@ public abstract class DAOImplementacion {
         sql += ")";
         
         return sql;
-        /*
-        switch(operacion){
-            case "INSERTAR":
-                sql += "INSERT INTO " + tabla + " (" + 
-                break;
-            case "MODIFICAR":
-                break;
-            case "ELIMINAR":
-                break;
-            case "LSITAR_TODOS":
-                break;
-            case "OBTENER_POR_ID":
-                break;
-        }*/
-        
     }
-    /*
-    private String generarSQLParaInsercion(){
-        String sql = "insert into " + tabla + "(";
-        ArrayList<String> atributos, valores;
-        
-        atributos = obtenerListaDeAtributos();
-        valores = obtenerListaDeValores();
-                 
-        for(int i = 0; i < atributos.size(); i++){
-            sql += atributos.get(i);
-
-            if(i + 1 < atributos.size()){
-                sql += ",";
-            } 
-        }
-
-        sql += ") values (";
-
-        for(int i = 0; i < valores.size(); i++){
-            sql += "'" + valores.get(i) + "'";
-
-            if(i + 1 < atributos.size()){
-                sql += ",";
-            }
-        }
-
-        sql += ")";
-        
-        return sql;
-    }*/
     
     //Actualizar
     public Integer modificar(){
@@ -227,7 +183,7 @@ public abstract class DAOImplementacion {
     }
     
     //Eliminar
-    public Integer eliminar(String whereClausula)
+    public Integer eliminar()
     {
         Integer resultado = 0;
         
@@ -261,7 +217,9 @@ public abstract class DAOImplementacion {
         
         atributos = obtenerListaDeAtributosEliminar();
         
-        sql += "DELETE FROM " + tabla + " WHERE " + atributos.get(0) + " = ?";
+        sql += "UPDATE " + tabla + " SET " + atributos.get(0) + " = 0 WHERE " + atributos.get(1) + " = ?" ;
+        
+        //sql += "DELETE FROM " + tabla + " WHERE " + atributos.get(0) + " = ?";
         
         return sql;
     }
@@ -289,17 +247,17 @@ public abstract class DAOImplementacion {
             if (i+1 < atributos.size())
                 sql += ",";
         }
-        sql = " FROM " + tabla;
+        sql = " FROM " + tabla + " WHERE activo = 1" ;
         
         return sql;
     }
     
-    public Integer obtenerPorId()
-    {
+    public Integer obtenerPorId(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
     protected String generarSQLParaObtenerPorId(){
         throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }
