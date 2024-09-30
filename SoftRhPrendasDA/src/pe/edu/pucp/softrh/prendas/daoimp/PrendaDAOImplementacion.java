@@ -8,13 +8,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pe.edu.pucp.softrh.database.DAOImplementacion;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PrendaDAO;
 import pe.edu.pucp.softrh.prendas.model.Prenda;
-import pe.edu.pucp.softrh.prendas.modelo.Prenda;
 
-public class PrendaDAOImplementacion extends DAOImplementacion implements PrendaDAO{
+public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implements PrendaDAO{
     private Prenda prenda;
     //Constructor
     public PrendaDAOImplementacion() {
@@ -155,10 +153,12 @@ public class PrendaDAOImplementacion extends DAOImplementacion implements Prenda
     @Override
     public ArrayList<Prenda> listarTodos() {
         return super.listarTodos();
+        //return new ArrayList<>(); //asi hasta que sepamos como hacerlo
     }
     
     @Override
     public Prenda obtenerPorId(String idPrenda) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return super.obtenerPorId();
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 }

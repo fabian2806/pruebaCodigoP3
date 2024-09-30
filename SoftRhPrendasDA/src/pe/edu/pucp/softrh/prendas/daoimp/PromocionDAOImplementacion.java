@@ -7,12 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pe.edu.pucp.softrh.database.DAOImplementacion;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PromocionDAO;
 import pe.edu.pucp.softrh.prendas.model.Promocion;
 
-public class PromocionDAOImplementacion extends DAOImplementacion implements PromocionDAO{
+public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> implements PromocionDAO{
     private Promocion promocion;
     
     public PromocionDAOImplementacion(){
@@ -83,7 +82,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion implements Pro
         valores.add(this.promocion.getTipo());
         valores.add(this.promocion.getFechaInicio());
         valores.add(this.promocion.getFechaFin());
-        valores.add(this.promocion.isActivo);
+        valores.add(this.promocion.isActivo());
 
         return valores;
     }
@@ -99,7 +98,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion implements Pro
         valores.add(this.promocion.getTipo());
         valores.add(this.promocion.getFechaInicio());
         valores.add(this.promocion.getFechaFin());
-        valores.add(this.promocion.isActivo);
+        valores.add(this.promocion.isActivo());
         valores.add(this.promocion.getIdPromocion());
 
         return valores;
