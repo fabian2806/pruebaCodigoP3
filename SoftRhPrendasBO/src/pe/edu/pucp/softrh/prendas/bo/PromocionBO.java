@@ -22,9 +22,9 @@ public class PromocionBO {
     }
 
     public Integer insertar(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, 
-            Date fechaInicio, Date fechaFin, Integer idTrabajador, Prenda prenda, Boolean activo){
+            Date fechaInicio, Date fechaFin, Integer idTrabajador, Prenda prenda){
         Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo,
-                fechaInicio, fechaFin, idTrabajador, prenda, activo);
+                fechaInicio, fechaFin, idTrabajador, prenda);
         return this.promocionDAO.insertar(promocion);
     }
     

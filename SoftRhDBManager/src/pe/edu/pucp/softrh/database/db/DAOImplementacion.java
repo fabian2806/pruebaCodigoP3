@@ -46,15 +46,12 @@ public abstract class DAOImplementacion<T> {
 
     protected Integer ejecutarModificacionesEnBD(String sql, ArrayList<Object> valores) throws SQLException{
         statement = conexion.prepareStatement(sql);
-        //System.out.println("FLAKO ES: " + sql);
         asignarValores(statement, valores);
         return statement.executeUpdate();
     }
 
-    protected ResultSet ejecutarConsultaEnBD(String sql, ArrayList<Object> valores) throws SQLException{
+    protected ResultSet ejecutarConsultaEnBD(String sql) throws SQLException{
         statement = conexion.prepareStatement(sql);
-        //System.out.println("FLAKO ES: " + sql);
-        asignarValores(statement, valores);
         return statement.executeQuery();
     }
 
@@ -63,6 +60,7 @@ public abstract class DAOImplementacion<T> {
     protected abstract ArrayList<String> obtenerListaDeAtributosModificar();
     protected abstract ArrayList<String> obtenerListaDeAtributosEliminar();
     protected abstract ArrayList<String> obtenerListaDeAtributosListarTodos();
+    protected abstract ArrayList<String> obtenerListaDeAtributosObtenerPorId();
 
     protected abstract ArrayList<Object> obtenerListaDeValoresInsertar();
     protected abstract ArrayList<Object> obtenerListaDeValoresModificar();
@@ -75,6 +73,7 @@ public abstract class DAOImplementacion<T> {
         try{
             iniciarTransaccion();
             String sql = generarSQLParaInsertar();
+            System.out.println(sql);
             resultado = this.ejecutarModificacionesEnBD(sql, obtenerListaDeValoresInsertar());
             comitarTransaccion();
         } catch (SQLException ex){
@@ -145,6 +144,7 @@ public abstract class DAOImplementacion<T> {
         try{
             iniciarTransaccion();
             String sql = generarSQLParaModificar();
+            System.out.println(sql);
             resultado = this.ejecutarModificacionesEnBD(sql, obtenerListaDeValoresModificar());
             comitarTransaccion();
         } catch (SQLException ex){
@@ -191,6 +191,7 @@ public abstract class DAOImplementacion<T> {
         try{
             iniciarTransaccion();
             String sql = generarSQLParaEliminar();
+            System.out.println(sql);
             resultado = this.ejecutarModificacionesEnBD(sql, obtenerListaDeValoresEliminar());
             comitarTransaccion();
         } catch (SQLException ex){
@@ -220,21 +221,23 @@ public abstract class DAOImplementacion<T> {
 
         sql += "UPDATE " + tabla + " SET " + atributos.get(0) + " = 0 WHERE " + atributos.get(1) + " = ?" ;
 
-        //sql += "DELETE FROM " + tabla + " WHERE " + atributos.get(0) + " = ?";
-
         return sql;
     }
 
+    public abstract ArrayList<T> obtenerListarTodos(ResultSet result_set) throws SQLException;
+    
     //Seleccionar todos
     public ArrayList<T> listarTodos(){
+        ArrayList<T> variable = null;
         try{
             iniciarTransaccion();
             String sql = generarSQLParaListarTodos();
-            result_set = this.ejecutarConsultaEnBD(sql, obtenerListaDeValoresListarTodos());
+            System.out.println(sql);
+            result_set = this.ejecutarConsultaEnBD(sql);
+            variable = obtenerListarTodos(result_set);
         } catch (SQLException ex){
             Logger.getLogger(DAOImplementacion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ArrayList<T> variable = new ArrayList<T>();
         return variable;
     }
 
@@ -243,24 +246,49 @@ public abstract class DAOImplementacion<T> {
         ArrayList<String> atributos;
 
         atributos = obtenerListaDeAtributosListarTodos();
-
+        
         sql += "SELECT ";
         for (int i=0; i<atributos.size(); i++){
             sql += atributos.get(i);
             if (i+1 < atributos.size())
                 sql += ",";
         }
-        sql = " FROM " + tabla + " WHERE activo = 1" ;
+        sql += " FROM " + tabla + " WHERE activo = 1" ;
 
         return sql;
     }
 
-    public T obtenerPorId(){
-        throw new UnsupportedOperationException("Not supported yet.");
+    public abstract T obtenerObtenerPorId(ResultSet result_set) throws SQLException;
+    
+    public T obtenerPorId(String id){
+        T variable = null;
+        try{
+            iniciarTransaccion();
+            String sql = generarSQLParaObtenerPorId(id);
+            System.out.println(sql);
+            result_set = this.ejecutarConsultaEnBD(sql);
+            variable = obtenerObtenerPorId(result_set);
+        } catch (SQLException ex){
+            Logger.getLogger(DAOImplementacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return variable;
     }
 
-    protected String generarSQLParaObtenerPorId(){
-        throw new UnsupportedOperationException("Not supported yet.");
+    protected String generarSQLParaObtenerPorId(String id){
+        String sql = "";
+        ArrayList<String> atributos;
+
+        atributos = obtenerListaDeAtributosObtenerPorId();
+
+        sql += "SELECT ";
+        for (int i=0; i<atributos.size()-1; i++){
+            sql += atributos.get(i);
+            if (i+1 < atributos.size()-1)
+                sql += ",";
+        }
+        sql += " FROM " + tabla + " WHERE " + atributos.get(atributos.size()-1) + " = " + id;
+
+        return sql;
     }
 
 }

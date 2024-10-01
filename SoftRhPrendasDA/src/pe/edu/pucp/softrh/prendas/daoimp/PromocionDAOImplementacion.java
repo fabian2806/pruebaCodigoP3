@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pe.edu.pucp.softrh.prendas.daoimp;
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -10,6 +12,7 @@ import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PromocionDAO;
 import pe.edu.pucp.softrh.prendas.model.Promocion;
+import pe.edu.pucp.softrh.prendas.model.TipoPromocion;
 
 public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> implements PromocionDAO{
     private Promocion promocion;
@@ -23,7 +26,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     protected ArrayList<String> obtenerListaDeAtributosInsertar(){
         ArrayList<String> atributos = new ArrayList<>();
         
-        atributos.add("idPromocion");
+       //atributos.add("idPromocion");
         atributos.add("fidTrabajador");
         atributos.add("nombre");
         atributos.add("descripcion");
@@ -31,7 +34,6 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
         atributos.add("tipo");
         atributos.add("fechaInicio");
         atributos.add("fechaFin");
-        atributos.add("activo");
         
         return atributos;
     }
@@ -40,14 +42,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     protected ArrayList<String> obtenerListaDeAtributosModificar(){
         ArrayList<String> atributos = new ArrayList<>();
         
-        atributos.add("fidTrabajador");
-        atributos.add("nombre");
-        atributos.add("descripcion");
-        atributos.add("valorDescuento");
-        atributos.add("tipo");
-        atributos.add("fechaInicio");
-        atributos.add("fechaFin");
-        atributos.add("activo");
+        atributos = obtenerListaDeAtributosInsertar();
         atributos.add("idPromocion");
         
         return atributos;
@@ -65,7 +60,37 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     
     @Override
     protected ArrayList<String> obtenerListaDeAtributosListarTodos(){
-        return obtenerListaDeAtributosInsertar();
+        ArrayList<String> atributos = new ArrayList<>();
+        
+        atributos.add("idPromocion");
+        atributos.add("fidTrabajador");
+        atributos.add("nombre");
+        atributos.add("descripcion");
+        atributos.add("valorDescuento");
+        atributos.add("tipo");
+        atributos.add("fechaInicio");
+        atributos.add("fechaFin");
+        atributos.add("activo");
+        
+        return atributos;
+    }
+    
+    @Override
+    protected ArrayList<String> obtenerListaDeAtributosObtenerPorId(){
+        ArrayList<String> atributos = new ArrayList<>();
+        
+        //atributos.add("fidPromocion");
+        atributos.add("fidTrabajador");
+        atributos.add("nombre");
+        atributos.add("descripcion");
+        atributos.add("valorDescuento");
+        atributos.add("tipo");
+        atributos.add("fechaInicio");
+        atributos.add("fechaFin");
+        atributos.add("activo");
+        atributos.add("idPrenda");
+
+        return atributos;
     }
     
     //////
@@ -74,7 +99,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     protected ArrayList<Object> obtenerListaDeValoresInsertar(){
         ArrayList<Object> valores = new ArrayList<>();
         
-        valores.add(this.promocion.getIdPromocion());
+        //valores.add(this.promocion.getIdPromocion());
         valores.add(this.promocion.getIdTrabajador());
         valores.add(this.promocion.getNombre());
         valores.add(this.promocion.getDescripcion());
@@ -82,7 +107,6 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
         valores.add(this.promocion.getTipo());
         valores.add(this.promocion.getFechaInicio());
         valores.add(this.promocion.getFechaFin());
-        valores.add(this.promocion.isActivo());
 
         return valores;
     }
@@ -91,14 +115,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     protected ArrayList<Object> obtenerListaDeValoresModificar(){
         ArrayList<Object> valores = new ArrayList<>();
         
-        valores.add(this.promocion.getIdTrabajador());
-        valores.add(this.promocion.getNombre());
-        valores.add(this.promocion.getDescripcion());
-        valores.add(this.promocion.getValorDescuento());
-        valores.add(this.promocion.getTipo());
-        valores.add(this.promocion.getFechaInicio());
-        valores.add(this.promocion.getFechaFin());
-        valores.add(this.promocion.isActivo());
+        valores = obtenerListaDeValoresInsertar();
         valores.add(this.promocion.getIdPromocion());
 
         return valores;
@@ -116,6 +133,42 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     @Override
     protected ArrayList<Object> obtenerListaDeValoresListarTodos(){
         return new ArrayList<>(); //vacio necesariamente
+    }
+    
+    @Override
+    public ArrayList<Promocion> obtenerListarTodos(ResultSet rs) throws SQLException{
+        ArrayList<Promocion> promociones = new ArrayList<Promocion>();
+        while (rs.next()){
+            Promocion promocion = new Promocion();
+            promocion.setIdPromocion(rs.getInt("idPrenda"));
+            //falta el de fidtrabajador
+            promocion.setNombre(rs.getString("nombre"));
+            promocion.setDescripcion(rs.getString("descripcion"));
+            promocion.setValorDescuento(rs.getDouble("valorDescuento"));
+            promocion.setTipo(TipoPromocion.valueOf(rs.getString("tipo")));
+            promocion.setFechaInicio(rs.getDate("fechaInicio"));
+            promocion.setFechaFin(rs.getDate("fechaFin"));
+            promocion.setActivo(rs.getBoolean("activo"));
+            promociones.add(promocion);
+        }
+        return promociones;
+    }
+    
+    @Override
+    public Promocion obtenerObtenerPorId(ResultSet rs) throws SQLException{
+        Promocion promocion = new Promocion();
+        while (rs.next()){
+            promocion.setIdPromocion(rs.getInt("idPrenda"));
+            //falta el de fidtrabajador
+            promocion.setNombre(rs.getString("nombre"));
+            promocion.setDescripcion(rs.getString("descripcion"));
+            promocion.setValorDescuento(rs.getDouble("valorDescuento"));
+            promocion.setTipo(TipoPromocion.valueOf(rs.getString("tipo")));
+            promocion.setFechaInicio(rs.getDate("fechaInicio"));
+            promocion.setFechaFin(rs.getDate("fechaFin"));
+            promocion.setActivo(rs.getBoolean("activo"));
+        }
+        return promocion;
     }
     
     @Override
@@ -141,8 +194,9 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
         return super.listarTodos();
     }
     
+    @Override
     public Promocion obtenerPorId(String idPromocion){
-        throw new UnsupportedOperationException("Not supported yet.");
+        return super.obtenerPorId(idPromocion);
     }
     
 }

@@ -19,10 +19,12 @@ public class Promocion {
     private Integer idTrabajador;
     private ArrayList<Prenda> prendas;
     private Boolean activo;
+    
+    public Promocion(){}
 
     public Promocion(String nombre, String descripcion, Double valorDescuento,
             TipoPromocion tipo, Date fechaInicio, Date fechaFin,
-            Integer idTrabajador, Prenda prenda, Boolean activo){
+            Integer idTrabajador, Prenda prenda){
         this.idPromocion = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -33,7 +35,7 @@ public class Promocion {
         this.idTrabajador = idTrabajador;
         this.prendas = new ArrayList<>();
         this.agregarPrenda(prenda);
-        this.activo = activo;
+        this.activo = true;
         id++;
     }
 
