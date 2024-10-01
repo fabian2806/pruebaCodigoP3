@@ -20,7 +20,7 @@ public class SoftRhTest {
         //ANTES DE HACER PRUEBA: DROP
 
         //1. Prueba de Conexión a BD
-        test_DB();
+        //test_DB();
 
         //2. Prueba de Insert (Tabla Prenda)
         //test_insertar();
@@ -32,10 +32,10 @@ public class SoftRhTest {
         //test_eliminar();
 
         //5. Prueba de listarTodos (Tabla Prenda)
-        //test_listarTodos();
+//        test_listarTodos();
 
-//        //6. Prueba de obtenerPorId (Tabla Prenda)
-        test_obtenerPorId("1");
+      //6. Prueba de obtenerPorId (Tabla Prenda)
+        test_obtenerPorId(7);
 
     }
 
@@ -53,7 +53,6 @@ public class SoftRhTest {
     private static void test_insertar() {
         int i;
         PrendaBO prendaBO = new PrendaBO();
-
         i = prendaBO.insertar("polo 1", "polo manga larga bonito", TipoPrenda.Polo, "imagen", Talla.L,
                 Genero.Mujer, "negro", 40.99, 10);
         i = prendaBO.insertar("polo 2", "polo messi", TipoPrenda.Polo, "imagen2", Talla.L,
@@ -75,7 +74,7 @@ public class SoftRhTest {
             Genero.Mujer, "negro y blanco", 30.99, 7);
         PrendaBO prendaBO = new PrendaBO();
 
-        prendaMod.setId(1);
+        prendaMod.setId(7);
 
         i = prendaBO.modificar(prendaMod);
         if (i == 1){
@@ -94,7 +93,7 @@ public class SoftRhTest {
 
 		// Para poder probar la eliminacion
 		Prenda prenda = new Prenda();
-		prenda.setId(1);
+		prenda.setId(7);
 
         i = prendaBO.eliminar(prenda);
         if (i == 1){
@@ -117,10 +116,11 @@ public class SoftRhTest {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private static void test_obtenerPorId(String id) {
+    private static void test_obtenerPorId(Integer id) {
+        
         PrendaBO prendaBO = new PrendaBO();
 
-        Prenda prenda = prendaBO.obtenerPorId(id);
+        Prenda prenda = prendaBO.obtenerPorId(id.toString());
         
         System.out.println(prenda.devolverDatos());
 

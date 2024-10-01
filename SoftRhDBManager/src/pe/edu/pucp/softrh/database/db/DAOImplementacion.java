@@ -230,7 +230,7 @@ public abstract class DAOImplementacion<T> {
     public ArrayList<T> listarTodos(){
         ArrayList<T> variable = null;
         try{
-            iniciarTransaccion();
+            this.conexion = DBManager.obtenerInstancia().obtenerConexion();
             String sql = generarSQLParaListarTodos();
             System.out.println(sql);
             result_set = this.ejecutarConsultaEnBD(sql);
@@ -263,7 +263,7 @@ public abstract class DAOImplementacion<T> {
     public T obtenerPorId(String id){
         T variable = null;
         try{
-            iniciarTransaccion();
+            this.conexion = DBManager.obtenerInstancia().obtenerConexion();
             String sql = generarSQLParaObtenerPorId(id);
             System.out.println(sql);
             result_set = this.ejecutarConsultaEnBD(sql);
