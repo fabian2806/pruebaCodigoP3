@@ -22,7 +22,7 @@ public class Prenda {
     private ArrayList<Promocion> promociones;
     private boolean activo;
 
-	public Prenda(){}
+    public Prenda(){}
 
     public Prenda(String nombre, String descripcion, TipoPrenda tipo,
             String imagen, Talla talla, Genero genero, String color,

@@ -3,14 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pe.edu.pucp.softrh.prendas.daoimp;
-//hola
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PrendaDAO;
+import pe.edu.pucp.softrh.prendas.model.Genero;
 import pe.edu.pucp.softrh.prendas.model.Prenda;
+import pe.edu.pucp.softrh.prendas.model.Talla;
+import pe.edu.pucp.softrh.prendas.model.TipoPrenda;
 
 public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implements PrendaDAO{
     private Prenda prenda;
@@ -41,15 +45,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     protected ArrayList<String> obtenerListaDeAtributosModificar(){
         ArrayList<String> atributos = new ArrayList<>();
 
-        atributos.add("nombre");
-        atributos.add("descripcion");
-        atributos.add("tipo");
-        atributos.add("imagen");
-        atributos.add("talla");
-        atributos.add("genero");
-        atributos.add("color");
-        atributos.add("precio");
-        atributos.add("stock");
+        atributos = obtenerListaDeAtributosInsertar();
         atributos.add("idPrenda");
 
         return atributos;
@@ -67,8 +63,47 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
 
     @Override
     protected ArrayList<String> obtenerListaDeAtributosListarTodos(){
-        return obtenerListaDeAtributosInsertar();
+        ArrayList<String> atributos = new ArrayList<>();
+        
+        atributos.add("idPrenda");
+        //atributos.add("fidPromocion");
+        atributos.add("nombre");
+        atributos.add("descripcion");
+        atributos.add("tipo");
+        atributos.add("imagen");
+        atributos.add("talla");
+        atributos.add("genero");
+        atributos.add("color");
+        atributos.add("precio");
+        atributos.add("stock");
+        atributos.add("cantVendida");
+        atributos.add("activo");
+
+        return atributos;
     }
+    
+    @Override
+    protected ArrayList<String> obtenerListaDeAtributosObtenerPorId(){
+        ArrayList<String> atributos = new ArrayList<>();
+        
+        //atributos.add("fidPromocion");
+        atributos.add("idPrenda");
+        atributos.add("nombre");
+        atributos.add("descripcion");
+        atributos.add("tipo");
+        atributos.add("imagen");
+        atributos.add("talla");
+        atributos.add("genero");
+        atributos.add("color");
+        atributos.add("precio");
+        atributos.add("stock");
+        atributos.add("cantVendida");
+        atributos.add("activo");
+        atributos.add("idPrenda");
+
+        return atributos;
+    }
+    
 
     //////
 
@@ -94,15 +129,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     protected ArrayList<Object> obtenerListaDeValoresModificar(){
         ArrayList<Object> valores = new ArrayList<>();
 
-        valores.add(this.prenda.getNombre());
-        valores.add(this.prenda.getDescripcion());
-        valores.add(this.prenda.getTipo().toString());
-        valores.add(this.prenda.getImagen());
-        valores.add(this.prenda.getTalla().toString());
-        valores.add(this.prenda.getGenero().toString());
-        valores.add(this.prenda.getColor());
-        valores.add(this.prenda.getPrecio());
-        valores.add(this.prenda.getStock());
+        valores = obtenerListaDeValoresInsertar();
         valores.add(this.prenda.getId());
 
         return valores;
@@ -121,7 +148,51 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     protected ArrayList<Object> obtenerListaDeValoresListarTodos(){
         return new ArrayList<>(); //vacio necesariamente
     }
-
+    
+    @Override
+    public ArrayList<Prenda> obtenerListarTodos(ResultSet rs) throws SQLException{
+        ArrayList<Prenda> prendas = new ArrayList<Prenda>();
+        while (rs.next()){
+            Prenda prenda = new Prenda();
+            prenda.setId(rs.getInt("idPrenda"));
+            //falta el de fidprenda
+            prenda.setNombre(rs.getString("nombre"));
+            prenda.setDescripcion(rs.getString("descripcion"));
+            prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
+            prenda.setImagen(rs.getString("imagen"));
+            prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+            prenda.setGenero(Genero.valueOf(rs.getString("genero")));
+            prenda.setColor(rs.getString("color"));
+            prenda.setPrecio(rs.getDouble("precio"));
+            prenda.setStock(rs.getInt("stock"));
+            prenda.setCantVendida(rs.getInt("cantVendida"));
+            prenda.setActivo(rs.getBoolean("activo"));
+            prendas.add(prenda);
+        }
+        return prendas;
+    }
+    
+    @Override
+    public Prenda obtenerObtenerPorId(ResultSet rs) throws SQLException{
+        Prenda prenda = new Prenda();
+        while (rs.next()){
+            prenda.setId(rs.getInt("idPrenda"));
+            //falta el de fidprenda
+            prenda.setNombre(rs.getString("nombre"));
+            prenda.setDescripcion(rs.getString("descripcion"));
+            prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
+            prenda.setImagen(rs.getString("imagen"));
+            prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+            prenda.setGenero(Genero.valueOf(rs.getString("genero")));
+            prenda.setColor(rs.getString("color"));
+            prenda.setPrecio(rs.getDouble("precio"));
+            prenda.setStock(rs.getInt("stock"));
+            prenda.setCantVendida(rs.getInt("cantVendida"));
+            prenda.setActivo(rs.getBoolean("activo"));
+        }
+        return prenda;
+    }
+    
     @Override
     public Integer insertar(Prenda prenda) {
         this.prenda = prenda;
@@ -143,12 +214,10 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     @Override
     public ArrayList<Prenda> listarTodos() {
         return super.listarTodos();
-        //return new ArrayList<>(); //asi hasta que sepamos como hacerlo
     }
 
     @Override
     public Prenda obtenerPorId(String idPrenda) {
-        return super.obtenerPorId();
-        //throw new UnsupportedOperationException("Not supported yet.");
+        return super.obtenerPorId(idPrenda);
     }
 }

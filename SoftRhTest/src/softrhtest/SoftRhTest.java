@@ -23,19 +23,19 @@ public class SoftRhTest {
         test_DB();
 
         //2. Prueba de Insert (Tabla Prenda)
-//        test_insertar();
+        //test_insertar();
 
         //3. Prueba de Modificar (Tabla Prenda)
-//        test_modificar();
+        //test_modificar();
 
         //4. Prueba de Eliminar (Tabla Prenda)
-        test_eliminar();
+        //test_eliminar();
 
         //5. Prueba de listarTodos (Tabla Prenda)
-        test_listarTodos();
-//
+        //test_listarTodos();
+
 //        //6. Prueba de obtenerPorId (Tabla Prenda)
-//        test_obtenerPorId("1");
+        test_obtenerPorId("1");
 
     }
 
@@ -56,6 +56,14 @@ public class SoftRhTest {
 
         i = prendaBO.insertar("polo 1", "polo manga larga bonito", TipoPrenda.Polo, "imagen", Talla.L,
                 Genero.Mujer, "negro", 40.99, 10);
+        i = prendaBO.insertar("polo 2", "polo messi", TipoPrenda.Polo, "imagen2", Talla.L,
+                Genero.Hombre, "celeste", 90.99, 20);
+        i = prendaBO.insertar("polera 1", "polera oversize", TipoPrenda.Polera, "imagen3", Talla.XXL,
+                Genero.Unisex, "blanco", 129.99, 15);
+        i = prendaBO.insertar("polo 3", "polo oversize", TipoPrenda.Polo, "imagen4", Talla.XL,
+                Genero.Mujer, "azul", 60.99, 12);
+        i = prendaBO.insertar("pantalon 1", "pantalon razgado", TipoPrenda.Pantalon, "imagen5", Talla.M,
+                Genero.Hombre, "beige", 80.99, 30);
         if (i == 1){
             System.out.println("Operacion concluida correctamente.");
         }
@@ -102,16 +110,19 @@ public class SoftRhTest {
         ArrayList<Prenda> listaPrendas = prendaBO.listarTodos();
 
         for (Prenda pr : listaPrendas){
+            System.out.println("messi");
             System.out.println(pr.devolverDatos());
         }
 
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private static void test_obtenerPorId(String id) {
         PrendaBO prendaBO = new PrendaBO();
 
         Prenda prenda = prendaBO.obtenerPorId(id);
+        
+        System.out.println(prenda.devolverDatos());
 
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
