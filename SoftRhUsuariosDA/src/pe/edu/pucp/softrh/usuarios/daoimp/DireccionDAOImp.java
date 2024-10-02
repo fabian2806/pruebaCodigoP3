@@ -1,11 +1,13 @@
 package pe.edu.pucp.softrh.usuarios.daoimp;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.usuarios.dao.DireccionDAO;
 import pe.edu.pucp.softrh.usuarios.model.Direccion;
 
-public class DireccionDAOImp extends DAOImplementacion implements DireccionDAO {
+public class DireccionDAOImp extends DAOImplementacion<Direccion> implements DireccionDAO {
 	private Direccion direccion;
 
 	public DireccionDAOImp() {
@@ -49,11 +51,6 @@ public class DireccionDAOImp extends DAOImplementacion implements DireccionDAO {
 	}
 
 	@Override
-	protected ArrayList<Object> obtenerListaDeValoresListarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
 	public Integer insertar(Direccion direccion) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
@@ -78,4 +75,18 @@ public class DireccionDAOImp extends DAOImplementacion implements DireccionDAO {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
+	@Override
+	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	@Override
+	public ArrayList<Direccion> obtenerListarTodos(ResultSet result_set) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	@Override
+	public Direccion obtenerObtenerPorId(ResultSet result_set) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 }

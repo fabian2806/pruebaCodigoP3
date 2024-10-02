@@ -1,14 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package pe.edu.pucp.softrh.prendas.daoimp;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.prendas.dao.PrendaDAO;
 import pe.edu.pucp.softrh.prendas.model.Genero;
@@ -64,7 +59,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     @Override
     protected ArrayList<String> obtenerListaDeAtributosListarTodos(){
         ArrayList<String> atributos = new ArrayList<>();
-        
+
         atributos.add("idPrenda");
         //atributos.add("fidPromocion");
         atributos.add("nombre");
@@ -81,11 +76,11 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
 
         return atributos;
     }
-    
+
     @Override
     protected ArrayList<String> obtenerListaDeAtributosObtenerPorId(){
         ArrayList<String> atributos = new ArrayList<>();
-        
+
         //atributos.add("fidPromocion");
         atributos.add("idPrenda");
         atributos.add("nombre");
@@ -103,7 +98,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
 
         return atributos;
     }
-    
+
 
     //////
 
@@ -145,11 +140,6 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     }
 
     @Override
-    protected ArrayList<Object> obtenerListaDeValoresListarTodos(){
-        return new ArrayList<>(); //vacio necesariamente
-    }
-    
-    @Override
     public ArrayList<Prenda> obtenerListarTodos(ResultSet rs) throws SQLException{
         ArrayList<Prenda> prendas = new ArrayList<Prenda>();
         while (rs.next()){
@@ -171,7 +161,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
         }
         return prendas;
     }
-    
+
     @Override
     public Prenda obtenerObtenerPorId(ResultSet rs) throws SQLException{
         Prenda prenda = new Prenda();
@@ -192,7 +182,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
         }
         return prenda;
     }
-    
+
     @Override
     public Integer insertar(Prenda prenda) {
         this.prenda = prenda;

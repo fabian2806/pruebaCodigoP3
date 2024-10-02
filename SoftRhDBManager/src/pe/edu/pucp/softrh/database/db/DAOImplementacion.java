@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.edu.pucp.softrh.database.db;
 
 import java.sql.Connection;
@@ -18,10 +14,12 @@ public abstract class DAOImplementacion<T> {
     protected Connection conexion;
     protected PreparedStatement statement;
     protected ResultSet result_set;
+
     //Constructor
     public DAOImplementacion(String tabla){
         this.tabla = tabla;
     }
+
     //Metodos de interaccion con BD
     protected void iniciarTransaccion() throws SQLException{
         this.conexion = DBManager.obtenerInstancia().obtenerConexion();
@@ -65,7 +63,7 @@ public abstract class DAOImplementacion<T> {
     protected abstract ArrayList<Object> obtenerListaDeValoresInsertar();
     protected abstract ArrayList<Object> obtenerListaDeValoresModificar();
     protected abstract ArrayList<Object> obtenerListaDeValoresEliminar();
-    protected abstract ArrayList<Object> obtenerListaDeValoresListarTodos();
+
     //Insertar
     public Integer insertar(){
         Integer resultado = 0;
@@ -225,7 +223,7 @@ public abstract class DAOImplementacion<T> {
     }
 
     public abstract ArrayList<T> obtenerListarTodos(ResultSet result_set) throws SQLException;
-    
+
     //Seleccionar todos
     public ArrayList<T> listarTodos(){
         ArrayList<T> variable = null;
@@ -246,7 +244,7 @@ public abstract class DAOImplementacion<T> {
         ArrayList<String> atributos;
 
         atributos = obtenerListaDeAtributosListarTodos();
-        
+
         sql += "SELECT ";
         for (int i=0; i<atributos.size(); i++){
             sql += atributos.get(i);
@@ -259,7 +257,7 @@ public abstract class DAOImplementacion<T> {
     }
 
     public abstract T obtenerObtenerPorId(ResultSet result_set) throws SQLException;
-    
+
     public T obtenerPorId(String id){
         T variable = null;
         try{

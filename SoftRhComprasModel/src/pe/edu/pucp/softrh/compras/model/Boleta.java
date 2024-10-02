@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.edu.pucp.softrh.compras.model;
 
-/**
- *
- * @author JP
- */
 public class Boleta extends Comprobante{
     private String dni;
     private String nombres;
     private String apellidos;
-    
+
     public Boleta(String dni, String nombres, String apellidos, Integer idComprobante, Double totalPagar) {
         super(idComprobante, totalPagar);
         this.dni = dni;
@@ -42,7 +34,5 @@ public class Boleta extends Comprobante{
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }   
-    
-    
+    }
 }
