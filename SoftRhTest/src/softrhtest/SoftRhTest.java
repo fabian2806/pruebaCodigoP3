@@ -20,22 +20,22 @@ public class SoftRhTest {
         //ANTES DE HACER PRUEBA: DROP
 
         //1. Prueba de Conexión a BD
-        //test_DB();
+        test_DB();
 
         //2. Prueba de Insert (Tabla Prenda)
-        //test_insertar();
+        test_insertar();
 
         //3. Prueba de Modificar (Tabla Prenda)
-        //test_modificar();
+        test_modificar();
 
         //4. Prueba de Eliminar (Tabla Prenda)
-        //test_eliminar();
+        test_eliminar();
 
         //5. Prueba de listarTodos (Tabla Prenda)
-//        test_listarTodos();
+        test_listarTodos();
 
-      //6. Prueba de obtenerPorId (Tabla Prenda)
-        test_obtenerPorId(7);
+        //6. Prueba de obtenerPorId (Tabla Prenda)
+        test_obtenerPorId(3);
 
     }
 
@@ -74,7 +74,7 @@ public class SoftRhTest {
             Genero.Mujer, "negro y blanco", 30.99, 7);
         PrendaBO prendaBO = new PrendaBO();
 
-        prendaMod.setId(7);
+        prendaMod.setId(3);
 
         i = prendaBO.modificar(prendaMod);
         if (i == 1){
@@ -117,11 +117,11 @@ public class SoftRhTest {
     }
 
     private static void test_obtenerPorId(Integer id) {
-        
+
         PrendaBO prendaBO = new PrendaBO();
 
         Prenda prenda = prendaBO.obtenerPorId(id.toString());
-        
+
         System.out.println(prenda.devolverDatos());
 
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

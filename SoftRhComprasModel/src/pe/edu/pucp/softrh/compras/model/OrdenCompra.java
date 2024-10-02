@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.edu.pucp.softrh.compras.model;
+
 import java.util.Date;
-/**
- *
- * @author JP
- */
+
 public class OrdenCompra {
     private static Integer id=1;
     private Integer idOrden;
@@ -17,8 +11,8 @@ public class OrdenCompra {
     private String dni;
     private String correo;
     private Double subtotal;
-    
-    public OrdenCompra(Integer idOrden, Date fechaPedido, Date fechaPago, 
+
+    public OrdenCompra(Integer idOrden, Date fechaPedido, Date fechaPago,
             Estado estado, String dni, String correo, Double subtotal) {
         this.idOrden = id;
         this.fechaPedido = fechaPedido;
@@ -29,7 +23,7 @@ public class OrdenCompra {
         this.subtotal = subtotal;
         id++;
     }
-    
+
     public Integer getIdOrden() {
         return idOrden;
     }
@@ -85,5 +79,4 @@ public class OrdenCompra {
     public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
-     
 }

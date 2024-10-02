@@ -1,11 +1,13 @@
 package pe.edu.pucp.softrh.usuarios.daoimp;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.usuarios.dao.CuponDAO;
 import pe.edu.pucp.softrh.usuarios.model.Cupon;
 
-public class CuponDAOImp extends DAOImplementacion implements CuponDAO {
+public class CuponDAOImp extends DAOImplementacion<Cupon> implements CuponDAO {
 	private Cupon cupon;
 
 	public CuponDAOImp() {
@@ -49,11 +51,6 @@ public class CuponDAOImp extends DAOImplementacion implements CuponDAO {
 	}
 
 	@Override
-	protected ArrayList<Object> obtenerListaDeValoresListarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
 	public Integer insertar(Cupon cupon) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
@@ -78,4 +75,18 @@ public class CuponDAOImp extends DAOImplementacion implements CuponDAO {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
+	@Override
+	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	@Override
+	public ArrayList<Cupon> obtenerListarTodos(ResultSet result_set) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	@Override
+	public Cupon obtenerObtenerPorId(ResultSet result_set) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 }

@@ -1,11 +1,13 @@
 package pe.edu.pucp.softrh.usuarios.daoimp;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.database.db.DAOImplementacion;
 import pe.edu.pucp.softrh.usuarios.dao.AdministradorDAO;
 import pe.edu.pucp.softrh.usuarios.model.Administrador;
 
-public class AdministradorDAOImp extends DAOImplementacion implements AdministradorDAO {
+public class AdministradorDAOImp extends DAOImplementacion<Administrador> implements AdministradorDAO {
 	private Administrador administrador;
 
 	public AdministradorDAOImp() {
@@ -49,11 +51,6 @@ public class AdministradorDAOImp extends DAOImplementacion implements Administra
 	}
 
 	@Override
-	protected ArrayList<Object> obtenerListaDeValoresListarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
 	public Integer insertar(Administrador administrador) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
@@ -78,4 +75,18 @@ public class AdministradorDAOImp extends DAOImplementacion implements Administra
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
+	@Override
+	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	@Override
+	public ArrayList<Administrador> obtenerListarTodos(ResultSet result_set) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	@Override
+	public Administrador obtenerObtenerPorId(ResultSet result_set) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
 }
