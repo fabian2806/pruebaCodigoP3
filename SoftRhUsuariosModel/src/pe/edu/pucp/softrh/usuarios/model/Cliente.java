@@ -14,6 +14,14 @@ public class Cliente extends Usuario {
 		cupones = new ArrayList<>();
 	}
 
+	public ArrayList<Direccion> getDirecciones() {
+		return direcciones;
+	}
+
+	public ArrayList<Cupon> getCupones() {
+		return cupones;
+	}
+
 	public void agregarDireccion(Direccion direccion) {
 		direcciones.add(direccion);
 	}

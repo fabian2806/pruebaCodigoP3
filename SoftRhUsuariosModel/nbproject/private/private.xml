@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Administrador.java</file>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Cliente.java</file>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Usuario.java</file>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Trabajador.java</file>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Cupon.java</file>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Direccion.java</file>
+            <file>file:/C:/Users/alex/Documents/git-fabian/pruebaCodigoP3/SoftRhUsuariosModel/src/pe/edu/pucp/softrh/usuarios/model/Funciones.java</file>
+        </group>
     </open-files>
 </project-private>

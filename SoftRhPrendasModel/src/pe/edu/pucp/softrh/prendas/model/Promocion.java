@@ -2,9 +2,9 @@ package pe.edu.pucp.softrh.prendas.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public class Promocion {
-    private static Integer id=1;
     private Integer idPromocion;
     private String nombre;
     private String descripcion;
@@ -12,27 +12,25 @@ public class Promocion {
     private TipoPromocion tipo;
     private Date fechaInicio;
     private Date fechaFin;
-    private Integer idTrabajador;
+	private Boolean activo;
+    private Trabajador trabajador;
     private ArrayList<Prenda> prendas;
-    private Boolean activo;
 
     public Promocion(){}
 
     public Promocion(String nombre, String descripcion, Double valorDescuento,
             TipoPromocion tipo, Date fechaInicio, Date fechaFin,
-            Integer idTrabajador, Prenda prenda){
-        this.idPromocion = id;
+            Trabajador trabajador, Prenda prenda){
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.valorDescuento = valorDescuento;
         this.tipo = tipo;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.idTrabajador = idTrabajador;
+		this.activo = true;
+        this.trabajador = trabajador;
         this.prendas = new ArrayList<>();
         this.agregarPrenda(prenda);
-        this.activo = true;
-        id++;
     }
 
     public int getIdPromocion() {
@@ -91,24 +89,24 @@ public class Promocion {
             this.fechaFin = fechaFin;
     }
 
-    public int getIdTrabajador() {
-            return idTrabajador;
-    }
-
-    public void setIdTrabajador(int idTrabajador) {
-            this.idTrabajador = idTrabajador;
-    }
-
-    public void agregarPrenda(Prenda prenda) {
-            prendas.add(prenda);
-            prenda.aplicarPromocion(this);
-    }
-
-    public boolean isActivo() {
+	public boolean isActivo() {
             return activo;
     }
 
     public void setActivo(boolean activo) {
             this.activo = activo;
+    }
+
+    public Trabajador getTrabajador() {
+            return trabajador;
+    }
+
+    public void setTrabajador(Trabajador trabajador) {
+            this.trabajador = trabajador;
+    }
+
+    public void agregarPrenda(Prenda prenda) {
+            prendas.add(prenda);
+            prenda.aplicarPromocion(this);
     }
 }

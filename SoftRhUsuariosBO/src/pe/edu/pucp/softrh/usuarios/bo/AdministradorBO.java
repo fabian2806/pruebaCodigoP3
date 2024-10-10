@@ -20,15 +20,15 @@ public class AdministradorBO {
 		return administradorDAO.modificar(administrador);
 	}
 
-	public Integer eliminar(Administrador administrador) {
-		return administradorDAO.eliminar(administrador);
+	public Integer eliminar(Integer idAdministrador) {
+		return administradorDAO.eliminar(idAdministrador);
 	}
 
 	public ArrayList<Administrador> listarTodos() {
 		return administradorDAO.listarTodos();
 	}
 
-	public Administrador obtenerPorId(String idAdministrador) {
+	public Administrador obtenerPorId(Integer idAdministrador) {
 		return administradorDAO.obtenerPorId(idAdministrador);
 	}
 }

@@ -61,7 +61,7 @@ public class AdministradorDAOImp extends DAOImplementacion<Administrador> implem
 	}
 
 	@Override
-	public Integer eliminar(Administrador administrador) {
+	public Integer eliminar(Integer idAdministrador) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
@@ -71,7 +71,7 @@ public class AdministradorDAOImp extends DAOImplementacion<Administrador> implem
 	}
 
 	@Override
-	public Administrador obtenerPorId(String idAdministrador) {
+	public Administrador obtenerPorId(Integer idAdministrador) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 

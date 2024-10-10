@@ -2,7 +2,6 @@ package pe.edu.pucp.softrh.prendas.bo;
 
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.prendas.dao.PrendaDAO;
-
 import pe.edu.pucp.softrh.prendas.daoimp.PrendaDAOImplementacion;
 import pe.edu.pucp.softrh.prendas.model.Genero;
 import pe.edu.pucp.softrh.prendas.model.Prenda;
@@ -27,15 +26,15 @@ public class PrendaBO {
         return this.prendaDAO.modificar(prenda);
     }
 
-    public Integer eliminar(Prenda prenda){
-        return this.prendaDAO.eliminar(prenda);
+    public Integer eliminar(Integer idPrenda){
+        return this.prendaDAO.eliminar(idPrenda);
     }
 
     public ArrayList<Prenda> listarTodos() {
         return this.prendaDAO.listarTodos();
     }
 
-    public Prenda obtenerPorId(String idPrenda) {
+    public Prenda obtenerPorId(Integer idPrenda) {
         return this.prendaDAO.obtenerPorId(idPrenda);
     }
 

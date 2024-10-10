@@ -3,7 +3,6 @@ package pe.edu.pucp.softrh.prendas.model;
 import java.util.ArrayList;
 
 public class Prenda {
-    private static Integer id=1;
     private Integer idPrenda;
     private String nombre;
     private String descripcion;
@@ -12,18 +11,18 @@ public class Prenda {
     private Talla talla;
     private Genero genero;
     private String color;
-    private Double precio;
+    private Double precioOriginal;
+	private Double precioDescontado;
     private Integer stock;
     private Integer cantVendida;
-    private ArrayList<Promocion> promociones;
     private boolean activo;
+	private ArrayList<Promocion> promociones;
 
     public Prenda(){}
 
     public Prenda(String nombre, String descripcion, TipoPrenda tipo,
             String imagen, Talla talla, Genero genero, String color,
-            Double precio, Integer stock){
-        this.idPrenda = id;
+            Double precioOriginal, Integer stock){
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipo = tipo;
@@ -31,12 +30,12 @@ public class Prenda {
         this.talla = talla;
         this.genero = genero;
         this.color = color;
-        this.precio = precio;
+        this.precioOriginal = precioOriginal;
+		this.precioDescontado = null;
         this.stock = stock;
         this.cantVendida = 0;
         this.activo = true;
         this.promociones = new ArrayList<>();
-        id++;
     }
 
     public Integer getId() {
@@ -103,12 +102,20 @@ public class Prenda {
         this.color = color;
     }
 
-    public Double getPrecio() {
-            return precio;
+    public Double getPrecioOriginal() {
+            return precioOriginal;
     }
 
-    public void setPrecio(Double precio) {
-            this.precio = precio;
+    public void setPrecioOriginal(Double precioOriginal) {
+            this.precioOriginal = precioOriginal;
+    }
+
+	public Double getPrecioDescontado() {
+            return precioDescontado;
+    }
+
+    public void setPrecioDescontado(Double precioDescontado) {
+            this.precioDescontado = precioDescontado;
     }
 
     public Integer getStock() {
@@ -139,10 +146,10 @@ public class Prenda {
         promociones.add(promocion);
         if (promocion.isActivo() == true){
             if (promocion.getTipo() == TipoPromocion.Porcentaje){
-                this.precio = this.precio - (this.precio * promocion.getValorDescuento() / 100);
+                this.precioDescontado = this.precioOriginal - (this.precioOriginal * promocion.getValorDescuento() / 100);
             }
             else if (promocion.getTipo() == TipoPromocion.MontoFijo){
-                this.precio = this.precio - promocion.getValorDescuento();
+                this.precioDescontado = this.precioOriginal - promocion.getValorDescuento();
             }
         }
     }

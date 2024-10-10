@@ -20,15 +20,15 @@ public class ClienteBO {
 		return clienteDAO.modificar(cliente);
 	}
 
-	public Integer eliminar(Cliente cliente) {
-		return clienteDAO.eliminar(cliente);
+	public Integer eliminar(Integer idCliente) {
+		return clienteDAO.eliminar(idCliente);
 	}
 
 	public ArrayList<Cliente> listarTodos() {
 		return clienteDAO.listarTodos();
 	}
 
-	public Cliente obtenerPorId(String idCliente) {
+	public Cliente obtenerPorId(Integer idCliente) {
 		return clienteDAO.obtenerPorId(idCliente);
 	}
 }

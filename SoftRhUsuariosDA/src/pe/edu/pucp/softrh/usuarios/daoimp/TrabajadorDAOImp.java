@@ -61,7 +61,7 @@ public class TrabajadorDAOImp extends DAOImplementacion<Trabajador> implements T
 	}
 
 	@Override
-	public Integer eliminar(Trabajador trabajador) {
+	public Integer eliminar(Integer idTrabajador) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
@@ -71,7 +71,7 @@ public class TrabajadorDAOImp extends DAOImplementacion<Trabajador> implements T
 	}
 
 	@Override
-	public Trabajador obtenerPorId(String idTrabajador) {
+	public Trabajador obtenerPorId(Integer idTrabajador) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 

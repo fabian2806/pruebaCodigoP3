@@ -12,12 +12,12 @@ public class Administrador extends Usuario implements Funciones {
 	public void crearEmpresa(){}
 
 	@Override
-	public void crearPrendas() {
+	public void crearPrenda() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
 	@Override
-	public void crearPromociones() {
+	public void crearPromocion() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
@@ -27,7 +27,7 @@ public class Administrador extends Usuario implements Funciones {
 	}
 
 	@Override
-	public void listarPromocion() {
+	public void listarPromociones() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 

@@ -61,7 +61,7 @@ public class DireccionDAOImp extends DAOImplementacion<Direccion> implements Dir
 	}
 
 	@Override
-	public Integer eliminar(Direccion direccion) {
+	public Integer eliminar(Integer idDireccion) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
@@ -71,7 +71,7 @@ public class DireccionDAOImp extends DAOImplementacion<Direccion> implements Dir
 	}
 
 	@Override
-	public Direccion obtenerPorId(String idDireccion) {
+	public Direccion obtenerPorId(Integer idDireccion) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 

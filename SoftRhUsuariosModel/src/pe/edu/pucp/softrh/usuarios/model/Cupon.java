@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Cupon {
-	private static Integer id = 1;
 	private Integer idCupon;
 	private String codigo;
 	private String descripcion;
@@ -12,15 +11,19 @@ public class Cupon {
 	private Date fechaFin;
 	private Boolean usado;
 	private Boolean activo;
+	private Trabajador trabajador;
 	private ArrayList<Cliente> clientes;
 
-	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Boolean usado, Boolean activo) {
+	public Cupon() {}
+
+	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Boolean usado, Trabajador trabajador) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.usado = usado;
-		this.activo = activo;
+		this.activo = true;
+		this.trabajador = trabajador;
 		this.clientes = new ArrayList<>();
 	}
 
@@ -78,6 +81,18 @@ public class Cupon {
 
 	public void setActivo(boolean activo) {
 		this.activo = activo;
+	}
+
+	public Trabajador getTrabajador() {
+		return trabajador;
+	}
+
+	public void setTrabajador() {
+		this.trabajador = trabajador;
+	}
+
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
 	}
 
 	public void agregarCliente(Cliente cliente) {

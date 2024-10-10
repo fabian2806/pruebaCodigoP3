@@ -258,7 +258,7 @@ public abstract class DAOImplementacion<T> {
 
     public abstract T obtenerObtenerPorId(ResultSet result_set) throws SQLException;
 
-    public T obtenerPorId(String id){
+    public T obtenerPorId(Integer id){
         T variable = null;
         try{
             this.conexion = DBManager.obtenerInstancia().obtenerConexion();
@@ -272,7 +272,7 @@ public abstract class DAOImplementacion<T> {
         return variable;
     }
 
-    protected String generarSQLParaObtenerPorId(String id){
+    protected String generarSQLParaObtenerPorId(Integer id){
         String sql = "";
         ArrayList<String> atributos;
 

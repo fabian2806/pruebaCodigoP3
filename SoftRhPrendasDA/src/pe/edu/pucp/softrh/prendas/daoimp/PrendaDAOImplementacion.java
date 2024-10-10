@@ -1,4 +1,3 @@
-
 package pe.edu.pucp.softrh.prendas.daoimp;
 
 import java.sql.ResultSet;
@@ -30,7 +29,8 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
         atributos.add("talla");
         atributos.add("genero");
         atributos.add("color");
-        atributos.add("precio");
+        atributos.add("precioOriginal");
+		atributos.add("precioDescontado");
         atributos.add("stock");
 
         return atributos;
@@ -69,7 +69,8 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
         atributos.add("talla");
         atributos.add("genero");
         atributos.add("color");
-        atributos.add("precio");
+        atributos.add("precioOriginal");
+		atributos.add("precioDescontado");
         atributos.add("stock");
         atributos.add("cantVendida");
         atributos.add("activo");
@@ -90,7 +91,8 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
         atributos.add("talla");
         atributos.add("genero");
         atributos.add("color");
-        atributos.add("precio");
+        atributos.add("precioOriginal");
+		atributos.add("precioDescontado");
         atributos.add("stock");
         atributos.add("cantVendida");
         atributos.add("activo");
@@ -114,7 +116,8 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
         valores.add(this.prenda.getTalla().toString());
         valores.add(this.prenda.getGenero().toString());
         valores.add(this.prenda.getColor());
-        valores.add(this.prenda.getPrecio());
+        valores.add(this.prenda.getPrecioOriginal());
+		valores.add(this.prenda.getPrecioDescontado());
         valores.add(this.prenda.getStock());
 
         return valores;
@@ -153,7 +156,8 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
             prenda.setTalla(Talla.valueOf(rs.getString("talla")));
             prenda.setGenero(Genero.valueOf(rs.getString("genero")));
             prenda.setColor(rs.getString("color"));
-            prenda.setPrecio(rs.getDouble("precio"));
+            prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
+			prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
             prenda.setStock(rs.getInt("stock"));
             prenda.setCantVendida(rs.getInt("cantVendida"));
             prenda.setActivo(rs.getBoolean("activo"));
@@ -175,7 +179,8 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
             prenda.setTalla(Talla.valueOf(rs.getString("talla")));
             prenda.setGenero(Genero.valueOf(rs.getString("genero")));
             prenda.setColor(rs.getString("color"));
-            prenda.setPrecio(rs.getDouble("precio"));
+            prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
+			prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
             prenda.setStock(rs.getInt("stock"));
             prenda.setCantVendida(rs.getInt("cantVendida"));
             prenda.setActivo(rs.getBoolean("activo"));
@@ -196,7 +201,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     }
 
     @Override
-    public Integer eliminar(Prenda prenda) {
+    public Integer eliminar(Integer idPrenda) {
         this.prenda = prenda;
         return super.eliminar();
     }
@@ -207,7 +212,7 @@ public class PrendaDAOImplementacion extends DAOImplementacion<Prenda> implement
     }
 
     @Override
-    public Prenda obtenerPorId(String idPrenda) {
+    public Prenda obtenerPorId(Integer idPrenda) {
         return super.obtenerPorId(idPrenda);
     }
 }

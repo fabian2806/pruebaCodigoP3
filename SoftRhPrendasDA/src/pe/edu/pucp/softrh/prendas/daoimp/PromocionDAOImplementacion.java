@@ -94,7 +94,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
         ArrayList<Object> valores = new ArrayList<>();
 
         //valores.add(this.promocion.getIdPromocion());
-        valores.add(this.promocion.getIdTrabajador());
+        valores.add(this.promocion.getTrabajador().getIdUsuario());
         valores.add(this.promocion.getNombre());
         valores.add(this.promocion.getDescripcion());
         valores.add(this.promocion.getValorDescuento());
@@ -173,7 +173,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     }
 
     @Override
-    public Integer eliminar(Promocion promocion){
+    public Integer eliminar(Integer idPromocion){
         this.promocion = promocion;
         return super.eliminar();
     }
@@ -184,7 +184,7 @@ public class PromocionDAOImplementacion extends DAOImplementacion<Promocion> imp
     }
 
     @Override
-    public Promocion obtenerPorId(String idPromocion){
+    public Promocion obtenerPorId(Integer idPromocion){
         return super.obtenerPorId(idPromocion);
     }
 }

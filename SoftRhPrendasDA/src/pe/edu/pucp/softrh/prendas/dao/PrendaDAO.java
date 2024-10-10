@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.prendas.model.Prenda;
 
 public interface PrendaDAO {
+    Integer insertar(Prenda prenda);
 
-    public Integer insertar(Prenda prenda);
+    Integer modificar(Prenda prendaModificada);
 
-    public Integer modificar(Prenda prendaModificada);
+    Integer eliminar(Integer idPrenda);
 
-    public Integer eliminar(Prenda prenda);
+    ArrayList<Prenda> listarTodos();
 
-    public ArrayList<Prenda> listarTodos();
-
-    public Prenda obtenerPorId(String idPrenda);
+    Prenda obtenerPorId(Integer idPrenda);
 }

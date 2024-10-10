@@ -61,7 +61,7 @@ public class ClienteDAOImp extends DAOImplementacion<Cliente> implements Cliente
 	}
 
 	@Override
-	public Integer eliminar(Cliente cliente) {
+	public Integer eliminar(Integer idCliente) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
@@ -71,7 +71,7 @@ public class ClienteDAOImp extends DAOImplementacion<Cliente> implements Cliente
 	}
 
 	@Override
-	public Cliente obtenerPorId(String idCliente) {
+	public Cliente obtenerPorId(Integer idCliente) {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 

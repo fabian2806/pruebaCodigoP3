@@ -7,7 +7,7 @@ import pe.edu.pucp.softrh.prendas.daoimp.PromocionDAOImplementacion;
 import pe.edu.pucp.softrh.prendas.model.Prenda;
 import pe.edu.pucp.softrh.prendas.model.Promocion;
 import pe.edu.pucp.softrh.prendas.model.TipoPromocion;
-
+import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public class PromocionBO {
 
@@ -18,9 +18,9 @@ public class PromocionBO {
     }
 
     public Integer insertar(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo,
-            Date fechaInicio, Date fechaFin, Integer idTrabajador, Prenda prenda){
+            Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
         Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo,
-                fechaInicio, fechaFin, idTrabajador, prenda);
+                fechaInicio, fechaFin, trabajador, prenda);
         return this.promocionDAO.insertar(promocion);
     }
 
@@ -28,16 +28,15 @@ public class PromocionBO {
         return this.promocionDAO.modificar(promocion);
     }
 
-    public Integer eliminar(Promocion promocion){
-        return this.promocionDAO.eliminar(promocion);
+    public Integer eliminar(Integer idPromocion){
+        return this.promocionDAO.eliminar(idPromocion);
     }
 
     public ArrayList<Promocion> listarTodos() {
         return this.promocionDAO.listarTodos();
     }
 
-    public Promocion obtenerPorId(String idPromocion) {
+    public Promocion obtenerPorId(Integer idPromocion) {
         return this.promocionDAO.obtenerPorId(idPromocion);
     }
-
 }

@@ -1,10 +1,10 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
 public interface Funciones {
-	void crearPrendas();
-	void crearPromociones();
+	void crearPrenda();
+	void crearPromocion();
 	void crearCupon();
-	void listarPromocion();
+	void listarPromociones();
 	void listarCupones();
 	void listarBoletas();
 	void listarFacturas();

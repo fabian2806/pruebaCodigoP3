@@ -1,10 +1,8 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
 public class Direccion {
-	private static Integer id = 1;
 	private Integer idDireccion;
-	private String calle;
-	private String numero;
+	private String direccion;
 	private String distrito;
 	private String provincia;
 	private String departamento;
@@ -13,17 +11,16 @@ public class Direccion {
 	private Boolean activo;
 	private Cliente cliente;
 
-	public Direccion(){};
+	public Direccion() {};
 
-	public Direccion(String calle, String numero, String distrito, String provincia, String departamento, String codigoPostal, String referencia, Boolean activo, Cliente cliente) {
-		this.calle = calle;
-		this.numero = numero;
+	public Direccion(String direccion, String distrito, String provincia, String departamento, String codigoPostal, String referencia, Cliente cliente) {
+		this.direccion = direccion;
 		this.distrito = distrito;
 		this.provincia = provincia;
 		this.departamento = departamento;
 		this.codigoPostal = codigoPostal;
 		this.referencia = referencia;
-		this.activo = activo;
+		this.activo = true;
 		this.cliente = cliente;
 	}
 
@@ -35,20 +32,12 @@ public class Direccion {
 		this.idDireccion = idDireccion;
 	}
 
-	public String getCalle() {
-		return calle;
+	public String getDireccion() {
+		return direccion;
 	}
 
-	public void setCalle(String calle) {
-		this.calle = calle;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
 	public String getDistrito() {
@@ -99,5 +88,11 @@ public class Direccion {
 		this.activo = activo;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
 
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 }
