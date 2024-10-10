@@ -16,11 +16,20 @@ public class Promocion {
     private Trabajador trabajador;
     private ArrayList<Prenda> prendas;
 
-    public Promocion(){}
+    public Promocion() {
+		this.idPromocion = null;
+		this.nombre = null;
+        this.descripcion = null;
+        this.valorDescuento = null;
+        this.tipo = null;
+        this.fechaInicio = null;
+        this.fechaFin = null;
+		this.activo = null;
+        this.trabajador = new Trabajador();
+        this.prendas = new ArrayList<>();
+	}
 
-    public Promocion(String nombre, String descripcion, Double valorDescuento,
-            TipoPromocion tipo, Date fechaInicio, Date fechaFin,
-            Trabajador trabajador, Prenda prenda){
+    public Promocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.valorDescuento = valorDescuento;
@@ -34,79 +43,79 @@ public class Promocion {
     }
 
     public int getIdPromocion() {
-            return idPromocion;
+        return idPromocion;
     }
 
-    public void setIdPromocion(int idPromocion) {
-            this.idPromocion = idPromocion;
+    public void setIdPromocion(Integer idPromocion) {
+        this.idPromocion = idPromocion;
     }
 
     public String getNombre() {
-            return nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-            this.nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
-            return descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-            this.descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public double getValorDescuento() {
-            return valorDescuento;
+        return valorDescuento;
     }
 
-    public void setValorDescuento(double valorDescuento) {
-            this.valorDescuento = valorDescuento;
+    public void setValorDescuento(Double valorDescuento) {
+        this.valorDescuento = valorDescuento;
     }
 
     public TipoPromocion getTipo() {
-            return tipo;
+        return tipo;
     }
 
     public void setTipo(TipoPromocion tipo) {
-            this.tipo = tipo;
+        this.tipo = tipo;
     }
 
     public Date getFechaInicio() {
-            return fechaInicio;
+        return fechaInicio;
     }
 
     public void setFechaInicio(Date fechaInicio) {
-            this.fechaInicio = fechaInicio;
+        this.fechaInicio = fechaInicio;
     }
 
     public Date getFechaFin() {
-            return fechaFin;
+        return fechaFin;
     }
 
     public void setFechaFin(Date fechaFin) {
-            this.fechaFin = fechaFin;
+        this.fechaFin = fechaFin;
     }
 
-	public boolean isActivo() {
-            return activo;
+	public Boolean isActivo() {
+        return activo;
     }
 
-    public void setActivo(boolean activo) {
-            this.activo = activo;
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public Trabajador getTrabajador() {
-            return trabajador;
+        return trabajador;
     }
 
     public void setTrabajador(Trabajador trabajador) {
-            this.trabajador = trabajador;
+        this.trabajador = trabajador;
     }
 
     public void agregarPrenda(Prenda prenda) {
-            prendas.add(prenda);
-            prenda.aplicarPromocion(this);
+        prendas.add(prenda);
+        prenda.aplicarPromocion(this);
     }
 }

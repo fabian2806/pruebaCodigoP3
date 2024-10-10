@@ -6,18 +6,26 @@ import java.util.Date;
 
 public class Trabajador extends Usuario implements Funciones {
 	private String puesto;
-	private Double salario;
+	private Double sueldo;
 	private Date fechaIngreso;
 	private LocalTime horarioInicio;
 	private LocalTime horarioFin;
 	private ArrayList<Cupon> cupones;
 
-	public Trabajador() {}
+	public Trabajador() {
+		super();
+		this.puesto = null;
+		this.sueldo = null;
+		this.fechaIngreso = null;
+		this.horarioInicio = null;
+		this.horarioFin = null;
+		this.cupones = new ArrayList<>();
+	}
 
-	public Trabajador(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double salario, Date fechaIngreso, LocalTime horarioInicio, LocalTime horarioFin) {
+	public Trabajador(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, LocalTime horarioInicio, LocalTime horarioFin) {
 		super(dni, nombres, apellidos, correo, contrasenha);
 		this.puesto = puesto;
-		this.salario = salario;
+		this.sueldo = sueldo;
 		this.fechaIngreso = fechaIngreso;
 		this.horarioInicio = horarioInicio;
 		this.horarioFin = horarioFin;
@@ -32,12 +40,12 @@ public class Trabajador extends Usuario implements Funciones {
 		this.puesto = puesto;
 	}
 
-	public Double getSalario() {
-		return salario;
+	public Double getSueldo() {
+		return sueldo;
 	}
 
-	public void setSalario(Double salario) {
-		this.salario = salario;
+	public void setSueldo(Double sueldo) {
+		this.sueldo = sueldo;
 	}
 
 	public Date getFechaIngreso() {
@@ -64,8 +72,8 @@ public class Trabajador extends Usuario implements Funciones {
 		this.horarioFin = horarioFin;
 	}
 
-	public ArrayList<Cupon> getCupones() {
-		return cupones;
+	public void agregarCupon(Cupon cupon) {
+		cupones.add(cupon);
 	}
 
 	@Override

@@ -32,3 +32,4 @@ public class TrabajadorBO {
 		return trabajadorDAO.obtenerPorId(idtrabajador);
 	}
 }
+

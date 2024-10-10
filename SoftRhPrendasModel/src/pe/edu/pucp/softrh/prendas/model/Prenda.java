@@ -15,14 +15,27 @@ public class Prenda {
 	private Double precioDescontado;
     private Integer stock;
     private Integer cantVendida;
-    private boolean activo;
+    private Boolean activo;
 	private ArrayList<Promocion> promociones;
 
-    public Prenda(){}
+    public Prenda() {
+		this.idPrenda = null;
+		this.nombre = null;
+        this.descripcion = null;
+        this.tipo = null;
+        this.imagen = null;
+        this.talla = null;
+        this.genero = null;
+        this.color = null;
+        this.precioOriginal = null;
+		this.precioDescontado = null;
+        this.stock = null;
+        this.cantVendida = null;
+        this.activo = null;
+        this.promociones = new ArrayList<>();
+	}
 
-    public Prenda(String nombre, String descripcion, TipoPrenda tipo,
-            String imagen, Talla talla, Genero genero, String color,
-            Double precioOriginal, Integer stock){
+    public Prenda(String nombre, String descripcion, TipoPrenda tipo, String imagen, Talla talla, Genero genero, String color, Double precioOriginal, Integer stock) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipo = tipo;
@@ -31,18 +44,18 @@ public class Prenda {
         this.genero = genero;
         this.color = color;
         this.precioOriginal = precioOriginal;
-		this.precioDescontado = null;
+		this.precioDescontado = 0.0;
         this.stock = stock;
         this.cantVendida = 0;
         this.activo = true;
         this.promociones = new ArrayList<>();
     }
 
-    public Integer getId() {
+    public Integer getIdPrenda() {
         return idPrenda;
     }
 
-    public void setId(Integer idPrenda) {
+    public void setIdPrenda(Integer idPrenda) {
         this.idPrenda = idPrenda;
     }
 
@@ -103,43 +116,43 @@ public class Prenda {
     }
 
     public Double getPrecioOriginal() {
-            return precioOriginal;
+        return precioOriginal;
     }
 
     public void setPrecioOriginal(Double precioOriginal) {
-            this.precioOriginal = precioOriginal;
+        this.precioOriginal = precioOriginal;
     }
 
 	public Double getPrecioDescontado() {
-            return precioDescontado;
+        return precioDescontado;
     }
 
     public void setPrecioDescontado(Double precioDescontado) {
-            this.precioDescontado = precioDescontado;
+        this.precioDescontado = precioDescontado;
     }
 
     public Integer getStock() {
-            return stock;
+        return stock;
     }
 
     public void setStock(Integer stock) {
-            this.stock = stock;
+        this.stock = stock;
     }
 
     public Integer getCantVendida() {
-            return cantVendida;
+        return cantVendida;
     }
 
     public void setCantVendida(Integer cantVendida) {
-            this.cantVendida = cantVendida;
+        this.cantVendida = cantVendida;
     }
 
-    public Integer isActivo() {
-            return (this.activo)? 1 : 0;
+    public Boolean isActivo() {
+        return activo;
     }
 
-    public void setActivo(boolean activo) {
-            this.activo = activo;
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public void aplicarPromocion(Promocion promocion){

@@ -4,13 +4,13 @@ import pe.edu.pucp.softrh.compras.model.Factura;
 import java.util.ArrayList;
 
 public interface FacturaDAO {
-    public Integer insertar(Factura documento);
+    Integer insertar(Factura factura);
 
-    public Integer modificar(Factura documentoModificada);
+    Integer modificar(Factura factura);
 
-    public Integer eliminar(Factura documento);
+    Integer eliminar(Integer idFactura);
 
-    public ArrayList<Factura> obtenerTodos();
+    ArrayList<Factura> listarTodos();
 
-    public Factura obtenerPorId(Integer idComprobante);
+    Factura obtenerPorId(Integer idFactura);
 }

@@ -9,7 +9,15 @@ public abstract class Usuario {
 	protected String contrasenha;
 	protected Boolean activo;
 
-	public Usuario() {}
+	public Usuario() {
+		this.idUsuario = null;
+		this.dni = null;
+		this.nombres = null;
+		this.apellidos = null;
+		this.correo = null;
+		this.contrasenha = null;
+		this.activo = null;
+	}
 
 	public Usuario(String dni, String nombres, String apellidos, String correo, String contrasenha) {
 		this.dni = dni;
@@ -75,6 +83,4 @@ public abstract class Usuario {
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
 	}
-
-	
 }

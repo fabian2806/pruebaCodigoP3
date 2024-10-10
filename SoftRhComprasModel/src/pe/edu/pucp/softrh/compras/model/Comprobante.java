@@ -1,14 +1,15 @@
 package pe.edu.pucp.softrh.compras.model;
 
 public abstract class Comprobante {
-    protected static Integer id=1;
     protected Integer idComprobante;
     protected Double totalPagar;
+	protected OrdenCompra orden;
 
-    public Comprobante(Integer idComprobante, Double totalPagar) {
-        this.idComprobante = id;
+	public Comprobante() {}
+
+    public Comprobante(Double totalPagar, OrdenCompra orden) {
         this.totalPagar = totalPagar;
-        id++;
+		this.orden = orden;
     }
 
     public Integer getIdComprobante() {
@@ -26,4 +27,12 @@ public abstract class Comprobante {
     public void setTotalPagar(Double totalPagar) {
         this.totalPagar = totalPagar;
     }
+
+	public OrdenCompra getOrden() {
+		return orden;
+	}
+
+	public void setOrden(OrdenCompra orden) {
+		this.orden = orden;
+	}
 }

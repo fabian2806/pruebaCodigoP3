@@ -11,7 +11,17 @@ public class Direccion {
 	private Boolean activo;
 	private Cliente cliente;
 
-	public Direccion() {};
+	public Direccion() {
+		this.idDireccion = null;
+		this.direccion = null;
+		this.distrito = null;
+		this.provincia = null;
+		this.departamento = null;
+		this.codigoPostal = null;
+		this.referencia = null;
+		this.activo = null;
+		this.cliente = new Cliente();
+	};
 
 	public Direccion(String direccion, String distrito, String provincia, String departamento, String codigoPostal, String referencia, Cliente cliente) {
 		this.direccion = direccion;

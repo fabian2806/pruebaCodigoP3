@@ -5,8 +5,8 @@ public class Factura extends Comprobante{
     private String razonSocial;
     private String repreLegal;
 
-    public Factura(String ruc, String razonSocial, String repreLegal, Integer idComprobante, Double totalPagar) {
-        super(idComprobante, totalPagar);
+    public Factura(Double totalPagar, OrdenCompra orden, String ruc, String razonSocial, String repreLegal) {
+        super(totalPagar, orden);
         this.ruc = ruc;
         this.razonSocial = razonSocial;
         this.repreLegal = repreLegal;

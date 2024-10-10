@@ -5,8 +5,10 @@ public class Boleta extends Comprobante{
     private String nombres;
     private String apellidos;
 
-    public Boleta(String dni, String nombres, String apellidos, Integer idComprobante, Double totalPagar) {
-        super(idComprobante, totalPagar);
+	public Boleta() {}
+
+    public Boleta(Double totalPagar, OrdenCompra orden, String dni, String nombres, String apellidos) {
+        super(totalPagar, orden);
         this.dni = dni;
         this.nombres = nombres;
         this.apellidos = apellidos;

@@ -14,14 +14,24 @@ public class Cupon {
 	private Trabajador trabajador;
 	private ArrayList<Cliente> clientes;
 
-	public Cupon() {}
+	public Cupon() {
+		this.idCupon = null;
+		this.codigo = null;
+		this.descripcion = null;
+		this.fechaInicio = null;
+		this.fechaFin = null;
+		this.usado = null;
+		this.activo = null;
+		this.trabajador = new Trabajador();
+		this.clientes = new ArrayList<>();
+	}
 
-	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Boolean usado, Trabajador trabajador) {
+	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
-		this.usado = usado;
+		this.usado = false;
 		this.activo = true;
 		this.trabajador = trabajador;
 		this.clientes = new ArrayList<>();
@@ -87,12 +97,8 @@ public class Cupon {
 		return trabajador;
 	}
 
-	public void setTrabajador() {
+	public void setTrabajador(Trabajador trabajador) {
 		this.trabajador = trabajador;
-	}
-
-	public ArrayList<Cliente> getClientes() {
-		return clientes;
 	}
 
 	public void agregarCliente(Cliente cliente) {
