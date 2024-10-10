@@ -3,7 +3,6 @@ package pe.edu.pucp.softrh.prendas.model;
 import java.util.ArrayList;
 
 public class Prenda {
-    private static Integer id=1;
     private Integer idPrenda;
     private String nombre;
     private String descripcion;
@@ -12,18 +11,31 @@ public class Prenda {
     private Talla talla;
     private Genero genero;
     private String color;
-    private Double precio;
+    private Double precioOriginal;
+	private Double precioDescontado;
     private Integer stock;
     private Integer cantVendida;
-    private ArrayList<Promocion> promociones;
-    private boolean activo;
+    private Boolean activo;
+	private ArrayList<Promocion> promociones;
 
-    public Prenda(){}
+    public Prenda() {
+		this.idPrenda = null;
+		this.nombre = null;
+        this.descripcion = null;
+        this.tipo = null;
+        this.imagen = null;
+        this.talla = null;
+        this.genero = null;
+        this.color = null;
+        this.precioOriginal = null;
+		this.precioDescontado = null;
+        this.stock = null;
+        this.cantVendida = null;
+        this.activo = null;
+        this.promociones = new ArrayList<>();
+	}
 
-    public Prenda(String nombre, String descripcion, TipoPrenda tipo,
-            String imagen, Talla talla, Genero genero, String color,
-            Double precio, Integer stock){
-        this.idPrenda = id;
+    public Prenda(String nombre, String descripcion, TipoPrenda tipo, String imagen, Talla talla, Genero genero, String color, Double precioOriginal, Integer stock) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipo = tipo;
@@ -31,19 +43,19 @@ public class Prenda {
         this.talla = talla;
         this.genero = genero;
         this.color = color;
-        this.precio = precio;
+        this.precioOriginal = precioOriginal;
+		this.precioDescontado = 0.0;
         this.stock = stock;
         this.cantVendida = 0;
         this.activo = true;
         this.promociones = new ArrayList<>();
-        id++;
     }
 
-    public Integer getId() {
+    public Integer getIdPrenda() {
         return idPrenda;
     }
 
-    public void setId(Integer idPrenda) {
+    public void setIdPrenda(Integer idPrenda) {
         this.idPrenda = idPrenda;
     }
 
@@ -103,46 +115,54 @@ public class Prenda {
         this.color = color;
     }
 
-    public Double getPrecio() {
-            return precio;
+    public Double getPrecioOriginal() {
+        return precioOriginal;
     }
 
-    public void setPrecio(Double precio) {
-            this.precio = precio;
+    public void setPrecioOriginal(Double precioOriginal) {
+        this.precioOriginal = precioOriginal;
+    }
+
+	public Double getPrecioDescontado() {
+        return precioDescontado;
+    }
+
+    public void setPrecioDescontado(Double precioDescontado) {
+        this.precioDescontado = precioDescontado;
     }
 
     public Integer getStock() {
-            return stock;
+        return stock;
     }
 
     public void setStock(Integer stock) {
-            this.stock = stock;
+        this.stock = stock;
     }
 
     public Integer getCantVendida() {
-            return cantVendida;
+        return cantVendida;
     }
 
     public void setCantVendida(Integer cantVendida) {
-            this.cantVendida = cantVendida;
+        this.cantVendida = cantVendida;
     }
 
-    public Integer isActivo() {
-            return (this.activo)? 1 : 0;
+    public Boolean isActivo() {
+        return activo;
     }
 
-    public void setActivo(boolean activo) {
-            this.activo = activo;
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public void aplicarPromocion(Promocion promocion){
         promociones.add(promocion);
         if (promocion.isActivo() == true){
             if (promocion.getTipo() == TipoPromocion.Porcentaje){
-                this.precio = this.precio - (this.precio * promocion.getValorDescuento() / 100);
+                this.precioDescontado = this.precioOriginal - (this.precioOriginal * promocion.getValorDescuento() / 100);
             }
             else if (promocion.getTipo() == TipoPromocion.MontoFijo){
-                this.precio = this.precio - promocion.getValorDescuento();
+                this.precioDescontado = this.precioOriginal - promocion.getValorDescuento();
             }
         }
     }

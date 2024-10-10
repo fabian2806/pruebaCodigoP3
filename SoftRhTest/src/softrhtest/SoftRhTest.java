@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package softrhtest;
 
 import pe.edu.pucp.softrh.database.config.DBManager;
@@ -69,19 +65,13 @@ public class SoftRhTest {
     }
 
     private static void test_modificar() {
-        int i;
-        Prenda prendaMod = new Prenda("polo 1 mod", "polo manga larga", TipoPrenda.Polo, "nueva imagen", Talla.XL,
-            Genero.Mujer, "negro y blanco", 30.99, 7);
         PrendaBO prendaBO = new PrendaBO();
 
-        prendaMod.setId(3);
-
-        i = prendaBO.modificar(prendaMod);
+        int i = prendaBO.modificar(3,"polo 1 mod", "polo manga larga", TipoPrenda.Polo, "nueva imagen", Talla.XL,
+            Genero.Mujer, "negro y blanco", 30.99, 0.0, 7, 0);
         if (i == 1){
             System.out.println("Operacion concluida correctamente.");
         }
-
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private static void test_eliminar() {
@@ -93,14 +83,12 @@ public class SoftRhTest {
 
 		// Para poder probar la eliminacion
 		Prenda prenda = new Prenda();
-		prenda.setId(7);
+		prenda.setIdPrenda(7);
 
-        i = prendaBO.eliminar(prenda);
+        i = prendaBO.eliminar(prenda.getIdPrenda());
         if (i == 1){
             System.out.println("Operacion concluida correctamente.");
         }
-
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private static void test_listarTodos() {
@@ -112,19 +100,14 @@ public class SoftRhTest {
             System.out.println("messi");
             System.out.println(pr.devolverDatos());
         }
-
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private static void test_obtenerPorId(Integer id) {
 
         PrendaBO prendaBO = new PrendaBO();
 
-        Prenda prenda = prendaBO.obtenerPorId(id.toString());
+        Prenda prenda = prendaBO.obtenerPorId(id);
 
         System.out.println(prenda.devolverDatos());
-
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
 }

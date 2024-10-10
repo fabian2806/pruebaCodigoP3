@@ -4,13 +4,13 @@ import pe.edu.pucp.softrh.compras.model.OrdenCompra;
 import java.util.ArrayList;
 
 public interface OrdenCompraDAO {
-    public Integer insertar(OrdenCompra documento);
+    Integer insertar(OrdenCompra orden);
 
-    public Integer modificar(OrdenCompra documentoModificada);
+    Integer modificar(OrdenCompra orden);
 
-    public Integer eliminar(OrdenCompra documento);
+    Integer eliminar(Integer idOrden);
 
-    public ArrayList<OrdenCompra> obtenerTodos();
+    ArrayList<OrdenCompra> listarTodos();
 
-    public OrdenCompra obtenerPorId(Integer idOrden);
+    OrdenCompra obtenerPorId(Integer idOrden);
 }

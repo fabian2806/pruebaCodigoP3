@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public interface TrabajadorDAO {
-	public Integer insertar(Trabajador trabajador);
+	Integer insertar(Trabajador trabajador);
 
-	public Integer modificar(Trabajador trabajador);
+	Integer modificar(Trabajador trabajador);
 
-	public Integer eliminar(Trabajador trabajador);
+	Integer eliminar(Integer idTrabajador);
 
-	public ArrayList<Trabajador> listarTodos();
+	ArrayList<Trabajador> listarTodos();
 
-	public Trabajador obtenerPorId(String idTrabajador);
+	Trabajador obtenerPorId(Integer idTrabajador);
 }

@@ -20,15 +20,15 @@ public class CuponBO {
 		return cuponDAO.modificar(cupon);
 	}
 
-	public Integer eliminar(Cupon cupon) {
-		return cuponDAO.eliminar(cupon);
+	public Integer eliminar(Integer idCupon) {
+		return cuponDAO.eliminar(idCupon);
 	}
 
 	public ArrayList<Cupon> listarTodos() {
 		return cuponDAO.listarTodos();
 	}
 
-	public Cupon obtenerPorId(String idCupon) {
+	public Cupon obtenerPorId(Integer idCupon) {
 		return cuponDAO.obtenerPorId(idCupon);
 	}
 }

@@ -20,15 +20,15 @@ public class DireccionBO {
 		return direccionDAO.modificar(direccion);
 	}
 
-	public Integer eliminar(Direccion direccion) {
-		return direccionDAO.eliminar(direccion);
+	public Integer eliminar(Integer idDireccion) {
+		return direccionDAO.eliminar(idDireccion);
 	}
 
 	public ArrayList<Direccion> listarTodos() {
 		return direccionDAO.listarTodos();
 	}
 
-	public Direccion obtenerPorId(String idDireccion) {
+	public Direccion obtenerPorId(Integer idDireccion) {
 		return direccionDAO.obtenerPorId(idDireccion);
 	}
 }

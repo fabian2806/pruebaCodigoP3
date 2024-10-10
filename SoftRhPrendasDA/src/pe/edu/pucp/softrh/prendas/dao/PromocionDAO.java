@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.prendas.model.Promocion;
 
 public interface PromocionDAO {
+    Integer insertar(Promocion promocion);
 
-    public Integer insertar(Promocion promocion);
+    Integer modificar(Promocion promocionModificada);
 
-    public Integer modificar(Promocion promocionModificada);
+    Integer eliminar(Integer idPromocion);
 
-    public Integer eliminar(Promocion promocion);
+    ArrayList<Promocion> listarTodos();
 
-    public ArrayList<Promocion> listarTodos();
-
-    public Promocion obtenerPorId(String idPromocion);
+    Promocion obtenerPorId(Integer idPromocion);
 }

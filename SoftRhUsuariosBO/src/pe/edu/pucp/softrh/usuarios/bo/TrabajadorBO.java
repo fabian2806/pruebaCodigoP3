@@ -20,15 +20,16 @@ public class TrabajadorBO {
 		return trabajadorDAO.modificar(trabajador);
 	}
 
-	public Integer eliminar(Trabajador trabajador) {
-		return trabajadorDAO.eliminar(trabajador);
+	public Integer eliminar(Integer idtrabajador) {
+		return trabajadorDAO.eliminar(idtrabajador);
 	}
 
 	public ArrayList<Trabajador> listarTodos() {
 		return trabajadorDAO.listarTodos();
 	}
 
-	public Trabajador obtenerPorId(String idtrabajador) {
+	public Trabajador obtenerPorId(Integer idtrabajador) {
 		return trabajadorDAO.obtenerPorId(idtrabajador);
 	}
 }
+
