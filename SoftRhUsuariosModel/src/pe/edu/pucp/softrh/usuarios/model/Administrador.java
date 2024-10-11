@@ -1,12 +1,26 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
+import java.util.Date;
+
 public class Administrador extends Usuario implements Funciones {
+	private Date fechaCreacion;
+
 	public Administrador() {
 		super();
+		this.fechaCreacion = null;
 	}
 
-	public Administrador(String dni, String nombres, String apellidos, String correo, String contrasenha) {
+	public Administrador(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaCreacion) {
 		super(dni, nombres, apellidos, correo, contrasenha);
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 
 	public void crearTrabajador() {}

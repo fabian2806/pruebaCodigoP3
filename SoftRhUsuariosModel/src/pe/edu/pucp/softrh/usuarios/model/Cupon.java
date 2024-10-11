@@ -9,7 +9,6 @@ public class Cupon {
 	private String descripcion;
 	private Date fechaInicio;
 	private Date fechaFin;
-	private Boolean usado;
 	private Boolean activo;
 	private Trabajador trabajador;
 	private ArrayList<Cliente> clientes;
@@ -20,7 +19,6 @@ public class Cupon {
 		this.descripcion = null;
 		this.fechaInicio = null;
 		this.fechaFin = null;
-		this.usado = null;
 		this.activo = null;
 		this.trabajador = new Trabajador();
 		this.clientes = new ArrayList<>();
@@ -31,7 +29,6 @@ public class Cupon {
 		this.descripcion = descripcion;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
-		this.usado = false;
 		this.activo = true;
 		this.trabajador = trabajador;
 		this.clientes = new ArrayList<>();
@@ -77,14 +74,6 @@ public class Cupon {
 		this.fechaFin = fechaFin;
 	}
 
-	public Boolean isUsado() {
-		return usado;
-	}
-
-	public void setUsado(boolean usado) {
-		this.usado = usado;
-	}
-
 	public Boolean isActivo() {
 		return activo;
 	}
@@ -103,5 +92,10 @@ public class Cupon {
 
 	public void agregarCliente(Cliente cliente) {
 		clientes.add(cliente);
+	}
+
+	@Override
+	public String toString() {
+		return "idCupon=" + idCupon + ", idTrabajador=" + trabajador.getIdUsuario() + ", codigo=" + codigo + ", descripcion=" + descripcion + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ".";
 	}
 }

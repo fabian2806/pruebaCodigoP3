@@ -24,12 +24,22 @@ public class AdministradorDAOImp extends DAOImp<Administrador> implements Admini
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idAdministrador");
+		valores.add("fechaCreacion");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(administrador.getIdUsuario());
+		valores.add(administrador.getFechaCreacion());
+
+		return valores;
 	}
 
 	// MODIFICAR

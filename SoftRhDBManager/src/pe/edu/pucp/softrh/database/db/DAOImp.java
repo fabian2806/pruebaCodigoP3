@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pe.edu.pucp.softrh.database.config.DBManager;
@@ -67,7 +69,11 @@ public abstract class DAOImp<T> {
             }
             else if(valor instanceof Boolean) {
                 ps.setBoolean(i, (Boolean)valor);
-            }
+            } else if(valor instanceof Date) {
+				ps.setDate(i, new java.sql.Date(((Date)valor).getTime()));
+			} else if(valor instanceof LocalTime) {
+				ps.setTime(i, java.sql.Time.valueOf((LocalTime)valor));
+			}
             i++;
         }
     }
@@ -83,6 +89,8 @@ public abstract class DAOImp<T> {
             String sql = generarSQLParaInsertar();
             System.out.println(sql);
             resultado = this.ejecutarModificacionesEnBD(sql, obtenerListaDeValoresInsertar());
+			Integer id = this.retornarUltimoIdGenerado();
+			resultado = id;
             comitarTransaccion();
         } catch(SQLException ex) {
             try {
@@ -125,6 +133,15 @@ public abstract class DAOImp<T> {
 
         return sql;
     }
+
+	protected Integer retornarUltimoIdGenerado() throws SQLException {
+		Integer resultado = null;
+		String sql = "select @@last_insert_id as id";
+		rs = this.ejecutarConsultaEnBD(sql);
+		if(rs.next())
+			resultado = rs.getInt("id");
+		return resultado;
+	}
 
 	protected abstract ArrayList<String> obtenerListaDeAtributosModificar();
 	protected abstract ArrayList<Object> obtenerListaDeValoresModificar();
@@ -294,6 +311,7 @@ public abstract class DAOImp<T> {
                 sql += ",";
         }
         sql += " FROM " + tabla + " WHERE " + atributos.get(atributos.size()-1) + " = " + id;
+		sql += " AND activo = 1";
 
         return sql;
     }

@@ -1,3 +1,21 @@
+DROP TABLE IF EXISTS clientexcupon;
+DROP TABLE IF EXISTS prendaseleccionadaxorden;
+DROP TABLE IF EXISTS prendaxpromocion;
+DROP TABLE IF EXISTS prendaseleccionada;
+DROP TABLE IF EXISTS prenda;
+DROP TABLE IF EXISTS promocion;
+DROP TABLE IF EXISTS direccion;
+DROP TABLE IF EXISTS boleta;
+DROP TABLE IF EXISTS factura;
+DROP TABLE IF EXISTS comprobante;
+DROP TABLE IF EXISTS ordencompra;
+DROP TABLE IF EXISTS carrito;
+DROP TABLE IF EXISTS administrador;
+DROP TABLE IF EXISTS cupon;
+DROP TABLE IF EXISTS trabajador;
+DROP TABLE IF EXISTS cliente;
+DROP TABLE IF EXISTS usuario;
+
 -- USUARIOS
 CREATE TABLE usuario(
 	idUsuario INT AUTO_INCREMENT,
@@ -12,6 +30,7 @@ CREATE TABLE usuario(
 
 CREATE TABLE administrador(
 	idAdministrador INT,
+    fechaCreacion DATE,
     PRIMARY KEY(idAdministrador),
     FOREIGN KEY(idAdministrador) REFERENCES usuario(idUsuario)
 )ENGINE = InnoDB;
@@ -19,7 +38,7 @@ CREATE TABLE administrador(
 CREATE TABLE trabajador(
 	idTrabajador INT,
     puesto VARCHAR(50),
-    salario DECIMAL(10, 2),
+    sueldo DECIMAL(10, 2),
     fechaIngreso DATE,
     horarioInicio TIME,
     horarioFin TIME,
@@ -29,6 +48,9 @@ CREATE TABLE trabajador(
 
 CREATE TABLE cliente(
 	idCliente INT,
+    telefono VARCHAR(20),
+    fechaRegistro DATE,
+    recibePromociones BOOLEAN,
     PRIMARY KEY(idCliente),
     FOREIGN KEY(idCliente) REFERENCES usuario(idUsuario)
 )ENGINE = InnoDB;
@@ -41,7 +63,7 @@ CREATE TABLE direccion(
     provincia VARCHAR(50),
     departamento VARCHAR(50),
     codigoPostal VARCHAR(50),
-    referencia VARCHAR(50),
+    referencia VARCHAR(150),
     activo BOOLEAN DEFAULT 1,
     PRIMARY KEY(idDireccion),
     FOREIGN KEY(fidCliente) REFERENCES cliente(idCliente)
@@ -51,10 +73,9 @@ CREATE TABLE cupon(
 	idCupon INT AUTO_INCREMENT,
     fidTrabajador INT,
     codigo VARCHAR(10),
-    descripcion VARCHAR(50),
+    descripcion VARCHAR(150),
     fechaInicio DATE,
     fechaFin DATE,
-    usado BOOLEAN DEFAULT 0,
     activo BOOLEAN DEFAULT 1,
     PRIMARY KEY(idCupon),
     FOREIGN KEY(fidTrabajador) REFERENCES trabajador(idTrabajador)
@@ -64,6 +85,7 @@ CREATE TABLE clientexcupon(
 	idCliente INT,
     idCupon INT,
     fechaAsignada DATE,
+    usado BOOLEAN DEFAULT 0,
     PRIMARY KEY(idCliente, idCupon),
     FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
     FOREIGN KEY(idCupon) REFERENCES cupon(idCupon)
@@ -75,7 +97,7 @@ CREATE TABLE clientexcupon(
 CREATE TABLE prenda(
 	idPrenda INT AUTO_INCREMENT,
 	nombre VARCHAR(50),
-	descripcion VARCHAR(50),
+	descripcion VARCHAR(150),
 	tipo ENUM('Polo', 'Pantalon', 'Polera', 'Camisa', 'Casaca'),
 	imagen VARCHAR(255),
 	talla ENUM('XS', 'S', 'M', 'L', 'XL', 'XXL'),
@@ -93,7 +115,9 @@ CREATE TABLE promocion(
 	idPromocion INT AUTO_INCREMENT,
     fidTrabajador INT,
 	nombre VARCHAR(50),
-	descripcion VARCHAR(50),
+	descripcion VARCHAR(150),
+    valorDescuento DECIMAL(10, 2),
+    tipo ENUM('Porcentaje', 'MontoFijo'),
 	fechaInicio DATE,
 	fechaFin DATE,
 	activo BOOLEAN DEFAULT 1,
@@ -105,6 +129,7 @@ CREATE TABLE prendaxpromocion(
 	idPrenda INT,
     idPromocion INT,
     fechaAsignada DATE,
+    activo BOOLEAN,
     PRIMARY KEY(idPrenda, idPromocion),
     FOREIGN KEY(idPrenda) REFERENCES prenda(idPrenda),
     FOREIGN KEY(idPromocion) REFERENCES promocion(idPromocion)

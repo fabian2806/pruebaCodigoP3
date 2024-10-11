@@ -118,4 +118,9 @@ public class Promocion {
         prendas.add(prenda);
         prenda.aplicarPromocion(this);
     }
+
+	@Override
+	public String toString() {
+		return "idPromocion=" + idPromocion + ", idTrabajador=" + trabajador.getIdUsuario() + ", nombre=" + nombre + ", descripcion=" + descripcion + ", valorDescuento=" + valorDescuento + ", tipo=" + tipo + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ".";
+	}
 }

@@ -167,10 +167,8 @@ public class Prenda {
         }
     }
 
-    public String devolverDatos(){
-        String cadena;
-        cadena = "Nombre: " + nombre + "\nTipo: " + tipo + "\nColor: " + color
-                + "\nTalla: " + talla + "\n";
-        return cadena;
-    }
+	@Override
+	public String toString() {
+		return "idPrenda=" + idPrenda + ", nombre=" + nombre + ", descripcion=" + descripcion + ", tipo=" + tipo + ", imagen=" + imagen + ", talla=" + talla + ", genero=" + genero + ", color=" + color + ", precioOriginal=" + precioOriginal + ", precioDescontado=" + precioDescontado + ", stock=" + stock + ", cantVendida=" + cantVendida + ".";
+	}
 }

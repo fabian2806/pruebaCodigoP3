@@ -16,13 +16,12 @@ public class PromocionBO {
         this.promocionDAO = new PromocionDAOImp();
     }
 
-	// String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda
     public Integer insertar(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
         Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador, prenda);
         return this.promocionDAO.insertar(promocion);
     }
 
-    public Integer modificar(Integer idPromocion, String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){ //la prenda ya modificada
+    public Integer modificar(Integer idPromocion, String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
 		Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador, prenda);
 		promocion.setIdPromocion(idPromocion);
         return this.promocionDAO.modificar(promocion);

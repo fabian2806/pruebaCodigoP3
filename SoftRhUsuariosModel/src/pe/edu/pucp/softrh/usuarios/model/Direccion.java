@@ -105,4 +105,9 @@ public class Direccion {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
+	@Override
+	public String toString() {
+		return "idDireccion=" + idDireccion + ", idCliente=" + cliente.getIdUsuario() + ", direccion=" + direccion + ", distrito=" + distrito + ", provincia=" + provincia + ", departamento=" + departamento + ", codigoPostal=" + codigoPostal + ", referencia=" + referencia + ".";
+	}
 }

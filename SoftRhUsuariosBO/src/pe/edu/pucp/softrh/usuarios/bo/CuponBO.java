@@ -1,9 +1,11 @@
 package pe.edu.pucp.softrh.usuarios.bo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.softrh.usuarios.dao.CuponDAO;
 import pe.edu.pucp.softrh.usuarios.daoimp.CuponDAOImp;
 import pe.edu.pucp.softrh.usuarios.model.Cupon;
+import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public class CuponBO {
 	private CuponDAO cuponDAO;
@@ -12,11 +14,15 @@ public class CuponBO {
 		this.cuponDAO = new CuponDAOImp();
 	}
 
-	public Integer insertar(Cupon cupon) {
-		return cuponDAO.insertar(cupon);
+	public Integer insertar(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		Cupon cupon = new Cupon(codigo, descripcion, fechaInicio, fechaFin, trabajador);
+		cupon.setIdCupon(cuponDAO.insertar(cupon));
+		return cupon.getIdCupon();
 	}
 
-	public Integer modificar(Cupon cupon) {
+	public Integer modificar(Integer idCupon, String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		Cupon cupon = new Cupon(codigo, descripcion, fechaInicio, fechaFin, trabajador);
+		cupon.setIdCupon(idCupon);
 		return cuponDAO.modificar(cupon);
 	}
 
