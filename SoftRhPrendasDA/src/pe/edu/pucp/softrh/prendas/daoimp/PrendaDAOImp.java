@@ -70,8 +70,16 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
     protected ArrayList<String> obtenerListaDeAtributosModificar() {
         ArrayList<String> atributos = new ArrayList<>();
 
-        atributos = obtenerListaDeAtributosInsertar();
+        atributos.add("nombre");
+        atributos.add("descripcion");
+        atributos.add("tipo");
+        atributos.add("imagen");
+        atributos.add("talla");
+        atributos.add("genero");
+        atributos.add("color");
+        atributos.add("precioOriginal");
 		atributos.add("precioDescontado");
+		atributos.add("stock");
 		atributos.add("cantVendida");
         atributos.add("idPrenda");
 
@@ -82,8 +90,16 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
     protected ArrayList<Object> obtenerListaDeValoresModificar() {
         ArrayList<Object> valores = new ArrayList<>();
 
-        valores = obtenerListaDeValoresInsertar();
+        valores.add(this.prenda.getNombre());
+        valores.add(this.prenda.getDescripcion());
+        valores.add(this.prenda.getTipo().toString());
+        valores.add(this.prenda.getImagen());
+        valores.add(this.prenda.getTalla().toString());
+        valores.add(this.prenda.getGenero().toString());
+        valores.add(this.prenda.getColor());
+        valores.add(this.prenda.getPrecioOriginal());
 		valores.add(this.prenda.getPrecioDescontado());
+		valores.add(this.prenda.getStock());
 		valores.add(this.prenda.getCantVendida());
         valores.add(this.prenda.getIdPrenda());
 
@@ -104,15 +120,6 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
 
         return atributos;
     }
-
-//	@Override
-//    protected ArrayList<Object> obtenerListaDeValoresEliminar(){
-//        ArrayList<Object> valores = new ArrayList<>();
-//
-//        valores.add(this.prenda.getIdPrenda());
-//
-//        return valores;
-//    }
 
 	// LISTAR TODOS
 	@Override
@@ -146,7 +153,8 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
 
 		while(rs.next()) {
             Prenda prenda = new Prenda();
-            prenda.setIdPrenda(rs.getInt("idPrenda"));
+
+			prenda.setIdPrenda(rs.getInt("idPrenda"));
             prenda.setNombre(rs.getString("nombre"));
             prenda.setDescripcion(rs.getString("descripcion"));
             prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
@@ -159,7 +167,8 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
             prenda.setStock(rs.getInt("stock"));
             prenda.setCantVendida(rs.getInt("cantVendida"));
             prenda.setActivo(true);
-            prendas.add(prenda);
+
+			prendas.add(prenda);
         }
 
 		return prendas;
@@ -187,7 +196,6 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
 		atributos.add("precioDescontado");
         atributos.add("stock");
         atributos.add("cantVendida");
-        atributos.add("activo");
         atributos.add("idPrenda");
 
         return atributos;
@@ -197,7 +205,7 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
     public Prenda obtenerObtenerPorId(ResultSet rs) throws SQLException{
         Prenda prenda = new Prenda();
 
-		while(rs.next()) {
+		if(rs.next()) {
             prenda.setIdPrenda(rs.getInt("idPrenda"));
             prenda.setNombre(rs.getString("nombre"));
             prenda.setDescripcion(rs.getString("descripcion"));
@@ -210,9 +218,9 @@ public class PrendaDAOImp extends DAOImp<Prenda> implements PrendaDAO {
 			prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
             prenda.setStock(rs.getInt("stock"));
             prenda.setCantVendida(rs.getInt("cantVendida"));
-            prenda.setActivo(rs.getBoolean("activo"));
+            prenda.setActivo(true);
         }
-        
+
 		return prenda;
     }
 }

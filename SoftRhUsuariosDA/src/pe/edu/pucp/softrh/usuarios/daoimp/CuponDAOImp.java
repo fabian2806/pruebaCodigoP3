@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.database.db.DAOImp;
 import pe.edu.pucp.softrh.usuarios.dao.CuponDAO;
 import pe.edu.pucp.softrh.usuarios.model.Cupon;
+import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
 	private Cupon cupon;
@@ -24,12 +25,28 @@ public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("fidTrabajador");
+		valores.add("codigo");
+		valores.add("descripcion");
+		valores.add("fechaInicio");
+		valores.add("fechaFin");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(cupon.getTrabajador().getIdUsuario());
+		valores.add(cupon.getCodigo());
+		valores.add(cupon.getDescripcion());
+		valores.add(cupon.getFechaInicio());
+		valores.add(cupon.getFechaFin());
+
+		return valores;
 	}
 
 	// MODIFICAR
@@ -41,12 +58,28 @@ public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosModificar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("codigo");
+		valores.add("descripcion");
+		valores.add("fechaInicio");
+		valores.add("fechaFin");
+		valores.add("idCupon");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresModificar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(cupon.getCodigo());
+		valores.add(cupon.getDescripcion());
+		valores.add(cupon.getFechaInicio());
+		valores.add(cupon.getFechaFin());
+		valores.add(cupon.getIdCupon());
+
+		return valores;
 	}
 
 	// ELIMINAR
@@ -57,7 +90,11 @@ public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosEliminar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idCupon");
+
+		return valores;
 	}
 
 	// LISTAR TODOS
@@ -68,12 +105,39 @@ public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosListarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idCupon");
+		valores.add("fidTrabajador");
+		valores.add("codigo");
+		valores.add("descripcion");
+		valores.add("fechaInicio");
+		valores.add("fechaFin");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Cupon> obtenerListarTodos(ResultSet rs) throws SQLException {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Cupon> cupones = new ArrayList<>();
+
+		while(rs.next()) {
+			Cupon cupon = new Cupon();
+			Trabajador trabajador = new Trabajador();
+			trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+
+			cupon.setIdCupon(rs.getInt("idCupon"));
+			cupon.setTrabajador(trabajador);
+			cupon.setCodigo(rs.getString("codigo"));
+			cupon.setDescripcion(rs.getString("descripcion"));
+			cupon.setFechaInicio(rs.getDate("fechaInicio"));
+			cupon.setFechaFin(rs.getDate("fechaFin"));
+			cupon.setActivo(true);
+
+			cupones.add(cupon);
+		}
+
+		return cupones;
 	}
 
 	// OBTENER POR ID
@@ -84,11 +148,36 @@ public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idCupon");
+		valores.add("fidTrabajador");
+		valores.add("codigo");
+		valores.add("descripcion");
+		valores.add("fechaInicio");
+		valores.add("fechaFin");
+		valores.add("idCupon");
+		
+		return valores;
 	}
 
 	@Override
 	protected Cupon obtenerObtenerPorId(ResultSet rs) throws SQLException {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		Cupon cupon = new Cupon();
+
+		if(rs.next()) {
+			Trabajador trabajador = new Trabajador();
+			trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+
+			cupon.setIdCupon(rs.getInt("idCupon"));
+			cupon.setTrabajador(trabajador);
+			cupon.setCodigo(rs.getString("codigo"));
+			cupon.setDescripcion(rs.getString("descripcion"));
+			cupon.setFechaInicio(rs.getDate("fechaInicio"));
+			cupon.setFechaFin(rs.getDate("fechaFin"));
+			cupon.setActivo(true);
+		}
+
+		return cupon;
 	}
 }

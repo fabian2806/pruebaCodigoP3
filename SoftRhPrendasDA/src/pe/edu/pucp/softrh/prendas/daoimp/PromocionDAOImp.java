@@ -47,7 +47,7 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
         valores.add(this.promocion.getNombre());
         valores.add(this.promocion.getDescripcion());
         valores.add(this.promocion.getValorDescuento());
-        valores.add(this.promocion.getTipo());
+        valores.add(this.promocion.getTipo().toString());
         valores.add(this.promocion.getFechaInicio());
         valores.add(this.promocion.getFechaFin());
 
@@ -65,7 +65,12 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
     protected ArrayList<String> obtenerListaDeAtributosModificar() {
         ArrayList<String> atributos = new ArrayList<>();
 
-        atributos = obtenerListaDeAtributosInsertar();
+        atributos.add("nombre");
+        atributos.add("descripcion");
+        atributos.add("valorDescuento");
+        atributos.add("tipo");
+        atributos.add("fechaInicio");
+        atributos.add("fechaFin");
         atributos.add("idPromocion");
 
         return atributos;
@@ -75,7 +80,12 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
     protected ArrayList<Object> obtenerListaDeValoresModificar() {
         ArrayList<Object> valores = new ArrayList<>();
 
-        valores = obtenerListaDeValoresInsertar();
+        valores.add(this.promocion.getNombre());
+        valores.add(this.promocion.getDescripcion());
+        valores.add(this.promocion.getValorDescuento());
+        valores.add(this.promocion.getTipo().toString());
+        valores.add(this.promocion.getFechaInicio());
+        valores.add(this.promocion.getFechaFin());
         valores.add(this.promocion.getIdPromocion());
 
         return valores;
@@ -95,15 +105,6 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
 
         return atributos;
     }
-
-//    @Override
-//    protected ArrayList<Object> obtenerListaDeValoresEliminar() {
-//        ArrayList<Object> valores = new ArrayList<>();
-//
-//        valores.add(this.promocion.getIdPromocion());
-//
-//        return valores;
-//    }
 
 	// LISTAR TODOS
     @Override
@@ -133,8 +134,11 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
 
 		while(rs.next()){
             Promocion promocion = new Promocion();
-            promocion.setIdPromocion(rs.getInt("idPrenda"));
-            promocion.getTrabajador().setIdUsuario(rs.getInt("fidTrabajador"));
+			Trabajador trabajador = new Trabajador();
+			trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+
+			promocion.setIdPromocion(rs.getInt("idPromocion"));
+            promocion.setTrabajador(trabajador);
             promocion.setNombre(rs.getString("nombre"));
             promocion.setDescripcion(rs.getString("descripcion"));
             promocion.setValorDescuento(rs.getDouble("valorDescuento"));
@@ -142,7 +146,8 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
             promocion.setFechaInicio(rs.getDate("fechaInicio"));
             promocion.setFechaFin(rs.getDate("fechaFin"));
             promocion.setActivo(true);
-            promociones.add(promocion);
+
+			promociones.add(promocion);
         }
 
 		return promociones;
@@ -166,7 +171,6 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
         atributos.add("tipo");
         atributos.add("fechaInicio");
         atributos.add("fechaFin");
-        atributos.add("activo");
         atributos.add("idPromocion");
 
         return atributos;
@@ -176,16 +180,19 @@ public class PromocionDAOImp extends DAOImp<Promocion> implements PromocionDAO {
     public Promocion obtenerObtenerPorId(ResultSet rs) throws SQLException{
         Promocion promocion = new Promocion();
 
-		while (rs.next()){
+		if(rs.next()) {
+			Trabajador trabajador = new Trabajador();
+			trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+
             promocion.setIdPromocion(rs.getInt("idPromocion"));
-            promocion.getTrabajador().setIdUsuario(rs.getInt("fidTrabajador"));
+            promocion.setTrabajador(trabajador);
             promocion.setNombre(rs.getString("nombre"));
             promocion.setDescripcion(rs.getString("descripcion"));
             promocion.setValorDescuento(rs.getDouble("valorDescuento"));
             promocion.setTipo(TipoPromocion.valueOf(rs.getString("tipo")));
             promocion.setFechaInicio(rs.getDate("fechaInicio"));
             promocion.setFechaFin(rs.getDate("fechaFin"));
-            promocion.setActivo(rs.getBoolean("activo"));
+            promocion.setActivo(true);
         }
 
 		return promocion;

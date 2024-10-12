@@ -24,12 +24,28 @@ public class UsuarioDAOImp extends DAOImp<Usuario> implements UsuarioDAO{
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("dni");
+		valores.add("nombres");
+		valores.add("apellidos");
+		valores.add("correo");
+		valores.add("contrasenha");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(usuario.getDni());
+		valores.add(usuario.getNombres());
+		valores.add(usuario.getApellidos());
+		valores.add(usuario.getCorreo());
+		valores.add(usuario.getContrasenha());
+
+		return valores;
 	}
 
 	// MODIFICAR
@@ -41,12 +57,30 @@ public class UsuarioDAOImp extends DAOImp<Usuario> implements UsuarioDAO{
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosModificar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("dni");
+		valores.add("nombres");
+		valores.add("apellidos");
+		valores.add("correo");
+		valores.add("contrasenha");
+		valores.add("idUsuario");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresModificar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(usuario.getDni());
+		valores.add(usuario.getNombres());
+		valores.add(usuario.getApellidos());
+		valores.add(usuario.getCorreo());
+		valores.add(usuario.getContrasenha());
+		valores.add(usuario.getIdUsuario());
+
+		return valores;
 	}
 
 	// ELIMINAR

@@ -24,12 +24,24 @@ public class ClienteDAOImp extends DAOImp<Cliente> implements ClienteDAO {
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idCliente");
+		valores.add("fechaRegistro");
+		valores.add("recibePromociones");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(cliente.getIdUsuario());
+		valores.add(cliente.getFechaRegistro());
+		valores.add(cliente.getRecibePromociones());
+
+		return valores;
 	}
 
 	// MODIFICAR

@@ -24,12 +24,30 @@ public class TrabajadorDAOImp extends DAOImp<Trabajador> implements TrabajadorDA
 
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idTrabajador");
+		valores.add("puesto");
+		valores.add("sueldo");
+		valores.add("fechaIngreso");
+		valores.add("horarioInicio");
+		valores.add("horarioFin");
+
+		return valores;
 	}
 
 	@Override
 	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(trabajador.getIdUsuario());
+		valores.add(trabajador.getPuesto());
+		valores.add(trabajador.getSueldo());
+		valores.add(trabajador.getFechaIngreso());
+		valores.add(trabajador.getHorarioInicio());
+		valores.add(trabajador.getHorarioFin());
+
+		return valores;
 	}
 
 	// MODIFICAR

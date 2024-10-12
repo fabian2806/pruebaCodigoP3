@@ -25,7 +25,7 @@ public class PrendaBO {
 		prenda.setIdPrenda(idPrenda);
 		prenda.setPrecioDescontado(precioDescontado);
 		prenda.setCantVendida(cantVendida);
-		return this.prendaDAO.modificar(prenda);  //la prenda ya modificada
+		return this.prendaDAO.modificar(prenda);
     }
 
     public Integer eliminar(Integer idPrenda){
