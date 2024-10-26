@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.usuarios.model.Cliente;
 
 public interface ClienteDAO {
-	public Integer insertar(Cliente cliente);
+	Integer insertar(Cliente cliente);
 
-	public Integer modificar(Cliente cliente);
+	Integer modificar(Cliente cliente);
 
-	public Integer eliminar(Cliente cliente);
+	Integer eliminar(Integer idCliente);
 
-	public ArrayList<Cliente> listarTodos();
+	ArrayList<Cliente> listarTodos();
 
-	public Cliente obtenerPorId(String idCliente);
+	Cliente obtenerPorId(Integer idCliente);
 }

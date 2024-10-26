@@ -1,23 +1,38 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
-public class Administrador extends Usuario implements Funciones {
-	public Administrador() {}
+import java.util.Date;
 
-	public Administrador(String dni, String nombres, String apellidos, String correo, String contrasenha) {
-		super(dni, nombres, apellidos, correo, contrasenha);
+public class Administrador extends Usuario implements Funciones {
+	private Date fechaCreacion;
+
+	public Administrador() {
+		super();
+		this.fechaCreacion = null;
 	}
 
-	public void crearTrabajador(){}
-	public void crearCliente(){}
-	public void crearEmpresa(){}
+	public Administrador(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaCreacion) {
+		super(dni, nombres, apellidos, correo, contrasenha);
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public void crearTrabajador() {}
+	public void crearCliente() {}
 
 	@Override
-	public void crearPrendas() {
+	public void crearPrenda() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
 	@Override
-	public void crearPromociones() {
+	public void crearPromocion() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
@@ -27,7 +42,7 @@ public class Administrador extends Usuario implements Funciones {
 	}
 
 	@Override
-	public void listarPromocion() {
+	public void listarPromociones() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 

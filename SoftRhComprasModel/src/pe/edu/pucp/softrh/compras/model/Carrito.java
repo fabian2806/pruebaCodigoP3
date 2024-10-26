@@ -1,25 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.edu.pucp.softrh.compras.model;
 
-/**
- *
- * @author JP
- */
+import java.util.ArrayList;
+
 public class Carrito {
-    private static Integer id=1;
     private Integer idCarrito;
     private Integer cantidadTotal;
     private Double precioTotal;
-    
-    public Carrito(Integer idCarrito, Integer cantidadTotal, Double precioTotal) {
-        this.idCarrito = id;
+	private OrdenCompra orden;
+	private ArrayList<PrendaSeleccionada> prendas;
+
+	public Carrito() {}
+
+    public Carrito(Integer cantidadTotal, Double precioTotal) {
         this.cantidadTotal = cantidadTotal;
         this.precioTotal = precioTotal;
-        id++;
+		this.orden = null;
+		this.prendas = new ArrayList<>();
     }
+
     public Integer getIdCarrito() {
         return idCarrito;
     }
@@ -42,7 +40,29 @@ public class Carrito {
 
     public void setPrecioTotal(Double precioTotal) {
         this.precioTotal = precioTotal;
-    }
-      
-    
+	}
+
+	public OrdenCompra getOrden() {
+		return orden;
+	}
+
+	public void setOrden(OrdenCompra orden) {
+		this.orden = orden;
+	}
+
+	public void agregarPrendas(PrendaSeleccionada prenda) {
+		prendas.add(prenda);
+	}
+
+	public void calcularCantidadTotal() {
+		setCantidadTotal(prendas.size());
+	}
+
+	public void calcularPrecioTotal() {
+		Double precio = 0.0;
+		for(PrendaSeleccionada prenda : prendas) {
+			precio += prenda.getPrecio();
+		}
+		setPrecioTotal(precio);
+	}
 }

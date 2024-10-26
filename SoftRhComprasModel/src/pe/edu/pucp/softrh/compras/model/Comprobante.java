@@ -1,24 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.edu.pucp.softrh.compras.model;
 
-/**
- *
- * @author JP
- */
 public abstract class Comprobante {
-    protected static Integer id=1;
     protected Integer idComprobante;
     protected Double totalPagar;
-    
-    public Comprobante(Integer idComprobante, Double totalPagar) {
-        this.idComprobante = id;
+	protected OrdenCompra orden;
+
+	public Comprobante() {}
+
+    public Comprobante(Double totalPagar, OrdenCompra orden) {
         this.totalPagar = totalPagar;
-        id++;
+		this.orden = orden;
     }
-    
+
     public Integer getIdComprobante() {
         return idComprobante;
     }
@@ -33,6 +26,13 @@ public abstract class Comprobante {
 
     public void setTotalPagar(Double totalPagar) {
         this.totalPagar = totalPagar;
-    } 
-    
+    }
+
+	public OrdenCompra getOrden() {
+		return orden;
+	}
+
+	public void setOrden(OrdenCompra orden) {
+		this.orden = orden;
+	}
 }

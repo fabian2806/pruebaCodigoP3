@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.usuarios.model.Direccion;
 
 public interface DireccionDAO {
-	public Integer insertar(Direccion direccion);
+	Integer insertar(Direccion direccion);
 
-	public Integer modificar(Direccion direccion);
+	Integer modificar(Direccion direccion);
 
-	public Integer eliminar(Direccion direccion);
+	Integer eliminar(Integer idDireccion);
 
-	public ArrayList<Direccion> listarTodos();
+	ArrayList<Direccion> listarTodos();
 
-	public Direccion obtenerPorId(String idDireccion);
+	Direccion obtenerPorId(Integer idDireccion);
 }
