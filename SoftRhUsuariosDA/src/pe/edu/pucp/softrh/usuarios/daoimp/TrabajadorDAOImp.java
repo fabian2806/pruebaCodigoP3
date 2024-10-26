@@ -1,11 +1,13 @@
 package pe.edu.pucp.softrh.usuarios.daoimp;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import pe.edu.pucp.softrh.database.db.DAOImplementacion;
+import pe.edu.pucp.softrh.database.db.DAOImp;
 import pe.edu.pucp.softrh.usuarios.dao.TrabajadorDAO;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
-public class TrabajadorDAOImp extends DAOImplementacion implements TrabajadorDAO {
+public class TrabajadorDAOImp extends DAOImp<Trabajador> implements TrabajadorDAO {
 	private Trabajador trabajador;
 
 	public TrabajadorDAOImp() {
@@ -13,9 +15,46 @@ public class TrabajadorDAOImp extends DAOImplementacion implements TrabajadorDAO
 		this.trabajador = null;
 	}
 
+	// INSERTAR
+	@Override
+	public Integer insertar(Trabajador trabajador) {
+		this.trabajador = trabajador;
+		return super.insertar();
+	}
+
 	@Override
 	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		ArrayList<String> valores = new ArrayList<>();
+
+		valores.add("idTrabajador");
+		valores.add("puesto");
+		valores.add("sueldo");
+		valores.add("fechaIngreso");
+		valores.add("horarioInicio");
+		valores.add("horarioFin");
+
+		return valores;
+	}
+
+	@Override
+	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
+		ArrayList<Object> valores = new ArrayList<>();
+
+		valores.add(trabajador.getIdUsuario());
+		valores.add(trabajador.getPuesto());
+		valores.add(trabajador.getSueldo());
+		valores.add(trabajador.getFechaIngreso());
+		valores.add(trabajador.getHorarioInicio());
+		valores.add(trabajador.getHorarioFin());
+
+		return valores;
+	}
+
+	// MODIFICAR
+	@Override
+	public Integer modificar(Trabajador trabajador) {
+		this.trabajador = trabajador;
+		return super.modificar();
 	}
 
 	@Override
@@ -24,8 +63,25 @@ public class TrabajadorDAOImp extends DAOImplementacion implements TrabajadorDAO
 	}
 
 	@Override
+	protected ArrayList<Object> obtenerListaDeValoresModificar() {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	// ELIMINAR
+	@Override
+	public Integer eliminar(Integer idTrabajador) {
+		return super.eliminar(idTrabajador);
+	}
+
+	@Override
 	protected ArrayList<String> obtenerListaDeAtributosEliminar() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	// LISTAR TODOS
+	@Override
+	public ArrayList<Trabajador> listarTodos() {
+		return super.listarTodos();
 	}
 
 	@Override
@@ -34,48 +90,23 @@ public class TrabajadorDAOImp extends DAOImplementacion implements TrabajadorDAO
 	}
 
 	@Override
-	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
+	public ArrayList<Trabajador> obtenerListarTodos(ResultSet rs) throws SQLException {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+	}
+
+	// OBTENER POR ID
+	@Override
+	public Trabajador obtenerPorId(Integer idTrabajador) {
+		return super.obtenerPorId(idTrabajador);
+	}
+
+	@Override
+	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
 	@Override
-	protected ArrayList<Object> obtenerListaDeValoresModificar() {
+	public Trabajador obtenerObtenerPorId(ResultSet rs) throws SQLException {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresEliminar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresListarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public Integer insertar(Trabajador trabajador) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public Integer modificar(Trabajador trabajador) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public Integer eliminar(Trabajador trabajador) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public ArrayList<Trabajador> listarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public Trabajador obtenerPorId(String idTrabajador) {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pe.edu.pucp.softrh.database.config;
 
 import java.io.File;
@@ -16,7 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static pe.edu.pucp.softrh.database.seg.Cifrado.decipher_MD5;
 
-
 public class DBManager {
     private static final String ARCHIVO_CONFIGURACION = "jdbc.properties";
     private Connection conexion;
@@ -28,35 +23,33 @@ public class DBManager {
     private String user;
     private String password;
     private static DBManager db_manager = null;
-    
-    private DBManager(){};
-    
-    public static DBManager obtenerInstancia(){
+
+    private DBManager() {}
+
+    public static DBManager obtenerInstancia() {
         if(DBManager.db_manager == null)
             crearInstancia();
         return DBManager.db_manager;
     }
-    
-    private static void crearInstancia(){
-        if (DBManager.db_manager == null)
+
+    private static void crearInstancia() {
+        if(DBManager.db_manager == null)
             DBManager.db_manager = new DBManager();
-    }  
-    
+    }
+
     public Connection obtenerConexion(){
         leerConfiguracion();
-        
+
         try {
             Class.forName(this.driver);
-            this.conexion = DriverManager.getConnection(getURL(), this.user,
-                    decipher_MD5(this.password));
-        } catch (ClassNotFoundException | SQLException ex) {        
-            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE,
-                    null, ex);
+            this.conexion = DriverManager.getConnection(getURL(), this.user, decipher_MD5(this.password));
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return this.conexion;
     }
-    
+
     private String getURL(){
         String url = this.driver_type.concat("://");
         url = url.concat(this.host_name);
@@ -66,10 +59,11 @@ public class DBManager {
         url = url.concat(this.database);
         return url;
     }
+
     private void leerConfiguracion(){
         Properties propiedades = new Properties();
         String archivo_configuracion_path = "resources/" + ARCHIVO_CONFIGURACION;
-        
+
         try {
             propiedades.load(new FileInputStream(
                     new File(archivo_configuracion_path)));
@@ -86,6 +80,6 @@ public class DBManager {
         } catch (IOException ex) {
             Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE,
                     null, ex);
-        } 
+        }
     }
 }
