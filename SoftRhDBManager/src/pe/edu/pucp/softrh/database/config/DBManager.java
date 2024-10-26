@@ -4,12 +4,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.Types;
 import static pe.edu.pucp.softrh.database.seg.Cifrado.decipher_MD5;
 
 public class DBManager {
@@ -82,4 +85,116 @@ public class DBManager {
                     null, ex);
         }
     }
+    
+    protected void iniciarTransaccion() throws SQLException {
+        this.conexion = DBManager.obtenerInstancia().obtenerConexion();
+        this.conexion.setAutoCommit(false);
+    }
+
+    protected void cerrarConexion() throws SQLException {
+        if(this.conexion != null) {
+            this.conexion.close();
+        }
+    }
+
+    protected void comitarTransaccion() throws SQLException {
+        this.conexion.commit();
+    }
+
+    protected void rollbackTransaccion() throws SQLException {
+        if(this.conexion != null) {
+            this.conexion.rollback();
+        }
+    }
+
+    public int EjecutarProcedimiento(String nombreProcedimiento, Object[] parameters, Boolean nombreParametroSalida){
+        int resultado = 0;
+        CallableStatement cs = null;
+        
+        try{
+            iniciarTransaccion();
+            String procedimiento = obtenerCadenaProcedimiento(nombreProcedimiento, parameters, nombreParametroSalida);
+            cs = conexion.prepareCall(procedimiento);
+            if (parameters != null){
+                for (int i=0; i<parameters.length; i++){
+                    cs.setObject(i+1, parameters[i]);
+                }
+            }
+            
+            if (nombreParametroSalida == true){
+                cs.registerOutParameter((parameters != null ? 1: 1), Types.INTEGER);
+            }
+            
+            resultado = cs.executeUpdate();
+            
+            if (nombreParametroSalida == true){
+                resultado = cs.getInt((parameters != null ? 1: 1));
+            }
+            
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        finally{
+            try {
+                cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return resultado;
+    }
+    
+    public ResultSet EjecutarProcedimientoLectura(String nombreProcedimiento, Object[] parameters){
+        ResultSet rs = null;
+        CallableStatement cs = null;
+        
+        try{
+            iniciarTransaccion();
+            String procedimiento = obtenerCadenaProcedimiento(nombreProcedimiento, parameters, null);
+            cs = conexion.prepareCall(procedimiento);
+            if (parameters != null){
+                for (int i=0; i<parameters.length; i++){
+                    cs.setObject(i+1, parameters[i]);
+                }
+            }
+            
+            rs = cs.executeQuery();
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();;
+        }
+        finally{
+            try {
+                cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return rs;
+    }
+    
+    protected String obtenerCadenaProcedimiento(String nombreProcedimiento, Object[] parameters, Boolean nombreParametroSalida){
+        String cadena = "";
+        cadena += " call " + nombreProcedimiento + "(";
+        if (parameters != null){
+            for (int i=0; i< parameters.length; i++){
+                cadena += "?";
+                if (i < parameters.length - 1){
+                    cadena += ",";
+                }
+            }
+        }
+        
+        if (nombreParametroSalida == true){
+            cadena += ", ?";
+        }
+        
+        cadena += ") ";
+        return cadena;
+    }
+    
+    
 }
