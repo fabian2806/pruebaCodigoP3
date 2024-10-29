@@ -3,181 +3,121 @@ package pe.edu.pucp.softrh.usuarios.daoimp;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import pe.edu.pucp.softrh.database.db.DAOImp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pe.edu.pucp.softrh.database.config.DBManager;
 import pe.edu.pucp.softrh.usuarios.dao.CuponDAO;
 import pe.edu.pucp.softrh.usuarios.model.Cupon;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
-public class CuponDAOImp extends DAOImp<Cupon> implements CuponDAO {
-	private Cupon cupon;
+public class CuponDAOImp implements CuponDAO {
+    
+    private ResultSet rs;
+    private DBManager dbManager = DBManager.obtenerInstancia();
 
-	public CuponDAOImp() {
-		super("cupon");
-		this.cupon = null;
-	}
+    @Override
+    public int insertar(Cupon cupon) {
+        int resultado = 0;
+        Object[] parameters = new Object[6];
+        parameters[0] = cupon.getIdCupon();
+        parameters[1] = cupon.getTrabajador().getIdUsuario();
+        parameters[2] = cupon.getCodigo();
+        parameters[3] = cupon.getDescripcion();
+        parameters[4] = cupon.getFechaInicio();
+        parameters[5] = cupon.getFechaFin();
+        
+        cupon.setIdCupon(dbManager.EjecutarProcedimiento("INSERTAR_CUPON", parameters, true));
+        resultado = cupon.getIdCupon();
+        
+        return resultado;
+    }
 
-	// INSERTAR
-	@Override
-	public Integer insertar(Cupon cupon) {
-		this.cupon = cupon;
-		return super.insertar();
-	}
+    @Override
+    public int modificar(Cupon cupon) {
+        int resultado = 0;
+        Object[] parameters = new Object[5];
+        parameters[0] = cupon.getIdCupon();
+        parameters[1] = cupon.getCodigo();
+        parameters[2] = cupon.getDescripcion();
+        parameters[3] = cupon.getFechaInicio();
+        parameters[4] = cupon.getFechaFin();
+        
+        resultado = dbManager.EjecutarProcedimiento("MODIFICAR_CUPON", parameters, false);
+        
+        return resultado;
+    }
 
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		ArrayList<String> valores = new ArrayList<>();
+    @Override
+    public int eliminar(int idCupon) {
+        int resultado = 0;
+        Object[] parameters = new Object[1];
+        parameters[0] = idCupon;
+        resultado = dbManager.EjecutarProcedimiento("ELIMINAR_CUPON", parameters, false);
+        return resultado;   
+    }
 
-		valores.add("fidTrabajador");
-		valores.add("codigo");
-		valores.add("descripcion");
-		valores.add("fechaInicio");
-		valores.add("fechaFin");
+    @Override
+    public ArrayList<Cupon> listarTodos() {
+        ArrayList<Cupon> cupones = new ArrayList<Cupon>();
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_CUPONES_TODOS", null);
+        
+        try {
+            while (rs.next()){
+                Cupon cupon = new Cupon();
+                cupon.setIdCupon(rs.getInt("idCupon"));
+                Trabajador trabajador = new Trabajador();
+                trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+                cupon.setTrabajador(trabajador);
+                cupon.setCodigo(rs.getString("codigo"));
+                cupon.setDescripcion(rs.getString("descripcion"));
+                cupon.setFechaInicio(rs.getDate("fechaInicio"));
+                cupon.setFechaFin(rs.getDate("fechaFin"));
+                
+                cupones.add(cupon);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CuponDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(CuponDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return cupones;
+    }
 
-		return valores;
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		ArrayList<Object> valores = new ArrayList<>();
-
-		valores.add(cupon.getTrabajador().getIdUsuario());
-		valores.add(cupon.getCodigo());
-		valores.add(cupon.getDescripcion());
-		valores.add(cupon.getFechaInicio());
-		valores.add(cupon.getFechaFin());
-
-		return valores;
-	}
-
-	// MODIFICAR
-	@Override
-	public Integer modificar(Cupon cupon) {
-		this.cupon = cupon;
-		return super.modificar();
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosModificar() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("codigo");
-		valores.add("descripcion");
-		valores.add("fechaInicio");
-		valores.add("fechaFin");
-		valores.add("idCupon");
-
-		return valores;
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresModificar() {
-		ArrayList<Object> valores = new ArrayList<>();
-
-		valores.add(cupon.getCodigo());
-		valores.add(cupon.getDescripcion());
-		valores.add(cupon.getFechaInicio());
-		valores.add(cupon.getFechaFin());
-		valores.add(cupon.getIdCupon());
-
-		return valores;
-	}
-
-	// ELIMINAR
-	@Override
-	public Integer eliminar(Integer idCupon) {
-		return super.eliminar(idCupon);
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosEliminar() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("idCupon");
-
-		return valores;
-	}
-
-	// LISTAR TODOS
-	@Override
-	public ArrayList<Cupon> listarTodos() {
-		return super.listarTodos();
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosListarTodos() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("idCupon");
-		valores.add("fidTrabajador");
-		valores.add("codigo");
-		valores.add("descripcion");
-		valores.add("fechaInicio");
-		valores.add("fechaFin");
-
-		return valores;
-	}
-
-	@Override
-	protected ArrayList<Cupon> obtenerListarTodos(ResultSet rs) throws SQLException {
-		ArrayList<Cupon> cupones = new ArrayList<>();
-
-		while(rs.next()) {
-			Cupon cupon = new Cupon();
-			Trabajador trabajador = new Trabajador();
-			trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
-
-			cupon.setIdCupon(rs.getInt("idCupon"));
-			cupon.setTrabajador(trabajador);
-			cupon.setCodigo(rs.getString("codigo"));
-			cupon.setDescripcion(rs.getString("descripcion"));
-			cupon.setFechaInicio(rs.getDate("fechaInicio"));
-			cupon.setFechaFin(rs.getDate("fechaFin"));
-			cupon.setActivo(true);
-
-			cupones.add(cupon);
-		}
-
-		return cupones;
-	}
-
-	// OBTENER POR ID
-	@Override
-	public Cupon obtenerPorId(Integer idCupon) {
-		return super.obtenerPorId(idCupon);
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("idCupon");
-		valores.add("fidTrabajador");
-		valores.add("codigo");
-		valores.add("descripcion");
-		valores.add("fechaInicio");
-		valores.add("fechaFin");
-		valores.add("idCupon");
-		
-		return valores;
-	}
-
-	@Override
-	protected Cupon obtenerObtenerPorId(ResultSet rs) throws SQLException {
-		Cupon cupon = new Cupon();
-
-		if(rs.next()) {
-			Trabajador trabajador = new Trabajador();
-			trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
-
-			cupon.setIdCupon(rs.getInt("idCupon"));
-			cupon.setTrabajador(trabajador);
-			cupon.setCodigo(rs.getString("codigo"));
-			cupon.setDescripcion(rs.getString("descripcion"));
-			cupon.setFechaInicio(rs.getDate("fechaInicio"));
-			cupon.setFechaFin(rs.getDate("fechaFin"));
-			cupon.setActivo(true);
-		}
-
-		return cupon;
-	}
+    @Override
+    public Cupon obtenerPorId(int idCupon) {
+        Cupon cupon = new Cupon();
+        Object[] parameters = new Object[1];
+        parameters[0] = idCupon;
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_CUPON_X_ID", parameters);
+        
+        try {
+            while (rs.next()){
+                cupon.setIdCupon(rs.getInt("idCupon"));
+                Trabajador trabajador = new Trabajador();
+                trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+                cupon.setTrabajador(trabajador);
+                cupon.setCodigo(rs.getString("codigo"));
+                cupon.setDescripcion(rs.getString("descripcion"));
+                cupon.setFechaInicio(rs.getDate("fechaInicio"));
+                cupon.setFechaFin(rs.getDate("fechaFin"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CuponDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(CuponDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return cupon;
+    }
 }

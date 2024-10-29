@@ -7,7 +7,7 @@ import pe.edu.pucp.softrh.usuarios.daoimp.ClienteDAOImp;
 import pe.edu.pucp.softrh.usuarios.model.Cliente;
 import pe.edu.pucp.softrh.usuarios.model.Usuario;
 
-public class ClienteBO extends UsuarioBO {
+public class ClienteBO{
 	private ClienteDAO clienteDAO;
 
 	public ClienteBO() {
@@ -16,7 +16,6 @@ public class ClienteBO extends UsuarioBO {
 
 	public Integer insertar(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaRegistro, Boolean recibePromociones) {
 		Usuario cliente = new Cliente(dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
-		cliente.setIdUsuario(super.insertar(cliente));
 		return clienteDAO.insertar((Cliente)cliente);
 	}
 

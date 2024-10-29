@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.usuarios.model.Usuario;
 
 public interface UsuarioDAO {
-	Integer insertar(Usuario usuario);
+    int insertar(Usuario usuario);
 
-	Integer modificar(Usuario usuario);
+    int modificar(Usuario usuario);
 
-	Integer eliminar(Integer idUsuario);
+    int eliminar(int idUsuario);
 
-	ArrayList<Usuario> listarTodos();
+    ArrayList<Usuario> listarTodos();
 
-	Usuario obtenerPorId(Integer idUsuario);
+    Usuario obtenerPorId(int idUsuario);
 }

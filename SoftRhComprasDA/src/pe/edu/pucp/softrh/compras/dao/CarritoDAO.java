@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.compras.model.Carrito;
 
 public interface CarritoDAO {
-	Integer insertar(Carrito carrito);
+    int insertar(Carrito carrito);
 
-    Integer modificar(Carrito carrito);
+    int modificar(Carrito carrito);
 
-    Integer eliminar(Integer idCarrito);
+    int eliminar(int idCarrito);
 
     ArrayList<Carrito> listarTodos();
 
-    Carrito obtenerPorId(Integer idCarrito);
+    Carrito obtenerPorId(int idCarrito);
 }

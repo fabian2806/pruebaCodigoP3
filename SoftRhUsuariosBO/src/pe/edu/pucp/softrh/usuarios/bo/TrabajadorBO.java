@@ -8,7 +8,7 @@ import pe.edu.pucp.softrh.usuarios.daoimp.TrabajadorDAOImp;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 import pe.edu.pucp.softrh.usuarios.model.Usuario;
 
-public class TrabajadorBO extends UsuarioBO {
+public class TrabajadorBO{
 	private TrabajadorDAO trabajadorDAO;
 
 	public TrabajadorBO() {
@@ -17,7 +17,6 @@ public class TrabajadorBO extends UsuarioBO {
 
 	public Integer insertar(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, LocalTime horarioInicio, LocalTime horarioFin) {
 		Usuario trabajador = new Trabajador(dni, nombres, apellidos, correo, contrasenha, puesto, sueldo, fechaIngreso, horarioInicio, horarioFin);
-		trabajador.setIdUsuario(super.insertar(trabajador));
 		return trabajadorDAO.insertar((Trabajador)trabajador);
 	}
 

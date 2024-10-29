@@ -4,13 +4,13 @@ import pe.edu.pucp.softrh.compras.model.Boleta;
 import java.util.ArrayList;
 
 public interface BoletaDAO {
-    Integer insertar(Boleta boleta);
+    int insertar(Boleta boleta);
 
-    Integer modificar(Boleta boleta);
+    int modificar(Boleta boleta);
 
-    Integer eliminar(Integer idBoleta);
+    int eliminar(int idBoleta);
 
     ArrayList<Boleta> listarTodos();
 
-    Boleta obtenerPorId(Integer idBoleta);
+    Boleta obtenerPorId(int idBoleta);
 }

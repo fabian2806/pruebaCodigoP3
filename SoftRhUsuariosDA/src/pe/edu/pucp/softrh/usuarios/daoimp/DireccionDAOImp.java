@@ -3,197 +3,131 @@ package pe.edu.pucp.softrh.usuarios.daoimp;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import pe.edu.pucp.softrh.database.db.DAOImp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pe.edu.pucp.softrh.database.config.DBManager;
 import pe.edu.pucp.softrh.usuarios.dao.DireccionDAO;
 import pe.edu.pucp.softrh.usuarios.model.Cliente;
 import pe.edu.pucp.softrh.usuarios.model.Direccion;
 
-public class DireccionDAOImp extends DAOImp<Direccion> implements DireccionDAO {
-	private Direccion direccion;
+public class DireccionDAOImp implements DireccionDAO {
+    
+    private ResultSet rs;
+    private DBManager dbManager = DBManager.obtenerInstancia();
 
-	public DireccionDAOImp() {
-		super("direccion");
-		this.direccion = null;
-	}
+    @Override
+    public int insertar(Direccion direccion) {
+        int resultado = 0;
+        Object[] parameters = new Object[8];
+        parameters[0] = direccion.getIdDireccion();
+        parameters[1] = direccion.getCliente().getIdUsuario();
+        parameters[2] = direccion.getDireccion();
+        parameters[3] = direccion.getDistrito();
+        parameters[4] = direccion.getProvincia();
+        parameters[5] = direccion.getDepartamento();
+        parameters[6] = direccion.getCodigoPostal();
+        parameters[7] = direccion.getReferencia();
+        
+        direccion.setIdDireccion(dbManager.EjecutarProcedimiento("INSERTAR_DIRECCION", parameters, true));
+        resultado = direccion.getIdDireccion();
+        
+        return resultado;
+    }
 
-	// INSERTAR
-	@Override
-	public Integer insertar(Direccion direccion) {
-		this.direccion = direccion;
-		return super.insertar();
-	}
+    @Override
+    public int modificar(Direccion direccion) {
+        int resultado = 0;
+        Object[] parameters = new Object[7];
+        parameters[0] = direccion.getIdDireccion();
+        parameters[1] = direccion.getDireccion();
+        parameters[2] = direccion.getDistrito();
+        parameters[3] = direccion.getProvincia();
+        parameters[4] = direccion.getDepartamento();
+        parameters[5] = direccion.getCodigoPostal();
+        parameters[6] = direccion.getReferencia();
+        
+        resultado = dbManager.EjecutarProcedimiento("MODIFICAR_DIRECCION", parameters, false);
+        
+        return resultado;
+    }
 
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		ArrayList<String> valores = new ArrayList<>();
+    @Override
+    public int eliminar(int idDireccion) {
+        int resultado = 0;
+        Object[] parameters = new Object[1];
+        parameters[0] = idDireccion;
+        resultado = dbManager.EjecutarProcedimiento("ELIMINAR_DIRECCION", parameters, false);
+        return resultado;
+    }
 
-		valores.add("fidCliente");
-		valores.add("direccion");
-		valores.add("distrito");
-		valores.add("provincia");
-		valores.add("departamento");
-		valores.add("codigoPostal");
-		valores.add("referencia");
+    @Override
+    public ArrayList<Direccion> listarTodos() {
+        ArrayList<Direccion> direcciones = new ArrayList<Direccion>();
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_DIRECCIONES_TODAS", null);
+        try{
+            while(rs.next()){
+            Direccion direccion = new Direccion();
+            direccion.setIdDireccion(rs.getInt("idDireccion"));
+            Cliente cliente = new Cliente();
+            cliente.setIdUsuario(rs.getInt("fidCliente"));
+            direccion.setCliente(cliente);
+            direccion.setDireccion(rs.getString("direccion"));
+            direccion.setDistrito(rs.getString("distrito"));
+            direccion.setProvincia(rs.getString("provincia"));
+            direccion.setDepartamento(rs.getString("departamento"));
+            direccion.setCodigoPostal(rs.getString("codigoPostal"));
+            direccion.setReferencia(rs.getString("referencia"));
+            
+            direcciones.add(direccion);
+            }
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(DireccionDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        return direcciones;
+    }
 
-		return valores;
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		ArrayList<Object> valores = new ArrayList<>();
-
-		valores.add(direccion.getCliente().getIdUsuario());
-		valores.add(direccion.getDireccion());
-		valores.add(direccion.getDistrito());
-		valores.add(direccion.getProvincia());
-		valores.add(direccion.getDepartamento());
-		valores.add(direccion.getCodigoPostal());
-		valores.add(direccion.getReferencia());
-
-		return valores;
-	}
-
-	// MODIFICAR
-	@Override
-	public Integer modificar(Direccion direccion) {
-		this.direccion = direccion;
-		return super.modificar();
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosModificar() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("direccion");
-		valores.add("distrito");
-		valores.add("provincia");
-		valores.add("departamento");
-		valores.add("codigoPostal");
-		valores.add("referencia");
-		valores.add("idDireccion");
-
-		return valores;
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresModificar() {
-		ArrayList<Object> valores = new ArrayList<>();
-
-		valores.add(direccion.getDireccion());
-		valores.add(direccion.getDistrito());
-		valores.add(direccion.getProvincia());
-		valores.add(direccion.getDepartamento());
-		valores.add(direccion.getCodigoPostal());
-		valores.add(direccion.getReferencia());
-		valores.add(direccion.getIdDireccion());
-
-		return valores;
-	}
-
-	// ELIMINAR
-	@Override
-	public Integer eliminar(Integer idDireccion) {
-		return super.eliminar(idDireccion);
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosEliminar() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("idDireccion");
-
-		return valores;
-	}
-
-	// LISTAR TODOS
-	@Override
-	public ArrayList<Direccion> listarTodos() {
-		return super.listarTodos();
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosListarTodos() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("idDireccion");
-		valores.add("fidCliente");
-		valores.add("direccion");
-		valores.add("distrito");
-		valores.add("provincia");
-		valores.add("departamento");
-		valores.add("codigoPostal");
-		valores.add("referencia");
-
-		return valores;
-	}
-
-	@Override
-	public ArrayList<Direccion> obtenerListarTodos(ResultSet rs) throws SQLException {
-		ArrayList<Direccion> direcciones = new ArrayList<>();
-
-		while(rs.next()) {
-			Direccion direccion = new Direccion();
-			Cliente cliente = new Cliente();
-			cliente.setIdUsuario(rs.getInt("fidCliente"));
-
-			direccion.setIdDireccion(rs.getInt("idDireccion"));
-			direccion.setCliente(cliente);
-			direccion.setDireccion(rs.getString("direccion"));
-			direccion.setDistrito(rs.getString("distrito"));
-			direccion.setProvincia(rs.getString("provincia"));
-			direccion.setDepartamento(rs.getString("departamento"));
-			direccion.setCodigoPostal(rs.getString("codigoPostal"));
-			direccion.setReferencia(rs.getString("referencia"));
-			direccion.setActivo(true);
-
-			direcciones.add(direccion);
-		}
-
-		return direcciones;
-	}
-
-	// OBTENER POR ID
-	@Override
-	public Direccion obtenerPorId(Integer idDireccion) {
-		return super.obtenerPorId(idDireccion);
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
-		ArrayList<String> valores = new ArrayList<>();
-
-		valores.add("idDireccion");
-		valores.add("fidCliente");
-		valores.add("direccion");
-		valores.add("distrito");
-		valores.add("provincia");
-		valores.add("departamento");
-		valores.add("codigoPostal");
-		valores.add("referencia");
-		valores.add("idDireccion");
-		
-		return valores;
-	}
-
-	@Override
-	public Direccion obtenerObtenerPorId(ResultSet rs) throws SQLException {
-		Direccion direccion = new Direccion();
-
-		if(rs.next()) {
-			Cliente cliente = new Cliente();
-			cliente.setIdUsuario(rs.getInt("fidCliente"));
-
-			direccion.setIdDireccion(rs.getInt("idDireccion"));
-			direccion.setCliente(cliente);
-			direccion.setDireccion(rs.getString("direccion"));
-			direccion.setDistrito(rs.getString("distrito"));
-			direccion.setProvincia(rs.getString("provincia"));
-			direccion.setDepartamento(rs.getString("departamento"));
-			direccion.setCodigoPostal(rs.getString("codigoPostal"));
-			direccion.setReferencia(rs.getString("referencia"));
-			direccion.setActivo(true);
-		}
-
-		return direccion;
-	}
+    @Override
+    public Direccion obtenerPorId(int idDireccion) {
+        Direccion direccion = new Direccion();
+        Object[] parameters = new Object[1];
+        parameters[0] = idDireccion;
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_DIRECCION_X_ID", parameters);
+        try{
+            while(rs.next()){
+            direccion.setIdDireccion(rs.getInt("idDireccion"));
+            Cliente cliente = new Cliente();
+            cliente.setIdUsuario(rs.getInt("fidCliente"));
+            direccion.setCliente(cliente);
+            direccion.setDireccion(rs.getString("direccion"));
+            direccion.setDistrito(rs.getString("distrito"));
+            direccion.setProvincia(rs.getString("provincia"));
+            direccion.setDepartamento(rs.getString("departamento"));
+            direccion.setCodigoPostal(rs.getString("codigoPostal"));
+            direccion.setReferencia(rs.getString("referencia"));
+            }
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(DireccionDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        return direccion;
+    }
 }

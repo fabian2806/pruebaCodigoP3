@@ -12,7 +12,7 @@ public class Prenda {
     private Genero genero;
     private String color;
     private Double precioOriginal;
-	private Double precioDescontado;
+    private Double precioDescontado;
     private Integer stock;
     private Integer cantVendida;
     private Boolean activo;
