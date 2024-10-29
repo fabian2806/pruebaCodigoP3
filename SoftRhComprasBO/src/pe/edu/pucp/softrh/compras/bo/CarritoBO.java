@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.compras.dao.CarritoDAO;
 import pe.edu.pucp.softrh.compras.daoimp.CarritoDAOImp;
 import pe.edu.pucp.softrh.compras.model.Carrito;
+import pe.edu.pucp.softrh.usuarios.model.Cliente;
 
 public class CarritoBO {
 	private CarritoDAO carritoDAO;
@@ -12,12 +13,13 @@ public class CarritoBO {
         this.carritoDAO = new CarritoDAOImp();
     }
 
-    public Integer insertar(Carrito carrito) {
-        return this.carritoDAO.insertar(carrito);
+    public Integer insertar(Integer cantidadTotal, Double precioTotal, Cliente cliente) {
+        Carrito carrito = new Carrito(cantidadTotal,precioTotal,cliente);
+        return this.carritoDAO.insertar((Carrito)carrito);
     }
 
     public Integer modificar(Carrito carrito){
-		return this.carritoDAO.modificar(carrito);  //la prenda ya modificada
+        return this.carritoDAO.modificar(carrito);  //la prenda ya modificada
     }
 
     public Integer eliminar(Integer idCarrito){

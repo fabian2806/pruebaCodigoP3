@@ -3,7 +3,9 @@ package pe.edu.pucp.softrh.compras.bo;
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.compras.dao.FacturaDAO;
 import pe.edu.pucp.softrh.compras.daoimp.FacturaDAOImp;
+import pe.edu.pucp.softrh.compras.model.Comprobante;
 import pe.edu.pucp.softrh.compras.model.Factura;
+import pe.edu.pucp.softrh.compras.model.OrdenCompra;
 
 public class FacturaBO {
 	private FacturaDAO facturaDAO;
@@ -12,8 +14,9 @@ public class FacturaBO {
         this.facturaDAO = new FacturaDAOImp();
     }
 
-    public Integer insertar(Factura factura) {
-        return this.facturaDAO.insertar(factura);
+    public Integer insertar(Double totalPagar, OrdenCompra orden, String dni, String nombres, String apellidos) {
+        Comprobante factura = new Factura(totalPagar,orden,dni,nombres,apellidos);
+        return this.facturaDAO.insertar((Factura)factura);
     }
 
     public Integer modificar(Factura factura){
