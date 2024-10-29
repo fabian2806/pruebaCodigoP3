@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class PrendaSeleccionada {
     private Integer idPrendaSeleccionada;
-	private Integer cantidad;
+    private Integer cantidad;
     private Double precio;
-	private Carrito carrito;
-	private ArrayList<OrdenCompra> ordenes;
+    private Carrito carrito;
+    private ArrayList<OrdenCompra> ordenes;
 
-	public PrendaSeleccionada() {};
+    public PrendaSeleccionada() {};
 
     public PrendaSeleccionada(Integer cantidad, Double precio, Carrito carrito) {
         this.cantidad = cantidad;
         this.precio = precio;
-		this.carrito = carrito;
-		ordenes = new ArrayList<>();
+        this.carrito = carrito;
+        ordenes = new ArrayList<>();
     }
 
 	public Integer getIdPrendaSeleccionada() {

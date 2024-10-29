@@ -576,3 +576,121 @@ CREATE PROCEDURE LISTAR_PROMOCION_X_ID(
 BEGIN
 	SELECT idPromocion, fidTrabajador, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin FROM promocion WHERE idPromocion = _idPromocion AND activo = 1;
 END$
+-- ------------------------------------------------------------------------------------------
+-- Procedimientos almacenados del paquete COMPRAS    -> solo se hará para orden de compra y comprobante(boleta y factura)
+
+DELIMITER $
+CREATE PROCEDURE INSERTAR_ORDENCOMPRA(
+    OUT _idOrden INT,
+    IN _fidCliente INT,
+    IN _fidCupon INT,
+    IN _fidCarrito INT,
+    IN _fechaRegistro DATE,
+    IN _fechaProcesado DATE,
+    IN _fechaEntregado DATE,
+    IN _fechaAnulado DATE,
+    IN _estado ENUM('Registrado', 'Procesado', 'Entregado', 'Anulado'),
+    IN _dni VARCHAR(8),
+    IN _correo VARCHAR(50),
+    IN _subtotal DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO ordencompra(fidCliente,fidCupon,fidCarrito,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal) VALUES (_fidCliente,_fidCupon,_fidCarrito,_fechaRegistro,_fechaProcesado,_fechaEntregado,_fechaAnulado,_estado,_dni,_correo,_subtotal);
+    SET _idOrden = @@last_insert_id;
+END$
+
+CREATE PROCEDURE MODIFICAR_ORDENCOMPRA(
+	IN _idOrden INT,
+    IN _fidCupon INT,
+    IN _fidCarrito INT,
+    IN _fechaRegistro DATE,
+    IN _fechaProcesado DATE,
+    IN _fechaEntregado DATE,
+    IN _fechaAnulado DATE,
+    IN _estado ENUM('Registrado', 'Procesado', 'Entregado', 'Anulado'),
+    IN _dni VARCHAR(8),
+    IN _correo VARCHAR(50),
+    IN _subtotal DECIMAL(10, 2)
+)
+BEGIN
+	UPDATE ordencompra SET fidCupon = _fidCupon, fidCarrito = _fidCarrito, fechaRegistro = _fechaRegistro, fechaProcesado = _fechaProcesado, fechaEntregado = _fechaEntregado, fechaAnulado = _fechaAnulado, estado = _estado, dni = _dni , correo = _correo, subtotal = _subtotal WHERE idOrden = _idOrden;
+END$
+
+CREATE PROCEDURE ELIMINAR_ORDENCOMPRA(
+	IN _idOrden INT
+)
+BEGIN
+	UPDATE ordencompra SET estado = 'Anulado' WHERE idOrden = _idOrden;
+END$
+
+CREATE PROCEDURE LISTAR_ORDENCOMPRA_TODAS()
+BEGIN
+	SELECT idOrden,fidCliente,fidCupon,fidCarrito,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal FROM ordencompra;
+END$
+
+CREATE PROCEDURE LISTAR_ORDENCOMPRA_X_ID(
+	IN _idOrden INT
+)
+BEGIN
+	SELECT idOrden,fidCliente,fidCupon,fidCarrito,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal FROM ordencompra WHERE idOrden = _idOrden;
+END$
+
+
+DELIMITER $
+CREATE PROCEDURE INSERTAR_CARRITO(
+    OUT _idCarrito INT,
+    IN _fidCliente INT,
+    IN _cantidadTotal INT,
+    IN _precioTotal DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO carrito(fidCliente,cantidadTotal,precioTotal) VALUES (_fidCliente, 0, 0.00);
+    SET _idCarrito = @@last_insert_id;
+END$
+
+
+CREATE PROCEDURE MODIFICAR_CARRITO(
+	IN _idCarrito INT,
+    IN _cantidadTotal INT,
+    IN _precioTotal DECIMAL(10, 2)
+)
+BEGIN
+	UPDATE carrito SET cantidadTotal = _cantidadTotal, precioTotal = _precioTotal WHERE idCarrito = _idCarrito;
+END$
+
+CREATE PROCEDURE LISTAR_CARRITO_X_ID(
+	IN _idCarrito INT
+)
+BEGIN
+	SELECT idCarrito,fidCliente,cantidadTotal,precioTotal FROM carrito WHERE idCarrito = _idCarrito;
+END$
+
+
+DELIMITER $
+CREATE PROCEDURE INSERTAR_PRENDASELECCIONADA(
+    OUT _idPrendaSeleccionada INT,
+    IN _fidCarrito INT,
+	IN _cantidad INT,
+    IN _precio DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO prendaseleccionada(fidCarrito,cantidad,precio) VALUES (_fidCarrito, _cantidad, _precio);
+    SET _idPrendaSeleccionada = @@last_insert_id;
+END$
+
+
+CREATE PROCEDURE MODIFICAR_PRENDASELECCIONADA(
+	IN _idPrendaSeleccionada INT,
+	IN _cantidad INT,
+    IN _precio DECIMAL(10, 2)
+)
+BEGIN
+	UPDATE prendaseleccionada SET cantidad = _cantidad, precio = _precio WHERE idPrendaSeleccionada = _idPrendaSeleccionada;
+END$
+
+CREATE PROCEDURE LISTAR_PRENDASELECCIONADA_X_ID(
+	IN _idPrendaSeleccionada INT
+)
+BEGIN
+	SELECT idPrendaSeleccionada,cantidad,precio FROM prendaseleccionada WHERE idPrendaSeleccionada = idPrendaSeleccionada;
+END$
