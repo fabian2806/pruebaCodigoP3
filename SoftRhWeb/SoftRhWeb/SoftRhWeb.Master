@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SoftRhWeb.Master.cs" Inherits="SoftRhWeb.SoftRhWeb" %>
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">SoftRhWeb</asp:ContentPlaceHolder></title>
+    
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    
+    <script src="Scripts/jquery-3.7.1.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header / Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="Home.aspx">SoftRhWeb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="GestionPrendas.aspx">Gestionar Prendas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="GestionPromociones.aspx">Gestionar Promociones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="GestionDirecciones.aspx">Gestionar Direcciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="GestionCupones.aspx">Gestionar Cupones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="GestionUsuarios.aspx">Gestionar Usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="AplicarCupon.aspx">Aplicar Cupon en Orden</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container mt-4">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <!-- Aquí se insertará el contenido de cada página específica -->
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-light text-center py-3 mt-4">
+            <p>&copy; 2024 SoftRhWeb - Todos los derechos reservados.</p>
+        </footer>
+    </form>
+</body>
+</html>
