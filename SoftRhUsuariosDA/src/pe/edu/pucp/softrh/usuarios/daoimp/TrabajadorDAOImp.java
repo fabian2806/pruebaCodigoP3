@@ -3,110 +3,136 @@ package pe.edu.pucp.softrh.usuarios.daoimp;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import pe.edu.pucp.softrh.database.db.DAOImp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pe.edu.pucp.softrh.database.config.DBManager;
 import pe.edu.pucp.softrh.usuarios.dao.TrabajadorDAO;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
-public class TrabajadorDAOImp extends DAOImp<Trabajador> implements TrabajadorDAO {
-	private Trabajador trabajador;
+public class TrabajadorDAOImp implements TrabajadorDAO {
+    
+    private ResultSet rs;
+    private DBManager dbManager = DBManager.obtenerInstancia();
 
-	public TrabajadorDAOImp() {
-		super("trabajador");
-		this.trabajador = null;
-	}
+    @Override
+    public int insertar(Trabajador trabajador) {
+        int resultado = 0;
+        Object[] parameters = new Object[11];
+        parameters[0] = trabajador.getIdUsuario();
+        parameters[1] = trabajador.getDni();
+        parameters[2] = trabajador.getNombres();
+        parameters[3] = trabajador.getApellidos();
+        parameters[4] = trabajador.getCorreo();
+        parameters[5] = trabajador.getContrasenha();
+        parameters[6] = trabajador.getPuesto();
+        parameters[7] = trabajador.getSueldo();
+        parameters[8] = trabajador.getFechaIngreso();
+        parameters[9] = trabajador.getHorarioInicio();
+        parameters[10] = trabajador.getHorarioFin();
+        
+        trabajador.setIdUsuario(dbManager.EjecutarProcedimiento("INSERTAR_TRABAJADOR", parameters, true));
+        resultado = trabajador.getIdUsuario();
+        
+        return resultado;
+    }
 
-	// INSERTAR
-	@Override
-	public Integer insertar(Trabajador trabajador) {
-		this.trabajador = trabajador;
-		return super.insertar();
-	}
+    @Override
+    public int modificar(Trabajador trabajador) {
+        int resultado = 0;
+        Object[] parameters = new Object[10];
+        parameters[0] = trabajador.getIdUsuario();
+        parameters[1] = trabajador.getDni();
+        parameters[2] = trabajador.getNombres();
+        parameters[3] = trabajador.getApellidos();
+        parameters[4] = trabajador.getCorreo();
+        parameters[5] = trabajador.getContrasenha();
+        parameters[6] = trabajador.getPuesto();
+        parameters[7] = trabajador.getSueldo();
+        parameters[8] = trabajador.getFechaIngreso();
+        parameters[9] = trabajador.getHorarioInicio();
+        parameters[10] = trabajador.getHorarioFin();
+        
+        resultado = dbManager.EjecutarProcedimiento("INSERTAR_TRABAJADOR", parameters, false);
+        
+        return resultado;
+    }
 
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosInsertar() {
-		ArrayList<String> valores = new ArrayList<>();
+    @Override
+    public int eliminar(int idTrabajador) {
+        int resultado = 0;
+        Object[] parameters = new Object[1];
+        parameters[0] = idTrabajador;
+        resultado = dbManager.EjecutarProcedimiento("ELIMINAR_TRABAJADOR", parameters, false);
+        return resultado;
+    }
 
-		valores.add("idTrabajador");
-		valores.add("puesto");
-		valores.add("sueldo");
-		valores.add("fechaIngreso");
-		valores.add("horarioInicio");
-		valores.add("horarioFin");
+    @Override
+    public ArrayList<Trabajador> listarTodos() {
+        ArrayList<Trabajador> trabajadores = new ArrayList<Trabajador>();
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_TRABAJADORES_TODOS", null);
+        try {
+            while (rs.next()){
+                Trabajador trabajador = new Trabajador();
+                trabajador.setIdUsuario(rs.getInt("idUsuario"));
+                trabajador.setDni(rs.getString("dni"));
+                trabajador.setNombres(rs.getString("nombres"));
+                trabajador.setApellidos(rs.getString("apellidos"));
+                trabajador.setCorreo(rs.getString("correo"));
+                trabajador.setContrasenha(rs.getString("contrasenha"));
+                trabajador.setPuesto(rs.getString("puesto"));
+                trabajador.setSueldo(rs.getDouble("sueldo"));
+                trabajador.setFechaIngreso(rs.getDate("fechaIngreso"));
+                trabajador.setHorarioInicio(rs.getTime("horarioInicio").toLocalTime());
+                trabajador.setHorarioFin(rs.getTime("horarioFin").toLocalTime());
+                trabajadores.add(trabajador);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TrabajadorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(TrabajadorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return trabajadores;
+    }
 
-		return valores;
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresInsertar() {
-		ArrayList<Object> valores = new ArrayList<>();
-
-		valores.add(trabajador.getIdUsuario());
-		valores.add(trabajador.getPuesto());
-		valores.add(trabajador.getSueldo());
-		valores.add(trabajador.getFechaIngreso());
-		valores.add(trabajador.getHorarioInicio());
-		valores.add(trabajador.getHorarioFin());
-
-		return valores;
-	}
-
-	// MODIFICAR
-	@Override
-	public Integer modificar(Trabajador trabajador) {
-		this.trabajador = trabajador;
-		return super.modificar();
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosModificar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	protected ArrayList<Object> obtenerListaDeValoresModificar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	// ELIMINAR
-	@Override
-	public Integer eliminar(Integer idTrabajador) {
-		return super.eliminar(idTrabajador);
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosEliminar() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	// LISTAR TODOS
-	@Override
-	public ArrayList<Trabajador> listarTodos() {
-		return super.listarTodos();
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosListarTodos() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public ArrayList<Trabajador> obtenerListarTodos(ResultSet rs) throws SQLException {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	// OBTENER POR ID
-	@Override
-	public Trabajador obtenerPorId(Integer idTrabajador) {
-		return super.obtenerPorId(idTrabajador);
-	}
-
-	@Override
-	protected ArrayList<String> obtenerListaDeAtributosObtenerPorId() {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
-
-	@Override
-	public Trabajador obtenerObtenerPorId(ResultSet rs) throws SQLException {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-	}
+    @Override
+    public Trabajador obtenerPorId(int idTrabajador) {
+        Trabajador trabajador = new Trabajador();
+        Object[] parameters = new Object[1];
+        
+        parameters[0] = idTrabajador;
+        
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_TRABAJADORES_X_ID", parameters);
+        try {
+            while (rs.next()){
+                trabajador.setIdUsuario(rs.getInt("idUsuario"));
+                trabajador.setDni(rs.getString("dni"));
+                trabajador.setNombres(rs.getString("nombres"));
+                trabajador.setApellidos(rs.getString("apellidos"));
+                trabajador.setCorreo(rs.getString("correo"));
+                trabajador.setContrasenha(rs.getString("contrasenha"));
+                trabajador.setPuesto(rs.getString("puesto"));
+                trabajador.setSueldo(rs.getDouble("sueldo"));
+                trabajador.setFechaIngreso(rs.getDate("fechaIngreso"));
+                trabajador.setHorarioInicio(rs.getTime("horarioInicio").toLocalTime());
+                trabajador.setHorarioFin(rs.getTime("horarioFin").toLocalTime());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TrabajadorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(TrabajadorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return trabajador;
+    }
 }

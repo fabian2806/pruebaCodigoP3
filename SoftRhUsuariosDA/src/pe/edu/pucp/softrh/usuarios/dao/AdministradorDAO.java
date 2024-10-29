@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.usuarios.model.Administrador;
 
 public interface AdministradorDAO {
-	Integer insertar(Administrador administrador);
+    int insertar(Administrador administrador);
 
-	Integer modificar(Administrador administrador);
+    int modificar(Administrador administrador);
 
-	Integer eliminar(Integer idAdministrador);
+    int eliminar(int idAdministrador);
 
-	ArrayList<Administrador> listarTodos();
+    ArrayList<Administrador> listarTodos();
 
-	Administrador obtenerPorId(Integer idAdministrador);
+    Administrador obtenerPorId(int idAdministrador);
 }

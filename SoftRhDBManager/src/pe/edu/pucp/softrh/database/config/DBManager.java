@@ -90,8 +90,8 @@ public class DBManager {
         this.conexion = DBManager.obtenerInstancia().obtenerConexion();
         this.conexion.setAutoCommit(false);
     }
-
-    protected void cerrarConexion() throws SQLException {
+    
+    public void cerrarConexion() throws SQLException {
         if(this.conexion != null) {
             this.conexion.close();
         }
@@ -108,7 +108,7 @@ public class DBManager {
     }
 
     public int EjecutarProcedimiento(String nombreProcedimiento, Object[] parameters, Boolean nombreParametroSalida){
-        int resultado = 0;
+        int resultado = -1;
         CallableStatement cs = null;
         
         try{
@@ -131,6 +131,7 @@ public class DBManager {
                 resultado = cs.getInt((parameters != null ? 1: 1));
             }
             
+            this.conexion.commit();
         }
         catch (SQLException ex){
             ex.printStackTrace();
@@ -165,20 +166,13 @@ public class DBManager {
         catch (SQLException ex){
             ex.printStackTrace();;
         }
-        finally{
-            try {
-                cerrarConexion();
-            } catch (SQLException ex) {
-                Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         
         return rs;
     }
     
     protected String obtenerCadenaProcedimiento(String nombreProcedimiento, Object[] parameters, Boolean nombreParametroSalida){
         String cadena = "";
-        cadena += " call " + nombreProcedimiento + "(";
+        cadena += "{call " + nombreProcedimiento + "(";
         if (parameters != null){
             for (int i=0; i< parameters.length; i++){
                 cadena += "?";
@@ -187,12 +181,12 @@ public class DBManager {
                 }
             }
         }
-        
+        /*
         if (nombreParametroSalida == true){
             cadena += ", ?";
-        }
+        }*/
         
-        cadena += ") ";
+        cadena += ") }";
         return cadena;
     }
     

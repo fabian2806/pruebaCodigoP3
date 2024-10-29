@@ -15,13 +15,11 @@ public class DireccionBO {
 
 	public Integer insertar(String direc, String distrito, String provincia, String departamente, String codigoPostal, String referencia, Cliente cliente) {
 		Direccion direccion = new Direccion(direc, distrito, provincia, departamente, codigoPostal, referencia, cliente);
-		direccion.setIdDireccion(direccionDAO.insertar(direccion));
-		return direccion.getIdDireccion();
+		return direccionDAO.insertar(direccion);
 	}
 
 	public Integer modificar(Integer idDireccion, String direc, String distrito, String provincia, String departamente, String codigoPostal, String referencia, Cliente cliente) {
 		Direccion direccion = new Direccion(direc, distrito, provincia, departamente, codigoPostal, referencia, cliente);
-		direccion.setIdDireccion(idDireccion);
 		return direccionDAO.modificar(direccion);
 	}
 

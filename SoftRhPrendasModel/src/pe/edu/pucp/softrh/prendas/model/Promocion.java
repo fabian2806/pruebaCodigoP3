@@ -5,6 +5,7 @@ import java.util.Date;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public class Promocion {
+
     private Integer idPromocion;
     private String nombre;
     private String descripcion;
@@ -12,37 +13,37 @@ public class Promocion {
     private TipoPromocion tipo;
     private Date fechaInicio;
     private Date fechaFin;
-	private Boolean activo;
+    private Boolean activo;
     private Trabajador trabajador;
     private ArrayList<Prenda> prendas;
 
     public Promocion() {
-		this.idPromocion = null;
-		this.nombre = null;
+        this.idPromocion = null;
+        this.nombre = null;
         this.descripcion = null;
         this.valorDescuento = null;
         this.tipo = null;
         this.fechaInicio = null;
         this.fechaFin = null;
-		this.activo = null;
+        this.activo = null;
         this.trabajador = new Trabajador();
         this.prendas = new ArrayList<>();
-	}
+    }
 
-    public Promocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
+    public Promocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.valorDescuento = valorDescuento;
         this.tipo = tipo;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-		this.activo = true;
+        this.activo = true;
         this.trabajador = trabajador;
         this.prendas = new ArrayList<>();
         this.agregarPrenda(prenda);
     }
 
-    public int getIdPromocion() {
+    public Integer getIdPromocion() {
         return idPromocion;
     }
 
@@ -98,7 +99,7 @@ public class Promocion {
         this.fechaFin = fechaFin;
     }
 
-	public Boolean isActivo() {
+    public Boolean isActivo() {
         return activo;
     }
 
@@ -118,9 +119,13 @@ public class Promocion {
         prendas.add(prenda);
         prenda.aplicarPromocion(this);
     }
+    
+    public Prenda getPrenda(int indice){
+        return prendas.get(indice);
+    }
 
-	@Override
-	public String toString() {
-		return "idPromocion=" + idPromocion + ", idTrabajador=" + trabajador.getIdUsuario() + ", nombre=" + nombre + ", descripcion=" + descripcion + ", valorDescuento=" + valorDescuento + ", tipo=" + tipo + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ".";
-	}
+    @Override
+    public String toString() {
+        return "idPromocion=" + idPromocion + ", idTrabajador=" + trabajador.getIdUsuario() + ", nombre=" + nombre + ", descripcion=" + descripcion + ", valorDescuento=" + valorDescuento + ", tipo=" + tipo + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ".";
+    }
 }

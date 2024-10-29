@@ -4,13 +4,13 @@ import pe.edu.pucp.softrh.compras.model.PrendaSeleccionada;
 import java.util.ArrayList;
 
 public interface PrendaSeleccionadaDAO {
-    Integer insertar(PrendaSeleccionada prenda);
+    int insertar(PrendaSeleccionada prenda);
 
-    Integer modificar(PrendaSeleccionada prenda);
+    int modificar(PrendaSeleccionada prenda);
 
-    Integer eliminar(Integer idPrenda);
+    int eliminar(int idPrenda);
 
     ArrayList<PrendaSeleccionada> listarTodos();
 
-    PrendaSeleccionada obtenerPorId(Integer idPrenda);
+    PrendaSeleccionada obtenerPorId(int idPrenda);
 }

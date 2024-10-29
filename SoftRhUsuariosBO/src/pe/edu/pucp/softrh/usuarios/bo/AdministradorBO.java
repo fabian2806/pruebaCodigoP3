@@ -7,7 +7,7 @@ import pe.edu.pucp.softrh.usuarios.daoimp.AdministradorDAOImp;
 import pe.edu.pucp.softrh.usuarios.model.Administrador;
 import pe.edu.pucp.softrh.usuarios.model.Usuario;
 
-public class AdministradorBO extends UsuarioBO {
+public class AdministradorBO{
 	private AdministradorDAO administradorDAO;
 
 	public AdministradorBO() {
@@ -16,25 +16,24 @@ public class AdministradorBO extends UsuarioBO {
 
 	public Integer insertar(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaCreacion) {
 		Usuario administrador = new Administrador(dni, nombres, apellidos, correo, contrasenha, fechaCreacion);
-		administrador.setIdUsuario(super.insertar(administrador));
 		return administradorDAO.insertar((Administrador)administrador);
 	}
 
 	public Integer modificar(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaCreacion) {
 		Usuario administrador = new Administrador(dni, nombres, apellidos, correo, contrasenha, fechaCreacion);
 		administrador.setIdUsuario(idUsuario);
-		return super.modificar(administrador);  // Para administrador solo modifico en la tabla padre
+		return administradorDAO.modificar((Administrador)administrador);  // Para administrador solo modifico en la tabla padre
 		//return administradorDAO.modificar(administrador);
 	}
 
 	public Integer eliminar(Integer idAdministrador) {
-		return super.eliminar(idAdministrador);
+		return administradorDAO.eliminar(idAdministrador);
 		//return administradorDAO.eliminar(idAdministrador);
 	}
 
-//	public ArrayList<Administrador> listarTodos() {
-//		return administradorDAO.listarTodos();
-//	}
+	public ArrayList<Administrador> listarTodos() {
+		return administradorDAO.listarTodos();
+	}
 
 	public Administrador obtenerPorId(Integer idAdministrador) {
 		return administradorDAO.obtenerPorId(idAdministrador);

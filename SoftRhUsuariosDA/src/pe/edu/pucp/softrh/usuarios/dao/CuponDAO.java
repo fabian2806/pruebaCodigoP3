@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import pe.edu.pucp.softrh.usuarios.model.Cupon;
 
 public interface CuponDAO {
-	Integer insertar(Cupon cupon);
+    int insertar(Cupon cupon);
 
-	Integer modificar(Cupon cupon);
+    int modificar(Cupon cupon);
 
-	Integer eliminar(Integer idCupon);
+    int eliminar(int idCupon);
 
-	ArrayList<Cupon> listarTodos();
+    ArrayList<Cupon> listarTodos();
 
-	Cupon obtenerPorId(Integer idCupon);
+    Cupon obtenerPorId(int idCupon);
 }
