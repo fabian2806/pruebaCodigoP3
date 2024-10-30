@@ -57,3 +57,44 @@ C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FIN
 C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\Plantilla\Frontend\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.Up2Date
 C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\Plantilla\Frontend\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.dll
 C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\Plantilla\Frontend\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.pdb
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.dll.config
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.pdb
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\csc.exe
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\csc.exe.config
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\csc.rsp
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\csi.exe
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\csi.exe.config
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\csi.rsp
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.Managed.Core.targets
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\vbc.exe
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\vbc.exe.config
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\vbc.rsp
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\VBCSCompiler.exe
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.AssemblyReference.cache
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.CoreCompileInputs.cache
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.Up2Date
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.pdb
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Buffers.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Memory.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Numerics.Vectors.dll
+D:\TA\pruebaCodigoP3\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
