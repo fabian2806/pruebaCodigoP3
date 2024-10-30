@@ -29,10 +29,10 @@ namespace SoftRhWeb
         private void SetWelcomeMessage()
         {
             // Ejemplo de obtención del rol y nombre desde la sesión (ajústalo a tu sistema de autenticación).
-                string userRole = Session["UserRole"] as string ?? "Administrador"; // Ejemplo: Cliente como valor predeterminado.
-            string userName = Session["UserName"] as string ?? "Invitado";
+            string userRole = Session["UserRole"] as string ?? "Administrador"; // Ejemplo: Cliente como valor predeterminado.
+            string userName = Session["UserName"] as string ?? "Jean Paul 7v7";
 
-            lblWelcome.Text = $"Bienvenido, {userName}. Rol: {userRole}";
+            lblWelcome.Text = $"Bienvenido, {userRole}: {userName}";
 
             // Configura la visibilidad de opciones según el rol
             ConfigureNavigationForRole(userRole);
