@@ -108,6 +108,7 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Correo</th>
+                    <th>Activo</th>
                 </tr>
             </thead>
             <tbody>
@@ -118,6 +119,7 @@
                     <td>Jean Paul</td>
                     <td>Tomasto Cordova</td>
                     <td>jp@gmail.com</td>
+                    <td>Activo</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox"></td>
@@ -126,6 +128,7 @@
                     <td>Fabián</td>
                     <td>Montenegro</td>
                     <td>fmontenegro@gmail.comm</td>
+                    <td>Activo</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox"></td>
@@ -134,6 +137,7 @@
                     <td>Jean Paul</td>
                     <td>Montenegro Perez</td>
                     <td>jjm@gmail.com</td>
+                    <td>Activo</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox"></td>
@@ -142,6 +146,7 @@
                     <td>Mikler Jr</td>
                     <td>Diaz Perez</td>
                     <td>mikler@gmail.com</td>
+                    <td>Activo</td>
                 </tr>
                 <!-- Agregar más filas según sea necesario -->
             </tbody>

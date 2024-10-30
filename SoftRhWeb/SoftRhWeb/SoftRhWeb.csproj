@@ -48,6 +48,8 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -64,6 +66,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RegistrarCupon.aspx" />
     <Content Include="RegistrarUsuario.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -119,7 +122,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="RegistrarCupon.aspx" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -128,6 +130,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegistrarCupon.aspx.cs">
+      <DependentUpon>RegistrarCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarCupon.aspx.designer.cs">
+      <DependentUpon>RegistrarCupon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,13 +201,6 @@
     <Compile Include="SoftRhWeb.Master.designer.cs">
       <DependentUpon>SoftRhWeb.Master</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarCupon.aspx.cs">
-      <DependentUpon>RegistrarCupon.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RegistrarCupon.aspx.designer.cs">
-      <DependentUpon>RegistrarCupon.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css.map" />
@@ -256,6 +258,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoftRhBaseBO\SoftRhBaseBO.csproj">
+      <Project>{46deec00-46ad-4bd1-a833-97ad3cd75773}</Project>
+      <Name>SoftRhBaseBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftRhUsuariosBO\SoftRhUsuariosBO.csproj">
+      <Project>{d64d8bdd-0f68-4a6e-9d48-bcd3fe254874}</Project>
+      <Name>SoftRhUsuariosBO</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

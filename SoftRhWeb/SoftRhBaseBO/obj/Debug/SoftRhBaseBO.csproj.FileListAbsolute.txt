@@ -1,0 +1,7 @@
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\bin\Debug\SoftRhBaseBO.dll.config
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\bin\Debug\SoftRhBaseBO.dll
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\bin\Debug\SoftRhBaseBO.pdb
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\obj\Debug\SoftRhBaseBO.csproj.AssemblyReference.cache
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\obj\Debug\SoftRhBaseBO.csproj.CoreCompileInputs.cache
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\obj\Debug\SoftRhBaseBO.dll
+E:\Descargas\SoftRhWeb\SoftRhBaseBO\obj\Debug\SoftRhBaseBO.pdb

@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\registrarcupon.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\registrarcupon.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\gestioncupones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\gestioncupones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\softrhweb\\registrarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\registrarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\softrhweb.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\softrhweb.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\gestionusuarios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\gestionusuarios.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\softrhweb\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\softrhweb\\gestioncupones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\gestioncupones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,59 +34,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SoftRhWeb.Master",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\SoftRhWeb.Master",
-              "RelativeDocumentMoniker": "SoftRhWeb\\SoftRhWeb.Master",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\SoftRhWeb.Master",
-              "RelativeToolTip": "SoftRhWeb\\SoftRhWeb.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T09:19:56.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RegistrarCupon.aspx",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\RegistrarCupon.aspx",
-              "RelativeDocumentMoniker": "SoftRhWeb\\RegistrarCupon.aspx",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\RegistrarCupon.aspx*",
-              "RelativeToolTip": "SoftRhWeb\\RegistrarCupon.aspx*",
+              "Title": "Login.aspx",
+              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\Login.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Login.aspx",
+              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\Login.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Login.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T09:19:01.766Z",
+              "WhenOpened": "2024-10-30T10:06:51.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GestionCupones.aspx",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionCupones.aspx",
-              "RelativeDocumentMoniker": "SoftRhWeb\\GestionCupones.aspx",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionCupones.aspx",
-              "RelativeToolTip": "SoftRhWeb\\GestionCupones.aspx",
+              "Title": "RegistrarUsuario.aspx",
+              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\RegistrarUsuario.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\RegistrarUsuario.aspx",
+              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\RegistrarUsuario.aspx",
+              "RelativeToolTip": "SoftRhWeb\\RegistrarUsuario.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T08:40:19.365Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T10:05:56.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GestionUsuarios.aspx.cs",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionUsuarios.aspx.cs",
-              "RelativeDocumentMoniker": "SoftRhWeb\\GestionUsuarios.aspx.cs",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionUsuarios.aspx.cs",
-              "RelativeToolTip": "SoftRhWeb\\GestionUsuarios.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T08:40:00.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "GestionUsuarios.aspx",
               "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionUsuarios.aspx",
               "RelativeDocumentMoniker": "SoftRhWeb\\GestionUsuarios.aspx",
@@ -98,8 +67,19 @@
               "RelativeToolTip": "SoftRhWeb\\GestionUsuarios.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T08:25:52.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T10:05:46.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GestionCupones.aspx",
+              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionCupones.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\GestionCupones.aspx",
+              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionCupones.aspx",
+              "RelativeToolTip": "SoftRhWeb\\GestionCupones.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-30T10:05:16.539Z"
             }
           ]
         }

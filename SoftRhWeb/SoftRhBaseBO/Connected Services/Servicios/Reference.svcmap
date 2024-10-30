@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="207e306e-7972-497b-9215-aef43c783782" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/SoftRHWS/archivo.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="archivo.disco" MetadataType="Disco" ID="de4aaf01-92b6-42ae-99a6-cc7c207615fd" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/archivo.disco" />
+    <MetadataFile FileName="TrabajadorWS.xsd" MetadataType="Schema" ID="1f755e4b-305f-4406-9681-b34a54637af5" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" />
+    <MetadataFile FileName="AdministradorWS.xsd" MetadataType="Schema" ID="aac423f9-52b6-4281-825c-ac3188219688" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/AdministradorWS?xsd=1" />
+    <MetadataFile FileName="PromocionWS.xsd" MetadataType="Schema" ID="79bb3692-d842-4aa0-9c5d-e01e87ea4d19" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PromocionWS?xsd=1" />
+    <MetadataFile FileName="TrabajadorWS.wsdl" MetadataType="Wsdl" ID="a0b684c9-bc60-4534-a686-230f4411a1e5" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?WSDL" />
+    <MetadataFile FileName="AdministradorWS.wsdl" MetadataType="Wsdl" ID="506b8cb5-96b9-4a7d-ba7a-438903e24395" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/AdministradorWS?WSDL" />
+    <MetadataFile FileName="CuponWS.wsdl" MetadataType="Wsdl" ID="a2451875-d093-4508-9c9d-efed6d7a60ba" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/CuponWS?WSDL" />
+    <MetadataFile FileName="PrendaWS.wsdl" MetadataType="Wsdl" ID="cf5aa137-63d1-4f00-b1d6-b4dd4d69678e" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PrendaWS?WSDL" />
+    <MetadataFile FileName="ClienteWS.xsd" MetadataType="Schema" ID="1dac8897-b0a3-4f75-a69b-fa0a478c3650" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/ClienteWS?xsd=1" />
+    <MetadataFile FileName="PromocionWS.wsdl" MetadataType="Wsdl" ID="bdbf6c6b-0c0c-4473-b541-65ed5f7b8779" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PromocionWS?WSDL" />
+    <MetadataFile FileName="DireccionWS.xsd" MetadataType="Schema" ID="2acb1e74-eaa6-4b52-8d05-e86fd4a739e6" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/DireccionWS?xsd=1" />
+    <MetadataFile FileName="CuponWS.xsd" MetadataType="Schema" ID="1d17636b-efb8-42ef-9ac2-29192eeb2f87" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/CuponWS?xsd=1" />
+    <MetadataFile FileName="PrendaWS.xsd" MetadataType="Schema" ID="b11503f5-ac9b-42a6-bf04-c4df8a07c9ac" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PrendaWS?xsd=1" />
+    <MetadataFile FileName="DireccionWS.wsdl" MetadataType="Wsdl" ID="d146bc88-39a2-4c60-a243-52b8a78fa4e0" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/DireccionWS?WSDL" />
+    <MetadataFile FileName="ClienteWS.wsdl" MetadataType="Wsdl" ID="1c8ebbef-1687-4dfb-91c7-856629374a4e" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/ClienteWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

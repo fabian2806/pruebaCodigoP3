@@ -9,28 +9,25 @@
         <h2 class="title">Registrar Cliente</h2>
 
         <!-- Formulario de registro -->
-        <form class="register-form">
+        <form class="register-form" runat="server">
             <label for="dni">DNI</label>
-            <input type="text" id="dni" name="dni" placeholder="Ingrese el DNI">
+        <asp:TextBox ID="txtDNI" runat="server" CssClass="input-text" Placeholder="Ingrese el DNI"></asp:TextBox>
 
-            <label for="nombres">Nombres</label>
-            <input type="text" id="nombres" name="nombres" placeholder="Ingrese los nombres">
+        <label for="nombres">Nombres</label>
+        <asp:TextBox ID="txtNombres" runat="server" CssClass="input-text" Placeholder="Ingrese los nombres"></asp:TextBox>
 
-            <label for="apellidos">Apellidos</label>
-            <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese los apellidos">
+        <label for="apellidos">Apellidos</label>
+        <asp:TextBox ID="txtApellidos" runat="server" CssClass="input-text" Placeholder="Ingrese los apellidos"></asp:TextBox>
 
-            <label for="correo">Correo</label>
-            <input type="email" id="correo" name="correo" placeholder="Ingrese el correo electrónico">
+        <label for="correo">Correo</label>
+        <asp:TextBox ID="txtCorreo" runat="server" CssClass="input-text" TextMode="Email" Placeholder="Ingrese el correo electrónico"></asp:TextBox>
 
-            <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese la contraseña">
+        <label for="contrasena">Contraseña</label>
+        <asp:TextBox ID="txtContrasena" runat="server" CssClass="input-text" TextMode="Password" Placeholder="Ingrese la contraseña"></asp:TextBox>
 
             <!-- Botones de acción -->
             <div class="button-group">
-
-                <button type="submit" class="btn-submit" onclick="redirectToGestionUsuarios(event)">
-                    <i class="fas fa-save"></i> GUARDAR
-                </button>
+                <asp:LinkButton ID="lbGuardar" class="btn-submit" runat="server" OnClick="lbGuardar_Click"><i class="fas fa-save"></i>GUARDAR</asp:LinkButton>
                 <button type="button" class="btn-cancel" onclick="window.location.href='GestionUsuarios.aspx'">
                     <i class="fas fa-times"></i> CANCELAR
                 </button>

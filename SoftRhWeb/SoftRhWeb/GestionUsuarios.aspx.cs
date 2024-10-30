@@ -15,6 +15,8 @@ namespace SoftRhWeb
             {
                 SetWelcomeMessage();
             }
+
+
         }
         private void SetWelcomeMessage()
         {
