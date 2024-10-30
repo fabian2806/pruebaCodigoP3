@@ -30,9 +30,9 @@ namespace SoftRhWeb
         {
             // Ejemplo de obtención del rol y nombre desde la sesión (ajústalo a tu sistema de autenticación).
             string userRole = Session["UserRole"] as string ?? "Administrador"; // Ejemplo: Cliente como valor predeterminado.
-            string userName = Session["UserName"] as string ?? "Jean Paul 7v7";
+            string userName = Session["UserName"] as string ?? "Invitado";
 
-            lblWelcome.Text = $"Bienvenido, {userRole}: {userName}";
+            lblWelcome.Text = $"Bienvenido, {userName}. Rol: {userRole}";
 
             // Configura la visibilidad de opciones según el rol
             ConfigureNavigationForRole(userRole);
@@ -50,7 +50,6 @@ namespace SoftRhWeb
             else if (userRole == "Trabajador")
             {
                 lnkGestionUsuarios.Visible = false;
-                lnkAplicarCupon.Visible = false;
             }
             // No se ocultan elementos para el rol de "Administrador"
         }

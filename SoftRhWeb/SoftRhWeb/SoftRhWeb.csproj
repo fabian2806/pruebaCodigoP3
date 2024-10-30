@@ -64,7 +64,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AplicarCupon.aspx" />
+    <Content Include="RegistrarUsuario.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -119,7 +119,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Inicio.Master" />
+    <Content Include="RegistrarCupon.aspx" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -128,12 +128,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AplicarCupon.aspx.cs">
-      <DependentUpon>AplicarCupon.aspx</DependentUpon>
+    <Compile Include="RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AplicarCupon.aspx.designer.cs">
-      <DependentUpon>AplicarCupon.aspx</DependentUpon>
+    <Compile Include="RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionCupones.aspx.cs">
       <DependentUpon>GestionCupones.aspx</DependentUpon>
@@ -177,13 +177,6 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Inicio.Master.cs">
-      <DependentUpon>Inicio.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inicio.Master.designer.cs">
-      <DependentUpon>Inicio.Master</DependentUpon>
-    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +191,13 @@
     </Compile>
     <Compile Include="SoftRhWeb.Master.designer.cs">
       <DependentUpon>SoftRhWeb.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCupon.aspx.cs">
+      <DependentUpon>RegistrarCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarCupon.aspx.designer.cs">
+      <DependentUpon>RegistrarCupon.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

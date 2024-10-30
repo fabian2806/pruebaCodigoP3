@@ -42,7 +42,6 @@
                 <asp:HyperLink ID="lnkGestionDirecciones" runat="server" NavigateUrl="~/GestionDirecciones.aspx" CssClass="nav-link">Gestionar Direcciones</asp:HyperLink>
                 <asp:HyperLink ID="lnkGestionCupones" runat="server" NavigateUrl="~/GestionCupones.aspx" CssClass="nav-link">Gestionar Cupones</asp:HyperLink>
                 <asp:HyperLink ID="lnkGestionUsuarios" runat="server" NavigateUrl="~/GestionUsuarios.aspx" CssClass="nav-link">Gestionar Usuarios</asp:HyperLink>
-                <asp:HyperLink ID="lnkAplicarCupon" runat="server" NavigateUrl="~/AplicarCupon.aspx" CssClass="nav-link">Aplicar Cupon en Orden</asp:HyperLink>
             </div>
         </div>
 

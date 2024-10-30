@@ -11,6 +11,13 @@ namespace SoftRhWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                SetWelcomeMessage();
+            }
+        }
+        private void SetWelcomeMessage()
+        {
 
         }
     }
