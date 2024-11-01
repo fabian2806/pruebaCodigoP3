@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="softrh.services" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AdministradorWS" targetNamespace="softrh.services" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/AdministradorWS?xsd=1" namespace="softrh.services" />
+    </xsd:schema>
+  </types>
+  <message name="modificarAdministrador">
+    <part name="parameters" element="tns:modificarAdministrador" />
+  </message>
+  <message name="modificarAdministradorResponse">
+    <part name="parameters" element="tns:modificarAdministradorResponse" />
+  </message>
+  <message name="eliminarAdministrador">
+    <part name="parameters" element="tns:eliminarAdministrador" />
+  </message>
+  <message name="eliminarAdministradorResponse">
+    <part name="parameters" element="tns:eliminarAdministradorResponse" />
+  </message>
+  <message name="listarAdministradoresTodos">
+    <part name="parameters" element="tns:listarAdministradoresTodos" />
+  </message>
+  <message name="listarAdministradoresTodosResponse">
+    <part name="parameters" element="tns:listarAdministradoresTodosResponse" />
+  </message>
+  <message name="insetarAdministrador">
+    <part name="parameters" element="tns:insetarAdministrador" />
+  </message>
+  <message name="insetarAdministradorResponse">
+    <part name="parameters" element="tns:insetarAdministradorResponse" />
+  </message>
+  <message name="obtenerAdministradorPorId">
+    <part name="parameters" element="tns:obtenerAdministradorPorId" />
+  </message>
+  <message name="obtenerAdministradorPorIdResponse">
+    <part name="parameters" element="tns:obtenerAdministradorPorIdResponse" />
+  </message>
+  <portType name="AdministradorWS">
+    <operation name="modificarAdministrador">
+      <input wsam:Action="softrh.services/AdministradorWS/modificarAdministradorRequest" message="tns:modificarAdministrador" />
+      <output wsam:Action="softrh.services/AdministradorWS/modificarAdministradorResponse" message="tns:modificarAdministradorResponse" />
+    </operation>
+    <operation name="eliminarAdministrador">
+      <input wsam:Action="softrh.services/AdministradorWS/eliminarAdministradorRequest" message="tns:eliminarAdministrador" />
+      <output wsam:Action="softrh.services/AdministradorWS/eliminarAdministradorResponse" message="tns:eliminarAdministradorResponse" />
+    </operation>
+    <operation name="listarAdministradoresTodos">
+      <input wsam:Action="softrh.services/AdministradorWS/listarAdministradoresTodosRequest" message="tns:listarAdministradoresTodos" />
+      <output wsam:Action="softrh.services/AdministradorWS/listarAdministradoresTodosResponse" message="tns:listarAdministradoresTodosResponse" />
+    </operation>
+    <operation name="insetarAdministrador">
+      <input wsam:Action="softrh.services/AdministradorWS/insetarAdministradorRequest" message="tns:insetarAdministrador" />
+      <output wsam:Action="softrh.services/AdministradorWS/insetarAdministradorResponse" message="tns:insetarAdministradorResponse" />
+    </operation>
+    <operation name="obtenerAdministradorPorId">
+      <input wsam:Action="softrh.services/AdministradorWS/obtenerAdministradorPorIdRequest" message="tns:obtenerAdministradorPorId" />
+      <output wsam:Action="softrh.services/AdministradorWS/obtenerAdministradorPorIdResponse" message="tns:obtenerAdministradorPorIdResponse" />
+    </operation>
+  </portType>
+  <binding name="AdministradorWSPortBinding" type="tns:AdministradorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarAdministrador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarAdministrador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAdministradoresTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insetarAdministrador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerAdministradorPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AdministradorWS">
+    <port name="AdministradorWSPort" binding="tns:AdministradorWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftRHWS/AdministradorWS" />
+    </port>
+  </service>
+</definitions>

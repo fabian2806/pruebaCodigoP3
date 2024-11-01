@@ -1,0 +1,10 @@
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\bin\Debug\SoftRhUsuariosBO.dll
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\bin\Debug\SoftRhUsuariosBO.pdb
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\bin\Debug\SoftRhBaseBO.dll
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\bin\Debug\SoftRhBaseBO.pdb
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\bin\Debug\SoftRhBaseBO.dll.config
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\obj\Debug\SoftRhUsuariosBO.csproj.AssemblyReference.cache
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\obj\Debug\SoftRhUsuariosBO.csproj.CoreCompileInputs.cache
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\obj\Debug\SoftRhUs.BED1FAB7.Up2Date
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\obj\Debug\SoftRhUsuariosBO.dll
+E:\Descargas\SoftRhWeb\SoftRhUsuariosBO\obj\Debug\SoftRhUsuariosBO.pdb
