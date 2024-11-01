@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\",
+  "WorkspaceRootPath": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|d:\\ta\\pruebacodigop3\\softrhweb\\softrhweb\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\softrhweb\\registrarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\registrarusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\gestionpromociones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\gestionpromociones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\softrhweb\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\gestionusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\gestiondirecciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\gestiondirecciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\softrhweb\\gestioncupones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\gestioncupones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\gestionprendas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\gestionprendas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\softrhweb\\softrhweb\\admin\\softrhweb.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{61386847-8E86-4A72-A963-D1D6AD50A2F1}|SoftRhWeb\\SoftRhWeb.csproj|solutionrelative:softrhweb\\admin\\softrhweb.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,57 +41,96 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\Login.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\Login.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\Login.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-30T10:06:51.167Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\Login.aspx",
-              "RelativeDocumentMoniker": "SoftRhWeb\\Login.aspx",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\Login.aspx",
-              "RelativeToolTip": "SoftRhWeb\\Login.aspx",
+              "Title": "GestionUsuarios.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionUsuarios.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\GestionUsuarios.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionUsuarios.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\GestionUsuarios.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T10:06:51.167Z",
+              "WhenOpened": "2024-11-01T18:11:03.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RegistrarUsuario.aspx",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\RegistrarUsuario.aspx",
-              "RelativeDocumentMoniker": "SoftRhWeb\\RegistrarUsuario.aspx",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\RegistrarUsuario.aspx",
-              "RelativeToolTip": "SoftRhWeb\\RegistrarUsuario.aspx",
+              "Title": "GestionPromociones.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionPromociones.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\GestionPromociones.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionPromociones.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\GestionPromociones.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T10:05:56.636Z"
+              "WhenOpened": "2024-11-01T18:10:57.982Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GestionUsuarios.aspx",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionUsuarios.aspx",
-              "RelativeDocumentMoniker": "SoftRhWeb\\GestionUsuarios.aspx",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionUsuarios.aspx",
-              "RelativeToolTip": "SoftRhWeb\\GestionUsuarios.aspx",
+              "Title": "GestionDirecciones.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionDirecciones.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\GestionDirecciones.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionDirecciones.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\GestionDirecciones.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T10:05:46.256Z"
+              "WhenOpened": "2024-11-01T18:10:56.984Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GestionCupones.aspx",
-              "DocumentMoniker": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionCupones.aspx",
-              "RelativeDocumentMoniker": "SoftRhWeb\\GestionCupones.aspx",
-              "ToolTip": "D:\\TA\\pruebaCodigoP3\\SoftRhWeb\\SoftRhWeb\\GestionCupones.aspx",
-              "RelativeToolTip": "SoftRhWeb\\GestionCupones.aspx",
+              "Title": "GestionPrendas.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionPrendas.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\GestionPrendas.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\GestionPrendas.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\GestionPrendas.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-30T10:05:16.539Z"
+              "WhenOpened": "2024-11-01T18:10:13.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Home.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\Home.aspx",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\Home.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\Home.aspx",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\Home.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-01T18:06:52.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SoftRhWeb.Master",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\SoftRhWeb.Master",
+              "RelativeDocumentMoniker": "SoftRhWeb\\Admin\\SoftRhWeb.Master",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\SoftRhWeb\\SoftRhWeb\\Admin\\SoftRhWeb.Master",
+              "RelativeToolTip": "SoftRhWeb\\Admin\\SoftRhWeb.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-01T18:06:14.866Z",
+              "EditorCaption": ""
             }
           ]
         }

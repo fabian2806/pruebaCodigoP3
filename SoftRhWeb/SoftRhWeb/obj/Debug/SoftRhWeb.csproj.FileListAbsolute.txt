@@ -221,3 +221,44 @@ C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.CoreCompil
 C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.Up2Date
 C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.dll
 C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.Up2Date
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\csc.exe
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\csc.exe.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\csc.rsp
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\csi.exe
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\csi.exe.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\csi.rsp
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Buffers.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Memory.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\vbc.exe
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\vbc.exe.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\vbc.rsp
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\VBCSCompiler.exe
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\roslyn\VBCSCompiler.exe.config
