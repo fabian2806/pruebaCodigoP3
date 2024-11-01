@@ -23,10 +23,11 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="archivo.disco" MetadataType="Disco" ID="de4aaf01-92b6-42ae-99a6-cc7c207615fd" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/archivo.disco" />
-    <MetadataFile FileName="TrabajadorWS.xsd" MetadataType="Schema" ID="1f755e4b-305f-4406-9681-b34a54637af5" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" />
+    <MetadataFile FileName="UsuarioWS.wsdl" MetadataType="Wsdl" ID="0cdea177-bf24-4172-b465-2ecfe743fc43" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/UsuarioWS?WSDL" />
     <MetadataFile FileName="AdministradorWS.xsd" MetadataType="Schema" ID="aac423f9-52b6-4281-825c-ac3188219688" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/AdministradorWS?xsd=1" />
     <MetadataFile FileName="PromocionWS.xsd" MetadataType="Schema" ID="79bb3692-d842-4aa0-9c5d-e01e87ea4d19" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PromocionWS?xsd=1" />
     <MetadataFile FileName="TrabajadorWS.wsdl" MetadataType="Wsdl" ID="a0b684c9-bc60-4534-a686-230f4411a1e5" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?WSDL" />
+    <MetadataFile FileName="UsuarioWS.xsd" MetadataType="Schema" ID="c90b2dab-3b40-42e2-ba85-cdc3e9d5a999" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/UsuarioWS?xsd=1" />
     <MetadataFile FileName="AdministradorWS.wsdl" MetadataType="Wsdl" ID="506b8cb5-96b9-4a7d-ba7a-438903e24395" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/AdministradorWS?WSDL" />
     <MetadataFile FileName="CuponWS.wsdl" MetadataType="Wsdl" ID="a2451875-d093-4508-9c9d-efed6d7a60ba" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/CuponWS?WSDL" />
     <MetadataFile FileName="PrendaWS.wsdl" MetadataType="Wsdl" ID="cf5aa137-63d1-4f00-b1d6-b4dd4d69678e" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PrendaWS?WSDL" />
@@ -36,6 +37,7 @@
     <MetadataFile FileName="CuponWS.xsd" MetadataType="Schema" ID="1d17636b-efb8-42ef-9ac2-29192eeb2f87" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/CuponWS?xsd=1" />
     <MetadataFile FileName="PrendaWS.xsd" MetadataType="Schema" ID="b11503f5-ac9b-42a6-bf04-c4df8a07c9ac" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PrendaWS?xsd=1" />
     <MetadataFile FileName="DireccionWS.wsdl" MetadataType="Wsdl" ID="d146bc88-39a2-4c60-a243-52b8a78fa4e0" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/DireccionWS?WSDL" />
+    <MetadataFile FileName="TrabajadorWS.xsd" MetadataType="Schema" ID="1f755e4b-305f-4406-9681-b34a54637af5" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" />
     <MetadataFile FileName="ClienteWS.wsdl" MetadataType="Wsdl" ID="1c8ebbef-1687-4dfb-91c7-856629374a4e" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/ClienteWS?WSDL" />
   </Metadata>
   <Extensions>

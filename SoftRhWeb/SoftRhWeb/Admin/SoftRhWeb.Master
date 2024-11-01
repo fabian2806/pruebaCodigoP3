@@ -32,7 +32,7 @@
 
         <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-secondary offcanvas-md offcanvas-start">
             <a href="#" class="navbar-brand">
-                <class="nav-item"><a class="nav-link" href="Home.aspx"><img src="Images/rhstore.jpg" width="150" /></a></>
+                <class="nav-item"><a class="nav-link" href="Home.aspx"><img src="/Images/rhstore.jpg" width="150" /></a></>
             </a>
             <hr>
             <ul class="mynav nav nav-pills flex-column mb-auto">
@@ -59,7 +59,7 @@
                 <a data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" class="text-white" href="#">
                     <i class="fa-solid fa-bars"></i>
                 </a>
-                <img src="Images/rhstore.jpg" class="ms-3" width="75">
+                <img src="/Images/rhstore.jpg" class="ms-3" width="75">
             </div>
             <!-- Barra de Usuario -->
             <nav class="navbar navbar-dark bg-secondary">

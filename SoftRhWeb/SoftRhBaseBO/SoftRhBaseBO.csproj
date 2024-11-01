@@ -146,10 +146,16 @@
     <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.listarDireccionesTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.listarPrendasTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.listarPromocionesTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.listarTipoPrendaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse.datasource">
@@ -206,8 +212,15 @@
     <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.trabajador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Servicios\SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Servicios\TrabajadorWS.wsdl" />
     <None Include="Connected Services\Servicios\TrabajadorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicios\UsuarioWS.wsdl" />
+    <None Include="Connected Services\Servicios\UsuarioWS.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

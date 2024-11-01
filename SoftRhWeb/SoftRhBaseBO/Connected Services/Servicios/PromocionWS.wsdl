@@ -17,11 +17,11 @@
   <message name="listarPromocionesTodasResponse">
     <part name="parameters" element="tns:listarPromocionesTodasResponse" />
   </message>
-  <message name="insertarPromocion">
-    <part name="parameters" element="tns:insertarPromocion" />
+  <message name="eliminarPromocion">
+    <part name="parameters" element="tns:eliminarPromocion" />
   </message>
-  <message name="insertarPromocionResponse">
-    <part name="parameters" element="tns:insertarPromocionResponse" />
+  <message name="eliminarPromocionResponse">
+    <part name="parameters" element="tns:eliminarPromocionResponse" />
   </message>
   <message name="modificarPromocion">
     <part name="parameters" element="tns:modificarPromocion" />
@@ -29,11 +29,11 @@
   <message name="modificarPromocionResponse">
     <part name="parameters" element="tns:modificarPromocionResponse" />
   </message>
-  <message name="eliminarPromocion">
-    <part name="parameters" element="tns:eliminarPromocion" />
+  <message name="insertarPromocion">
+    <part name="parameters" element="tns:insertarPromocion" />
   </message>
-  <message name="eliminarPromocionResponse">
-    <part name="parameters" element="tns:eliminarPromocionResponse" />
+  <message name="insertarPromocionResponse">
+    <part name="parameters" element="tns:insertarPromocionResponse" />
   </message>
   <portType name="PromocionWS">
     <operation name="obtenerPromocionPorId">
@@ -44,17 +44,17 @@
       <input wsam:Action="softrh.services/PromocionWS/listarPromocionesTodasRequest" message="tns:listarPromocionesTodas" />
       <output wsam:Action="softrh.services/PromocionWS/listarPromocionesTodasResponse" message="tns:listarPromocionesTodasResponse" />
     </operation>
-    <operation name="insertarPromocion">
-      <input wsam:Action="softrh.services/PromocionWS/insertarPromocionRequest" message="tns:insertarPromocion" />
-      <output wsam:Action="softrh.services/PromocionWS/insertarPromocionResponse" message="tns:insertarPromocionResponse" />
+    <operation name="eliminarPromocion">
+      <input wsam:Action="softrh.services/PromocionWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
+      <output wsam:Action="softrh.services/PromocionWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
     </operation>
     <operation name="modificarPromocion">
       <input wsam:Action="softrh.services/PromocionWS/modificarPromocionRequest" message="tns:modificarPromocion" />
       <output wsam:Action="softrh.services/PromocionWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
     </operation>
-    <operation name="eliminarPromocion">
-      <input wsam:Action="softrh.services/PromocionWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
-      <output wsam:Action="softrh.services/PromocionWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
+    <operation name="insertarPromocion">
+      <input wsam:Action="softrh.services/PromocionWS/insertarPromocionRequest" message="tns:insertarPromocion" />
+      <output wsam:Action="softrh.services/PromocionWS/insertarPromocionResponse" message="tns:insertarPromocionResponse" />
     </operation>
   </portType>
   <binding name="PromocionWSPortBinding" type="tns:PromocionWS">
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarPromocion">
+    <operation name="eliminarPromocion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPromocion">
+    <operation name="insertarPromocion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

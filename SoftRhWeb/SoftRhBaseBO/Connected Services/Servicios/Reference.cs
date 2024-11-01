@@ -12,6 +12,145 @@ namespace SoftRhBaseBO.Servicios {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="softrh.services", ConfigurationName="Servicios.UsuarioWS")]
+    public interface UsuarioWS {
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento arg0 del espacio de nombres  no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/UsuarioWS/verificarIngresoUsuarioRequest", ReplyAction="softrh.services/UsuarioWS/verificarIngresoUsuarioResponse")]
+        SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse verificarIngresoUsuario(SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/UsuarioWS/verificarIngresoUsuarioRequest", ReplyAction="softrh.services/UsuarioWS/verificarIngresoUsuarioResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse> verificarIngresoUsuarioAsync(SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class verificarIngresoUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="verificarIngresoUsuario", Namespace="softrh.services", Order=0)]
+        public SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequestBody Body;
+        
+        public verificarIngresoUsuarioRequest() {
+        }
+        
+        public verificarIngresoUsuarioRequest(SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class verificarIngresoUsuarioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string arg0;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string arg1;
+        
+        public verificarIngresoUsuarioRequestBody() {
+        }
+        
+        public verificarIngresoUsuarioRequestBody(string arg0, string arg1) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class verificarIngresoUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="verificarIngresoUsuarioResponse", Namespace="softrh.services", Order=0)]
+        public SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponseBody Body;
+        
+        public verificarIngresoUsuarioResponse() {
+        }
+        
+        public verificarIngresoUsuarioResponse(SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
+    public partial class verificarIngresoUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int @return;
+        
+        public verificarIngresoUsuarioResponseBody() {
+        }
+        
+        public verificarIngresoUsuarioResponseBody(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface UsuarioWSChannel : SoftRhBaseBO.Servicios.UsuarioWS, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UsuarioWSClient : System.ServiceModel.ClientBase<SoftRhBaseBO.Servicios.UsuarioWS>, SoftRhBaseBO.Servicios.UsuarioWS {
+        
+        public UsuarioWSClient() {
+        }
+        
+        public UsuarioWSClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public UsuarioWSClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public UsuarioWSClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public UsuarioWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse SoftRhBaseBO.Servicios.UsuarioWS.verificarIngresoUsuario(SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest request) {
+            return base.Channel.verificarIngresoUsuario(request);
+        }
+        
+        public int verificarIngresoUsuario(string arg0, string arg1) {
+            SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest inValue = new SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest();
+            inValue.Body = new SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse retVal = ((SoftRhBaseBO.Servicios.UsuarioWS)(this)).verificarIngresoUsuario(inValue);
+            return retVal.Body.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse> SoftRhBaseBO.Servicios.UsuarioWS.verificarIngresoUsuarioAsync(SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest request) {
+            return base.Channel.verificarIngresoUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.verificarIngresoUsuarioResponse> verificarIngresoUsuarioAsync(string arg0, string arg1) {
+            SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest inValue = new SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequest();
+            inValue.Body = new SoftRhBaseBO.Servicios.verificarIngresoUsuarioRequestBody();
+            inValue.Body.arg0 = arg0;
+            inValue.Body.arg1 = arg1;
+            return ((SoftRhBaseBO.Servicios.UsuarioWS)(this)).verificarIngresoUsuarioAsync(inValue);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="softrh.services", ConfigurationName="Servicios.TrabajadorWS")]
     public interface TrabajadorWS {
         
@@ -26,16 +165,6 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.modificarTrabajadorResponse> modificarTrabajadorAsync(SoftRhBaseBO.Servicios.modificarTrabajadorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest", ReplyAction="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse listarTrabajadoresTodos(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest", ReplyAction="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse> listarTrabajadoresTodosAsync(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest", ReplyAction="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
@@ -44,6 +173,16 @@ namespace SoftRhBaseBO.Servicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest", ReplyAction="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse")]
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerTrabajadorPorIdResponse> obtenerTrabajadorPorIdAsync(SoftRhBaseBO.Servicios.obtenerTrabajadorPorIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest", ReplyAction="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse listarTrabajadoresTodos(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest", ReplyAction="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse> listarTrabajadoresTodosAsync(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/TrabajadorWS/insertarTrabajadorRequest", ReplyAction="softrh.services/TrabajadorWS/insertarTrabajadorResponse")]
@@ -67,7 +206,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -85,7 +224,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -257,7 +396,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -337,9 +476,9 @@ namespace SoftRhBaseBO.Servicios {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(cliente))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(administrador))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(trabajador))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(administrador))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -483,44 +622,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="softrh.services")]
-    public partial class administrador : usuario {
-        
-        private System.DateTime fechaCreacionField;
-        
-        private bool fechaCreacionFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public System.DateTime fechaCreacion {
-            get {
-                return this.fechaCreacionField;
-            }
-            set {
-                this.fechaCreacionField = value;
-                this.RaisePropertyChanged("fechaCreacion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool fechaCreacionSpecified {
-            get {
-                return this.fechaCreacionFieldSpecified;
-            }
-            set {
-                this.fechaCreacionFieldSpecified = value;
-                this.RaisePropertyChanged("fechaCreacionSpecified");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -627,7 +729,44 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="softrh.services")]
+    public partial class administrador : usuario {
+        
+        private System.DateTime fechaCreacionField;
+        
+        private bool fechaCreacionFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public System.DateTime fechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("fechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fechaCreacionSpecified {
+            get {
+                return this.fechaCreacionFieldSpecified;
+            }
+            set {
+                this.fechaCreacionFieldSpecified = value;
+                this.RaisePropertyChanged("fechaCreacionSpecified");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -827,7 +966,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="softrh.services")]
     public enum tipoPromocion {
@@ -840,7 +979,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1166,7 +1305,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="softrh.services")]
     public enum genero {
@@ -1182,7 +1321,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="softrh.services")]
     public enum talla {
@@ -1207,7 +1346,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="softrh.services")]
     public enum tipoPrenda {
@@ -1229,7 +1368,7 @@ namespace SoftRhBaseBO.Servicios {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1433,34 +1572,6 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTrabajadoresTodos", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarTrabajadoresTodosRequest {
-        
-        public listarTrabajadoresTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTrabajadoresTodosResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarTrabajadoresTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.trabajador[] @return;
-        
-        public listarTrabajadoresTodosResponse() {
-        }
-        
-        public listarTrabajadoresTodosResponse(SoftRhBaseBO.Servicios.trabajador[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerTrabajadorPorId", WrapperNamespace="softrh.services", IsWrapped=true)]
     public partial class obtenerTrabajadorPorIdRequest {
         
@@ -1490,6 +1601,34 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         public obtenerTrabajadorPorIdResponse(SoftRhBaseBO.Servicios.trabajador @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTrabajadoresTodos", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarTrabajadoresTodosRequest {
+        
+        public listarTrabajadoresTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTrabajadoresTodosResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarTrabajadoresTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.trabajador[] @return;
+        
+        public listarTrabajadoresTodosResponse() {
+        }
+        
+        public listarTrabajadoresTodosResponse(SoftRhBaseBO.Servicios.trabajador[] @return) {
             this.@return = @return;
         }
     }
@@ -1682,27 +1821,6 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse SoftRhBaseBO.Servicios.TrabajadorWS.listarTrabajadoresTodos(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request) {
-            return base.Channel.listarTrabajadoresTodos(request);
-        }
-        
-        public SoftRhBaseBO.Servicios.trabajador[] listarTrabajadoresTodos() {
-            SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest inValue = new SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest();
-            SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse retVal = ((SoftRhBaseBO.Servicios.TrabajadorWS)(this)).listarTrabajadoresTodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse> SoftRhBaseBO.Servicios.TrabajadorWS.listarTrabajadoresTodosAsync(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request) {
-            return base.Channel.listarTrabajadoresTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse> listarTrabajadoresTodosAsync() {
-            SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest inValue = new SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest();
-            return ((SoftRhBaseBO.Servicios.TrabajadorWS)(this)).listarTrabajadoresTodosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SoftRhBaseBO.Servicios.obtenerTrabajadorPorIdResponse SoftRhBaseBO.Servicios.TrabajadorWS.obtenerTrabajadorPorId(SoftRhBaseBO.Servicios.obtenerTrabajadorPorIdRequest request) {
             return base.Channel.obtenerTrabajadorPorId(request);
         }
@@ -1723,6 +1841,27 @@ namespace SoftRhBaseBO.Servicios {
             SoftRhBaseBO.Servicios.obtenerTrabajadorPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerTrabajadorPorIdRequest();
             inValue.arg0 = arg0;
             return ((SoftRhBaseBO.Servicios.TrabajadorWS)(this)).obtenerTrabajadorPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse SoftRhBaseBO.Servicios.TrabajadorWS.listarTrabajadoresTodos(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request) {
+            return base.Channel.listarTrabajadoresTodos(request);
+        }
+        
+        public SoftRhBaseBO.Servicios.trabajador[] listarTrabajadoresTodos() {
+            SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest inValue = new SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest();
+            SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse retVal = ((SoftRhBaseBO.Servicios.TrabajadorWS)(this)).listarTrabajadoresTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse> SoftRhBaseBO.Servicios.TrabajadorWS.listarTrabajadoresTodosAsync(SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest request) {
+            return base.Channel.listarTrabajadoresTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTrabajadoresTodosResponse> listarTrabajadoresTodosAsync() {
+            SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest inValue = new SoftRhBaseBO.Servicios.listarTrabajadoresTodosRequest();
+            return ((SoftRhBaseBO.Servicios.TrabajadorWS)(this)).listarTrabajadoresTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1795,6 +1934,16 @@ namespace SoftRhBaseBO.Servicios {
     public interface AdministradorWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/insetarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/insetarAdministradorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.insetarAdministradorResponse insetarAdministrador(SoftRhBaseBO.Servicios.insetarAdministradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/insetarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/insetarAdministradorResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insetarAdministradorResponse> insetarAdministradorAsync(SoftRhBaseBO.Servicios.insetarAdministradorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/modificarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/modificarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
@@ -1803,16 +1952,6 @@ namespace SoftRhBaseBO.Servicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/modificarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/modificarAdministradorResponse")]
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.modificarAdministradorResponse> modificarAdministradorAsync(SoftRhBaseBO.Servicios.modificarAdministradorRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/eliminarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/eliminarAdministradorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.eliminarAdministradorResponse eliminarAdministrador(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/eliminarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/eliminarAdministradorResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarAdministradorResponse> eliminarAdministradorAsync(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/listarAdministradoresTodosRequest", ReplyAction="softrh.services/AdministradorWS/listarAdministradoresTodosResponse")]
@@ -1825,14 +1964,14 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarAdministradoresTodosResponse> listarAdministradoresTodosAsync(SoftRhBaseBO.Servicios.listarAdministradoresTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/insetarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/insetarAdministradorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/eliminarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/eliminarAdministradorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.insetarAdministradorResponse insetarAdministrador(SoftRhBaseBO.Servicios.insetarAdministradorRequest request);
+        SoftRhBaseBO.Servicios.eliminarAdministradorResponse eliminarAdministrador(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/insetarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/insetarAdministradorResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insetarAdministradorResponse> insetarAdministradorAsync(SoftRhBaseBO.Servicios.insetarAdministradorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/eliminarAdministradorRequest", ReplyAction="softrh.services/AdministradorWS/eliminarAdministradorResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarAdministradorResponse> eliminarAdministradorAsync(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/obtenerAdministradorPorIdRequest", ReplyAction="softrh.services/AdministradorWS/obtenerAdministradorPorIdResponse")]
@@ -1843,6 +1982,67 @@ namespace SoftRhBaseBO.Servicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/AdministradorWS/obtenerAdministradorPorIdRequest", ReplyAction="softrh.services/AdministradorWS/obtenerAdministradorPorIdResponse")]
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerAdministradorPorIdResponse> obtenerAdministradorPorIdAsync(SoftRhBaseBO.Servicios.obtenerAdministradorPorIdRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insetarAdministrador", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class insetarAdministradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg4;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime arg5;
+        
+        public insetarAdministradorRequest() {
+        }
+        
+        public insetarAdministradorRequest(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
+            this.arg5 = arg5;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insetarAdministradorResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class insetarAdministradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insetarAdministradorResponse() {
+        }
+        
+        public insetarAdministradorResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1914,6 +2114,34 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministradoresTodos", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarAdministradoresTodosRequest {
+        
+        public listarAdministradoresTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministradoresTodosResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarAdministradoresTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.administrador[] @return;
+        
+        public listarAdministradoresTodosResponse() {
+        }
+        
+        public listarAdministradoresTodosResponse(SoftRhBaseBO.Servicios.administrador[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAdministrador", WrapperNamespace="softrh.services", IsWrapped=true)]
     public partial class eliminarAdministradorRequest {
         
@@ -1943,95 +2171,6 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         public eliminarAdministradorResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministradoresTodos", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarAdministradoresTodosRequest {
-        
-        public listarAdministradoresTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAdministradoresTodosResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarAdministradoresTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.administrador[] @return;
-        
-        public listarAdministradoresTodosResponse() {
-        }
-        
-        public listarAdministradoresTodosResponse(SoftRhBaseBO.Servicios.administrador[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insetarAdministrador", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class insetarAdministradorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime arg5;
-        
-        public insetarAdministradorRequest() {
-        }
-        
-        public insetarAdministradorRequest(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insetarAdministradorResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class insetarAdministradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insetarAdministradorResponse() {
-        }
-        
-        public insetarAdministradorResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2100,6 +2239,39 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.insetarAdministradorResponse SoftRhBaseBO.Servicios.AdministradorWS.insetarAdministrador(SoftRhBaseBO.Servicios.insetarAdministradorRequest request) {
+            return base.Channel.insetarAdministrador(request);
+        }
+        
+        public int insetarAdministrador(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5) {
+            SoftRhBaseBO.Servicios.insetarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.insetarAdministradorRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            SoftRhBaseBO.Servicios.insetarAdministradorResponse retVal = ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).insetarAdministrador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insetarAdministradorResponse> SoftRhBaseBO.Servicios.AdministradorWS.insetarAdministradorAsync(SoftRhBaseBO.Servicios.insetarAdministradorRequest request) {
+            return base.Channel.insetarAdministradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insetarAdministradorResponse> insetarAdministradorAsync(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5) {
+            SoftRhBaseBO.Servicios.insetarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.insetarAdministradorRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            return ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).insetarAdministradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SoftRhBaseBO.Servicios.modificarAdministradorResponse SoftRhBaseBO.Servicios.AdministradorWS.modificarAdministrador(SoftRhBaseBO.Servicios.modificarAdministradorRequest request) {
             return base.Channel.modificarAdministrador(request);
         }
@@ -2135,29 +2307,6 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.eliminarAdministradorResponse SoftRhBaseBO.Servicios.AdministradorWS.eliminarAdministrador(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request) {
-            return base.Channel.eliminarAdministrador(request);
-        }
-        
-        public int eliminarAdministrador(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.eliminarAdministradorRequest();
-            inValue.arg0 = arg0;
-            SoftRhBaseBO.Servicios.eliminarAdministradorResponse retVal = ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).eliminarAdministrador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarAdministradorResponse> SoftRhBaseBO.Servicios.AdministradorWS.eliminarAdministradorAsync(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request) {
-            return base.Channel.eliminarAdministradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarAdministradorResponse> eliminarAdministradorAsync(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.eliminarAdministradorRequest();
-            inValue.arg0 = arg0;
-            return ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).eliminarAdministradorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SoftRhBaseBO.Servicios.listarAdministradoresTodosResponse SoftRhBaseBO.Servicios.AdministradorWS.listarAdministradoresTodos(SoftRhBaseBO.Servicios.listarAdministradoresTodosRequest request) {
             return base.Channel.listarAdministradoresTodos(request);
         }
@@ -2179,36 +2328,26 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.insetarAdministradorResponse SoftRhBaseBO.Servicios.AdministradorWS.insetarAdministrador(SoftRhBaseBO.Servicios.insetarAdministradorRequest request) {
-            return base.Channel.insetarAdministrador(request);
+        SoftRhBaseBO.Servicios.eliminarAdministradorResponse SoftRhBaseBO.Servicios.AdministradorWS.eliminarAdministrador(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request) {
+            return base.Channel.eliminarAdministrador(request);
         }
         
-        public int insetarAdministrador(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5) {
-            SoftRhBaseBO.Servicios.insetarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.insetarAdministradorRequest();
+        public int eliminarAdministrador(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.eliminarAdministradorRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            SoftRhBaseBO.Servicios.insetarAdministradorResponse retVal = ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).insetarAdministrador(inValue);
+            SoftRhBaseBO.Servicios.eliminarAdministradorResponse retVal = ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).eliminarAdministrador(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insetarAdministradorResponse> SoftRhBaseBO.Servicios.AdministradorWS.insetarAdministradorAsync(SoftRhBaseBO.Servicios.insetarAdministradorRequest request) {
-            return base.Channel.insetarAdministradorAsync(request);
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarAdministradorResponse> SoftRhBaseBO.Servicios.AdministradorWS.eliminarAdministradorAsync(SoftRhBaseBO.Servicios.eliminarAdministradorRequest request) {
+            return base.Channel.eliminarAdministradorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insetarAdministradorResponse> insetarAdministradorAsync(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5) {
-            SoftRhBaseBO.Servicios.insetarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.insetarAdministradorRequest();
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarAdministradorResponse> eliminarAdministradorAsync(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarAdministradorRequest inValue = new SoftRhBaseBO.Servicios.eliminarAdministradorRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            return ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).insetarAdministradorAsync(inValue);
+            return ((SoftRhBaseBO.Servicios.AdministradorWS)(this)).eliminarAdministradorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2240,6 +2379,16 @@ namespace SoftRhBaseBO.Servicios {
     public interface CuponWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/insertarCuponRequest", ReplyAction="softrh.services/CuponWS/insertarCuponResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.insertarCuponResponse insertarCupon(SoftRhBaseBO.Servicios.insertarCuponRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/insertarCuponRequest", ReplyAction="softrh.services/CuponWS/insertarCuponResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarCuponResponse> insertarCuponAsync(SoftRhBaseBO.Servicios.insertarCuponRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/eliminarCuponRequest", ReplyAction="softrh.services/CuponWS/eliminarCuponResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
@@ -2248,6 +2397,16 @@ namespace SoftRhBaseBO.Servicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/eliminarCuponRequest", ReplyAction="softrh.services/CuponWS/eliminarCuponResponse")]
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarCuponResponse> eliminarCuponAsync(SoftRhBaseBO.Servicios.eliminarCuponRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/obtenerCuponPorIdRequest", ReplyAction="softrh.services/CuponWS/obtenerCuponPorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse obtenerCuponPorId(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/obtenerCuponPorIdRequest", ReplyAction="softrh.services/CuponWS/obtenerCuponPorIdResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse> obtenerCuponPorIdAsync(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/listarCuponesTodosRequest", ReplyAction="softrh.services/CuponWS/listarCuponesTodosResponse")]
@@ -2260,16 +2419,6 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarCuponesTodosResponse> listarCuponesTodosAsync(SoftRhBaseBO.Servicios.listarCuponesTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/insertarCuponRequest", ReplyAction="softrh.services/CuponWS/insertarCuponResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.insertarCuponResponse insertarCupon(SoftRhBaseBO.Servicios.insertarCuponRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/insertarCuponRequest", ReplyAction="softrh.services/CuponWS/insertarCuponResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarCuponResponse> insertarCuponAsync(SoftRhBaseBO.Servicios.insertarCuponRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/modificarCuponRequest", ReplyAction="softrh.services/CuponWS/modificarCuponResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
@@ -2278,80 +2427,6 @@ namespace SoftRhBaseBO.Servicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/modificarCuponRequest", ReplyAction="softrh.services/CuponWS/modificarCuponResponse")]
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.modificarCuponResponse> modificarCuponAsync(SoftRhBaseBO.Servicios.modificarCuponRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/obtenerCuponPorIdRequest", ReplyAction="softrh.services/CuponWS/obtenerCuponPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse obtenerCuponPorId(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/CuponWS/obtenerCuponPorIdRequest", ReplyAction="softrh.services/CuponWS/obtenerCuponPorIdResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse> obtenerCuponPorIdAsync(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCupon", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class eliminarCuponRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public eliminarCuponRequest() {
-        }
-        
-        public eliminarCuponRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCuponResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class eliminarCuponResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarCuponResponse() {
-        }
-        
-        public eliminarCuponResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuponesTodos", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarCuponesTodosRequest {
-        
-        public listarCuponesTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuponesTodosResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarCuponesTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.cupon[] @return;
-        
-        public listarCuponesTodosResponse() {
-        }
-        
-        public listarCuponesTodosResponse(SoftRhBaseBO.Servicios.cupon[] @return) {
-            this.@return = @return;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2406,6 +2481,106 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         public insertarCuponResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCupon", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class eliminarCuponRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public eliminarCuponRequest() {
+        }
+        
+        public eliminarCuponRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCuponResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class eliminarCuponResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarCuponResponse() {
+        }
+        
+        public eliminarCuponResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCuponPorId", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class obtenerCuponPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public obtenerCuponPorIdRequest() {
+        }
+        
+        public obtenerCuponPorIdRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCuponPorIdResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class obtenerCuponPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.cupon @return;
+        
+        public obtenerCuponPorIdResponse() {
+        }
+        
+        public obtenerCuponPorIdResponse(SoftRhBaseBO.Servicios.cupon @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuponesTodos", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarCuponesTodosRequest {
+        
+        public listarCuponesTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuponesTodosResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarCuponesTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.cupon[] @return;
+        
+        public listarCuponesTodosResponse() {
+        }
+        
+        public listarCuponesTodosResponse(SoftRhBaseBO.Servicios.cupon[] @return) {
             this.@return = @return;
         }
     }
@@ -2471,42 +2646,6 @@ namespace SoftRhBaseBO.Servicios {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCuponPorId", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class obtenerCuponPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public obtenerCuponPorIdRequest() {
-        }
-        
-        public obtenerCuponPorIdRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerCuponPorIdResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class obtenerCuponPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.cupon @return;
-        
-        public obtenerCuponPorIdResponse() {
-        }
-        
-        public obtenerCuponPorIdResponse(SoftRhBaseBO.Servicios.cupon @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CuponWSChannel : SoftRhBaseBO.Servicios.CuponWS, System.ServiceModel.IClientChannel {
     }
@@ -2532,50 +2671,6 @@ namespace SoftRhBaseBO.Servicios {
         
         public CuponWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.eliminarCuponResponse SoftRhBaseBO.Servicios.CuponWS.eliminarCupon(SoftRhBaseBO.Servicios.eliminarCuponRequest request) {
-            return base.Channel.eliminarCupon(request);
-        }
-        
-        public int eliminarCupon(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarCuponRequest inValue = new SoftRhBaseBO.Servicios.eliminarCuponRequest();
-            inValue.arg0 = arg0;
-            SoftRhBaseBO.Servicios.eliminarCuponResponse retVal = ((SoftRhBaseBO.Servicios.CuponWS)(this)).eliminarCupon(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarCuponResponse> SoftRhBaseBO.Servicios.CuponWS.eliminarCuponAsync(SoftRhBaseBO.Servicios.eliminarCuponRequest request) {
-            return base.Channel.eliminarCuponAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarCuponResponse> eliminarCuponAsync(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarCuponRequest inValue = new SoftRhBaseBO.Servicios.eliminarCuponRequest();
-            inValue.arg0 = arg0;
-            return ((SoftRhBaseBO.Servicios.CuponWS)(this)).eliminarCuponAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.listarCuponesTodosResponse SoftRhBaseBO.Servicios.CuponWS.listarCuponesTodos(SoftRhBaseBO.Servicios.listarCuponesTodosRequest request) {
-            return base.Channel.listarCuponesTodos(request);
-        }
-        
-        public SoftRhBaseBO.Servicios.cupon[] listarCuponesTodos() {
-            SoftRhBaseBO.Servicios.listarCuponesTodosRequest inValue = new SoftRhBaseBO.Servicios.listarCuponesTodosRequest();
-            SoftRhBaseBO.Servicios.listarCuponesTodosResponse retVal = ((SoftRhBaseBO.Servicios.CuponWS)(this)).listarCuponesTodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarCuponesTodosResponse> SoftRhBaseBO.Servicios.CuponWS.listarCuponesTodosAsync(SoftRhBaseBO.Servicios.listarCuponesTodosRequest request) {
-            return base.Channel.listarCuponesTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarCuponesTodosResponse> listarCuponesTodosAsync() {
-            SoftRhBaseBO.Servicios.listarCuponesTodosRequest inValue = new SoftRhBaseBO.Servicios.listarCuponesTodosRequest();
-            return ((SoftRhBaseBO.Servicios.CuponWS)(this)).listarCuponesTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2610,6 +2705,73 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.eliminarCuponResponse SoftRhBaseBO.Servicios.CuponWS.eliminarCupon(SoftRhBaseBO.Servicios.eliminarCuponRequest request) {
+            return base.Channel.eliminarCupon(request);
+        }
+        
+        public int eliminarCupon(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarCuponRequest inValue = new SoftRhBaseBO.Servicios.eliminarCuponRequest();
+            inValue.arg0 = arg0;
+            SoftRhBaseBO.Servicios.eliminarCuponResponse retVal = ((SoftRhBaseBO.Servicios.CuponWS)(this)).eliminarCupon(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarCuponResponse> SoftRhBaseBO.Servicios.CuponWS.eliminarCuponAsync(SoftRhBaseBO.Servicios.eliminarCuponRequest request) {
+            return base.Channel.eliminarCuponAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarCuponResponse> eliminarCuponAsync(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarCuponRequest inValue = new SoftRhBaseBO.Servicios.eliminarCuponRequest();
+            inValue.arg0 = arg0;
+            return ((SoftRhBaseBO.Servicios.CuponWS)(this)).eliminarCuponAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse SoftRhBaseBO.Servicios.CuponWS.obtenerCuponPorId(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request) {
+            return base.Channel.obtenerCuponPorId(request);
+        }
+        
+        public SoftRhBaseBO.Servicios.cupon obtenerCuponPorId(int arg0) {
+            SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest();
+            inValue.arg0 = arg0;
+            SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse retVal = ((SoftRhBaseBO.Servicios.CuponWS)(this)).obtenerCuponPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse> SoftRhBaseBO.Servicios.CuponWS.obtenerCuponPorIdAsync(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request) {
+            return base.Channel.obtenerCuponPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse> obtenerCuponPorIdAsync(int arg0) {
+            SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest();
+            inValue.arg0 = arg0;
+            return ((SoftRhBaseBO.Servicios.CuponWS)(this)).obtenerCuponPorIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.listarCuponesTodosResponse SoftRhBaseBO.Servicios.CuponWS.listarCuponesTodos(SoftRhBaseBO.Servicios.listarCuponesTodosRequest request) {
+            return base.Channel.listarCuponesTodos(request);
+        }
+        
+        public SoftRhBaseBO.Servicios.cupon[] listarCuponesTodos() {
+            SoftRhBaseBO.Servicios.listarCuponesTodosRequest inValue = new SoftRhBaseBO.Servicios.listarCuponesTodosRequest();
+            SoftRhBaseBO.Servicios.listarCuponesTodosResponse retVal = ((SoftRhBaseBO.Servicios.CuponWS)(this)).listarCuponesTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarCuponesTodosResponse> SoftRhBaseBO.Servicios.CuponWS.listarCuponesTodosAsync(SoftRhBaseBO.Servicios.listarCuponesTodosRequest request) {
+            return base.Channel.listarCuponesTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarCuponesTodosResponse> listarCuponesTodosAsync() {
+            SoftRhBaseBO.Servicios.listarCuponesTodosRequest inValue = new SoftRhBaseBO.Servicios.listarCuponesTodosRequest();
+            return ((SoftRhBaseBO.Servicios.CuponWS)(this)).listarCuponesTodosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SoftRhBaseBO.Servicios.modificarCuponResponse SoftRhBaseBO.Servicios.CuponWS.modificarCupon(SoftRhBaseBO.Servicios.modificarCuponRequest request) {
             return base.Channel.modificarCupon(request);
         }
@@ -2641,34 +2803,31 @@ namespace SoftRhBaseBO.Servicios {
             inValue.arg5 = arg5;
             return ((SoftRhBaseBO.Servicios.CuponWS)(this)).modificarCuponAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse SoftRhBaseBO.Servicios.CuponWS.obtenerCuponPorId(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request) {
-            return base.Channel.obtenerCuponPorId(request);
-        }
-        
-        public SoftRhBaseBO.Servicios.cupon obtenerCuponPorId(int arg0) {
-            SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest();
-            inValue.arg0 = arg0;
-            SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse retVal = ((SoftRhBaseBO.Servicios.CuponWS)(this)).obtenerCuponPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse> SoftRhBaseBO.Servicios.CuponWS.obtenerCuponPorIdAsync(SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest request) {
-            return base.Channel.obtenerCuponPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerCuponPorIdResponse> obtenerCuponPorIdAsync(int arg0) {
-            SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerCuponPorIdRequest();
-            inValue.arg0 = arg0;
-            return ((SoftRhBaseBO.Servicios.CuponWS)(this)).obtenerCuponPorIdAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="softrh.services", ConfigurationName="Servicios.PrendaWS")]
     public interface PrendaWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarPrendasPorTipoRequest", ReplyAction="softrh.services/PrendaWS/listarPrendasPorTipoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse listarPrendasPorTipo(SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarPrendasPorTipoRequest", ReplyAction="softrh.services/PrendaWS/listarPrendasPorTipoResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse> listarPrendasPorTipoAsync(SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/obtenerPrendaPorIdRequest", ReplyAction="softrh.services/PrendaWS/obtenerPrendaPorIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse obtenerPrendaPorId(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/obtenerPrendaPorIdRequest", ReplyAction="softrh.services/PrendaWS/obtenerPrendaPorIdResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse> obtenerPrendaPorIdAsync(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/modificarPrendaRequest", ReplyAction="softrh.services/PrendaWS/modificarPrendaResponse")]
@@ -2681,16 +2840,6 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.modificarPrendaResponse> modificarPrendaAsync(SoftRhBaseBO.Servicios.modificarPrendaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarPrendasTodasRequest", ReplyAction="softrh.services/PrendaWS/listarPrendasTodasResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.listarPrendasTodasResponse listarPrendasTodas(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarPrendasTodasRequest", ReplyAction="softrh.services/PrendaWS/listarPrendasTodasResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasTodasResponse> listarPrendasTodasAsync(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/insertarPrendaRequest", ReplyAction="softrh.services/PrendaWS/insertarPrendaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
@@ -2701,6 +2850,26 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPrendaResponse> insertarPrendaAsync(SoftRhBaseBO.Servicios.insertarPrendaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarPrendasTodasRequest", ReplyAction="softrh.services/PrendaWS/listarPrendasTodasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.listarPrendasTodasResponse listarPrendasTodas(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarPrendasTodasRequest", ReplyAction="softrh.services/PrendaWS/listarPrendasTodasResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasTodasResponse> listarPrendasTodasAsync(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarTipoPrendaRequest", ReplyAction="softrh.services/PrendaWS/listarTipoPrendaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SoftRhBaseBO.Servicios.listarTipoPrendaResponse listarTipoPrenda(SoftRhBaseBO.Servicios.listarTipoPrendaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/listarTipoPrendaRequest", ReplyAction="softrh.services/PrendaWS/listarTipoPrendaResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTipoPrendaResponse> listarTipoPrendaAsync(SoftRhBaseBO.Servicios.listarTipoPrendaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/eliminarPrendaRequest", ReplyAction="softrh.services/PrendaWS/eliminarPrendaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
@@ -2709,16 +2878,78 @@ namespace SoftRhBaseBO.Servicios {
         
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/eliminarPrendaRequest", ReplyAction="softrh.services/PrendaWS/eliminarPrendaResponse")]
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPrendaResponse> eliminarPrendaAsync(SoftRhBaseBO.Servicios.eliminarPrendaRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasPorTipo", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarPrendasPorTipoRequest {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/obtenerPrendaPorIdRequest", ReplyAction="softrh.services/PrendaWS/obtenerPrendaPorIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse obtenerPrendaPorId(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
         
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PrendaWS/obtenerPrendaPorIdRequest", ReplyAction="softrh.services/PrendaWS/obtenerPrendaPorIdResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse> obtenerPrendaPorIdAsync(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request);
+        public listarPrendasPorTipoRequest() {
+        }
+        
+        public listarPrendasPorTipoRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasPorTipoResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarPrendasPorTipoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.prenda[] @return;
+        
+        public listarPrendasPorTipoResponse() {
+        }
+        
+        public listarPrendasPorTipoResponse(SoftRhBaseBO.Servicios.prenda[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaPorId", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class obtenerPrendaPorIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public obtenerPrendaPorIdRequest() {
+        }
+        
+        public obtenerPrendaPorIdRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaPorIdResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class obtenerPrendaPorIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.prenda @return;
+        
+        public obtenerPrendaPorIdResponse() {
+        }
+        
+        public obtenerPrendaPorIdResponse(SoftRhBaseBO.Servicios.prenda @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2815,34 +3046,6 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasTodas", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarPrendasTodasRequest {
-        
-        public listarPrendasTodasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasTodasResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class listarPrendasTodasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.prenda[] @return;
-        
-        public listarPrendasTodasResponse() {
-        }
-        
-        public listarPrendasTodasResponse(SoftRhBaseBO.Servicios.prenda[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPrenda", WrapperNamespace="softrh.services", IsWrapped=true)]
     public partial class insertarPrendaRequest {
         
@@ -2919,6 +3122,62 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasTodas", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarPrendasTodasRequest {
+        
+        public listarPrendasTodasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPrendasTodasResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarPrendasTodasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.prenda[] @return;
+        
+        public listarPrendasTodasResponse() {
+        }
+        
+        public listarPrendasTodasResponse(SoftRhBaseBO.Servicios.prenda[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTipoPrenda", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarTipoPrendaRequest {
+        
+        public listarTipoPrendaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTipoPrendaResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class listarTipoPrendaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string[] @return;
+        
+        public listarTipoPrendaResponse() {
+        }
+        
+        public listarTipoPrendaResponse(string[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPrenda", WrapperNamespace="softrh.services", IsWrapped=true)]
     public partial class eliminarPrendaRequest {
         
@@ -2952,42 +3211,6 @@ namespace SoftRhBaseBO.Servicios {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaPorId", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class obtenerPrendaPorIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public obtenerPrendaPorIdRequest() {
-        }
-        
-        public obtenerPrendaPorIdRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerPrendaPorIdResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class obtenerPrendaPorIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.prenda @return;
-        
-        public obtenerPrendaPorIdResponse() {
-        }
-        
-        public obtenerPrendaPorIdResponse(SoftRhBaseBO.Servicios.prenda @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PrendaWSChannel : SoftRhBaseBO.Servicios.PrendaWS, System.ServiceModel.IClientChannel {
     }
@@ -3013,6 +3236,52 @@ namespace SoftRhBaseBO.Servicios {
         
         public PrendaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse SoftRhBaseBO.Servicios.PrendaWS.listarPrendasPorTipo(SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest request) {
+            return base.Channel.listarPrendasPorTipo(request);
+        }
+        
+        public SoftRhBaseBO.Servicios.prenda[] listarPrendasPorTipo(string arg0) {
+            SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest inValue = new SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest();
+            inValue.arg0 = arg0;
+            SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse retVal = ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarPrendasPorTipo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse> SoftRhBaseBO.Servicios.PrendaWS.listarPrendasPorTipoAsync(SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest request) {
+            return base.Channel.listarPrendasPorTipoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasPorTipoResponse> listarPrendasPorTipoAsync(string arg0) {
+            SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest inValue = new SoftRhBaseBO.Servicios.listarPrendasPorTipoRequest();
+            inValue.arg0 = arg0;
+            return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarPrendasPorTipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse SoftRhBaseBO.Servicios.PrendaWS.obtenerPrendaPorId(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request) {
+            return base.Channel.obtenerPrendaPorId(request);
+        }
+        
+        public SoftRhBaseBO.Servicios.prenda obtenerPrendaPorId(int arg0) {
+            SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest();
+            inValue.arg0 = arg0;
+            SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse retVal = ((SoftRhBaseBO.Servicios.PrendaWS)(this)).obtenerPrendaPorId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse> SoftRhBaseBO.Servicios.PrendaWS.obtenerPrendaPorIdAsync(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request) {
+            return base.Channel.obtenerPrendaPorIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse> obtenerPrendaPorIdAsync(int arg0) {
+            SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest();
+            inValue.arg0 = arg0;
+            return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).obtenerPrendaPorIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3061,27 +3330,6 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.listarPrendasTodasResponse SoftRhBaseBO.Servicios.PrendaWS.listarPrendasTodas(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request) {
-            return base.Channel.listarPrendasTodas(request);
-        }
-        
-        public SoftRhBaseBO.Servicios.prenda[] listarPrendasTodas() {
-            SoftRhBaseBO.Servicios.listarPrendasTodasRequest inValue = new SoftRhBaseBO.Servicios.listarPrendasTodasRequest();
-            SoftRhBaseBO.Servicios.listarPrendasTodasResponse retVal = ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarPrendasTodas(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasTodasResponse> SoftRhBaseBO.Servicios.PrendaWS.listarPrendasTodasAsync(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request) {
-            return base.Channel.listarPrendasTodasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasTodasResponse> listarPrendasTodasAsync() {
-            SoftRhBaseBO.Servicios.listarPrendasTodasRequest inValue = new SoftRhBaseBO.Servicios.listarPrendasTodasRequest();
-            return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarPrendasTodasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SoftRhBaseBO.Servicios.insertarPrendaResponse SoftRhBaseBO.Servicios.PrendaWS.insertarPrenda(SoftRhBaseBO.Servicios.insertarPrendaRequest request) {
             return base.Channel.insertarPrenda(request);
         }
@@ -3121,6 +3369,48 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.listarPrendasTodasResponse SoftRhBaseBO.Servicios.PrendaWS.listarPrendasTodas(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request) {
+            return base.Channel.listarPrendasTodas(request);
+        }
+        
+        public SoftRhBaseBO.Servicios.prenda[] listarPrendasTodas() {
+            SoftRhBaseBO.Servicios.listarPrendasTodasRequest inValue = new SoftRhBaseBO.Servicios.listarPrendasTodasRequest();
+            SoftRhBaseBO.Servicios.listarPrendasTodasResponse retVal = ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarPrendasTodas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasTodasResponse> SoftRhBaseBO.Servicios.PrendaWS.listarPrendasTodasAsync(SoftRhBaseBO.Servicios.listarPrendasTodasRequest request) {
+            return base.Channel.listarPrendasTodasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPrendasTodasResponse> listarPrendasTodasAsync() {
+            SoftRhBaseBO.Servicios.listarPrendasTodasRequest inValue = new SoftRhBaseBO.Servicios.listarPrendasTodasRequest();
+            return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarPrendasTodasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SoftRhBaseBO.Servicios.listarTipoPrendaResponse SoftRhBaseBO.Servicios.PrendaWS.listarTipoPrenda(SoftRhBaseBO.Servicios.listarTipoPrendaRequest request) {
+            return base.Channel.listarTipoPrenda(request);
+        }
+        
+        public string[] listarTipoPrenda() {
+            SoftRhBaseBO.Servicios.listarTipoPrendaRequest inValue = new SoftRhBaseBO.Servicios.listarTipoPrendaRequest();
+            SoftRhBaseBO.Servicios.listarTipoPrendaResponse retVal = ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarTipoPrenda(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTipoPrendaResponse> SoftRhBaseBO.Servicios.PrendaWS.listarTipoPrendaAsync(SoftRhBaseBO.Servicios.listarTipoPrendaRequest request) {
+            return base.Channel.listarTipoPrendaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarTipoPrendaResponse> listarTipoPrendaAsync() {
+            SoftRhBaseBO.Servicios.listarTipoPrendaRequest inValue = new SoftRhBaseBO.Servicios.listarTipoPrendaRequest();
+            return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).listarTipoPrendaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SoftRhBaseBO.Servicios.eliminarPrendaResponse SoftRhBaseBO.Servicios.PrendaWS.eliminarPrenda(SoftRhBaseBO.Servicios.eliminarPrendaRequest request) {
             return base.Channel.eliminarPrenda(request);
         }
@@ -3141,29 +3431,6 @@ namespace SoftRhBaseBO.Servicios {
             SoftRhBaseBO.Servicios.eliminarPrendaRequest inValue = new SoftRhBaseBO.Servicios.eliminarPrendaRequest();
             inValue.arg0 = arg0;
             return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).eliminarPrendaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse SoftRhBaseBO.Servicios.PrendaWS.obtenerPrendaPorId(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request) {
-            return base.Channel.obtenerPrendaPorId(request);
-        }
-        
-        public SoftRhBaseBO.Servicios.prenda obtenerPrendaPorId(int arg0) {
-            SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest();
-            inValue.arg0 = arg0;
-            SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse retVal = ((SoftRhBaseBO.Servicios.PrendaWS)(this)).obtenerPrendaPorId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse> SoftRhBaseBO.Servicios.PrendaWS.obtenerPrendaPorIdAsync(SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest request) {
-            return base.Channel.obtenerPrendaPorIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerPrendaPorIdResponse> obtenerPrendaPorIdAsync(int arg0) {
-            SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest inValue = new SoftRhBaseBO.Servicios.obtenerPrendaPorIdRequest();
-            inValue.arg0 = arg0;
-            return ((SoftRhBaseBO.Servicios.PrendaWS)(this)).obtenerPrendaPorIdAsync(inValue);
         }
     }
     
@@ -3192,14 +3459,14 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.listarPromocionesTodasResponse> listarPromocionesTodasAsync(SoftRhBaseBO.Servicios.listarPromocionesTodasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/insertarPromocionRequest", ReplyAction="softrh.services/PromocionWS/insertarPromocionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/eliminarPromocionRequest", ReplyAction="softrh.services/PromocionWS/eliminarPromocionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.insertarPromocionResponse insertarPromocion(SoftRhBaseBO.Servicios.insertarPromocionRequest request);
+        SoftRhBaseBO.Servicios.eliminarPromocionResponse eliminarPromocion(SoftRhBaseBO.Servicios.eliminarPromocionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/insertarPromocionRequest", ReplyAction="softrh.services/PromocionWS/insertarPromocionResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPromocionResponse> insertarPromocionAsync(SoftRhBaseBO.Servicios.insertarPromocionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/eliminarPromocionRequest", ReplyAction="softrh.services/PromocionWS/eliminarPromocionResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPromocionResponse> eliminarPromocionAsync(SoftRhBaseBO.Servicios.eliminarPromocionRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/modificarPromocionRequest", ReplyAction="softrh.services/PromocionWS/modificarPromocionResponse")]
@@ -3212,14 +3479,14 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.modificarPromocionResponse> modificarPromocionAsync(SoftRhBaseBO.Servicios.modificarPromocionRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/eliminarPromocionRequest", ReplyAction="softrh.services/PromocionWS/eliminarPromocionResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/insertarPromocionRequest", ReplyAction="softrh.services/PromocionWS/insertarPromocionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.eliminarPromocionResponse eliminarPromocion(SoftRhBaseBO.Servicios.eliminarPromocionRequest request);
+        SoftRhBaseBO.Servicios.insertarPromocionResponse insertarPromocion(SoftRhBaseBO.Servicios.insertarPromocionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/eliminarPromocionRequest", ReplyAction="softrh.services/PromocionWS/eliminarPromocionResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPromocionResponse> eliminarPromocionAsync(SoftRhBaseBO.Servicios.eliminarPromocionRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/PromocionWS/insertarPromocionRequest", ReplyAction="softrh.services/PromocionWS/insertarPromocionResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPromocionResponse> insertarPromocionAsync(SoftRhBaseBO.Servicios.insertarPromocionRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3289,70 +3556,35 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPromocion", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class insertarPromocionRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocion", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class eliminarPromocionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
+        public int arg0;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.tipoPromocion arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.trabajador arg6;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SoftRhBaseBO.Servicios.prenda arg7;
-        
-        public insertarPromocionRequest() {
+        public eliminarPromocionRequest() {
         }
         
-        public insertarPromocionRequest(string arg0, string arg1, double arg2, SoftRhBaseBO.Servicios.tipoPromocion arg3, System.DateTime arg4, System.DateTime arg5, SoftRhBaseBO.Servicios.trabajador arg6, SoftRhBaseBO.Servicios.prenda arg7) {
+        public eliminarPromocionRequest(int arg0) {
             this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
-            this.arg7 = arg7;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPromocionResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class insertarPromocionResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocionResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class eliminarPromocionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarPromocionResponse() {
+        public eliminarPromocionResponse() {
         }
         
-        public insertarPromocionResponse(int @return) {
+        public eliminarPromocionResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -3436,35 +3668,70 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocion", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class eliminarPromocionRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPromocion", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class insertarPromocionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
+        public string arg0;
         
-        public eliminarPromocionRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public double arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.tipoPromocion arg3;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime arg4;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime arg5;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.trabajador arg6;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SoftRhBaseBO.Servicios.prenda arg7;
+        
+        public insertarPromocionRequest() {
         }
         
-        public eliminarPromocionRequest(int arg0) {
+        public insertarPromocionRequest(string arg0, string arg1, double arg2, SoftRhBaseBO.Servicios.tipoPromocion arg3, System.DateTime arg4, System.DateTime arg5, SoftRhBaseBO.Servicios.trabajador arg6, SoftRhBaseBO.Servicios.prenda arg7) {
             this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
+            this.arg5 = arg5;
+            this.arg6 = arg6;
+            this.arg7 = arg7;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPromocionResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class eliminarPromocionResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPromocionResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class insertarPromocionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarPromocionResponse() {
+        public insertarPromocionResponse() {
         }
         
-        public eliminarPromocionResponse(int @return) {
+        public insertarPromocionResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -3541,40 +3808,26 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.insertarPromocionResponse SoftRhBaseBO.Servicios.PromocionWS.insertarPromocion(SoftRhBaseBO.Servicios.insertarPromocionRequest request) {
-            return base.Channel.insertarPromocion(request);
+        SoftRhBaseBO.Servicios.eliminarPromocionResponse SoftRhBaseBO.Servicios.PromocionWS.eliminarPromocion(SoftRhBaseBO.Servicios.eliminarPromocionRequest request) {
+            return base.Channel.eliminarPromocion(request);
         }
         
-        public int insertarPromocion(string arg0, string arg1, double arg2, SoftRhBaseBO.Servicios.tipoPromocion arg3, System.DateTime arg4, System.DateTime arg5, SoftRhBaseBO.Servicios.trabajador arg6, SoftRhBaseBO.Servicios.prenda arg7) {
-            SoftRhBaseBO.Servicios.insertarPromocionRequest inValue = new SoftRhBaseBO.Servicios.insertarPromocionRequest();
+        public int eliminarPromocion(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarPromocionRequest inValue = new SoftRhBaseBO.Servicios.eliminarPromocionRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            SoftRhBaseBO.Servicios.insertarPromocionResponse retVal = ((SoftRhBaseBO.Servicios.PromocionWS)(this)).insertarPromocion(inValue);
+            SoftRhBaseBO.Servicios.eliminarPromocionResponse retVal = ((SoftRhBaseBO.Servicios.PromocionWS)(this)).eliminarPromocion(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPromocionResponse> SoftRhBaseBO.Servicios.PromocionWS.insertarPromocionAsync(SoftRhBaseBO.Servicios.insertarPromocionRequest request) {
-            return base.Channel.insertarPromocionAsync(request);
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPromocionResponse> SoftRhBaseBO.Servicios.PromocionWS.eliminarPromocionAsync(SoftRhBaseBO.Servicios.eliminarPromocionRequest request) {
+            return base.Channel.eliminarPromocionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPromocionResponse> insertarPromocionAsync(string arg0, string arg1, double arg2, SoftRhBaseBO.Servicios.tipoPromocion arg3, System.DateTime arg4, System.DateTime arg5, SoftRhBaseBO.Servicios.trabajador arg6, SoftRhBaseBO.Servicios.prenda arg7) {
-            SoftRhBaseBO.Servicios.insertarPromocionRequest inValue = new SoftRhBaseBO.Servicios.insertarPromocionRequest();
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPromocionResponse> eliminarPromocionAsync(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarPromocionRequest inValue = new SoftRhBaseBO.Servicios.eliminarPromocionRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            inValue.arg7 = arg7;
-            return ((SoftRhBaseBO.Servicios.PromocionWS)(this)).insertarPromocionAsync(inValue);
+            return ((SoftRhBaseBO.Servicios.PromocionWS)(this)).eliminarPromocionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3617,26 +3870,40 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.eliminarPromocionResponse SoftRhBaseBO.Servicios.PromocionWS.eliminarPromocion(SoftRhBaseBO.Servicios.eliminarPromocionRequest request) {
-            return base.Channel.eliminarPromocion(request);
+        SoftRhBaseBO.Servicios.insertarPromocionResponse SoftRhBaseBO.Servicios.PromocionWS.insertarPromocion(SoftRhBaseBO.Servicios.insertarPromocionRequest request) {
+            return base.Channel.insertarPromocion(request);
         }
         
-        public int eliminarPromocion(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarPromocionRequest inValue = new SoftRhBaseBO.Servicios.eliminarPromocionRequest();
+        public int insertarPromocion(string arg0, string arg1, double arg2, SoftRhBaseBO.Servicios.tipoPromocion arg3, System.DateTime arg4, System.DateTime arg5, SoftRhBaseBO.Servicios.trabajador arg6, SoftRhBaseBO.Servicios.prenda arg7) {
+            SoftRhBaseBO.Servicios.insertarPromocionRequest inValue = new SoftRhBaseBO.Servicios.insertarPromocionRequest();
             inValue.arg0 = arg0;
-            SoftRhBaseBO.Servicios.eliminarPromocionResponse retVal = ((SoftRhBaseBO.Servicios.PromocionWS)(this)).eliminarPromocion(inValue);
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            inValue.arg6 = arg6;
+            inValue.arg7 = arg7;
+            SoftRhBaseBO.Servicios.insertarPromocionResponse retVal = ((SoftRhBaseBO.Servicios.PromocionWS)(this)).insertarPromocion(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPromocionResponse> SoftRhBaseBO.Servicios.PromocionWS.eliminarPromocionAsync(SoftRhBaseBO.Servicios.eliminarPromocionRequest request) {
-            return base.Channel.eliminarPromocionAsync(request);
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPromocionResponse> SoftRhBaseBO.Servicios.PromocionWS.insertarPromocionAsync(SoftRhBaseBO.Servicios.insertarPromocionRequest request) {
+            return base.Channel.insertarPromocionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarPromocionResponse> eliminarPromocionAsync(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarPromocionRequest inValue = new SoftRhBaseBO.Servicios.eliminarPromocionRequest();
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarPromocionResponse> insertarPromocionAsync(string arg0, string arg1, double arg2, SoftRhBaseBO.Servicios.tipoPromocion arg3, System.DateTime arg4, System.DateTime arg5, SoftRhBaseBO.Servicios.trabajador arg6, SoftRhBaseBO.Servicios.prenda arg7) {
+            SoftRhBaseBO.Servicios.insertarPromocionRequest inValue = new SoftRhBaseBO.Servicios.insertarPromocionRequest();
             inValue.arg0 = arg0;
-            return ((SoftRhBaseBO.Servicios.PromocionWS)(this)).eliminarPromocionAsync(inValue);
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            inValue.arg6 = arg6;
+            inValue.arg7 = arg7;
+            return ((SoftRhBaseBO.Servicios.PromocionWS)(this)).insertarPromocionAsync(inValue);
         }
     }
     
@@ -4124,14 +4391,14 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.obtenerClientePorIdResponse> obtenerClientePorIdAsync(SoftRhBaseBO.Servicios.obtenerClientePorIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/eliminarClienteRequest", ReplyAction="softrh.services/ClienteWS/eliminarClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/insertarClienteRequest", ReplyAction="softrh.services/ClienteWS/insertarClienteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.eliminarClienteResponse eliminarCliente(SoftRhBaseBO.Servicios.eliminarClienteRequest request);
+        SoftRhBaseBO.Servicios.insertarClienteResponse insertarCliente(SoftRhBaseBO.Servicios.insertarClienteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/eliminarClienteRequest", ReplyAction="softrh.services/ClienteWS/eliminarClienteResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarClienteResponse> eliminarClienteAsync(SoftRhBaseBO.Servicios.eliminarClienteRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/insertarClienteRequest", ReplyAction="softrh.services/ClienteWS/insertarClienteResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarClienteResponse> insertarClienteAsync(SoftRhBaseBO.Servicios.insertarClienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/modificarClienteRequest", ReplyAction="softrh.services/ClienteWS/modificarClienteResponse")]
@@ -4144,14 +4411,14 @@ namespace SoftRhBaseBO.Servicios {
         System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.modificarClienteResponse> modificarClienteAsync(SoftRhBaseBO.Servicios.modificarClienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/insertarClienteRequest", ReplyAction="softrh.services/ClienteWS/insertarClienteResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/eliminarClienteRequest", ReplyAction="softrh.services/ClienteWS/eliminarClienteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuario))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SoftRhBaseBO.Servicios.insertarClienteResponse insertarCliente(SoftRhBaseBO.Servicios.insertarClienteRequest request);
+        SoftRhBaseBO.Servicios.eliminarClienteResponse eliminarCliente(SoftRhBaseBO.Servicios.eliminarClienteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/insertarClienteRequest", ReplyAction="softrh.services/ClienteWS/insertarClienteResponse")]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarClienteResponse> insertarClienteAsync(SoftRhBaseBO.Servicios.insertarClienteRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="softrh.services/ClienteWS/eliminarClienteRequest", ReplyAction="softrh.services/ClienteWS/eliminarClienteResponse")]
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarClienteResponse> eliminarClienteAsync(SoftRhBaseBO.Servicios.eliminarClienteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4221,35 +4488,65 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCliente", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class eliminarClienteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCliente", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class insertarClienteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
+        public string arg0;
         
-        public eliminarClienteRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg4;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime arg5;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool arg6;
+        
+        public insertarClienteRequest() {
         }
         
-        public eliminarClienteRequest(int arg0) {
+        public insertarClienteRequest(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5, bool arg6) {
             this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
+            this.arg5 = arg5;
+            this.arg6 = arg6;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarClienteResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class eliminarClienteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarClienteResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class insertarClienteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarClienteResponse() {
+        public insertarClienteResponse() {
         }
         
-        public eliminarClienteResponse(int @return) {
+        public insertarClienteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4328,65 +4625,35 @@ namespace SoftRhBaseBO.Servicios {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCliente", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class insertarClienteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCliente", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class eliminarClienteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
+        public int arg0;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime arg5;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool arg6;
-        
-        public insertarClienteRequest() {
+        public eliminarClienteRequest() {
         }
         
-        public insertarClienteRequest(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5, bool arg6) {
+        public eliminarClienteRequest(int arg0) {
             this.arg0 = arg0;
-            this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
-            this.arg5 = arg5;
-            this.arg6 = arg6;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarClienteResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
-    public partial class insertarClienteResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarClienteResponse", WrapperNamespace="softrh.services", IsWrapped=true)]
+    public partial class eliminarClienteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="softrh.services", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarClienteResponse() {
+        public eliminarClienteResponse() {
         }
         
-        public insertarClienteResponse(int @return) {
+        public eliminarClienteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4463,26 +4730,38 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.eliminarClienteResponse SoftRhBaseBO.Servicios.ClienteWS.eliminarCliente(SoftRhBaseBO.Servicios.eliminarClienteRequest request) {
-            return base.Channel.eliminarCliente(request);
+        SoftRhBaseBO.Servicios.insertarClienteResponse SoftRhBaseBO.Servicios.ClienteWS.insertarCliente(SoftRhBaseBO.Servicios.insertarClienteRequest request) {
+            return base.Channel.insertarCliente(request);
         }
         
-        public int eliminarCliente(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarClienteRequest inValue = new SoftRhBaseBO.Servicios.eliminarClienteRequest();
+        public int insertarCliente(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5, bool arg6) {
+            SoftRhBaseBO.Servicios.insertarClienteRequest inValue = new SoftRhBaseBO.Servicios.insertarClienteRequest();
             inValue.arg0 = arg0;
-            SoftRhBaseBO.Servicios.eliminarClienteResponse retVal = ((SoftRhBaseBO.Servicios.ClienteWS)(this)).eliminarCliente(inValue);
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            inValue.arg6 = arg6;
+            SoftRhBaseBO.Servicios.insertarClienteResponse retVal = ((SoftRhBaseBO.Servicios.ClienteWS)(this)).insertarCliente(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarClienteResponse> SoftRhBaseBO.Servicios.ClienteWS.eliminarClienteAsync(SoftRhBaseBO.Servicios.eliminarClienteRequest request) {
-            return base.Channel.eliminarClienteAsync(request);
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarClienteResponse> SoftRhBaseBO.Servicios.ClienteWS.insertarClienteAsync(SoftRhBaseBO.Servicios.insertarClienteRequest request) {
+            return base.Channel.insertarClienteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarClienteResponse> eliminarClienteAsync(int arg0) {
-            SoftRhBaseBO.Servicios.eliminarClienteRequest inValue = new SoftRhBaseBO.Servicios.eliminarClienteRequest();
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarClienteResponse> insertarClienteAsync(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5, bool arg6) {
+            SoftRhBaseBO.Servicios.insertarClienteRequest inValue = new SoftRhBaseBO.Servicios.insertarClienteRequest();
             inValue.arg0 = arg0;
-            return ((SoftRhBaseBO.Servicios.ClienteWS)(this)).eliminarClienteAsync(inValue);
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            inValue.arg5 = arg5;
+            inValue.arg6 = arg6;
+            return ((SoftRhBaseBO.Servicios.ClienteWS)(this)).insertarClienteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4523,38 +4802,26 @@ namespace SoftRhBaseBO.Servicios {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SoftRhBaseBO.Servicios.insertarClienteResponse SoftRhBaseBO.Servicios.ClienteWS.insertarCliente(SoftRhBaseBO.Servicios.insertarClienteRequest request) {
-            return base.Channel.insertarCliente(request);
+        SoftRhBaseBO.Servicios.eliminarClienteResponse SoftRhBaseBO.Servicios.ClienteWS.eliminarCliente(SoftRhBaseBO.Servicios.eliminarClienteRequest request) {
+            return base.Channel.eliminarCliente(request);
         }
         
-        public int insertarCliente(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5, bool arg6) {
-            SoftRhBaseBO.Servicios.insertarClienteRequest inValue = new SoftRhBaseBO.Servicios.insertarClienteRequest();
+        public int eliminarCliente(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarClienteRequest inValue = new SoftRhBaseBO.Servicios.eliminarClienteRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            SoftRhBaseBO.Servicios.insertarClienteResponse retVal = ((SoftRhBaseBO.Servicios.ClienteWS)(this)).insertarCliente(inValue);
+            SoftRhBaseBO.Servicios.eliminarClienteResponse retVal = ((SoftRhBaseBO.Servicios.ClienteWS)(this)).eliminarCliente(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarClienteResponse> SoftRhBaseBO.Servicios.ClienteWS.insertarClienteAsync(SoftRhBaseBO.Servicios.insertarClienteRequest request) {
-            return base.Channel.insertarClienteAsync(request);
+        System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarClienteResponse> SoftRhBaseBO.Servicios.ClienteWS.eliminarClienteAsync(SoftRhBaseBO.Servicios.eliminarClienteRequest request) {
+            return base.Channel.eliminarClienteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.insertarClienteResponse> insertarClienteAsync(string arg0, string arg1, string arg2, string arg3, string arg4, System.DateTime arg5, bool arg6) {
-            SoftRhBaseBO.Servicios.insertarClienteRequest inValue = new SoftRhBaseBO.Servicios.insertarClienteRequest();
+        public System.Threading.Tasks.Task<SoftRhBaseBO.Servicios.eliminarClienteResponse> eliminarClienteAsync(int arg0) {
+            SoftRhBaseBO.Servicios.eliminarClienteRequest inValue = new SoftRhBaseBO.Servicios.eliminarClienteRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            inValue.arg5 = arg5;
-            inValue.arg6 = arg6;
-            return ((SoftRhBaseBO.Servicios.ClienteWS)(this)).insertarClienteAsync(inValue);
+            return ((SoftRhBaseBO.Servicios.ClienteWS)(this)).eliminarClienteAsync(inValue);
         }
     }
 }

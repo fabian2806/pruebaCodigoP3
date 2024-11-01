@@ -39,4 +39,13 @@ public class PrendaBO {
     public Prenda obtenerPorId(Integer idPrenda) {
         return this.prendaDAO.obtenerPorId(idPrenda);
     }
+    
+    public ArrayList<String> listarTipoPrenda(){
+        return this.prendaDAO.listarTipoPrenda();
+    }
+    
+    public ArrayList<Prenda> listarPrendasPorTipo(String tipoSeleccionado) {
+        return this.prendaDAO.listarPrendasPorTipo(tipoSeleccionado);
+    }
+    
 }

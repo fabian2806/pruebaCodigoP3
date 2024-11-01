@@ -4,8 +4,12 @@
   <xs:element name="eliminarPrendaResponse" type="tns:eliminarPrendaResponse" />
   <xs:element name="insertarPrenda" type="tns:insertarPrenda" />
   <xs:element name="insertarPrendaResponse" type="tns:insertarPrendaResponse" />
+  <xs:element name="listarPrendasPorTipo" type="tns:listarPrendasPorTipo" />
+  <xs:element name="listarPrendasPorTipoResponse" type="tns:listarPrendasPorTipoResponse" />
   <xs:element name="listarPrendasTodas" type="tns:listarPrendasTodas" />
   <xs:element name="listarPrendasTodasResponse" type="tns:listarPrendasTodasResponse" />
+  <xs:element name="listarTipoPrenda" type="tns:listarTipoPrenda" />
+  <xs:element name="listarTipoPrendaResponse" type="tns:listarTipoPrendaResponse" />
   <xs:element name="modificarPrenda" type="tns:modificarPrenda" />
   <xs:element name="modificarPrendaResponse" type="tns:modificarPrendaResponse" />
   <xs:element name="obtenerPrendaPorId" type="tns:obtenerPrendaPorId" />
@@ -33,6 +37,14 @@
       <xs:element minOccurs="0" name="stock" type="xs:int" />
       <xs:element minOccurs="0" name="talla" type="tns:talla" />
       <xs:element minOccurs="0" name="tipo" type="tns:tipoPrenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTipoPrenda">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTipoPrendaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerPrendaPorId">
@@ -92,6 +104,16 @@
   <xs:complexType name="modificarPrendaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasPorTipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasPorTipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:prenda" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="genero">
