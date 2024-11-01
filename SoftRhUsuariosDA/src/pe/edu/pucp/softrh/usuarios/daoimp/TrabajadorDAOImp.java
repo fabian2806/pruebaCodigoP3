@@ -107,7 +107,7 @@ public class TrabajadorDAOImp implements TrabajadorDAO {
         
         parameters[0] = idTrabajador;
         
-        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_TRABAJADORES_X_ID", parameters);
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_TRABAJADOR_X_ID", parameters);
         try {
             while (rs.next()){
                 trabajador.setIdUsuario(rs.getInt("idUsuario"));

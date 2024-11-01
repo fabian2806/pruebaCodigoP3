@@ -9,34 +9,34 @@ public class OrdenCompra {
     private Integer idOrden;
     private Date fechaRegistro;
     private Date fechaProcesado;
-    private Date fechaEntregado;
-    private Date fechaAnulado;
+	private Date fechaEntregado;
+	private Date fechaAnulado;
     private Estado estado;
     private String dni;
     private String correo;
     private Double subtotal;
-    private Cliente cliente;
-    private Cupon cupon;
-    private Carrito carrito;
-    private Comprobante comprobante;
-    private ArrayList<PrendaSeleccionada> prendas;
+	private Cliente cliente;
+	private Cupon cupon;
+	private Carrito carrito;
+	private Comprobante comprobante;
+	private ArrayList<PrendaSeleccionada> prendas;
 
-    public OrdenCompra() {}
+	public OrdenCompra() {}
 
     public OrdenCompra(Date fechaRegistro, String dni, String correo, Double subtotal, Cliente cliente, Carrito carrito) {
-        this.fechaRegistro = fechaRegistro;
-        this.fechaProcesado = null;
-        this.fechaEntregado = null;
-        this.fechaAnulado = null;
+		this.fechaRegistro = fechaRegistro;
+		this.fechaProcesado = null;
+		this.fechaEntregado = null;
+		this.fechaAnulado = null;
         this.estado = Estado.Registrado;
         this.dni = dni;
         this.correo = correo;
         this.subtotal = subtotal;
-        this.cliente = cliente;
-        this.cupon = null;
-        this.carrito = carrito;
-        this.comprobante = null;
-        this.prendas = new ArrayList<>();
+		this.cliente = cliente;
+		this.cupon = null;
+		this.carrito = carrito;
+		this.comprobante = null;
+		this.prendas = new ArrayList<>();
     }
 
     public Integer getIdOrden() {

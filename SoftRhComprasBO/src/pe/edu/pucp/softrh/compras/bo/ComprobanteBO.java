@@ -6,7 +6,7 @@ import pe.edu.pucp.softrh.compras.daoimp.ComprobanteDAOImp;
 import pe.edu.pucp.softrh.compras.model.Comprobante;
 
 public class ComprobanteBO {
-	private ComprobanteDAO comprobanteDAO;//
+	private ComprobanteDAO comprobanteDAO;
 
     public ComprobanteBO(){
         this.comprobanteDAO = new ComprobanteDAOImp();

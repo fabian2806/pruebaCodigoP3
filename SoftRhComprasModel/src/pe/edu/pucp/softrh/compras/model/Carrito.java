@@ -1,24 +1,21 @@
 package pe.edu.pucp.softrh.compras.model;
 
 import java.util.ArrayList;
-import pe.edu.pucp.softrh.usuarios.model.Cliente;
 
 public class Carrito {
     private Integer idCarrito;
     private Integer cantidadTotal;
     private Double precioTotal;
-    private Cliente cliente;
-    //private OrdenCompra orden;
-    private ArrayList<PrendaSeleccionada> prendas;
+	private OrdenCompra orden;
+	private ArrayList<PrendaSeleccionada> prendas;
 
 	public Carrito() {}
 
-    public Carrito(Integer cantidadTotal, Double precioTotal, Cliente cliente) {
+    public Carrito(Integer cantidadTotal, Double precioTotal) {
         this.cantidadTotal = cantidadTotal;
         this.precioTotal = precioTotal;
-        //this.orden = null;
-        this.cliente = cliente;
-        this.prendas = new ArrayList<>();
+		this.orden = null;
+		this.prendas = new ArrayList<>();
     }
 
     public Integer getIdCarrito() {
@@ -43,36 +40,29 @@ public class Carrito {
 
     public void setPrecioTotal(Double precioTotal) {
         this.precioTotal = precioTotal;
-    }
+	}
 
-//    public OrdenCompra getOrden() {
-//            return orden;
-//    }
-//
-//    public void setOrden(OrdenCompra orden) {
-//            this.orden = orden;
-//    }
-    
-    public Cliente getCliente() {
-            return cliente;    
-    }
+	public OrdenCompra getOrden() {
+		return orden;
+	}
 
-    public void setCliente(Cliente cliente) {
-            this.cliente = cliente;
-    }
-    public void agregarPrendas(PrendaSeleccionada prenda) {
-            prendas.add(prenda);
-    }
+	public void setOrden(OrdenCompra orden) {
+		this.orden = orden;
+	}
 
-    public void calcularCantidadTotal() {
-            setCantidadTotal(prendas.size());
-    }
+	public void agregarPrendas(PrendaSeleccionada prenda) {
+		prendas.add(prenda);
+	}
 
-    public void calcularPrecioTotal() {
-            Double precio = 0.0;
-            for(PrendaSeleccionada prenda : prendas) {
-                    precio += prenda.getPrecio();
-            }
-            setPrecioTotal(precio);
-    }
+	public void calcularCantidadTotal() {
+		setCantidadTotal(prendas.size());
+	}
+
+	public void calcularPrecioTotal() {
+		Double precio = 0.0;
+		for(PrendaSeleccionada prenda : prendas) {
+			precio += prenda.getPrecio();
+		}
+		setPrecioTotal(precio);
+	}
 }

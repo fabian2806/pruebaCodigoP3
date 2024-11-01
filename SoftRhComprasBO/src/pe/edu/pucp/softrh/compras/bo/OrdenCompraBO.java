@@ -1,12 +1,9 @@
 package pe.edu.pucp.softrh.compras.bo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import pe.edu.pucp.softrh.compras.dao.OrdenCompraDAO;
 import pe.edu.pucp.softrh.compras.daoimp.OrdenCompraDAOImp;
-import pe.edu.pucp.softrh.compras.model.Carrito;
 import pe.edu.pucp.softrh.compras.model.OrdenCompra;
-import pe.edu.pucp.softrh.usuarios.model.Cliente;
 
 public class OrdenCompraBO {
 	private OrdenCompraDAO ordenCompraDAO;
@@ -15,10 +12,8 @@ public class OrdenCompraBO {
         this.ordenCompraDAO = new OrdenCompraDAOImp();
     }
 
-    public Integer insertar(Date fechaRegistro, String dni, String correo, Double subtotal, 
-            Cliente cliente, Carrito carrito) {
-        OrdenCompra orden = new OrdenCompra(fechaRegistro,dni,correo,subtotal,cliente,carrito);
-        return this.ordenCompraDAO.insertar((OrdenCompra)orden);
+    public Integer insertar(OrdenCompra orden) {
+        return this.ordenCompraDAO.insertar(orden);
     }
 
     public Integer modificar(OrdenCompra orden){
