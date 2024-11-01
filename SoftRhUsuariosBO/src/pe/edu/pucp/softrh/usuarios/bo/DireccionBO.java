@@ -20,7 +20,8 @@ public class DireccionBO {
 
 	public Integer modificar(Integer idDireccion, String direc, String distrito, String provincia, String departamente, String codigoPostal, String referencia, Cliente cliente) {
 		Direccion direccion = new Direccion(direc, distrito, provincia, departamente, codigoPostal, referencia, cliente);
-		return direccionDAO.modificar(direccion);
+		direccion.setIdDireccion(idDireccion);
+                return direccionDAO.modificar(direccion);
 	}
 
 	public Integer eliminar(Integer idDireccion) {

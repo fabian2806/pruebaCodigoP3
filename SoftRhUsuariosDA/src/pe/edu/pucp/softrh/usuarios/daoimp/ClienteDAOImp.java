@@ -104,7 +104,7 @@ public class ClienteDAOImp implements ClienteDAO {
         
         parameters[0] = idCliente;
         
-        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_CLIENTES_X_ID", parameters);
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_CLIENTE_X_ID", parameters);
         
         try {
             while (rs.next()){
@@ -114,7 +114,7 @@ public class ClienteDAOImp implements ClienteDAO {
                 cliente.setApellidos(rs.getString("apellidos"));
                 cliente.setCorreo(rs.getString("correo"));
                 cliente.setContrasenha(rs.getString("contrasenha"));
-                cliente.setTelefono(rs.getString(""));
+                cliente.setTelefono(rs.getString("telefono"));
                 cliente.setFechaRegistro(rs.getDate("fechaRegistro"));
                 cliente.setRecibePromociones(rs.getBoolean("recibePromociones"));
             }
