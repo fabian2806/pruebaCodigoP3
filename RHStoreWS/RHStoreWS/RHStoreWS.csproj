@@ -61,9 +61,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\GestionarPrendas.aspx" />
     <Content Include="Admin\Home.aspx" />
     <Content Include="Admin\IniciarSesion.aspx" />
     <Content Include="Admin\RecuperarContrasenha.aspx" />
+    <Content Include="Admin\RegistroPrendas.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -148,6 +150,9 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\GestionarPrendas.aspx.designer.cs">
+      <DependentUpon>GestionarPrendas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,6 +173,13 @@
     </Compile>
     <Compile Include="Admin\RecuperarContrasenha.aspx.designer.cs">
       <DependentUpon>RecuperarContrasenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegistroPrendas.aspx.cs">
+      <DependentUpon>RegistroPrendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegistroPrendas.aspx.designer.cs">
+      <DependentUpon>RegistroPrendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\rhstorews\\rhstorews\\admin\\registroprendas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\admin\\registroprendas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|RHStoreWS||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\rhstorews\\admin\\admin.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\admin\\admin.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\rhstorews\\rhstorews\\admin\\gestionarprendas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\admin\\gestionarprendas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\rhstorews\\rhstorews\\admin\\iniciarsesion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\admin\\iniciarsesion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62B5C6F3-4980-4946-8E5C-17F0BF1261EE}|RHStoreUsuariosBO\\RHStoreUsuariosBO.csproj|C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\rhstoreusuariosbo\\usuariobo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62B5C6F3-4980-4946-8E5C-17F0BF1261EE}|RHStoreUsuariosBO\\RHStoreUsuariosBO.csproj|solutionrelative:rhstoreusuariosbo\\usuariobo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\fabian\\desktop\\pucp\\8vo ciclo\\programaci\u00F3n 3\\proyecto github\\rhstorews\\rhstorews\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|909d16b3-c8e8-43d1-a2b8-26ea0d4b6b57"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 216,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegistroPrendas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\RegistroPrendas.aspx.cs",
+              "RelativeDocumentMoniker": "RHStoreWS\\Admin\\RegistroPrendas.aspx.cs",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\RegistroPrendas.aspx.cs",
+              "RelativeToolTip": "RHStoreWS\\Admin\\RegistroPrendas.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T17:39:31.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GestionarPrendas.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\GestionarPrendas.aspx",
+              "RelativeDocumentMoniker": "RHStoreWS\\Admin\\GestionarPrendas.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\GestionarPrendas.aspx",
+              "RelativeToolTip": "RHStoreWS\\Admin\\GestionarPrendas.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-01T17:39:07.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IniciarSesion.aspx",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\IniciarSesion.aspx",
+              "RelativeDocumentMoniker": "RHStoreWS\\Admin\\IniciarSesion.aspx",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\IniciarSesion.aspx",
+              "RelativeToolTip": "RHStoreWS\\Admin\\IniciarSesion.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-01T17:31:02.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioBO.cs",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreUsuariosBO\\UsuarioBO.cs",
+              "RelativeDocumentMoniker": "RHStoreUsuariosBO\\UsuarioBO.cs",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreUsuariosBO\\UsuarioBO.cs",
+              "RelativeToolTip": "RHStoreUsuariosBO\\UsuarioBO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T17:25:25.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Admin.Master",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\Admin.Master",
+              "RelativeDocumentMoniker": "RHStoreWS\\Admin\\Admin.Master",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\Admin\\Admin.Master",
+              "RelativeToolTip": "RHStoreWS\\Admin\\Admin.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-01T17:20:55.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RHStoreWS",
+              "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\RHStoreWS.csproj",
+              "RelativeDocumentMoniker": "RHStoreWS\\RHStoreWS.csproj",
+              "ToolTip": "C:\\Users\\FABIAN\\Desktop\\PUCP\\8vo Ciclo\\Programaci\u00F3n 3\\Proyecto GitHub\\RHStoreWS\\RHStoreWS\\RHStoreWS.csproj",
+              "RelativeToolTip": "RHStoreWS\\RHStoreWS.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-01T17:19:21.608Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
