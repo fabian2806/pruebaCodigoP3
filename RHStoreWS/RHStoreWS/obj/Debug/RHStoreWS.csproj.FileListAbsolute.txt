@@ -22,3 +22,20 @@ C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHSto
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.Up2Date
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.dll
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreWS.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreWS.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreWS.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreComprasBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStorePrendasBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreUsuariosBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreComprasBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStorePrendasBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\bin\RHStoreUsuariosBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.Up2Date
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.pdb

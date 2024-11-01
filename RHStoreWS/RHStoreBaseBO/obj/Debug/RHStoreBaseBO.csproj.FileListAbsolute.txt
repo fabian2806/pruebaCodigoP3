@@ -5,3 +5,10 @@ C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\R
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.csproj.CoreCompileInputs.cache
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.dll
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.pdb

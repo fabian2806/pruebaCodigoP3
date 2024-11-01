@@ -8,3 +8,13 @@ C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Deb
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreU.FA134165.Up2Date
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.dll
 C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreUsuariosBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreUsuariosBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreU.FA134165.Up2Date
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.pdb
