@@ -1,0 +1,10 @@
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreUsuariosBO.dll
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreUsuariosBO.pdb
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.csproj.AssemblyReference.cache
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.csproj.CoreCompileInputs.cache
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreU.FA134165.Up2Date
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.dll
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.pdb

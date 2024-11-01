@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="RHStoreWS.Admin.Admin" %>
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta name="viewport" content="with=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<link href="../Content/bootstrap.css" rel="stylesheet" />
+	<link href="../Content/styles.css" rel="stylesheet" />
+	<link href="../Content/Fonts/css/all.css" rel="stylesheet" />
+
+	<script src="../Scripts/bootstrap.js"></script>
+	<script src="../Scripts/bootstrap.bundle.js"></script>
+	<script src="../Scripts/jquery-3.7.1.js"></script>
+
+    <title>
+        <asp:ContentPlaceHolder ID="cphTitulo" runat="server"></asp:ContentPlaceHolder>
+    </title>
+
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="cphContenido" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
