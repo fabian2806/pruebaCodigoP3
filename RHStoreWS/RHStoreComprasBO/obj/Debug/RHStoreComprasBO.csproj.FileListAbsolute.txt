@@ -1,0 +1,20 @@
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreComprasBO.dll
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreComprasBO.pdb
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.csproj.AssemblyReference.cache
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.csproj.CoreCompileInputs.cache
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreC.F7D3BA7A.Up2Date
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.dll
+C:\Users\alex\Documents\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreComprasBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreComprasBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreC.F7D3BA7A.Up2Date
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.pdb

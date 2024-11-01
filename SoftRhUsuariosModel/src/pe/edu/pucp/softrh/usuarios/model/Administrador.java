@@ -26,6 +26,13 @@ public class Administrador extends Usuario implements Funciones {
 	public void crearTrabajador() {}
 	public void crearCliente() {}
 
+        @Override
+        public String toString(){
+            String cadena = super.toString();
+            return cadena + ", fechaCreacion = " + fechaCreacion + ".";
+        }
+        
+        
 	@Override
 	public void crearPrenda() {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

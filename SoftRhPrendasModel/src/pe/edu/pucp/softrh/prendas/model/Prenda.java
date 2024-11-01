@@ -16,7 +16,7 @@ public class Prenda {
     private Integer stock;
     private Integer cantVendida;
     private Boolean activo;
-    private ArrayList<Promocion> promociones;
+	private ArrayList<Promocion> promociones;
 
     public Prenda() {
 		this.idPrenda = null;
