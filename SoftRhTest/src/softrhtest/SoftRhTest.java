@@ -20,6 +20,7 @@ import pe.edu.pucp.softrh.usuarios.bo.ClienteBO;
 import pe.edu.pucp.softrh.usuarios.bo.CuponBO;
 import pe.edu.pucp.softrh.usuarios.bo.DireccionBO;
 import pe.edu.pucp.softrh.usuarios.bo.TrabajadorBO;
+import pe.edu.pucp.softrh.usuarios.model.Administrador;
 import pe.edu.pucp.softrh.usuarios.model.Cliente;
 import pe.edu.pucp.softrh.usuarios.model.Cupon;
 import pe.edu.pucp.softrh.usuarios.model.Direccion;
@@ -60,25 +61,43 @@ public class SoftRhTest {
         // Insertar administrador
         resultado = administradorBO.insertar("12345678", "Alex Ismael", "Calero Revilla", "alex@gmail.com", "calerinho", sdf.parse("2024-10-10"));
         System.out.println(resultado);
+        resultado = administradorBO.insertar("23291023", "Percy", "Marca Rojas", "percymr@gmail.com", "osorizado", sdf.parse("2024-10-11"));
+        System.out.println(resultado);
+        resultado = administradorBO.insertar("23281102", "Axel Edu", "Huaripata", "axeleduh@gmail.com", "imthelex", sdf.parse("2024-10-21"));
+        System.out.println(resultado);
+        
+        // Modificar administrador
+        resultado = administradorBO.modificar(2, "12345678", "Lionel", "Messi", "hola2022@gmail.com", "ydaleU", sdf.parse("2024-11-11"));
+        System.out.println(resultado);
+        
+        //Eliminar administrador
+        resultado = administradorBO.eliminar(3);
+        System.out.println(resultado);
+        
+        // Listar administradores
+        ArrayList<Administrador> administradores = administradorBO.listarTodos();
+        for (Administrador a : administradores) {
+            System.out.println(a.toString());
+        }
 
+        // Obtener direccion por id
+        Administrador adminBuscado = administradorBO.obtenerPorId(1);
+        System.out.println(adminBuscado.toString());
+        
+        
         // Insertar trabajador
         resultado = trabajadorBO.insertar("23456789", "Mikler Jr", "Diaz Perez", "mikler@gmail.com", "tenis1234", "Cajero", 850.00, sdf.parse("2024-10-10"), LocalTime.of(8, 0), LocalTime.of(17, 0));
         System.out.println(resultado);
-
-        Trabajador trabajador1 = new Trabajador("23456789", "Mikler Jr", "Diaz Perez", "mikler@gmail.com", "tenis1234", "Cajero", 850.00, sdf.parse("2024-10-10"), LocalTime.of(8, 0), LocalTime.of(17, 0));
-        trabajador1.setIdUsuario(2);
-
+        Trabajador trabajador1 = trabajadorBO.obtenerPorId(resultado);
+        
         // Insertar cliente
         resultado = clienteBO.insertar("32457612", "Jean Paul", "Tomasto Cordova", "jp@gmail.com", "lonchera", new Date(), true);
         System.out.println(resultado);
+        Cliente cliente1 = clienteBO.obtenerPorId(resultado);
         resultado = clienteBO.insertar("98765432", "Fabián", "Montenegro", "fmontenegro@gmail.com", "po123", sdf.parse("2024-09-22"), false);
         System.out.println(resultado);
-
-        Cliente cliente1 = new Cliente("32457612", "Jean Paul", "Tomasto Cordova", "jp@gmail.com", "lonchera", new Date(), true);
-        cliente1.setIdUsuario(3);
-        Cliente cliente2 = new Cliente("98765432", "Fabián", "Montenegro", "fmontenegro@gmail.com", "po123", sdf.parse("2024-09-22"), false);
-        cliente2.setIdUsuario(4);
-
+        Cliente cliente2 = clienteBO.obtenerPorId(resultado);
+        
         // Insertar direccion
         resultado = direccionBO.insertar("Calle Las Rosas", "San Miguel", "Lima", "Lima", "Lima3", "Cruce de las avenidas La Marina con Universitaria", cliente1);
         System.out.println(resultado);
@@ -105,6 +124,7 @@ public class SoftRhTest {
         Direccion direcBuscada = direccionBO.obtenerPorId(1);
         System.out.println(direcBuscada.toString());
 
+        
         // Insertar cupon
         resultado = cuponBO.insertar("COD001", "Cupon del 10% de dcto.", sdf.parse("2024-10-10"), sdf.parse("2024-12-31"), trabajador1);
         System.out.println(resultado);
@@ -122,15 +142,14 @@ public class SoftRhTest {
         System.out.println(resultado);
 
         // Listar cupones
-        
-		ArrayList<Cupon> cupones = cuponBO.listarTodos();
-		for(Cupon c : cupones)
-			System.out.println(c.toString());
-                        
-                        
-		// Obtener cupon por id
-		Cupon cuponBuscado = cuponBO.obtenerPorId(1);
-		System.out.println(cuponBuscado.toString());
+        ArrayList<Cupon> cupones = cuponBO.listarTodos();
+        for (Cupon c : cupones) {
+            System.out.println(c.toString());
+        }
+
+        // Obtener cupon por id
+        Cupon cuponBuscado = cuponBO.obtenerPorId(1);
+        System.out.println(cuponBuscado.toString());
          
     }
 
@@ -162,22 +181,21 @@ public class SoftRhTest {
         // Eliminar prenda
         resultado = prendaBO.eliminar(2);
         System.out.println(resultado);
-        
-        
-//         Listar prendas
+           
+//      Listar prendas
 		ArrayList<Prenda> prendas = prendaBO.listarTodos();
         for (Prenda p : prendas){
             System.out.println(p.toString());
         }
+        
         // Obtener prenda por id
         Prenda prendaBuscada = prendaBO.obtenerPorId(1);
         System.out.println(prendaBuscada.toString());
         
         
-        
         // Insertar promocion
-        Trabajador trabajador1 = new Trabajador("23456789", "Mikler Jr", "Diaz Perez", "mikler@gmail.com", "tenis1234", "Cajero", 850.00, sdf.parse("2024-10-10"), LocalTime.of(8, 0), LocalTime.of(17, 0));
-        trabajador1.setIdUsuario(2);
+        TrabajadorBO trabajadorBO = new TrabajadorBO();
+        Trabajador trabajador1 = trabajadorBO.obtenerPorId(2);
 
         resultado = promocionBO.insertar("Dia del niño", "Promoción por el día del niño", 20.0, TipoPromocion.Porcentaje, sdf.parse("2024-03-1"), sdf.parse("2024-04-1"), trabajador1, prenda1);
         System.out.println(resultado);
@@ -189,14 +207,17 @@ public class SoftRhTest {
         // Modificar promocion
         resultado = promocionBO.modificar(1, "Año Nuevo", "Promocion por año nuevo", 15.0, TipoPromocion.MontoFijo, sdf.parse("2024-12-20"), sdf.parse("2025-01-15"), trabajador1, prenda1);
         System.out.println(resultado);
+        
         // Eliminar promocion
         resultado = promocionBO.eliminar(2);
         System.out.println(resultado);
         
         // Listar promociones
-		ArrayList<Promocion> promociones = promocionBO.listarTodos();
-		for(Promocion p : promociones)
-			System.out.println(p.toString());
+        ArrayList<Promocion> promociones = promocionBO.listarTodos();
+        for (Promocion p : promociones) {
+            System.out.println(p.toString());
+        }
+
         // Obtener promocion por id
         Promocion promocionBuscada = promocionBO.obtenerPorId(1);
         System.out.println(promocionBuscada.toString());

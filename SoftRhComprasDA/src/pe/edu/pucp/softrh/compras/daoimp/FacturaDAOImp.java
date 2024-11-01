@@ -5,13 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.compras.dao.FacturaDAO;
 import pe.edu.pucp.softrh.compras.model.Factura;
-import pe.edu.pucp.softrh.database.config.DBManager;
 
 public class FacturaDAOImp implements FacturaDAO {
-    
-    private ResultSet rs;
-    private DBManager dbManager = DBManager.obtenerInstancia();
-    
+
     @Override
     public int insertar(Factura factura) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

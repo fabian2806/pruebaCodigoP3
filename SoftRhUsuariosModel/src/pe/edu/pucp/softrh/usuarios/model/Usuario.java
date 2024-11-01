@@ -83,4 +83,10 @@ public abstract class Usuario {
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
 	}
+        
+        @Override
+        public String toString(){
+            return "idUsuario=" + idUsuario + ", dni=" + dni + ", nombres=" + 
+                    nombres + ", apellidos="  + apellidos + ", correo=" + correo + ", contraseña=" + contrasenha;
+        }
 }

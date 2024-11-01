@@ -3,19 +3,17 @@ package pe.edu.pucp.softrh.compras.bo;
 import java.util.ArrayList;
 import pe.edu.pucp.softrh.compras.dao.PrendaSeleccionadaDAO;
 import pe.edu.pucp.softrh.compras.daoimp.PrendaSeleccionadaDAOImp;
-import pe.edu.pucp.softrh.compras.model.Carrito;
 import pe.edu.pucp.softrh.compras.model.PrendaSeleccionada;
 
 public class PrendaSeleccionadaBO {
-    private PrendaSeleccionadaDAO prendaSeleccionadaDAO;
+	private PrendaSeleccionadaDAO prendaSeleccionadaDAO;
 
     public PrendaSeleccionadaBO(){
         this.prendaSeleccionadaDAO = new PrendaSeleccionadaDAOImp();
     }
 
-    public Integer insertar(Integer cantidad, Double precio, Carrito carrito) {
-        PrendaSeleccionada prenda = new PrendaSeleccionada(cantidad,precio,carrito);
-        return this.prendaSeleccionadaDAO.insertar((PrendaSeleccionada)prenda);
+    public Integer insertar(PrendaSeleccionada prenda) {
+        return this.prendaSeleccionadaDAO.insertar(prenda);
     }
 
     public Integer modificar(PrendaSeleccionada prenda){
