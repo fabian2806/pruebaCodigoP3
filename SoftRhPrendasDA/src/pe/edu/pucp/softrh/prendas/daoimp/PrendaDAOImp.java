@@ -136,5 +136,56 @@ public class PrendaDAOImp implements PrendaDAO {
         return prenda;
     }
 
+    @Override
+    public ArrayList<String> listarTipoPrenda() {
+        ArrayList<String> tiposPrenda = new ArrayList<String>();
+        
+        for (TipoPrenda tipo : TipoPrenda.values()){
+            tiposPrenda.add(tipo.name());
+        }
+        
+        return tiposPrenda;
+    }
+    
+    
+    @Override
+    public ArrayList<Prenda> listarPrendasPorTipo(String tipoSeleccionado) {
+        ArrayList<Prenda> prendas = new ArrayList<Prenda>();
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_POR_TIPO", null);
+        try{
+            while(rs.next()){
+                Prenda prenda = new Prenda();
+                prenda.setIdPrenda(rs.getInt("idPrenda"));
+                prenda.setNombre(rs.getString("nombre"));
+                prenda.setDescripcion(rs.getString("descripcion"));
+                prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
+                prenda.setImagen(rs.getString("imagen"));
+                prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+                prenda.setGenero(Genero.valueOf(rs.getString("genero")));
+                prenda.setColor(rs.getString("color"));
+                prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
+                prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
+                prenda.setStock(rs.getInt("stock"));
+                prenda.setCantVendida(rs.getInt("cantVendida"));
+                //prenda.setActivo(rs.getBoolean("activo"));
+
+                prendas.add(prenda);
+            }
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(PrendaDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        return prendas;
+    }
+    
     
 }

@@ -33,5 +33,18 @@ namespace SoftRhPrendasBO
 		{
 			return PrendaWS.obtenerPrendaPorId(idPrenda);
 		}
-	}
+
+		public BindingList<String> listarTipoPrenda()
+		{
+			return new BindingList<String>(PrendaWS.listarTipoPrenda());
+		}
+
+        public BindingList<prenda> listarPrendasPorTipo(String tipoSeleccionado)
+        {
+            return new BindingList<prenda>(PrendaWS.listarPrendasPorTipo(tipoSeleccionado));
+        }
+
+
+
+    }
 }

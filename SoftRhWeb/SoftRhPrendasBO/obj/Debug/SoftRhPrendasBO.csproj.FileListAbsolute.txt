@@ -8,3 +8,13 @@ E:\Descargas\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.csproj.CoreComp
 E:\Descargas\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPr.8A0588F1.Up2Date
 E:\Descargas\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.dll
 E:\Descargas\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\bin\Debug\SoftRhPrendasBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\bin\Debug\SoftRhPrendasBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\bin\Debug\SoftRhBaseBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\bin\Debug\SoftRhBaseBO.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\bin\Debug\SoftRhBaseBO.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPr.8A0588F1.Up2Date
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhPrendasBO\obj\Debug\SoftRhPrendasBO.pdb

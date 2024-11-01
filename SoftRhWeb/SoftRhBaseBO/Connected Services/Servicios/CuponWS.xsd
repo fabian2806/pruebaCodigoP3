@@ -62,12 +62,14 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarCuponesTodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarCuponesTodosResponse">
+  <xs:complexType name="obtenerCuponPorId">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cupon" />
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerCuponPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cupon" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cupon">
@@ -79,14 +81,12 @@
       <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerCuponPorId">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:int" />
-    </xs:sequence>
+  <xs:complexType name="listarCuponesTodos">
+    <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="obtenerCuponPorIdResponse">
+  <xs:complexType name="listarCuponesTodosResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:cupon" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cupon" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarCupon">

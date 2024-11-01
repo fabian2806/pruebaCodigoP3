@@ -29,7 +29,7 @@
         <!-- Welcome Message -->
         <div class="welcome-section">
             <asp:Label ID="lblWelcome" runat="server" CssClass="welcome-message" Text="Bienvenido, Administrador: <span>Jean Paul 7v7</span>"></asp:Label>
-            <img src="Images/Paw.gif" width="50" />
+            <img src="/Images/Paw.gif" width="50" />
         </div>
 
 

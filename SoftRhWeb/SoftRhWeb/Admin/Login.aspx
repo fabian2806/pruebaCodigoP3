@@ -126,7 +126,7 @@
         <div class="login-container">
             <!-- Contenedor del personaje con ojos -->
             <div class="character-container">
-                <img src="Images/penguin.jpg"/>
+                <img src="/Images/penguin.jpg"/>
                 <div class="eye left"></div>
                 <div class="eye right"></div>
             </div>
