@@ -214,6 +214,10 @@ CREATE TABLE factura(
 -- ------------------------------------------------------------------------------------------
 -- Drop de procedimientos almacenados
 DROP PROCEDURE IF EXISTS INSERTAR_ADMINISTRADOR;
+DROP PROCEDURE IF EXISTS MODIFICAR_ADMINISTRADOR;
+DROP PROCEDURE IF EXISTS ELIMINAR_ADMINISTRADOR;
+DROP PROCEDURE IF EXISTS LISTAR_ADMINISTRADORES_TODOS;
+DROP PROCEDURE IF EXISTS LISTAR_ADMINISTRADOR_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_TRABAJADOR;
 DROP PROCEDURE IF EXISTS MODIFICAR_TRABAJADOR;
@@ -252,6 +256,9 @@ DROP PROCEDURE IF EXISTS MODIFICAR_PROMOCION;
 DROP PROCEDURE IF EXISTS ELIMINAR_PROMOCION;
 DROP PROCEDURE IF EXISTS LISTAR_PROMOCIONES_TODAS;
 DROP PROCEDURE IF EXISTS LISTAR_PROMOCION_X_ID;
+
+DROP PROCEDURE IF EXISTS VERIFICAR_INGRESO_USUARIO;
+DROP PROCEDURE IF EXISTS OBTENER_ROL_USUARIO;
 -- ------------------------------------------------------------------------------------------
 -- Procedimientos almacenados del paquete Usuarios
 DELIMITER $
@@ -265,9 +272,38 @@ CREATE PROCEDURE INSERTAR_ADMINISTRADOR(
     IN _fechaCreacion DATE
 )
 BEGIN
-    INSERT INTO usuario(dni, nombres, apellidos, correo, contrasenha, activo) VALUES (_dni, _nombres, _apellidos, _correo, _contrasenha, 1);
+    INSERT INTO usuario(dni, nombres, apellidos, correo, contrasenha, activo) VALUES (_dni, _nombres, _apellidos, _correo, MD5(_contrasenha), 1);
     SET _idAdministrador = @@last_insert_id;
     INSERT INTO administrador(idAdministrador, fechaCreacion) VALUES (_idAdministrador, _fechaCreacion);
+END$
+CREATE PROCEDURE MODIFICAR_ADMINISTRADOR(
+	IN _idAdministrador INT,
+    IN _dni VARCHAR(8),
+    IN _nombres VARCHAR(50),
+    IN _apellidos VARCHAR(50),
+    IN _correo VARCHAR(50),
+    IN _contrasenha VARCHAR(50),
+    IN _fechaCreacion DATE
+)
+BEGIN
+	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo, contrasenha = _contrasenha WHERE idUsuario = _idAdministrador;
+    UPDATE administrador SET fechaCreacion = _fechaCreacion WHERE idAdministrador = _idAdministrador;
+END$
+CREATE PROCEDURE ELIMINAR_ADMINISTRADOR(
+	IN _idAdministrador INT
+)
+BEGIN
+	UPDATE usuario SET activo = 0 WHERE idUsuario = _idAdministrador;
+END$
+CREATE PROCEDURE LISTAR_ADMINISTRADORES_TODOS()
+BEGIN
+	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE u.activo = 1;
+END$
+CREATE PROCEDURE LISTAR_ADMINISTRADOR_X_ID(
+	IN _idAdministrador INT
+)
+BEGIN
+	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idAdministrador AND u.activo = 1;
 END$
 
 
@@ -285,7 +321,7 @@ CREATE PROCEDURE INSERTAR_TRABAJADOR(
     IN _horarioFin TIME
 )
 BEGIN
-    INSERT INTO usuario(dni, nombres, apellidos, correo, contrasenha, activo) VALUES (_dni, _nombres, _apellidos, _correo, _contrasenha, 1);
+    INSERT INTO usuario(dni, nombres, apellidos, correo, contrasenha, activo) VALUES (_dni, _nombres, _apellidos, _correo, MD5(_contrasenha), 1);
     SET _idTrabajador = @@last_insert_id;
     INSERT INTO trabajador(idTrabajador, puesto, sueldo, fechaIngreso, horarioInicio, horarioFin) VALUES (_idTrabajador, _puesto, _sueldo, _fechaIngreso, _horarioInicio, _horarioFin);
 END$
@@ -336,7 +372,7 @@ CREATE PROCEDURE INSERTAR_CLIENTE(
     IN _recibePromociones BOOLEAN
 )
 BEGIN
-    INSERT INTO usuario(dni, nombres, apellidos, correo, contrasenha, activo) VALUES (_dni, _nombres, _apellidos, _correo, _contrasenha, 1);
+    INSERT INTO usuario(dni, nombres, apellidos, correo, contrasenha, activo) VALUES (_dni, _nombres, _apellidos, _correo, MD5(_contrasenha), 1);
     SET _idCliente = @@last_insert_id;
     INSERT INTO cliente(idCliente, telefono, fechaRegistro, recibePromociones) VALUES (_idCliente, _telefono, _fechaRegistro, _recibePromociones);
     
@@ -575,4 +611,53 @@ CREATE PROCEDURE LISTAR_PROMOCION_X_ID(
 )
 BEGIN
 	SELECT idPromocion, fidTrabajador, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin FROM promocion WHERE idPromocion = _idPromocion AND activo = 1;
+END$
+
+DELIMITER $
+CREATE PROCEDURE VERIFICAR_INGRESO_USUARIO(
+	IN _correo VARCHAR(50),
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	DECLARE _idUsuario INT;
+
+    -- Obtener idUsuario si cumple con las credenciales y está activo
+    SELECT idUsuario INTO _idUsuario FROM usuario WHERE correo = _correo AND contrasenha = MD5(_contrasenha) AND activo = 1;
+    
+    -- Verificar si el idUsuario está en la tabla trabajador
+    IF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM trabajador WHERE idTrabajador = _idUsuario) THEN
+        SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, t.puesto, t.sueldo, t.fechaIngreso, t.horarioInicio, t.horarioFin FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idUsuario AND u.activo = 1;
+
+    -- Verificar si el idUsuario está en la tabla administrador
+    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
+        SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
+
+    -- En caso de que sea cliente o usuario no encontrado
+    ELSE
+        SELECT 0 AS idUsuario;
+    END IF;
+END$
+
+CREATE PROCEDURE OBTENER_ROL_USUARIO(
+	IN _correo VARCHAR(50),
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	DECLARE _idUsuario INT;
+
+    -- Obtener idUsuario si cumple con las credenciales y está activo
+    SELECT idUsuario INTO _idUsuario FROM usuario WHERE correo = _correo AND contrasenha = MD5(_contrasenha) AND activo = 1;
+    
+    -- Verificar si el idUsuario está en la tabla trabajador
+    IF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM trabajador WHERE idTrabajador = _idUsuario) THEN
+        SELECT 'Trabajador' as rol FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idUsuario AND u.activo = 1;
+
+    -- Verificar si el idUsuario está en la tabla administrador
+    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
+        SELECT 'Administrador' as rol FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
+
+    -- En caso de que sea cliente o usuario no encontrado
+    ELSE
+        SELECT 'Denegado' AS rol;
+    END IF;
 END$
