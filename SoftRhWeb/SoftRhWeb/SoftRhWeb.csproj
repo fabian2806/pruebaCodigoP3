@@ -66,8 +66,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RegistrarCupon.aspx" />
-    <Content Include="RegistrarUsuario.aspx" />
+    <Content Include="Admin\RegistrarCupon.aspx" />
+    <Content Include="Admin\RegistrarUsuario.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -109,13 +109,13 @@
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
     <Content Include="Content\site.css" />
-    <Content Include="GestionCupones.aspx" />
-    <Content Include="GestionDirecciones.aspx" />
-    <Content Include="GestionPrendas.aspx" />
-    <Content Include="GestionPromociones.aspx" />
-    <Content Include="GestionUsuarios.aspx" />
-    <Content Include="Home.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="Admin\GestionCupones.aspx" />
+    <Content Include="Admin\GestionDirecciones.aspx" />
+    <Content Include="Admin\GestionPrendas.aspx" />
+    <Content Include="Admin\GestionPromociones.aspx" />
+    <Content Include="Admin\GestionUsuarios.aspx" />
+    <Content Include="Admin\Home.aspx" />
+    <Content Include="Admin\Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -130,75 +130,75 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RegistrarCupon.aspx.cs">
+    <Compile Include="Admin\RegistrarCupon.aspx.cs">
       <DependentUpon>RegistrarCupon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegistrarCupon.aspx.designer.cs">
+    <Compile Include="Admin\RegistrarCupon.aspx.designer.cs">
       <DependentUpon>RegistrarCupon.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarUsuario.aspx.cs">
+    <Compile Include="Admin\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegistrarUsuario.aspx.designer.cs">
+    <Compile Include="Admin\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GestionCupones.aspx.cs">
+    <Compile Include="Admin\GestionCupones.aspx.cs">
       <DependentUpon>GestionCupones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GestionCupones.aspx.designer.cs">
+    <Compile Include="Admin\GestionCupones.aspx.designer.cs">
       <DependentUpon>GestionCupones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GestionDirecciones.aspx.cs">
+    <Compile Include="Admin\GestionDirecciones.aspx.cs">
       <DependentUpon>GestionDirecciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GestionDirecciones.aspx.designer.cs">
+    <Compile Include="Admin\GestionDirecciones.aspx.designer.cs">
       <DependentUpon>GestionDirecciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GestionPrendas.aspx.cs">
+    <Compile Include="Admin\GestionPrendas.aspx.cs">
       <DependentUpon>GestionPrendas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GestionPrendas.aspx.designer.cs">
+    <Compile Include="Admin\GestionPrendas.aspx.designer.cs">
       <DependentUpon>GestionPrendas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GestionPromociones.aspx.cs">
+    <Compile Include="Admin\GestionPromociones.aspx.cs">
       <DependentUpon>GestionPromociones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GestionPromociones.aspx.designer.cs">
+    <Compile Include="Admin\GestionPromociones.aspx.designer.cs">
       <DependentUpon>GestionPromociones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GestionUsuarios.aspx.cs">
+    <Compile Include="Admin\GestionUsuarios.aspx.cs">
       <DependentUpon>GestionUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GestionUsuarios.aspx.designer.cs">
+    <Compile Include="Admin\GestionUsuarios.aspx.designer.cs">
       <DependentUpon>GestionUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
+    <Compile Include="Admin\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
+    <Compile Include="Admin\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoftRhWeb.Master.cs">
+    <Compile Include="Admin\SoftRhWeb.Master.cs">
       <DependentUpon>SoftRhWeb.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SoftRhWeb.Master.designer.cs">
+    <Compile Include="Admin\SoftRhWeb.Master.designer.cs">
       <DependentUpon>SoftRhWeb.Master</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -248,7 +248,7 @@
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
-    <Content Include="SoftRhWeb.Master" />
+    <Content Include="Admin\SoftRhWeb.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

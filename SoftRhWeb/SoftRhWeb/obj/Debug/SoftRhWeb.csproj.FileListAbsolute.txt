@@ -221,3 +221,13 @@ C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.CoreCompil
 C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.Up2Date
 C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.dll
 C:\Users\ADMIN\Desktop\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.dll.config
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\SoftRhWeb.pdb
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.AssemblyReference.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.csproj.Up2Date
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.dll
+C:\Users\FABIAN\Desktop\PUCP\8vo Ciclo\Programación 3\Proyecto GitHub\SoftRhWeb\SoftRhWeb\obj\Debug\SoftRhWeb.pdb
