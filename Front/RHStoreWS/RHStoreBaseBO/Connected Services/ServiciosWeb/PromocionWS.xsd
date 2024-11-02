@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="softrh.services" targetNamespace="softrh.services" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarPromocion" type="tns:eliminarPromocion" />
+  <xs:element name="eliminarPromocionResponse" type="tns:eliminarPromocionResponse" />
+  <xs:element name="insertarPromocion" type="tns:insertarPromocion" />
+  <xs:element name="insertarPromocionResponse" type="tns:insertarPromocionResponse" />
+  <xs:element name="listarPromocionesTodas" type="tns:listarPromocionesTodas" />
+  <xs:element name="listarPromocionesTodasResponse" type="tns:listarPromocionesTodasResponse" />
+  <xs:element name="modificarPromocion" type="tns:modificarPromocion" />
+  <xs:element name="modificarPromocionResponse" type="tns:modificarPromocionResponse" />
+  <xs:element name="obtenerPromocionPorId" type="tns:obtenerPromocionPorId" />
+  <xs:element name="obtenerPromocionPorIdResponse" type="tns:obtenerPromocionPorIdResponse" />
+  <xs:complexType name="obtenerPromocionPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPromocionPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:promocion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="promocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idPromocion" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoPromocion" />
+      <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="trabajador">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="horarioFin" type="tns:localTime" />
+          <xs:element minOccurs="0" name="horarioInicio" type="tns:localTime" />
+          <xs:element minOccurs="0" name="puesto" type="xs:string" />
+          <xs:element minOccurs="0" name="sueldo" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="usuario" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="localTime" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPromocionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:double" />
+      <xs:element minOccurs="0" name="arg3" type="tns:tipoPromocion" />
+      <xs:element minOccurs="0" name="arg4" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg5" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg6" type="tns:trabajador" />
+      <xs:element minOccurs="0" name="arg7" type="tns:prenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="prenda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cantVendida" type="xs:int" />
+      <xs:element minOccurs="0" name="color" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="genero" type="tns:genero" />
+      <xs:element minOccurs="0" name="idPrenda" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="precioDescontado" type="xs:double" />
+      <xs:element minOccurs="0" name="precioOriginal" type="xs:double" />
+      <xs:element minOccurs="0" name="stock" type="xs:int" />
+      <xs:element minOccurs="0" name="talla" type="tns:talla" />
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoPrenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPromocionesTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPromocionesTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:double" />
+      <xs:element minOccurs="0" name="arg4" type="tns:tipoPromocion" />
+      <xs:element minOccurs="0" name="arg5" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg6" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg7" type="tns:trabajador" />
+      <xs:element minOccurs="0" name="arg8" type="tns:prenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPromocionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoPromocion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Porcentaje" />
+      <xs:enumeration value="MontoFijo" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="genero">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hombre" />
+      <xs:enumeration value="Mujer" />
+      <xs:enumeration value="Unisex" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="talla">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XS" />
+      <xs:enumeration value="S" />
+      <xs:enumeration value="M" />
+      <xs:enumeration value="L" />
+      <xs:enumeration value="XL" />
+      <xs:enumeration value="XXL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoPrenda">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Polo" />
+      <xs:enumeration value="Pantalon" />
+      <xs:enumeration value="Polera" />
+      <xs:enumeration value="Camisa" />
+      <xs:enumeration value="Casaca" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

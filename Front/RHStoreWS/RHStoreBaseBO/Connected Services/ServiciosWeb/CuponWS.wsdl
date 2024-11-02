@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="softrh.services" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="CuponWS" targetNamespace="softrh.services" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/CuponWS?xsd=1" namespace="softrh.services" />
+    </xsd:schema>
+  </types>
+  <message name="listarCuponesTodos">
+    <part name="parameters" element="tns:listarCuponesTodos" />
+  </message>
+  <message name="listarCuponesTodosResponse">
+    <part name="parameters" element="tns:listarCuponesTodosResponse" />
+  </message>
+  <message name="eliminarCupon">
+    <part name="parameters" element="tns:eliminarCupon" />
+  </message>
+  <message name="eliminarCuponResponse">
+    <part name="parameters" element="tns:eliminarCuponResponse" />
+  </message>
+  <message name="insertarCupon">
+    <part name="parameters" element="tns:insertarCupon" />
+  </message>
+  <message name="insertarCuponResponse">
+    <part name="parameters" element="tns:insertarCuponResponse" />
+  </message>
+  <message name="obtenerCuponPorId">
+    <part name="parameters" element="tns:obtenerCuponPorId" />
+  </message>
+  <message name="obtenerCuponPorIdResponse">
+    <part name="parameters" element="tns:obtenerCuponPorIdResponse" />
+  </message>
+  <message name="modificarCupon">
+    <part name="parameters" element="tns:modificarCupon" />
+  </message>
+  <message name="modificarCuponResponse">
+    <part name="parameters" element="tns:modificarCuponResponse" />
+  </message>
+  <portType name="CuponWS">
+    <operation name="listarCuponesTodos">
+      <input wsam:Action="softrh.services/CuponWS/listarCuponesTodosRequest" message="tns:listarCuponesTodos" />
+      <output wsam:Action="softrh.services/CuponWS/listarCuponesTodosResponse" message="tns:listarCuponesTodosResponse" />
+    </operation>
+    <operation name="eliminarCupon">
+      <input wsam:Action="softrh.services/CuponWS/eliminarCuponRequest" message="tns:eliminarCupon" />
+      <output wsam:Action="softrh.services/CuponWS/eliminarCuponResponse" message="tns:eliminarCuponResponse" />
+    </operation>
+    <operation name="insertarCupon">
+      <input wsam:Action="softrh.services/CuponWS/insertarCuponRequest" message="tns:insertarCupon" />
+      <output wsam:Action="softrh.services/CuponWS/insertarCuponResponse" message="tns:insertarCuponResponse" />
+    </operation>
+    <operation name="obtenerCuponPorId">
+      <input wsam:Action="softrh.services/CuponWS/obtenerCuponPorIdRequest" message="tns:obtenerCuponPorId" />
+      <output wsam:Action="softrh.services/CuponWS/obtenerCuponPorIdResponse" message="tns:obtenerCuponPorIdResponse" />
+    </operation>
+    <operation name="modificarCupon">
+      <input wsam:Action="softrh.services/CuponWS/modificarCuponRequest" message="tns:modificarCupon" />
+      <output wsam:Action="softrh.services/CuponWS/modificarCuponResponse" message="tns:modificarCuponResponse" />
+    </operation>
+  </portType>
+  <binding name="CuponWSPortBinding" type="tns:CuponWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarCuponesTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCupon">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCupon">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerCuponPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarCupon">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CuponWS">
+    <port name="CuponWSPort" binding="tns:CuponWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftRHWS/CuponWS" />
+    </port>
+  </service>
+</definitions>

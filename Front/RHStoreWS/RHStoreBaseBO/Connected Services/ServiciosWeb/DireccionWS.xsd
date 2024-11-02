@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="softrh.services" targetNamespace="softrh.services" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarDireccion" type="tns:eliminarDireccion" />
+  <xs:element name="eliminarDireccionResponse" type="tns:eliminarDireccionResponse" />
+  <xs:element name="insetarDireccion" type="tns:insetarDireccion" />
+  <xs:element name="insetarDireccionResponse" type="tns:insetarDireccionResponse" />
+  <xs:element name="listarDireccionesTodas" type="tns:listarDireccionesTodas" />
+  <xs:element name="listarDireccionesTodasResponse" type="tns:listarDireccionesTodasResponse" />
+  <xs:element name="modificarDireccion" type="tns:modificarDireccion" />
+  <xs:element name="modificarDireccionResponse" type="tns:modificarDireccionResponse" />
+  <xs:element name="obtenerDireccionPorId" type="tns:obtenerDireccionPorId" />
+  <xs:element name="obtenerDireccionPorIdResponse" type="tns:obtenerDireccionPorIdResponse" />
+  <xs:complexType name="listarDireccionesTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDireccionesTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:direccion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="direccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="codigoPostal" type="xs:string" />
+      <xs:element minOccurs="0" name="departamento" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="distrito" type="xs:string" />
+      <xs:element minOccurs="0" name="idDireccion" type="xs:int" />
+      <xs:element minOccurs="0" name="provincia" type="xs:string" />
+      <xs:element minOccurs="0" name="referencia" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="recibePromociones" type="xs:boolean" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="usuario" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDireccionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:string" />
+      <xs:element minOccurs="0" name="arg7" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarDireccionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insetarDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insetarDireccionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerDireccionPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerDireccionPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:direccion" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
