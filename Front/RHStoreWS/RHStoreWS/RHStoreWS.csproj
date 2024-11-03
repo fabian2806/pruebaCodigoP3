@@ -75,6 +75,7 @@
     <Content Include="Admin\GestionarTrabajadores.aspx" />
     <Content Include="Admin\Home.aspx" />
     <Content Include="Admin\IniciarSesion.aspx" />
+    <Content Include="Admin\ModificarContrasenha.aspx" />
     <Content Include="Admin\RecuperarContrasenha.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -258,6 +259,13 @@
     </Compile>
     <Compile Include="Admin\IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ModificarContrasenha.aspx.cs">
+      <DependentUpon>ModificarContrasenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ModificarContrasenha.aspx.designer.cs">
+      <DependentUpon>ModificarContrasenha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\RecuperarContrasenha.aspx.cs">
       <DependentUpon>RecuperarContrasenha.aspx</DependentUpon>

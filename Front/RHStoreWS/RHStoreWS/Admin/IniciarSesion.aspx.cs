@@ -2,6 +2,7 @@
 using RHStoreUsuariosBO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
@@ -24,22 +25,24 @@ namespace RHStoreWS.Admin
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-			usuarioBO = new UsuarioBO();
+            usuarioBO = new UsuarioBO();
             int resultado = usuarioBO.verificarIngresoUsuario(txtCorreo.Text, txtContrasenha.Text);
-            if(resultado != 0)
+            if (resultado != 0)
             {
                 string rol = usuarioBO.obtenerRolUsuario(txtCorreo.Text, txtContrasenha.Text);
-                if (rol == "administrador") {
+                if (rol == "administrador")
+                {
                     administradorBO = new AdministradorBO();
                     administrador _administrador = administradorBO.obtenerPorId(resultado);
                     Session["administrador"] = _administrador;
                 }
-                else if(rol == "trabajador")
-				{
+                else if (rol == "trabajador")
+                {
                     trabajadorBO = new TrabajadorBO();
                     trabajador _trabajador = trabajadorBO.obtenerPorId(resultado);
                     Session["trabajador"] = _trabajador;
                 }
+
                 FormsAuthenticationTicket tkt;
                 string cookiestr;
                 HttpCookie ck;
@@ -56,10 +59,12 @@ namespace RHStoreWS.Admin
                 if (strRedirect == null)
                     strRedirect = "Home.aspx?rol=" + rol;
                 Response.Redirect(strRedirect, true);
-            } else
+            }
+            else
             {
-                Response.Redirect("IniciarSesion.aspx");
+                lblError.Visible = true; // Muestra el mensaje de error
             }
         }
+
     }
 }

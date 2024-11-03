@@ -39,3 +39,37 @@ E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.cspro
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.Up2Date
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.dll
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.pdb
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreWS.dll.config
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreWS.dll
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreWS.pdb
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.dll
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreComprasBO.dll
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStorePrendasBO.dll
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreUsuariosBO.dll
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.pdb
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.dll.config
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreComprasBO.pdb
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStorePrendasBO.pdb
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\bin\RHStoreUsuariosBO.pdb
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.AssemblyReference.cache
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.CoreCompileInputs.cache
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.Up2Date
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.dll
+D:\TA\pruebaCodigoP3-alex\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.pdb
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreWS.dll.config
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreWS.dll
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreWS.pdb
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.dll
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreComprasBO.dll
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStorePrendasBO.dll
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreUsuariosBO.dll
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.pdb
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreBaseBO.dll.config
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreComprasBO.pdb
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStorePrendasBO.pdb
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\bin\RHStoreUsuariosBO.pdb
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.AssemblyReference.cache
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.CoreCompileInputs.cache
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.csproj.Up2Date
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.dll
+E:\Descargas\Front\Front\RHStoreWS\RHStoreWS\obj\Debug\RHStoreWS.pdb

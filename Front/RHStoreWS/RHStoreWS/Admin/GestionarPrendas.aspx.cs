@@ -31,11 +31,9 @@ namespace RHStoreWS.Admin
 			}
 		}
 
-        protected void lbEliminar_Click(object sender, EventArgs e)
-        {
-			int idPrenda = Int32.Parse(((LinkButton)sender).CommandArgument);
-			this.prendaBO.eliminar(idPrenda);
-			Response.Redirect("GestionarPrendas.aspx");
+		protected void lbRegistrar_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("CrudPrendas.aspx");
 		}
 
 		protected void lbModificar_Click(object sender, EventArgs e)
@@ -46,9 +44,18 @@ namespace RHStoreWS.Admin
 			Response.Redirect("CrudPrendas.aspx?accion=modificar");
 		}
 
-		protected void btnInsertar_Click(object sender, EventArgs e)
+		protected void lbEliminar_Click(object sender, EventArgs e)
+        {
+			int idPrenda = Int32.Parse(((LinkButton)sender).CommandArgument);
+			this.prendaBO.eliminar(idPrenda);
+			Response.Redirect("GestionarPrendas.aspx");
+		}
+
+		protected void dgvPrendas_PageIndexChanging(object sender, GridViewPageEventArgs e)
 		{
-			Response.Redirect("CrudPrendas.aspx");
+			dgvPrendas.PageIndex = e.NewPageIndex;
+			dgvPrendas.DataSource = listaDePrendas;
+			dgvPrendas.DataBind();
 		}
 	}
 }

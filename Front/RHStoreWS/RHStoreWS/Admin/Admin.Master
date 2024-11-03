@@ -112,8 +112,8 @@
 							</button>
 							<ul class="dropdown-menu" aria-labelledby="btnUsuario">
 								<li><a class="dropdown-item" href="#">Perfil</a></li>
-								<li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
-								<li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+								<li><a class="dropdown-item" href="ModificarContrasenha.aspx">Cambiar Contraseña</a></li>
+								<li><a class="dropdown-item" href="IniciarSesion.aspx">Cerrar Sesión</a></li>
 							</ul>
 						</div>
 					</form>
