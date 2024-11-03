@@ -136,5 +136,46 @@ public class PrendaDAOImp implements PrendaDAO {
         return prenda;
     }
 
+	@Override
+	public ArrayList<Prenda> listarPorNombre(String nombre) {
+		ArrayList<Prenda> prendas = new ArrayList<Prenda>();
 
+		Object[] parameters = new Object[1];
+        parameters[0] = nombre;
+
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_X_NOMBRE", parameters);
+        try{
+            while(rs.next()){
+				Prenda prenda = new Prenda();
+
+				prenda.setIdPrenda(rs.getInt("idPrenda"));
+				prenda.setNombre(rs.getString("nombre"));
+				prenda.setDescripcion(rs.getString("descripcion"));
+				prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
+				prenda.setImagen(rs.getBytes("imagen"));
+				prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+				prenda.setGenero(Genero.valueOf(rs.getString("genero")));
+				prenda.setColor(rs.getString("color"));
+				prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
+				prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
+				prenda.setStock(rs.getInt("stock"));
+				prenda.setCantVendida(rs.getInt("cantVendida"));
+				prenda.setActivo(true);
+
+				prendas.add(prenda);
+            }
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(PrendaDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+		return prendas;
+	}
 }

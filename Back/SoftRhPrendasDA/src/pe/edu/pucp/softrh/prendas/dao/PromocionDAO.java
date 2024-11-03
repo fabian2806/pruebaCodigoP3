@@ -13,4 +13,6 @@ public interface PromocionDAO {
     ArrayList<Promocion> listarTodos();
 
     Promocion obtenerPorId(int idPromocion);
+
+	ArrayList<Promocion> listarPorNombre(String nombre);
 }

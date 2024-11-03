@@ -13,5 +13,15 @@ namespace RHStoreWS.Admin
 		{
 
 		}
+
+        protected void lbBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+		protected void lbRegistrar_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

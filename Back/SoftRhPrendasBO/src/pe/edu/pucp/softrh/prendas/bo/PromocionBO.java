@@ -38,4 +38,8 @@ public class PromocionBO {
     public Promocion obtenerPorId(Integer idPromocion) {
         return this.promocionDAO.obtenerPorId(idPromocion);
     }
+
+	public ArrayList<Promocion> listarPorNombre(String nombre) {
+        return this.promocionDAO.listarPorNombre(nombre);
+    }
 }

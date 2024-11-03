@@ -12,7 +12,6 @@ namespace RHStoreWS.Admin
 {
 	public partial class GestionarPrendas : System.Web.UI.Page
 	{
-
 		private PrendaBO prendaBO;
 		private BindingList<prenda> listaDePrendas;
 
@@ -57,5 +56,13 @@ namespace RHStoreWS.Admin
 			dgvPrendas.DataSource = listaDePrendas;
 			dgvPrendas.DataBind();
 		}
-	}
+
+        protected void lbBuscar_Click(object sender, EventArgs e)
+        {
+			string nombre = txtNombre.Text;
+			listaDePrendas = prendaBO.listarPorNombre(nombre);
+			dgvPrendas.DataSource = listaDePrendas;
+			dgvPrendas.DataBind();
+        }
+    }
 }

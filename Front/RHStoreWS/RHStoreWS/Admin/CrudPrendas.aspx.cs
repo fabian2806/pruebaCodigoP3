@@ -2,7 +2,6 @@
 using RHStorePrendasBO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -13,7 +12,6 @@ namespace RHStoreWS.Admin
 {
 	public partial class CrudPrendas : System.Web.UI.Page
 	{
-
 		private PrendaBO prendaBO;
 
 		public CrudPrendas()

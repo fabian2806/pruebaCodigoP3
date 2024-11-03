@@ -17,17 +17,17 @@
   <message name="eliminarTrabajadorResponse">
     <part name="parameters" element="tns:eliminarTrabajadorResponse" />
   </message>
-  <message name="obtenerTrabajadorPorId">
-    <part name="parameters" element="tns:obtenerTrabajadorPorId" />
-  </message>
-  <message name="obtenerTrabajadorPorIdResponse">
-    <part name="parameters" element="tns:obtenerTrabajadorPorIdResponse" />
-  </message>
   <message name="modificarTrabajador">
     <part name="parameters" element="tns:modificarTrabajador" />
   </message>
   <message name="modificarTrabajadorResponse">
     <part name="parameters" element="tns:modificarTrabajadorResponse" />
+  </message>
+  <message name="obtenerTrabajadorPorId">
+    <part name="parameters" element="tns:obtenerTrabajadorPorId" />
+  </message>
+  <message name="obtenerTrabajadorPorIdResponse">
+    <part name="parameters" element="tns:obtenerTrabajadorPorIdResponse" />
   </message>
   <message name="listarTrabajadoresTodos">
     <part name="parameters" element="tns:listarTrabajadoresTodos" />
@@ -44,13 +44,13 @@
       <input wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorRequest" message="tns:eliminarTrabajador" />
       <output wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorResponse" message="tns:eliminarTrabajadorResponse" />
     </operation>
-    <operation name="obtenerTrabajadorPorId">
-      <input wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest" message="tns:obtenerTrabajadorPorId" />
-      <output wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse" message="tns:obtenerTrabajadorPorIdResponse" />
-    </operation>
     <operation name="modificarTrabajador">
       <input wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorRequest" message="tns:modificarTrabajador" />
       <output wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorResponse" message="tns:modificarTrabajadorResponse" />
+    </operation>
+    <operation name="obtenerTrabajadorPorId">
+      <input wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest" message="tns:obtenerTrabajadorPorId" />
+      <output wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse" message="tns:obtenerTrabajadorPorIdResponse" />
     </operation>
     <operation name="listarTrabajadoresTodos">
       <input wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest" message="tns:listarTrabajadoresTodos" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerTrabajadorPorId">
+    <operation name="modificarTrabajador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarTrabajador">
+    <operation name="obtenerTrabajadorPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

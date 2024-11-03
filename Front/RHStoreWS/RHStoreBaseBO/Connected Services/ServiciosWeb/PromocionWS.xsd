@@ -4,20 +4,22 @@
   <xs:element name="eliminarPromocionResponse" type="tns:eliminarPromocionResponse" />
   <xs:element name="insertarPromocion" type="tns:insertarPromocion" />
   <xs:element name="insertarPromocionResponse" type="tns:insertarPromocionResponse" />
+  <xs:element name="listarPromocionesPorNombre" type="tns:listarPromocionesPorNombre" />
+  <xs:element name="listarPromocionesPorNombreResponse" type="tns:listarPromocionesPorNombreResponse" />
   <xs:element name="listarPromocionesTodas" type="tns:listarPromocionesTodas" />
   <xs:element name="listarPromocionesTodasResponse" type="tns:listarPromocionesTodasResponse" />
   <xs:element name="modificarPromocion" type="tns:modificarPromocion" />
   <xs:element name="modificarPromocionResponse" type="tns:modificarPromocionResponse" />
   <xs:element name="obtenerPromocionPorId" type="tns:obtenerPromocionPorId" />
   <xs:element name="obtenerPromocionPorIdResponse" type="tns:obtenerPromocionPorIdResponse" />
-  <xs:complexType name="obtenerPromocionPorId">
+  <xs:complexType name="listarPromocionesPorNombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerPromocionPorIdResponse">
+  <xs:complexType name="listarPromocionesPorNombreResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:promocion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocion" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="promocion">
@@ -58,6 +60,16 @@
   </xs:complexType>
   <xs:complexType name="localTime" final="extension restriction">
     <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerPromocionPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPromocionPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:promocion" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarPromocion">
     <xs:sequence>

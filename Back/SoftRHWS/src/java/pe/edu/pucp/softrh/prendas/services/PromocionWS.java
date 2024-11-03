@@ -44,4 +44,9 @@ public class PromocionWS {
 	public Promocion obtenerPromocionPorId(Integer idPromocion) {
 		return promocionBO.obtenerPorId(idPromocion);
 	}
+
+	@WebMethod(operationName = "listarPromocionesPorNombre")
+	public ArrayList<Promocion> listarPromocionesPorNombre(String nombre) {
+		return promocionBO.listarPorNombre(nombre);
+	}
 }

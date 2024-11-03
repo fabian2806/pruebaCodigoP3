@@ -4,6 +4,8 @@
   <xs:element name="eliminarPrendaResponse" type="tns:eliminarPrendaResponse" />
   <xs:element name="insertarPrenda" type="tns:insertarPrenda" />
   <xs:element name="insertarPrendaResponse" type="tns:insertarPrendaResponse" />
+  <xs:element name="listarPrendasPorNombre" type="tns:listarPrendasPorNombre" />
+  <xs:element name="listarPrendasPorNombreResponse" type="tns:listarPrendasPorNombreResponse" />
   <xs:element name="listarPrendasTodas" type="tns:listarPrendasTodas" />
   <xs:element name="listarPrendasTodasResponse" type="tns:listarPrendasTodasResponse" />
   <xs:element name="modificarPrenda" type="tns:modificarPrenda" />
@@ -33,6 +35,16 @@
       <xs:element minOccurs="0" name="stock" type="xs:int" />
       <xs:element minOccurs="0" name="talla" type="tns:talla" />
       <xs:element minOccurs="0" name="tipo" type="tns:tipoPrenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:prenda" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerPrendaPorId">

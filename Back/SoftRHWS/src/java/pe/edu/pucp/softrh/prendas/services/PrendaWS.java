@@ -43,4 +43,9 @@ public class PrendaWS {
 	public Prenda obtenerPrendaPorId(Integer idPrenda) {
 		return prendaBO.obtenerPorId(idPrenda);
 	}
+
+	@WebMethod(operationName = "listarPrendasPorNombre")
+	public ArrayList<Prenda> listarPrendasPorNombre(String nombre) {
+		return prendaBO.listarPorNombre(nombre);
+	}
 }

@@ -33,5 +33,10 @@ namespace RHStorePrendasBO
         {
             return PromocionWS.obtenerPromocionPorId(idPromocion);
         }
-    }
+
+		public BindingList<promocion> listarPorNombre(string nombre)
+		{
+			return new BindingList<promocion>(PromocionWS.listarPromocionesPorNombre(nombre));
+		}
+	}
 }

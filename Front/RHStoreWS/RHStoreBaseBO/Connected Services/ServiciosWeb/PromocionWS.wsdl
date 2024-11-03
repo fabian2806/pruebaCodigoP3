@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/PromocionWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
-  <message name="eliminarPromocion">
-    <part name="parameters" element="tns:eliminarPromocion" />
+  <message name="modificarPromocion">
+    <part name="parameters" element="tns:modificarPromocion" />
   </message>
-  <message name="eliminarPromocionResponse">
-    <part name="parameters" element="tns:eliminarPromocionResponse" />
+  <message name="modificarPromocionResponse">
+    <part name="parameters" element="tns:modificarPromocionResponse" />
   </message>
   <message name="insertarPromocion">
     <part name="parameters" element="tns:insertarPromocion" />
@@ -17,17 +17,11 @@
   <message name="insertarPromocionResponse">
     <part name="parameters" element="tns:insertarPromocionResponse" />
   </message>
-  <message name="modificarPromocion">
-    <part name="parameters" element="tns:modificarPromocion" />
+  <message name="eliminarPromocion">
+    <part name="parameters" element="tns:eliminarPromocion" />
   </message>
-  <message name="modificarPromocionResponse">
-    <part name="parameters" element="tns:modificarPromocionResponse" />
-  </message>
-  <message name="obtenerPromocionPorId">
-    <part name="parameters" element="tns:obtenerPromocionPorId" />
-  </message>
-  <message name="obtenerPromocionPorIdResponse">
-    <part name="parameters" element="tns:obtenerPromocionPorIdResponse" />
+  <message name="eliminarPromocionResponse">
+    <part name="parameters" element="tns:eliminarPromocionResponse" />
   </message>
   <message name="listarPromocionesTodas">
     <part name="parameters" element="tns:listarPromocionesTodas" />
@@ -35,31 +29,47 @@
   <message name="listarPromocionesTodasResponse">
     <part name="parameters" element="tns:listarPromocionesTodasResponse" />
   </message>
+  <message name="obtenerPromocionPorId">
+    <part name="parameters" element="tns:obtenerPromocionPorId" />
+  </message>
+  <message name="obtenerPromocionPorIdResponse">
+    <part name="parameters" element="tns:obtenerPromocionPorIdResponse" />
+  </message>
+  <message name="listarPromocionesPorNombre">
+    <part name="parameters" element="tns:listarPromocionesPorNombre" />
+  </message>
+  <message name="listarPromocionesPorNombreResponse">
+    <part name="parameters" element="tns:listarPromocionesPorNombreResponse" />
+  </message>
   <portType name="PromocionWS">
-    <operation name="eliminarPromocion">
-      <input wsam:Action="softrh.services/PromocionWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
-      <output wsam:Action="softrh.services/PromocionWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
+    <operation name="modificarPromocion">
+      <input wsam:Action="softrh.services/PromocionWS/modificarPromocionRequest" message="tns:modificarPromocion" />
+      <output wsam:Action="softrh.services/PromocionWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
     </operation>
     <operation name="insertarPromocion">
       <input wsam:Action="softrh.services/PromocionWS/insertarPromocionRequest" message="tns:insertarPromocion" />
       <output wsam:Action="softrh.services/PromocionWS/insertarPromocionResponse" message="tns:insertarPromocionResponse" />
     </operation>
-    <operation name="modificarPromocion">
-      <input wsam:Action="softrh.services/PromocionWS/modificarPromocionRequest" message="tns:modificarPromocion" />
-      <output wsam:Action="softrh.services/PromocionWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
-    </operation>
-    <operation name="obtenerPromocionPorId">
-      <input wsam:Action="softrh.services/PromocionWS/obtenerPromocionPorIdRequest" message="tns:obtenerPromocionPorId" />
-      <output wsam:Action="softrh.services/PromocionWS/obtenerPromocionPorIdResponse" message="tns:obtenerPromocionPorIdResponse" />
+    <operation name="eliminarPromocion">
+      <input wsam:Action="softrh.services/PromocionWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
+      <output wsam:Action="softrh.services/PromocionWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
     </operation>
     <operation name="listarPromocionesTodas">
       <input wsam:Action="softrh.services/PromocionWS/listarPromocionesTodasRequest" message="tns:listarPromocionesTodas" />
       <output wsam:Action="softrh.services/PromocionWS/listarPromocionesTodasResponse" message="tns:listarPromocionesTodasResponse" />
     </operation>
+    <operation name="obtenerPromocionPorId">
+      <input wsam:Action="softrh.services/PromocionWS/obtenerPromocionPorIdRequest" message="tns:obtenerPromocionPorId" />
+      <output wsam:Action="softrh.services/PromocionWS/obtenerPromocionPorIdResponse" message="tns:obtenerPromocionPorIdResponse" />
+    </operation>
+    <operation name="listarPromocionesPorNombre">
+      <input wsam:Action="softrh.services/PromocionWS/listarPromocionesPorNombreRequest" message="tns:listarPromocionesPorNombre" />
+      <output wsam:Action="softrh.services/PromocionWS/listarPromocionesPorNombreResponse" message="tns:listarPromocionesPorNombreResponse" />
+    </operation>
   </portType>
   <binding name="PromocionWSPortBinding" type="tns:PromocionWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarPromocion">
+    <operation name="modificarPromocion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +87,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPromocion">
+    <operation name="eliminarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPromocionesTodas">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +114,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPromocionesTodas">
+    <operation name="listarPromocionesPorNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

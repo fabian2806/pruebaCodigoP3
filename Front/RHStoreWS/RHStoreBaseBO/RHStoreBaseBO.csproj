@@ -146,7 +146,13 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarDireccionesTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPrendasPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPrendasTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPromocionesPorNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPromocionesTodasResponse.datasource">

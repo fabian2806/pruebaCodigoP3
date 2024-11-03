@@ -32,14 +32,17 @@ public class SoftRhTest {
     public static void main(String[] args) throws ParseException {
         testConexionDB();
 
-        System.out.println("Prueba 1: Usuarios\n");
-        testModuloUsuarios();
+//        System.out.println("Prueba 1: Usuarios\n");
+//        testModuloUsuarios();
+//
+//        System.out.print("Prueba 2: Prendas\n");
+//        testModuloPrendas();
+//
+//        System.out.println("Prueba 3: Verificacion de ingreso y roles\n");
+//		testModuloVerificacionIngresoConRol();
 
-        System.out.print("Prueba 2: Prendas\n");
-        testModuloPrendas();
-
-        System.out.println("Prueba 3: Verificacion de ingreso y roles\n");
-		testModuloVerificacionIngresoConRol();
+		System.out.println("Prueba 4: Listar por nombres\n");
+		testModuloListarPrendaPorNombre();
     }
 
     private static void testConexionDB() {
@@ -238,5 +241,12 @@ public class SoftRhTest {
 		rol = usuarioBO.obtenerRolUsuario("mikler@gmail.com", "tenis1234");
 		System.out.println(resultado);
 		System.out.println(rol);
+	}
+
+	private static void testModuloListarPrendaPorNombre() {
+		PrendaBO prendaBO = new PrendaBO();
+		ArrayList<Prenda> prendasCoincidentes = prendaBO.listarPorNombre("polo");
+		for(Prenda p : prendasCoincidentes)
+			System.out.println(p.toString());
 	}
 }

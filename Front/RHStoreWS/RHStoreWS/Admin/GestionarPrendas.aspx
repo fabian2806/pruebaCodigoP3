@@ -20,7 +20,7 @@
 						<asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
 					</div>
 					<div class="col-12 col-md-auto me-2 mt-3 mt-md-0">
-						<asp:LinkButton ID="lbBuscar" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass'></i> Buscar" />
+						<asp:LinkButton ID="lbBuscar" runat="server" CssClass="btn btn-info" Text="<i class='fa-solid fa-magnifying-glass'></i> Buscar" OnClick="lbBuscar_Click"/>
 					</div>
 					<div class="col-12 col-md text-md-end mt-3 mt-md-0">
 						<asp:LinkButton ID="lbRegistrar" runat="server" CssClass="btn btn-success" Text="<i class='fa-solid fa-plus'></i> Registrar Prenda" OnClick="lbRegistrar_Click" />
