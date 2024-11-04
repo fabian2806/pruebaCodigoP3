@@ -18,6 +18,11 @@ namespace RHStoreWS.Admin
         private AdministradorBO administradorBO;
         private TrabajadorBO trabajadorBO;
 
+        public IniciarSesion()
+        {
+            usuarioBO = new UsuarioBO();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
 		{
 
@@ -25,7 +30,7 @@ namespace RHStoreWS.Admin
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            usuarioBO = new UsuarioBO();
+            // Devuelve el ID del administrador o trabajador que esta iniciando sesion
             int resultado = usuarioBO.verificarIngresoUsuario(txtCorreo.Text, txtContrasenha.Text);
             if (resultado != 0)
             {
@@ -57,14 +62,13 @@ namespace RHStoreWS.Admin
                 string strRedirect;
                 strRedirect = Request["ReturnUrl"];
                 if (strRedirect == null)
-                    strRedirect = "Home.aspx?rol=" + rol;
+                    strRedirect = "Home.aspx";
                 Response.Redirect(strRedirect, true);
             }
             else
             {
-                lblError.Visible = true; // Muestra el mensaje de error
+                lblError.Visible = true;  // Muestra el mensaje de error
             }
         }
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="CrudPrendas.aspx.cs" Inherits="RHStoreWS.Admin.CrudPrendas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
-	Registrar Prenda
+	Registro o Modificación de Prenda
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
 </asp:Content>

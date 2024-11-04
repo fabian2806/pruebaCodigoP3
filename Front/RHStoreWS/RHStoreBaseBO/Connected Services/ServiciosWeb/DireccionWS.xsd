@@ -80,6 +80,16 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="obtenerDireccionPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerDireccionPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:direccion" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insetarDireccion">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
@@ -94,16 +104,6 @@
   <xs:complexType name="insetarDireccionResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerDireccionPorId">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerDireccionPorIdResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:direccion" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

@@ -18,16 +18,21 @@ namespace RHStoreWS.Admin
 		public GestionarPromociones()
 		{
 			promocionBO = new PromocionBO();
-			listaDePromociones = promocionBO.listarTodos();
 		}
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
-			{
-				dgvPromociones.DataSource = listaDePromociones;
-				dgvPromociones.DataBind();
-			}
+			listaDePromociones = promocionBO.listarTodos();
+			dgvPromociones.DataSource = listaDePromociones;
+			dgvPromociones.DataBind();
+		}
+
+		protected void lbBuscar_Click(object sender, EventArgs e)
+		{
+			string nombre = txtNombre.Text;
+			listaDePromociones = promocionBO.listarPorNombre(nombre);
+			dgvPromociones.DataSource = listaDePromociones;
+			dgvPromociones.DataBind();
 		}
 
 		protected void lbRegistrar_Click(object sender, EventArgs e)
@@ -53,15 +58,6 @@ namespace RHStoreWS.Admin
 		protected void dgvPromociones_PageIndexChanging(object sender, GridViewPageEventArgs e)
 		{
 			dgvPromociones.PageIndex = e.NewPageIndex;
-			dgvPromociones.DataSource = listaDePromociones;
-			dgvPromociones.DataBind();
-		}
-
-		protected void lbBuscar_Click(object sender, EventArgs e)
-		{
-			string nombre = txtNombre.Text;
-			listaDePromociones = promocionBO.listarPorNombre(nombre);
-			dgvPromociones.DataSource = listaDePromociones;
 			dgvPromociones.DataBind();
 		}
 	}

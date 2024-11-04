@@ -62,23 +62,6 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarCuponesTodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarCuponesTodosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cupon" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="cupon">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="codigo" type="xs:string" />
-      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="obtenerCuponPorId">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:int" />
@@ -87,6 +70,24 @@
   <xs:complexType name="obtenerCuponPorIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:cupon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cupon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idCupon" type="xs:int" />
+      <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCuponesTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCuponesTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cupon" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarCupon">

@@ -39,4 +39,12 @@ public class UsuarioBO {
 	public String obtenerRolUsuario(String correo, String contrasenha) {
 		return usuarioDAO.obtenerRolUsuario(correo, contrasenha);
 	}
+
+	public Integer verificarContrasenha(Integer idUsuario, String contrasenha) {
+		return usuarioDAO.verificarContrasenha(idUsuario, contrasenha);
+	}
+
+	public Integer cambiarContrasenha(Integer idUsuario, String contrasenhaNueva) {
+		return usuarioDAO.cambiarContrasenha(idUsuario, contrasenhaNueva);
+	}
 }

@@ -23,4 +23,14 @@ public class UsuarioWS {
 	public String obtenerRolUsuario(String correo, String contrasenha) {
 		return usuarioBO.obtenerRolUsuario(correo, contrasenha);
 	}
+
+	@WebMethod(operationName = "verificarContrasenha")
+	public Integer verificarContrasenha(Integer idUsuario, String contrasenha) {
+		return usuarioBO.verificarContrasenha(idUsuario, contrasenha);
+	}
+
+	@WebMethod(operationName = "cambiarContrasenha")
+	public Integer cambiarContrasenha(Integer idUsuario, String contrasenhaNueva) {
+		return usuarioBO.cambiarContrasenha(idUsuario, contrasenhaNueva);
+	}
 }

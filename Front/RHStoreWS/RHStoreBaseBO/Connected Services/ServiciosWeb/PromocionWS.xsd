@@ -32,6 +32,7 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="tipo" type="tns:tipoPromocion" />
       <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
+      <xs:element minOccurs="0" name="valorDescuento" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="trabajador">

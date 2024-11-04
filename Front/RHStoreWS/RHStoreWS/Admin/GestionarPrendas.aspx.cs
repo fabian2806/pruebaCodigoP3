@@ -18,16 +18,21 @@ namespace RHStoreWS.Admin
 		public GestionarPrendas()
 		{
 			prendaBO = new PrendaBO();
-			listaDePrendas = prendaBO.listarTodos();
 		}
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
-			{
-				dgvPrendas.DataSource = listaDePrendas;
-				dgvPrendas.DataBind();
-			}
+			listaDePrendas = prendaBO.listarTodos();
+			dgvPrendas.DataSource = listaDePrendas;
+			dgvPrendas.DataBind();
+		}
+
+		protected void lbBuscar_Click(object sender, EventArgs e)
+		{
+			string nombre = txtNombre.Text;
+			listaDePrendas = prendaBO.listarPorNombre(nombre);
+			dgvPrendas.DataSource = listaDePrendas;
+			dgvPrendas.DataBind();
 		}
 
 		protected void lbRegistrar_Click(object sender, EventArgs e)
@@ -53,16 +58,7 @@ namespace RHStoreWS.Admin
 		protected void dgvPrendas_PageIndexChanging(object sender, GridViewPageEventArgs e)
 		{
 			dgvPrendas.PageIndex = e.NewPageIndex;
-			dgvPrendas.DataSource = listaDePrendas;
 			dgvPrendas.DataBind();
 		}
-
-        protected void lbBuscar_Click(object sender, EventArgs e)
-        {
-			string nombre = txtNombre.Text;
-			listaDePrendas = prendaBO.listarPorNombre(nombre);
-			dgvPrendas.DataSource = listaDePrendas;
-			dgvPrendas.DataBind();
-        }
     }
 }

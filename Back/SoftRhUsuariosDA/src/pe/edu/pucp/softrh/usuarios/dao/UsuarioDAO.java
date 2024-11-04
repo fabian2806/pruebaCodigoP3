@@ -17,4 +17,8 @@ public interface UsuarioDAO {
     int verificarIngresoUsuario(String correo, String contrasenha);
 
 	String obtenerRolUsuario(String correo, String contrasenha);
+
+	int verificarContrasenha(Integer idUsuario, String contrasenha);
+
+	int cambiarContrasenha(Integer idUsuario, String nuevaContrasenha);
 }

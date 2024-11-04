@@ -153,9 +153,7 @@
                 </div>
 				
 				<!-- Mensaje de error -->
-				<asp:Label ID="lblError" runat="server" Text="Usuario o contraseña inválidos" 
-				           CssClass="text-danger" Visible="false" 
-				           style="color: red; font-weight: bold;"></asp:Label>
+				<asp:Label ID="lblError" runat="server" Text="Usuario o contraseña inválidos" CssClass="text-danger" Visible="false" style="color: red; font-weight: bold;"></asp:Label>
 				
 				<div class="text-center mt-3">
 					<asp:Button ID="btnIniciarSesion" runat="server" Text="Ingresar" CssClass="btn btn-primary w-100" OnClick="btnIniciarSesion_Click" />

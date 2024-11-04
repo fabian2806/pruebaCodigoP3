@@ -18,5 +18,15 @@ namespace RHStoreUsuariosBO
 		{
 			return UsuarioWS.obtenerRolUsuario(correo, contrasenha);
 		}
+
+		public int verificarContrasenha(int idUsuario, string contrasenha)
+		{
+			return UsuarioWS.verificarContrasenha(idUsuario, contrasenha);
+		}
+
+		public int cambiarContrasenha(int idUsuario, string contrasenhaNueva)
+		{
+			return UsuarioWS.cambiarContrasenha(idUsuario, contrasenhaNueva);
+		}
 	}
 }

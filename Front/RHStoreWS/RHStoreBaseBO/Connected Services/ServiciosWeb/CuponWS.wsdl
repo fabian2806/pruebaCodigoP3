@@ -5,17 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/CuponWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
-  <message name="modificarCupon">
-    <part name="parameters" element="tns:modificarCupon" />
+  <message name="obtenerCuponPorId">
+    <part name="parameters" element="tns:obtenerCuponPorId" />
   </message>
-  <message name="modificarCuponResponse">
-    <part name="parameters" element="tns:modificarCuponResponse" />
-  </message>
-  <message name="eliminarCupon">
-    <part name="parameters" element="tns:eliminarCupon" />
-  </message>
-  <message name="eliminarCuponResponse">
-    <part name="parameters" element="tns:eliminarCuponResponse" />
+  <message name="obtenerCuponPorIdResponse">
+    <part name="parameters" element="tns:obtenerCuponPorIdResponse" />
   </message>
   <message name="listarCuponesTodos">
     <part name="parameters" element="tns:listarCuponesTodos" />
@@ -29,20 +23,22 @@
   <message name="insertarCuponResponse">
     <part name="parameters" element="tns:insertarCuponResponse" />
   </message>
-  <message name="obtenerCuponPorId">
-    <part name="parameters" element="tns:obtenerCuponPorId" />
+  <message name="modificarCupon">
+    <part name="parameters" element="tns:modificarCupon" />
   </message>
-  <message name="obtenerCuponPorIdResponse">
-    <part name="parameters" element="tns:obtenerCuponPorIdResponse" />
+  <message name="modificarCuponResponse">
+    <part name="parameters" element="tns:modificarCuponResponse" />
+  </message>
+  <message name="eliminarCupon">
+    <part name="parameters" element="tns:eliminarCupon" />
+  </message>
+  <message name="eliminarCuponResponse">
+    <part name="parameters" element="tns:eliminarCuponResponse" />
   </message>
   <portType name="CuponWS">
-    <operation name="modificarCupon">
-      <input wsam:Action="softrh.services/CuponWS/modificarCuponRequest" message="tns:modificarCupon" />
-      <output wsam:Action="softrh.services/CuponWS/modificarCuponResponse" message="tns:modificarCuponResponse" />
-    </operation>
-    <operation name="eliminarCupon">
-      <input wsam:Action="softrh.services/CuponWS/eliminarCuponRequest" message="tns:eliminarCupon" />
-      <output wsam:Action="softrh.services/CuponWS/eliminarCuponResponse" message="tns:eliminarCuponResponse" />
+    <operation name="obtenerCuponPorId">
+      <input wsam:Action="softrh.services/CuponWS/obtenerCuponPorIdRequest" message="tns:obtenerCuponPorId" />
+      <output wsam:Action="softrh.services/CuponWS/obtenerCuponPorIdResponse" message="tns:obtenerCuponPorIdResponse" />
     </operation>
     <operation name="listarCuponesTodos">
       <input wsam:Action="softrh.services/CuponWS/listarCuponesTodosRequest" message="tns:listarCuponesTodos" />
@@ -52,23 +48,18 @@
       <input wsam:Action="softrh.services/CuponWS/insertarCuponRequest" message="tns:insertarCupon" />
       <output wsam:Action="softrh.services/CuponWS/insertarCuponResponse" message="tns:insertarCuponResponse" />
     </operation>
-    <operation name="obtenerCuponPorId">
-      <input wsam:Action="softrh.services/CuponWS/obtenerCuponPorIdRequest" message="tns:obtenerCuponPorId" />
-      <output wsam:Action="softrh.services/CuponWS/obtenerCuponPorIdResponse" message="tns:obtenerCuponPorIdResponse" />
+    <operation name="modificarCupon">
+      <input wsam:Action="softrh.services/CuponWS/modificarCuponRequest" message="tns:modificarCupon" />
+      <output wsam:Action="softrh.services/CuponWS/modificarCuponResponse" message="tns:modificarCuponResponse" />
+    </operation>
+    <operation name="eliminarCupon">
+      <input wsam:Action="softrh.services/CuponWS/eliminarCuponRequest" message="tns:eliminarCupon" />
+      <output wsam:Action="softrh.services/CuponWS/eliminarCuponResponse" message="tns:eliminarCuponResponse" />
     </operation>
   </portType>
   <binding name="CuponWSPortBinding" type="tns:CuponWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="modificarCupon">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarCupon">
+    <operation name="obtenerCuponPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerCuponPorId">
+    <operation name="modificarCupon">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCupon">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

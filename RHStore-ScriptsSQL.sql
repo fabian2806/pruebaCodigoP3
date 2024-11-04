@@ -261,6 +261,8 @@ DROP PROCEDURE IF EXISTS LISTAR_PROMOCION_X_ID;
 
 DROP PROCEDURE IF EXISTS VERIFICAR_INGRESO_USUARIO;
 DROP PROCEDURE IF EXISTS OBTENER_ROL_USUARIO;
+DROP PROCEDURE IF EXISTS VERIFICAR_CONTRASENHA;
+DROP PROCEDURE IF EXISTS CAMBIAR_CONTRASENHA;
 -- ------------------------------------------------------------------------------------------
 -- Procedimientos almacenados del paquete Usuarios
 DELIMITER $
@@ -674,4 +676,20 @@ BEGIN
     ELSE
         SELECT 'denegado' AS rol;
     END IF;
+END$
+
+CREATE PROCEDURE VERIFICAR_CONTRASENHA(
+	IN _idUsuario INT,
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	SELECT 1 AS resultado FROM usuario WHERE idUsuario = _idUsuario AND contrasenha = MD5(_contrasenha) AND activo = 1;
+END$
+
+CREATE PROCEDURE CAMBIAR_CONTRASENHA(
+	IN _idUsuario INT,
+    IN _contrasenhaNueva VARCHAR(50)
+)
+BEGIN
+	UPDATE usuario SET contrasenha = MD5(_contrasenhaNueva) WHERE idUsuario = _idUsuario AND activo = 1;
 END$

@@ -60,6 +60,15 @@ namespace RHStoreWS.Admin
 		protected global::System.Web.UI.WebControls.TextBox txtIdTrabajador;
 
 		/// <summary>
+		/// Control lbBuscarTrabajador.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton lbBuscarTrabajador;
+
+		/// <summary>
 		/// Control lblIdPrenda.
 		/// </summary>
 		/// <remarks>
@@ -76,6 +85,15 @@ namespace RHStoreWS.Admin
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtIdPrenda;
+
+		/// <summary>
+		/// Control lbBuscarPrenda.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton lbBuscarPrenda;
 
 		/// <summary>
 		/// Control lblNombrePromocion.
@@ -150,13 +168,13 @@ namespace RHStoreWS.Admin
 		protected global::System.Web.UI.WebControls.Label lblFechaInicio;
 
 		/// <summary>
-		/// Control txtFechaInicio.
+		/// Control dtpFechaInicio.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaInicio;
 
 		/// <summary>
 		/// Control lblFechaFin.
@@ -168,13 +186,13 @@ namespace RHStoreWS.Admin
 		protected global::System.Web.UI.WebControls.Label lblFechaFin;
 
 		/// <summary>
-		/// Control txtFechaFin.
+		/// Control dtpFechaFin.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
+		protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaFin;
 
 		/// <summary>
 		/// Control lblDescripcion.
@@ -211,5 +229,32 @@ namespace RHStoreWS.Admin
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.LinkButton lbGuardar;
+
+		/// <summary>
+		/// Control ModalTrabajador_txtNombreDniTrabajador.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox ModalTrabajador_txtNombreDniTrabajador;
+
+		/// <summary>
+		/// Control ModalTrabajador_lbBuscarTrabajador.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.LinkButton ModalTrabajador_lbBuscarTrabajador;
+
+		/// <summary>
+		/// Control ModalTrabajador_gvTrabajadores.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.GridView ModalTrabajador_gvTrabajadores;
 	}
 }

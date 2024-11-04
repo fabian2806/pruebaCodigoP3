@@ -29,15 +29,13 @@
 				<div class="row">
 					<asp:GridView ID="dgvPromociones" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="dgvPromociones_PageIndexChanging" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" ShowHeaderWhenEmpty="true">
 						<Columns>
-							<asp:BoundField HeaderText="ID" DataField="idPromocion" />
-
+							<asp:BoundField HeaderText="ID Trabajador" DataField="trabajador.idUsuario" />
 							<asp:BoundField HeaderText="Nombre" DataField="nombre" />
 							<asp:BoundField HeaderText="Descripción" DataField="descripcion" />
-
+							<asp:BoundField HeaderText="Valor Dscto." DataField="valorDescuento" />
 							<asp:BoundField HeaderText="Tipo" DataField="tipo" />
 							<asp:BoundField HeaderText="Fecha Inicio" DataField="fechaInicio" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
 							<asp:BoundField HeaderText="Fecha Fin" DataField="fechaFin" DataFormatString="{0:dd-MM-yyyy}" HtmlEncode="false" />
-
 							<asp:TemplateField>
 								<ItemTemplate>
 									<div style="display: inline-flex; align-items: center;">

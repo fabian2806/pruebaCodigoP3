@@ -120,6 +120,7 @@
     <Content Include="Images\PlaceHolder.jpg" />
     <Content Include="Content\styles.css" />
     <Content Include="Images\RHStoreLogo.jpg" />
+    <Content Include="Scripts\AdminModals\CrudPromociones.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -310,6 +311,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Scripts\UserModals\" />
     <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>

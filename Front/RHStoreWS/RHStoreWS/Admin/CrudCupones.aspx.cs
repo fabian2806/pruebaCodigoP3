@@ -13,5 +13,15 @@ namespace RHStoreWS.Admin
 		{
 
 		}
-	}
+
+        protected void lbRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarCupones.aspx");
+        }
+
+        protected void lbGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

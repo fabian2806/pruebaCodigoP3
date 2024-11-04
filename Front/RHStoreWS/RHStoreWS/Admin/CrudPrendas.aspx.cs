@@ -13,6 +13,8 @@ namespace RHStoreWS.Admin
 	public partial class CrudPrendas : System.Web.UI.Page
 	{
 		private PrendaBO prendaBO;
+		private prenda _prenda;
+		private bool estaModificando;
 
 		public CrudPrendas()
 		{
@@ -31,18 +33,20 @@ namespace RHStoreWS.Admin
 			if (accion != null && accion == "modificar")
 			{
 				lblTitulo.Text = "Modificación de Prenda";
-				prenda _prenda = (prenda)Session["prenda"];
-				cargarDatosDeLaBD(_prenda);
+				_prenda = (prenda)Session["prenda"];
+				cargarDatosDeLaBD();
 				cargarFoto(sender, e);
+				estaModificando = true;
 			}
 			else
 			{
 				lblTitulo.Text = "Registro de Prenda";
 				cargarFoto(sender, e);
+				estaModificando = false;
 			}
 		}
 
-		protected void cargarDatosDeLaBD(prenda _prenda)
+		protected void cargarDatosDeLaBD()
 		{
 			txtIdPrenda.Text = _prenda.idPrenda.ToString();
 			txtIdPrenda.Enabled = false;
@@ -67,14 +71,14 @@ namespace RHStoreWS.Admin
 				rbPolera.Checked = true;
 			else if (_prenda.tipo.ToString().Equals("Camisa"))
 				rbCamisa.Checked = true;
-			else if (_prenda.tipo.ToString().Equals("Casaca"))
+			else
 				rbCasaca.Checked = true;
 			
 			if (_prenda.genero.ToString().Equals("Hombre"))
 				rbHombre.Checked = true;
 			else if (_prenda.genero.ToString().Equals("Mujer"))
 				rbMujer.Checked = true;
-			else if (_prenda.genero.ToString().Equals("Unisex"))
+			else
 				rbUnisex.Checked = true;
 
 			txtColor.Text = _prenda.color;
@@ -148,8 +152,7 @@ namespace RHStoreWS.Admin
 			double precioOriginal = Double.Parse(txtPrecioOriginal.Text);
 			int stock = Int32.Parse(txtStock.Text);
 
-			string accion = Request.QueryString["accion"];
-			if (accion != null && accion == "modificar")
+			if (estaModificando == true)
 			{
 				int idPrenda = Int32.Parse(txtIdPrenda.Text);
 				double precioDescontado = Double.Parse(txtPrecioDescontado.Text);

@@ -83,6 +83,9 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.administrador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.cambiarContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.cliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -213,6 +216,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.trabajador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.verificarContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.verificarIngresoUsuarioResponse.datasource">

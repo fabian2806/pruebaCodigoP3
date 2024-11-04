@@ -38,7 +38,7 @@ public class Cupon {
 		return idCupon;
 	}
 
-	public void setIdCupon(int idCupon) {
+	public void setIdCupon(Integer idCupon) {
 		this.idCupon = idCupon;
 	}
 

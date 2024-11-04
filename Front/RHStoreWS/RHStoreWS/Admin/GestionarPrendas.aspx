@@ -29,16 +29,15 @@
 				<div class="row">
 					<asp:GridView ID="dgvPrendas" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="dgvPrendas_PageIndexChanging" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" ShowHeaderWhenEmpty="true">
 						<Columns>
-							<asp:BoundField HeaderText="ID" DataField="idPrenda" />
 							<asp:BoundField HeaderText="Nombre" DataField="nombre" />
-							<asp:BoundField HeaderText="Descripcion" DataField="descripcion" />
-							<asp:BoundField HeaderText="Tipo" DataField="tipo" />
+							<asp:BoundField HeaderText="Descripción" DataField="descripcion" />
 							<asp:BoundField HeaderText="Talla" DataField="talla" />
-							<asp:BoundField HeaderText="Genero" DataField="genero" />
+							<asp:BoundField HeaderText="Género" DataField="genero" />
 							<asp:BoundField HeaderText="Color" DataField="color" />
 							<asp:BoundField HeaderText="Stock" DataField="stock" />
-							<asp:BoundField HeaderText="PrecioOriginal" DataField="precioOriginal" />
-							<asp:BoundField HeaderText="PrecioDescontado" DataField="precioDescontado" />
+							<asp:BoundField HeaderText="Cant. Vendida" DataField="cantVendida" />
+							<asp:BoundField HeaderText="Prec. Original" DataField="precioOriginal" />
+							<asp:BoundField HeaderText="Prec. Descontado" DataField="precioDescontado" />
 							<asp:TemplateField>
 								<ItemTemplate>
 									<div style="display: inline-flex; align-items: center;">

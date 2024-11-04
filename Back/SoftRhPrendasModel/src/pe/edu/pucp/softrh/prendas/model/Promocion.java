@@ -67,7 +67,7 @@ public class Promocion {
         this.descripcion = descripcion;
     }
 
-    public double getValorDescuento() {
+    public Double getValorDescuento() {
         return valorDescuento;
     }
 
@@ -119,10 +119,14 @@ public class Promocion {
         prendas.add(prenda);
         prenda.aplicarPromocion(this);
     }
-    
+
     public Prenda getPrenda(int indice){
         return prendas.get(indice);
     }
+
+	public ArrayList<Prenda> getPrendas() {
+		return this.prendas;
+	}
 
     @Override
     public String toString() {
