@@ -13,21 +13,20 @@ namespace RHStoreWS.Cliente
         {
             if (!IsPostBack)
             {
-                // Aquí puedes cargar datos necesarios solo la primera vez que se carga la página
                 CargarDatosUsuario();
             }
         }
 
         private void CargarDatosUsuario()
         {
-            // Implementa la lógica para cargar datos del usuario
-            // Por ejemplo, mostrar el nombre del usuario si ha iniciado sesión
+            // Lógica para cargar datos del usuario
             if (Session["Usuario"] != null)
             {
                 string nombreUsuario = Session["Usuario"].ToString();
                 // Aquí puedes actualizar el encabezado o cualquier otro control con el nombre del usuario
             }
         }
+
 
     }
 }

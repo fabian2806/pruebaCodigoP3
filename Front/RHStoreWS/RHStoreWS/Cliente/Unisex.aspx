@@ -152,7 +152,7 @@
 
     <header>
         <div class="logo">
-            <a href="ClienteHome.aspx"><img src="../Images/logo.jpg" alt="Logo" class="logo" /></a>
+            <a href="ClienteHome.aspx"><img src="../Images/logo2.png" alt="Logo" class="logo" /></a>
         </div>
         <div class="header-content">
             <div class="search-container">

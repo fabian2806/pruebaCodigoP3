@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/Cliente/Cliente.master" AutoEventWireup="true" CodeBehind="ClienteHome.aspx.cs" Inherits="RHStoreWS.Cliente.ClienteHome" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         body {
             margin: 0;
@@ -33,7 +33,7 @@
             flex-direction: column;
             align-items: flex-start;
             margin-top: 100px;
-            margin-left: 120px;
+            margin-left: 180px;
         }
 
         nav {
@@ -124,13 +124,6 @@
             width: 100%;
         }
 
-        .product-category {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 40px;
-            width: 100%;
-        }
-
         .product {
             position: relative;
             text-align: center;
@@ -181,92 +174,45 @@
 
     <header>
         <div class="logo">
-            <a href="ClienteHome.aspx"><img src="../Images/logo.jpg" alt="Logo" class="logo" /></a>
+            <a href="ClienteHome.aspx"><img src="../Images/logo2.png" alt="Logo" class="logo" /></a>
         </div>
         <div class="nav-container">
             <nav>
                 <ul>
-                    <li><asp:LinkButton ID="btnInicio" runat="server" OnClick="btnInicio_Click">INICIO</asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnHombre" runat="server" OnClick="btnHombre_Click">HOMBRE</asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnMujer" runat="server" OnClick="btnMujer_Click">MUJER</asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnUnisex" runat="server" OnClick="btnUnisex_Click">UNISEX</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnInicio_Click">INICIO</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="btnHombre_Click">HOMBRE</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="LinkButton3" runat="server" OnClick="btnMujer_Click">MUJER</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="LinkButton4" runat="server" OnClick="btnUnisex_Click">UNISEX</asp:LinkButton></li>
                 </ul>
             </nav>
         </div>
         <div class="header-content">
             <div class="search-container">
-                <input type="text" placeholder="Buscar productos..." />
-                <button type="submit">Buscar</button>
+                <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control" placeholder="Buscar productos..." />
+                <asp:LinkButton ID="lbBuscar" runat="server" CssClass="btn btn-info" Text="Buscar" OnClick="lbBuscar_Click" />
             </div>
-                <div class="user-options">
-                    <asp:LinkButton ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click">INICIAR SESIÓN</asp:LinkButton>
-                    <asp:LinkButton ID="btnCarrito" runat="server" OnClick="btnCarrito_Click">CARRITO</asp:LinkButton>
-                </div>
+            <div class="user-options">
+                <asp:LinkButton ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click">INICIAR SESIÓN</asp:LinkButton>
+                <a href="javascript:void(0);" onclick="toggleCartSummary()">CARRITO</a>
+            </div>
         </div>
     </header>
 
     <!-- Sección de Productos -->
     <div class="products">
-        <div class="product-category">
-            <div class="product">
-                <div class="add-to-cart">
-                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
+        <asp:Repeater ID="RepeaterPrendas" runat="server">
+            <ItemTemplate>
+                <div class="product">
+                    <div class="add-to-cart">
+                        <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
+                    </div>
+                    <img src='<%# Eval("imagen", "{0}") %>' alt='<%# Eval("nombre") %>' />
+                    <p><%# Eval("nombre") %></p>
+                    <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
+                    <p>Colores disponibles: <%# Eval("color") %></p>
                 </div>
-                <img src="../Images/CamisaHombre.jpg" alt="Camisa Hombre" />
-                <p>Polo Regular Fit</p>
-                <p>S/ 22.00 <s>S/ 24.95</s> -12%</p>
-                <p>Colores disponibles: Rojo, Azul, Verde</p>
-            </div>
-            <div class="product">
-                <div class="add-to-cart">
-                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
-                </div>
-                <img src="../Images/PantalonHombre.jpg" alt="Pantalón Hombre" />
-                <p>Pantalón Clásico</p>
-                <p>S/ 40.00</p>
-                <p>Colores disponibles: Negro, Caqui</p>
-            </div>
-        </div>
-        <div class="product-category">
-            <div class="product">
-                <div class="add-to-cart">
-                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
-                </div>
-                <img src="../Images/CardiganMujer.jpg" alt="Cardigan Mujer" />
-                <p>Cardigan Suave</p>
-                <p>S/ 35.00</p>
-                <p>Colores disponibles: Gris, Rosa</p>
-            </div>
-            <div class="product">
-                <div class="add-to-cart">
-                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
-                </div>
-                <img src="../Images/PantalonMujer.jpg" alt="Pantalón Mujer" />
-                <p>Pantalón Elegante</p>
-                <p>S/ 45.00</p>
-                <p>Colores disponibles: Azul, Negro</p>
-            </div>
-        </div>
-        <div class="product-category">
-            <div class="product">
-                <div class="add-to-cart">
-                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
-                </div>
-                <img src="../Images/CamisaHombre.jpg" alt="Camisa Hombre" />
-                <p>Camisa de Moda</p>
-                <p>S/ 22.00 <s>S/ 24.95</s> -12%</p>
-                <p>Colores disponibles: Rojo, Azul, Verde</p>
-            </div>
-            <div class="product">
-                <div class="add-to-cart">
-                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
-                </div>
-                <img src="../Images/PantalonMujer.jpg" alt="Pantalón Mujer" />
-                <p>Pantalón Moderno</p>
-                <p>S/ 45.00</p>
-                <p>Colores disponibles: Negro, Caqui</p>
-            </div>
-        </div>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 
     <!-- Pie de página -->

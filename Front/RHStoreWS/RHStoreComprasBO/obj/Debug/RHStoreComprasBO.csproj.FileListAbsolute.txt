@@ -18,3 +18,13 @@ E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreC
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreC.F7D3BA7A.Up2Date
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.dll
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreComprasBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreComprasBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.csproj.AssemblyReference.cache
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.csproj.CoreCompileInputs.cache
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreC.F7D3BA7A.Up2Date
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreComprasBO\obj\Debug\RHStoreComprasBO.pdb

@@ -152,19 +152,19 @@
 
     <header>
         <div class="logo">
-            <a href="ClienteHome.aspx"><img src="../Images/logo.jpg" alt="Logo" class="logo" /></a>
+            <a href="ClienteHome.aspx"><img src="../Images/logo2.png" alt="Logo" class="logo" /></a>
         </div>
         <div class="header-content">
             <div class="search-container">
                 <input type="text" placeholder="Buscar productos..." />
                 <button type="submit">Buscar</button>
             </div>
-                <div class="user-options">
-                    <asp:LinkButton ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click">INICIAR SESIÓN</asp:LinkButton>
-                    <!-- Contenedor de filtros y productos <asp:LinkButton ID="btnCarrito" runat="server" OnClick="btnCarrito_Click">CARRITO</asp:LinkButton> -->
-                    <a href="javascript:void(0);" onclick="toggleCartSummary()">CARRITO</a>
+            <div class="user-options">
+                <asp:LinkButton ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click">INICIAR SESIÓN</asp:LinkButton>
+                <!-- Contenedor de filtros y productos <asp:LinkButton ID="btnCarrito" runat="server" OnClick="btnCarrito_Click">CARRITO</asp:LinkButton> -->
+                <a href="javascript:void(0);" onclick="toggleCartSummary()">CARRITO</a>
 
-                </div>
+            </div>
         </div>
     </header>
 

@@ -12,3 +12,10 @@ E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBase
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.csproj.CoreCompileInputs.cache
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.dll
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.csproj.AssemblyReference.cache
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.csproj.CoreCompileInputs.cache
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreBaseBO\obj\Debug\RHStoreBaseBO.pdb

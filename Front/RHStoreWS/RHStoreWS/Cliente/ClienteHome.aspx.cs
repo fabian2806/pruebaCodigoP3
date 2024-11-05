@@ -1,5 +1,8 @@
-﻿using System;
+﻿using RHStoreBaseBO.ServiciosWeb;
+using RHStorePrendasBO;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,11 +12,47 @@ namespace RHStoreWS.Cliente
 {
     public partial class ClienteHome : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        private PrendaBO prendaBO;
+        private BindingList<prenda> listaDePrendas;
+
+        public ClienteHome()
         {
-            // Cualquier lógica de inicialización que necesites
+            prendaBO = new PrendaBO();
         }
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CargarPrendas();
+            }
+        }
+
+        private void CargarPrendas()
+        {
+            // Cargar todas las prendas usando el procedimiento almacenado
+            listaDePrendas = new BindingList<prenda>(prendaBO.listarTodos());
+
+            // Enlazar los datos al control de visualización, como un Repeater o un GridView
+            RepeaterPrendas.DataSource = listaDePrendas;
+            RepeaterPrendas.DataBind();
+        }
+        protected void lbBuscar_Click(object sender, EventArgs e)
+        {
+            string nombreBuscado = txtBuscar.Text.Trim();
+            if (!string.IsNullOrEmpty(nombreBuscado))
+            {
+                // Llamar al procedimiento almacenado para buscar prendas
+                listaDePrendas = new BindingList<prenda>(prendaBO.listarPorNombre(nombreBuscado)); // Cambia por tu método
+                RepeaterPrendas.DataSource = listaDePrendas;
+                RepeaterPrendas.DataBind();
+            }
+            else
+            {
+                // Si no hay texto, cargar todas las prendas
+                CargarPrendas();
+            }
+        }
         protected void RedirectToPage(string pageName)
         {
             Response.Redirect(pageName);

@@ -15,40 +15,58 @@ namespace RHStoreWS.Cliente
     {
 
         /// <summary>
-        /// Control btnInicio.
+        /// Control LinkButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnInicio;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
 
         /// <summary>
-        /// Control btnHombre.
+        /// Control LinkButton2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnHombre;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
 
         /// <summary>
-        /// Control btnMujer.
+        /// Control LinkButton3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnMujer;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
 
         /// <summary>
-        /// Control btnUnisex.
+        /// Control LinkButton4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnUnisex;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
+
+        /// <summary>
+        /// Control txtBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
+
+        /// <summary>
+        /// Control lbBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbBuscar;
 
         /// <summary>
         /// Control btnIniciarSesion.
@@ -60,12 +78,12 @@ namespace RHStoreWS.Cliente
         protected global::System.Web.UI.WebControls.LinkButton btnIniciarSesion;
 
         /// <summary>
-        /// Control btnCarrito.
+        /// Control RepeaterPrendas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCarrito;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterPrendas;
     }
 }

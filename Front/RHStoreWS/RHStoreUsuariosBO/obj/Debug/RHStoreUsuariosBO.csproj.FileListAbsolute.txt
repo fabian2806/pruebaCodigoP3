@@ -18,3 +18,13 @@ E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStore
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreU.FA134165.Up2Date
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.dll
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreUsuariosBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreUsuariosBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.csproj.AssemblyReference.cache
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.csproj.CoreCompileInputs.cache
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreU.FA134165.Up2Date
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.dll
+C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStoreUsuariosBO\obj\Debug\RHStoreUsuariosBO.pdb
