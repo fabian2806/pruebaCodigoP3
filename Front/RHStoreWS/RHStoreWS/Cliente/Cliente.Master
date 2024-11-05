@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Cliente.master.cs" Inherits="RHStoreWS.Cliente.Cliente" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <!-- Inclusión de Bootstrap CSS y Font Awesome -->
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/styles.css" rel="stylesheet" />
+    <link href="../Content/Fonts/css/all.css" rel="stylesheet" />
+    <!-- Inclusión de jQuery y Bootstrap JS -->
+    <script src="../Scripts/jquery-3.7.1.js"></script>
+    <script src="../Scripts/bootstrap.bundle.js"></script>
+    <title>RH Store</title>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <main>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+    </form>
+
+
+</body>
+</html>

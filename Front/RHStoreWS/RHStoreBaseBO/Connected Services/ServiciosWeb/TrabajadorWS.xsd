@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="softrh.services" targetNamespace="softrh.services" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarTrabajador" type="tns:eliminarTrabajador" />
+  <xs:element name="eliminarTrabajadorResponse" type="tns:eliminarTrabajadorResponse" />
+  <xs:element name="insertarTrabajador" type="tns:insertarTrabajador" />
+  <xs:element name="insertarTrabajadorResponse" type="tns:insertarTrabajadorResponse" />
+  <xs:element name="listarTrabajadoresTodos" type="tns:listarTrabajadoresTodos" />
+  <xs:element name="listarTrabajadoresTodosResponse" type="tns:listarTrabajadoresTodosResponse" />
+  <xs:element name="modificarTrabajador" type="tns:modificarTrabajador" />
+  <xs:element name="modificarTrabajadorResponse" type="tns:modificarTrabajadorResponse" />
+  <xs:element name="obtenerTrabajadorPorId" type="tns:obtenerTrabajadorPorId" />
+  <xs:element name="obtenerTrabajadorPorIdResponse" type="tns:obtenerTrabajadorPorIdResponse" />
+  <xs:complexType name="insertarTrabajador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:double" />
+      <xs:element minOccurs="0" name="arg7" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg8" type="tns:localTime" />
+      <xs:element minOccurs="0" name="arg9" type="tns:localTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="localTime" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarTrabajadorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerTrabajadorPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerTrabajadorPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:trabajador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="trabajador">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="horarioFin" type="tns:localTime" />
+          <xs:element minOccurs="0" name="horarioInicio" type="tns:localTime" />
+          <xs:element minOccurs="0" name="puesto" type="xs:string" />
+          <xs:element minOccurs="0" name="sueldo" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="usuario" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTrabajador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTrabajadorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTrabajador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:string" />
+      <xs:element minOccurs="0" name="arg7" type="xs:double" />
+      <xs:element minOccurs="0" name="arg8" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg9" type="tns:localTime" />
+      <xs:element minOccurs="0" name="arg10" type="tns:localTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTrabajadorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTrabajadoresTodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTrabajadoresTodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:trabajador" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

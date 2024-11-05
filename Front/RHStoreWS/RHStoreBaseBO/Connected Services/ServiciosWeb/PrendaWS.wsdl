@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="softrh.services" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PrendaWS" targetNamespace="softrh.services" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/PrendaWS?xsd=1" namespace="softrh.services" />
+    </xsd:schema>
+  </types>
+  <message name="insertarPrenda">
+    <part name="parameters" element="tns:insertarPrenda" />
+  </message>
+  <message name="insertarPrendaResponse">
+    <part name="parameters" element="tns:insertarPrendaResponse" />
+  </message>
+  <message name="listarPrendasPorNombre">
+    <part name="parameters" element="tns:listarPrendasPorNombre" />
+  </message>
+  <message name="listarPrendasPorNombreResponse">
+    <part name="parameters" element="tns:listarPrendasPorNombreResponse" />
+  </message>
+  <message name="listarPrendasTodas">
+    <part name="parameters" element="tns:listarPrendasTodas" />
+  </message>
+  <message name="listarPrendasTodasResponse">
+    <part name="parameters" element="tns:listarPrendasTodasResponse" />
+  </message>
+  <message name="obtenerPrendaPorId">
+    <part name="parameters" element="tns:obtenerPrendaPorId" />
+  </message>
+  <message name="obtenerPrendaPorIdResponse">
+    <part name="parameters" element="tns:obtenerPrendaPorIdResponse" />
+  </message>
+  <message name="eliminarPrenda">
+    <part name="parameters" element="tns:eliminarPrenda" />
+  </message>
+  <message name="eliminarPrendaResponse">
+    <part name="parameters" element="tns:eliminarPrendaResponse" />
+  </message>
+  <message name="modificarPrenda">
+    <part name="parameters" element="tns:modificarPrenda" />
+  </message>
+  <message name="modificarPrendaResponse">
+    <part name="parameters" element="tns:modificarPrendaResponse" />
+  </message>
+  <portType name="PrendaWS">
+    <operation name="insertarPrenda">
+      <input wsam:Action="softrh.services/PrendaWS/insertarPrendaRequest" message="tns:insertarPrenda" />
+      <output wsam:Action="softrh.services/PrendaWS/insertarPrendaResponse" message="tns:insertarPrendaResponse" />
+    </operation>
+    <operation name="listarPrendasPorNombre">
+      <input wsam:Action="softrh.services/PrendaWS/listarPrendasPorNombreRequest" message="tns:listarPrendasPorNombre" />
+      <output wsam:Action="softrh.services/PrendaWS/listarPrendasPorNombreResponse" message="tns:listarPrendasPorNombreResponse" />
+    </operation>
+    <operation name="listarPrendasTodas">
+      <input wsam:Action="softrh.services/PrendaWS/listarPrendasTodasRequest" message="tns:listarPrendasTodas" />
+      <output wsam:Action="softrh.services/PrendaWS/listarPrendasTodasResponse" message="tns:listarPrendasTodasResponse" />
+    </operation>
+    <operation name="obtenerPrendaPorId">
+      <input wsam:Action="softrh.services/PrendaWS/obtenerPrendaPorIdRequest" message="tns:obtenerPrendaPorId" />
+      <output wsam:Action="softrh.services/PrendaWS/obtenerPrendaPorIdResponse" message="tns:obtenerPrendaPorIdResponse" />
+    </operation>
+    <operation name="eliminarPrenda">
+      <input wsam:Action="softrh.services/PrendaWS/eliminarPrendaRequest" message="tns:eliminarPrenda" />
+      <output wsam:Action="softrh.services/PrendaWS/eliminarPrendaResponse" message="tns:eliminarPrendaResponse" />
+    </operation>
+    <operation name="modificarPrenda">
+      <input wsam:Action="softrh.services/PrendaWS/modificarPrendaRequest" message="tns:modificarPrenda" />
+      <output wsam:Action="softrh.services/PrendaWS/modificarPrendaResponse" message="tns:modificarPrendaResponse" />
+    </operation>
+  </portType>
+  <binding name="PrendaWSPortBinding" type="tns:PrendaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPrendasPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPrendasTodas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPrendaPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PrendaWS">
+    <port name="PrendaWSPort" binding="tns:PrendaWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftRHWS/PrendaWS" />
+    </port>
+  </service>
+</definitions>

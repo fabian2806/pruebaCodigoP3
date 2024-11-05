@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="b6f1d99f-f6fa-4e3d-8ce2-74008493d0d9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/SoftRHWS/archivo.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="archivo.disco" MetadataType="Disco" ID="411059b6-3f41-4dde-a8eb-f798dc57508b" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/archivo.disco" />
+    <MetadataFile FileName="UsuarioWS.wsdl" MetadataType="Wsdl" ID="bef6629e-5b21-4583-90fd-9f3af7b444e2" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/UsuarioWS?WSDL" />
+    <MetadataFile FileName="AdministradorWS.xsd" MetadataType="Schema" ID="80ef68aa-e059-47e2-98a4-6343ac777222" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/AdministradorWS?xsd=1" />
+    <MetadataFile FileName="PromocionWS.xsd" MetadataType="Schema" ID="7c7cb47f-79af-422b-83cd-bf71b9156da4" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PromocionWS?xsd=1" />
+    <MetadataFile FileName="TrabajadorWS.wsdl" MetadataType="Wsdl" ID="16dc4c2a-b750-49de-8800-6da0587f20c3" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?WSDL" />
+    <MetadataFile FileName="UsuarioWS.xsd" MetadataType="Schema" ID="ee328a17-8fe7-47eb-8a74-691b47ea756e" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/UsuarioWS?xsd=1" />
+    <MetadataFile FileName="AdministradorWS.wsdl" MetadataType="Wsdl" ID="fcb2f40b-64bc-4b66-af28-c86bf4cb38c1" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/AdministradorWS?WSDL" />
+    <MetadataFile FileName="CuponWS.wsdl" MetadataType="Wsdl" ID="308d6bc8-d57a-41f3-ab93-8cfc4baa03fb" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/CuponWS?WSDL" />
+    <MetadataFile FileName="PrendaWS.wsdl" MetadataType="Wsdl" ID="5ff0131b-d46b-471d-b0d5-b5128afe219a" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PrendaWS?WSDL" />
+    <MetadataFile FileName="ClienteWS.xsd" MetadataType="Schema" ID="45fcaa87-0519-428c-8d2e-098bd30b7280" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/ClienteWS?xsd=1" />
+    <MetadataFile FileName="PromocionWS.wsdl" MetadataType="Wsdl" ID="4624442c-f18a-486c-abd6-85a8274b237d" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PromocionWS?WSDL" />
+    <MetadataFile FileName="DireccionWS.xsd" MetadataType="Schema" ID="2c54d93c-c902-4380-b4b4-3f1bfb2b43ae" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/DireccionWS?xsd=1" />
+    <MetadataFile FileName="CuponWS.xsd" MetadataType="Schema" ID="87d15320-0536-4b48-b9f6-ea0ec696c92d" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/CuponWS?xsd=1" />
+    <MetadataFile FileName="PrendaWS.xsd" MetadataType="Schema" ID="b277395a-e943-4421-aa91-59e9402436d0" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/PrendaWS?xsd=1" />
+    <MetadataFile FileName="DireccionWS.wsdl" MetadataType="Wsdl" ID="cbdab9f9-a08d-4fa9-b12a-6f606084cec4" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/DireccionWS?WSDL" />
+    <MetadataFile FileName="TrabajadorWS.xsd" MetadataType="Schema" ID="34d8f02a-765d-49d4-867b-947f35f70eab" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" />
+    <MetadataFile FileName="ClienteWS.wsdl" MetadataType="Wsdl" ID="7dd081bc-b994-4eb4-9f16-6f7ea60997f6" SourceId="1" SourceUrl="http://localhost:8080/SoftRHWS/ClienteWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

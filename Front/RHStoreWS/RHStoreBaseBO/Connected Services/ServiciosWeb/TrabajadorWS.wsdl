@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="softrh.services" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="TrabajadorWS" targetNamespace="softrh.services" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" namespace="softrh.services" />
+    </xsd:schema>
+  </types>
+  <message name="insertarTrabajador">
+    <part name="parameters" element="tns:insertarTrabajador" />
+  </message>
+  <message name="insertarTrabajadorResponse">
+    <part name="parameters" element="tns:insertarTrabajadorResponse" />
+  </message>
+  <message name="eliminarTrabajador">
+    <part name="parameters" element="tns:eliminarTrabajador" />
+  </message>
+  <message name="eliminarTrabajadorResponse">
+    <part name="parameters" element="tns:eliminarTrabajadorResponse" />
+  </message>
+  <message name="modificarTrabajador">
+    <part name="parameters" element="tns:modificarTrabajador" />
+  </message>
+  <message name="modificarTrabajadorResponse">
+    <part name="parameters" element="tns:modificarTrabajadorResponse" />
+  </message>
+  <message name="obtenerTrabajadorPorId">
+    <part name="parameters" element="tns:obtenerTrabajadorPorId" />
+  </message>
+  <message name="obtenerTrabajadorPorIdResponse">
+    <part name="parameters" element="tns:obtenerTrabajadorPorIdResponse" />
+  </message>
+  <message name="listarTrabajadoresTodos">
+    <part name="parameters" element="tns:listarTrabajadoresTodos" />
+  </message>
+  <message name="listarTrabajadoresTodosResponse">
+    <part name="parameters" element="tns:listarTrabajadoresTodosResponse" />
+  </message>
+  <portType name="TrabajadorWS">
+    <operation name="insertarTrabajador">
+      <input wsam:Action="softrh.services/TrabajadorWS/insertarTrabajadorRequest" message="tns:insertarTrabajador" />
+      <output wsam:Action="softrh.services/TrabajadorWS/insertarTrabajadorResponse" message="tns:insertarTrabajadorResponse" />
+    </operation>
+    <operation name="eliminarTrabajador">
+      <input wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorRequest" message="tns:eliminarTrabajador" />
+      <output wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorResponse" message="tns:eliminarTrabajadorResponse" />
+    </operation>
+    <operation name="modificarTrabajador">
+      <input wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorRequest" message="tns:modificarTrabajador" />
+      <output wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorResponse" message="tns:modificarTrabajadorResponse" />
+    </operation>
+    <operation name="obtenerTrabajadorPorId">
+      <input wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest" message="tns:obtenerTrabajadorPorId" />
+      <output wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse" message="tns:obtenerTrabajadorPorIdResponse" />
+    </operation>
+    <operation name="listarTrabajadoresTodos">
+      <input wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest" message="tns:listarTrabajadoresTodos" />
+      <output wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse" message="tns:listarTrabajadoresTodosResponse" />
+    </operation>
+  </portType>
+  <binding name="TrabajadorWSPortBinding" type="tns:TrabajadorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarTrabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarTrabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarTrabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerTrabajadorPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTrabajadoresTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TrabajadorWS">
+    <port name="TrabajadorWSPort" binding="tns:TrabajadorWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftRHWS/TrabajadorWS" />
+    </port>
+  </service>
+</definitions>
