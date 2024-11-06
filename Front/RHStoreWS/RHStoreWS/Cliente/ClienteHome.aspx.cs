@@ -22,21 +22,12 @@ namespace RHStoreWS.Cliente
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            /*if (!IsPostBack)
             {
                 CargarPrendas();
-            }
+            }*/
         }
 
-        private void CargarPrendas()
-        {
-            // Cargar todas las prendas usando el procedimiento almacenado
-            listaDePrendas = new BindingList<prenda>(prendaBO.listarTodos());
-
-            // Enlazar los datos al control de visualización, como un Repeater o un GridView
-            RepeaterPrendas.DataSource = listaDePrendas;
-            RepeaterPrendas.DataBind();
-        }
         protected string ObtenerImagen(int idPrenda)
         {
             // Obtener la imagen como bytes desde la base de datos
@@ -48,22 +39,8 @@ namespace RHStoreWS.Cliente
             }
             return string.Empty; // Devuelve una cadena vacía si no hay imagen
         }
-        protected void lbBuscar_Click(object sender, EventArgs e)
-        {
-            string nombreBuscado = txtBuscar.Text.Trim();
-            if (!string.IsNullOrEmpty(nombreBuscado))
-            {
-                // Llamar al procedimiento almacenado para buscar prendas
-                listaDePrendas = new BindingList<prenda>(prendaBO.listarPorNombre(nombreBuscado)); // Cambia por tu método
-                RepeaterPrendas.DataSource = listaDePrendas;
-                RepeaterPrendas.DataBind();
-            }
-            else
-            {
-                // Si no hay texto, cargar todas las prendas
-                CargarPrendas();
-            }
-        }
+
+
         protected void RedirectToPage(string pageName)
         {
             Response.Redirect(pageName);
@@ -88,7 +65,7 @@ namespace RHStoreWS.Cliente
         {
             RedirectToPage("Unisex.aspx");
         }
-
+        
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             // Redirige a la página de inicio de sesión en Admin

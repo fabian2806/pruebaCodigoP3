@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
-  <message name="insertarTrabajador">
-    <part name="parameters" element="tns:insertarTrabajador" />
-  </message>
-  <message name="insertarTrabajadorResponse">
-    <part name="parameters" element="tns:insertarTrabajadorResponse" />
-  </message>
   <message name="eliminarTrabajador">
     <part name="parameters" element="tns:eliminarTrabajador" />
   </message>
   <message name="eliminarTrabajadorResponse">
     <part name="parameters" element="tns:eliminarTrabajadorResponse" />
+  </message>
+  <message name="insertarTrabajador">
+    <part name="parameters" element="tns:insertarTrabajador" />
+  </message>
+  <message name="insertarTrabajadorResponse">
+    <part name="parameters" element="tns:insertarTrabajadorResponse" />
   </message>
   <message name="modificarTrabajador">
     <part name="parameters" element="tns:modificarTrabajador" />
@@ -23,43 +23,43 @@
   <message name="modificarTrabajadorResponse">
     <part name="parameters" element="tns:modificarTrabajadorResponse" />
   </message>
-  <message name="listarTrabajadoresTodos">
-    <part name="parameters" element="tns:listarTrabajadoresTodos" />
-  </message>
-  <message name="listarTrabajadoresTodosResponse">
-    <part name="parameters" element="tns:listarTrabajadoresTodosResponse" />
-  </message>
   <message name="obtenerTrabajadorPorId">
     <part name="parameters" element="tns:obtenerTrabajadorPorId" />
   </message>
   <message name="obtenerTrabajadorPorIdResponse">
     <part name="parameters" element="tns:obtenerTrabajadorPorIdResponse" />
   </message>
+  <message name="listarTrabajadoresTodos">
+    <part name="parameters" element="tns:listarTrabajadoresTodos" />
+  </message>
+  <message name="listarTrabajadoresTodosResponse">
+    <part name="parameters" element="tns:listarTrabajadoresTodosResponse" />
+  </message>
   <portType name="TrabajadorWS">
-    <operation name="insertarTrabajador">
-      <input wsam:Action="softrh.services/TrabajadorWS/insertarTrabajadorRequest" message="tns:insertarTrabajador" />
-      <output wsam:Action="softrh.services/TrabajadorWS/insertarTrabajadorResponse" message="tns:insertarTrabajadorResponse" />
-    </operation>
     <operation name="eliminarTrabajador">
       <input wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorRequest" message="tns:eliminarTrabajador" />
       <output wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorResponse" message="tns:eliminarTrabajadorResponse" />
+    </operation>
+    <operation name="insertarTrabajador">
+      <input wsam:Action="softrh.services/TrabajadorWS/insertarTrabajadorRequest" message="tns:insertarTrabajador" />
+      <output wsam:Action="softrh.services/TrabajadorWS/insertarTrabajadorResponse" message="tns:insertarTrabajadorResponse" />
     </operation>
     <operation name="modificarTrabajador">
       <input wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorRequest" message="tns:modificarTrabajador" />
       <output wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorResponse" message="tns:modificarTrabajadorResponse" />
     </operation>
-    <operation name="listarTrabajadoresTodos">
-      <input wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest" message="tns:listarTrabajadoresTodos" />
-      <output wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse" message="tns:listarTrabajadoresTodosResponse" />
-    </operation>
     <operation name="obtenerTrabajadorPorId">
       <input wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest" message="tns:obtenerTrabajadorPorId" />
       <output wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse" message="tns:obtenerTrabajadorPorIdResponse" />
     </operation>
+    <operation name="listarTrabajadoresTodos">
+      <input wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest" message="tns:listarTrabajadoresTodos" />
+      <output wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse" message="tns:listarTrabajadoresTodosResponse" />
+    </operation>
   </portType>
   <binding name="TrabajadorWSPortBinding" type="tns:TrabajadorWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarTrabajador">
+    <operation name="eliminarTrabajador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarTrabajador">
+    <operation name="insertarTrabajador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarTrabajadoresTodos">
+    <operation name="obtenerTrabajadorPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerTrabajadorPorId">
+    <operation name="listarTrabajadoresTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -217,18 +217,21 @@ DROP PROCEDURE IF EXISTS INSERTAR_ADMINISTRADOR;
 DROP PROCEDURE IF EXISTS MODIFICAR_ADMINISTRADOR;
 DROP PROCEDURE IF EXISTS ELIMINAR_ADMINISTRADOR;
 DROP PROCEDURE IF EXISTS LISTAR_ADMINISTRADORES_TODOS;
+DROP PROCEDURE IF EXISTS LISTAR_ADMINISTRADORES_X_DNI_O_NOMBRE;
 DROP PROCEDURE IF EXISTS LISTAR_ADMINISTRADOR_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_TRABAJADOR;
 DROP PROCEDURE IF EXISTS MODIFICAR_TRABAJADOR;
 DROP PROCEDURE IF EXISTS ELIMINAR_TRABAJADOR;
 DROP PROCEDURE IF EXISTS LISTAR_TRABAJADORES_TODOS;
+DROP PROCEDURE IF EXISTS LISTAR_TRABAJADORES_X_DNI_O_NOMBRE;
 DROP PROCEDURE IF EXISTS LISTAR_TRABAJADOR_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_CLIENTE;
 DROP PROCEDURE IF EXISTS MODIFICAR_CLIENTE;
 DROP PROCEDURE IF EXISTS ELIMINAR_CLIENTE;
 DROP PROCEDURE IF EXISTS LISTAR_CLIENTES_TODOS;
+DROP PROCEDURE IF EXISTS LISTAR_CLIENTES_X_DNI_O_NOMBRE;
 DROP PROCEDURE IF EXISTS LISTAR_CLIENTE_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_DIRECCION;
@@ -241,6 +244,7 @@ DROP PROCEDURE IF EXISTS INSERTAR_CUPON;
 DROP PROCEDURE IF EXISTS MODIFICAR_CUPON;
 DROP PROCEDURE IF EXISTS ELIMINAR_CUPON;
 DROP PROCEDURE IF EXISTS LISTAR_CUPONES_TODOS;
+DROP PROCEDURE IF EXISTS LISTAR_CUPONES_X_CODIGO_O_DESCRIPCION;
 DROP PROCEDURE IF EXISTS LISTAR_CUPON_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_CLIENTE_X_CUPON;
@@ -249,18 +253,37 @@ DROP PROCEDURE IF EXISTS INSERTAR_PRENDA;
 DROP PROCEDURE IF EXISTS MODIFICAR_PRENDA;
 DROP PROCEDURE IF EXISTS ELIMINAR_PRENDA;
 DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_TODAS;
-DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_X_NOMBRE;
+DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_X_NOMBRE_O_DESCRIPCION;
 DROP PROCEDURE IF EXISTS LISTAR_PRENDA_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_PROMOCION;
 DROP PROCEDURE IF EXISTS MODIFICAR_PROMOCION;
 DROP PROCEDURE IF EXISTS ELIMINAR_PROMOCION;
 DROP PROCEDURE IF EXISTS LISTAR_PROMOCIONES_TODAS;
-DROP PROCEDURE IF EXISTS LISTAR_PROMOCIONES_X_NOMBRE;
+DROP PROCEDURE IF EXISTS LISTAR_PROMOCIONES_X_NOMBRE_O_DESCRIPCION;
 DROP PROCEDURE IF EXISTS LISTAR_PROMOCION_X_ID;
+
+DROP PROCEDURE IF EXISTS INSERTAR_PRENDA_X_PROMOCION;
+
+DROP PROCEDURE IF EXISTS INSERTAR_ORDENCOMPRA;
+DROP PROCEDURE IF EXISTS MODIFICAR_ORDENCOMPRA;
+DROP PROCEDURE IF EXISTS ELIMINAR_ORDENCOMPRA;
+DROP PROCEDURE IF EXISTS LISTAR_ORDENESCOMPRA_TODAS;
+DROP PROCEDURE IF EXISTS LISTAR_ORDENCOMPRA_X_ID;
+
+DROP PROCEDURE IF EXISTS INSERTAR_CARRITO;
+DROP PROCEDURE IF EXISTS MODIFICAR_CARRITO;
+DROP PROCEDURE IF EXISTS LISTAR_CARRITO_X_ID;
+DROP PROCEDURE IF EXISTS INSERTAR_PRENDASELECCIONADA;
+DROP PROCEDURE IF EXISTS MODIFICAR_PRENDASELECCIONADA;
+DROP PROCEDURE IF EXISTS LISTAR_PRENDASELECCIONADA_X_ID;
 
 DROP PROCEDURE IF EXISTS VERIFICAR_INGRESO_USUARIO;
 DROP PROCEDURE IF EXISTS OBTENER_ROL_USUARIO;
+DROP PROCEDURE IF EXISTS VERIFICAR_CONTRASENHA;
+DROP PROCEDURE IF EXISTS CAMBIAR_CONTRASENHA;
+
+
 -- ------------------------------------------------------------------------------------------
 -- Procedimientos almacenados del paquete Usuarios
 DELIMITER $
@@ -301,13 +324,18 @@ CREATE PROCEDURE LISTAR_ADMINISTRADORES_TODOS()
 BEGIN
 	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE u.activo = 1;
 END$
+CREATE PROCEDURE LISTAR_ADMINISTRADORES_X_DNI_O_NOMBRE(
+	IN _nombre VARCHAR(50)
+)
+BEGIN
+	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE u.activo = 1 AND (CONCAT(u.nombres, ' ', u.apellidos) LIKE CONCAT('%', _nombre, '%') OR u.dni LIKE CONCAT('%', _nombre, '%'));
+END$
 CREATE PROCEDURE LISTAR_ADMINISTRADOR_X_ID(
 	IN _idAdministrador INT
 )
 BEGIN
 	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idAdministrador AND u.activo = 1;
 END$
-
 
 CREATE PROCEDURE INSERTAR_TRABAJADOR(
     OUT _idTrabajador INT,
@@ -354,13 +382,18 @@ CREATE PROCEDURE LISTAR_TRABAJADORES_TODOS()
 BEGIN
 	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, t.puesto, t.sueldo, t.fechaIngreso, t.horarioInicio, t.horarioFin FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE u.activo = 1;
 END$
+CREATE PROCEDURE LISTAR_TRABAJADORES_X_DNI_O_NOMBRE(
+	IN _nombre VARCHAR(50)
+)
+BEGIN
+	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, t.puesto, t.sueldo, t.fechaIngreso, t.horarioInicio, t.horarioFin FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE u.activo = 1 AND (CONCAT(u.nombres, ' ', u.apellidos) LIKE CONCAT('%', _nombre, '%') OR u.dni LIKE CONCAT('%', _nombre, '%'));
+END$
 CREATE PROCEDURE LISTAR_TRABAJADOR_X_ID(
 	IN _idTrabajador INT
 )
 BEGIN
 	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, t.puesto, t.sueldo, t.fechaIngreso, t.horarioInicio, t.horarioFin FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idTrabajador AND u.activo = 1;
 END$
-
 
 CREATE PROCEDURE INSERTAR_CLIENTE(
     OUT _idCliente INT,
@@ -405,13 +438,18 @@ CREATE PROCEDURE LISTAR_CLIENTES_TODOS()
 BEGIN
 	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, c.telefono, c.fechaRegistro, c.recibePromociones FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE u.activo = 1;
 END$
+CREATE PROCEDURE LISTAR_CLIENTES_X_DNI_O_NOMBRE(
+	IN _nombre VARCHAR(50)
+)
+BEGIN
+	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, c.telefono, c.fechaRegistro, c.recibePromociones FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE u.activo = 1 AND (CONCAT(u.nombres, ' ', u.apellidos) LIKE CONCAT('%', _nombre, '%') OR u.dni LIKE CONCAT('%', _nombre, '%'));
+END$
 CREATE PROCEDURE LISTAR_CLIENTE_X_ID(
 	IN _idCliente INT
 )
 BEGIN
 	SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, c.telefono, c.fechaRegistro, c.recibePromociones FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE c.idCliente = _idCliente AND u.activo = 1;
 END$
-
 
 CREATE PROCEDURE INSERTAR_DIRECCION(
     OUT _idDireccion INT,
@@ -456,7 +494,6 @@ BEGIN
 	SELECT idDireccion, fidCliente, direccion, distrito, provincia, departamento, codigoPostal, referencia FROM direccion WHERE idDireccion = _idDireccion AND activo = 1;
 END$
 
-
 CREATE PROCEDURE INSERTAR_CUPON(
     OUT _idCupon INT,
     IN _fidTrabajador INT,
@@ -489,13 +526,18 @@ CREATE PROCEDURE LISTAR_CUPONES_TODOS()
 BEGIN
 	SELECT idCupon, fidTrabajador, codigo, descripcion, fechaInicio, fechaFin FROM cupon WHERE activo = 1;
 END$
+CREATE PROCEDURE LISTAR_CUPONES_X_CODIGO_O_DESCRIPCION(
+	IN _codigo VARCHAR(50)
+)
+BEGIN
+	SELECT idCupon, fidTrabajador, codigo, descripcion, fechaInicio, fechaFin FROM cupon WHERE activo = 1 AND (codigo LIKE CONCAT('%', _codigo, '%') OR descripcion LIKE CONCAT('%', _codigo, '%'));
+END$
 CREATE PROCEDURE LISTAR_CUPON_X_ID(
 	IN _idCupon INT
 )
 BEGIN
 	SELECT idCupon, fidTrabajador, codigo, descripcion, fechaInicio, fechaFin FROM cupon WHERE idCupon = _idCupon AND activo = 1;
 END$
-
 
 CREATE PROCEDURE INSERTAR_CLIENTE_X_CUPON(
     IN _idCliente INT,
@@ -505,6 +547,7 @@ CREATE PROCEDURE INSERTAR_CLIENTE_X_CUPON(
 BEGIN
     INSERT INTO clientexcupon(idCliente, idCupon, fechaAsignada, usado) VALUES (_idCliente, _idCupon, _fechaAsignada, 0);
 END$
+
 
 -- ------------------------------------------------------------------------------------------
 -- Procedimientos almacenados del paquete Prendas
@@ -547,26 +590,24 @@ BEGIN
 END$
 CREATE PROCEDURE LISTAR_PRENDAS_TODAS()
 BEGIN
-	SELECT idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1;
+	SELECT idPrenda, nombre, descripcion, tipo, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1;
 END$
-CREATE PROCEDURE LISTAR_PRENDAS_X_NOMBRE(
+CREATE PROCEDURE LISTAR_PRENDAS_X_NOMBRE_O_DESCRIPCION(
 	IN _nombre VARCHAR(50)
 )
 BEGIN
-	SELECT idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1 AND nombre LIKE CONCAT('%', _nombre, '%');
+	SELECT idPrenda, nombre, descripcion, tipo, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1 AND (nombre LIKE CONCAT('%', _nombre, '%') OR descripcion LIKE CONCAT('%', _nombre, '%'));
 END$
 CREATE PROCEDURE LISTAR_PRENDA_X_ID(
 	IN _idPrenda INT
 )
 BEGIN
-	SELECT idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE idPrenda = _idPrenda AND activo = 1;
+	SELECT idPrenda, nombre, descripcion, tipo, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE idPrenda = _idPrenda AND activo = 1;
 END$
-
 
 CREATE PROCEDURE INSERTAR_PROMOCION(
     OUT _idPromocion INT,
     IN _fidTrabajador INT,
-    IN _idPrenda INT,
 	IN _nombre VARCHAR(50),
 	IN _descripcion VARCHAR(150),
     IN _valorDescuento DECIMAL(10, 2),
@@ -575,22 +616,8 @@ CREATE PROCEDURE INSERTAR_PROMOCION(
 	IN _fechaFin DATE
 )
 BEGIN
-	DECLARE _precioOriginal DECIMAL(10, 2);
-    DECLARE _precioDescontado DECIMAL(10, 2);
-
     INSERT INTO promocion(fidTrabajador, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, activo) VALUES (_fidTrabajador, _nombre, _descripcion, _valorDescuento, _tipo, _fechaInicio, _fechaFin, 1);
     SET _idPromocion = @@last_insert_id;
-    INSERT INTO prendaxpromocion(idPrenda, idPromocion, fechaAsignada, activo) VALUES (_idPrenda, _idPromocion, _fechaInicio, 1);
-    
-    SELECT precioOriginal INTO _precioOriginal FROM prenda WHERE idPrenda = _idPrenda;
-    
-    IF _tipo = 'Porcentaje' THEN
-        SET _precioDescontado = _precioOriginal - (_precioOriginal * _valorDescuento / 100);
-    ELSEIF _tipo = 'MontoFijo' THEN
-        SET _precioDescontado = _precioOriginal - _valorDescuento;
-    END IF;
-    
-    UPDATE prenda SET precioDescontado = _precioDescontado WHERE idPrenda = _idPrenda;
 END$
 CREATE PROCEDURE MODIFICAR_PROMOCION(
 	IN _idPromocion INT,
@@ -614,7 +641,7 @@ CREATE PROCEDURE LISTAR_PROMOCIONES_TODAS()
 BEGIN
 	SELECT idPromocion, fidTrabajador, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin FROM promocion WHERE activo = 1;
 END$
-CREATE PROCEDURE LISTAR_PROMOCIONES_X_NOMBRE(
+CREATE PROCEDURE LISTAR_PROMOCIONES_X_NOMBRE_O_DESCRIPCION(
 	IN _nombre VARCHAR(50)
 )
 BEGIN
@@ -627,7 +654,134 @@ BEGIN
 	SELECT idPromocion, fidTrabajador, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin FROM promocion WHERE idPromocion = _idPromocion AND activo = 1;
 END$
 
-DELIMITER $
+CREATE PROCEDURE INSERTAR_PRENDA_X_PROMOCION(
+    IN _idPrenda INT,
+    IN _idPromocion INT,
+    IN _fechaAsignada DATE
+)
+BEGIN
+	DECLARE _precioOriginal DECIMAL(10, 2);
+    DECLARE _precioDescontado DECIMAL(10, 2);
+    DECLARE _tipo ENUM('Porcentaje', 'MontoFijo');
+    
+    INSERT INTO prendaxpromocion(idPrenda, idPromocion, fechaAsignada, activo) VALUES (_idPrenda, _idPromocion, _fechaAsignada, 0);
+    
+    SELECT precioOriginal INTO _precioOriginal FROM prenda WHERE idPrenda = _idPrenda;
+    SELECT tipo INTO _tipo FROM promocion WHERE idPromocion = _idPromocion;
+    
+    IF _tipo = 'Porcentaje' THEN
+        SET _precioDescontado = _precioOriginal - (_precioOriginal * _valorDescuento / 100);
+    ELSEIF _tipo = 'MontoFijo' THEN
+        SET _precioDescontado = _precioOriginal - _valorDescuento;
+    END IF;
+    
+    UPDATE prenda SET precioDescontado = _precioDescontado WHERE idPrenda = _idPrenda;
+END$
+
+
+-- ------------------------------------------------------------------------------------------
+-- Procedimientos almacenados del paquete Compras
+CREATE PROCEDURE INSERTAR_ORDENCOMPRA(
+    OUT _idOrden INT,
+    IN _fidCliente INT,
+    IN _fechaRegistro DATE,
+    IN _fechaProcesado DATE,
+    IN _fechaEntregado DATE,
+    IN _fechaAnulado DATE,
+    IN _estado ENUM('Registrado', 'Procesado', 'Entregado', 'Anulado'),
+    IN _dni VARCHAR(8),
+    IN _correo VARCHAR(50),
+    IN _subtotal DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO ordencompra(fidCliente,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal) VALUES (_fidCliente_fechaRegistro,_fechaProcesado,_fechaEntregado,_fechaAnulado,_estado,_dni,_correo,_subtotal);
+    SET _idOrden = @@last_insert_id;
+END$
+CREATE PROCEDURE MODIFICAR_ORDENCOMPRA(
+	IN _idOrden INT,
+    IN _fechaRegistro DATE,
+    IN _fechaProcesado DATE,
+    IN _fechaEntregado DATE,
+    IN _fechaAnulado DATE,
+    IN _estado ENUM('Registrado', 'Procesado', 'Entregado', 'Anulado'),
+    IN _dni VARCHAR(8),
+    IN _correo VARCHAR(50),
+    IN _subtotal DECIMAL(10, 2)
+)
+BEGIN
+	UPDATE ordencompra SET fechaRegistro = _fechaRegistro, fechaProcesado = _fechaProcesado, fechaEntregado = _fechaEntregado, fechaAnulado = _fechaAnulado, estado = _estado, dni = _dni , correo = _correo, subtotal = _subtotal WHERE idOrden = _idOrden;
+END$
+CREATE PROCEDURE ELIMINAR_ORDENCOMPRA(
+    IN _idOrden INT
+)
+BEGIN
+    UPDATE ordencompra 
+    SET estado = 'Anulado', fechaAnulado = CONVERT_TZ(NOW(), '+00:00', '-05:00') WHERE idOrden = _idOrden;
+END$
+CREATE PROCEDURE LISTAR_ORDENESCOMPRA_TODAS()
+BEGIN
+	SELECT idOrden,fidCliente,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal FROM ordencompra;
+END$
+CREATE PROCEDURE LISTAR_ORDENCOMPRA_X_ID(
+	IN _idOrden INT
+)
+BEGIN
+	SELECT idOrden,fidCliente,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal FROM ordencompra WHERE idOrden = _idOrden;
+END$
+
+CREATE PROCEDURE INSERTAR_CARRITO(
+    OUT _idCarrito INT,
+    IN _fidCliente INT,
+    IN _cantidadTotal INT,
+    IN _precioTotal DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO carrito(fidCliente, cantidadTotal, precioTotal) VALUES (_fidCliente, 0, 0.00);
+    SET _idCarrito = @@last_insert_id;
+END$
+CREATE PROCEDURE MODIFICAR_CARRITO(
+	IN _idCarrito INT,
+    IN _cantidadTotal INT,
+    IN _precioTotal DECIMAL(10, 2)
+)
+BEGIN
+	UPDATE carrito SET cantidadTotal = _cantidadTotal, precioTotal = _precioTotal WHERE idCarrito = _idCarrito;
+END$
+CREATE PROCEDURE LISTAR_CARRITO_X_ID(
+	IN _idCarrito INT
+)
+BEGIN
+	SELECT idCarrito, fidCliente, cantidadTotal, precioTotal FROM carrito WHERE idCarrito = _idCarrito;
+END$
+
+CREATE PROCEDURE INSERTAR_PRENDASELECCIONADA(
+    OUT _idPrendaSeleccionada INT,
+    IN _fidCarrito INT,
+	IN _cantidad INT,
+    IN _precio DECIMAL(10, 2)
+)
+BEGIN
+    INSERT INTO prendaseleccionada(fidCarrito, cantidad, precio) VALUES (_fidCarrito, _cantidad, _precio);
+    SET _idPrendaSeleccionada = @@last_insert_id;
+END$
+CREATE PROCEDURE MODIFICAR_PRENDASELECCIONADA(
+	IN _idPrendaSeleccionada INT,
+	IN _cantidad INT,
+    IN _precio DECIMAL(10, 2)
+)
+BEGIN
+	UPDATE prendaseleccionada SET cantidad = _cantidad, precio = _precio WHERE idPrendaSeleccionada = _idPrendaSeleccionada;
+END$
+CREATE PROCEDURE LISTAR_PRENDASELECCIONADA_X_ID(
+	IN _idPrendaSeleccionada INT
+)
+BEGIN
+	SELECT idPrendaSeleccionada, fidCarrito, cantidad, preciocliente FROM prendaseleccionada WHERE idPrendaSeleccionada = idPrendaSeleccionada;
+END$
+
+
+-- ------------------------------------------------------------------------------------------
+-- Procedimientos almacenados adicionales
 CREATE PROCEDURE VERIFICAR_INGRESO_USUARIO(
 	IN _correo VARCHAR(50),
     IN _contrasenha VARCHAR(50)
@@ -646,7 +800,11 @@ BEGIN
     ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
         SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
 
-    -- En caso de que sea cliente o usuario no encontrado
+    -- En caso de que sea cliente 
+    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM cliente WHERE idCliente = _idUsuario) THEN
+        SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, c.telefono, c.fechaRegistro, c.recibePromociones FROM cliente c INNER JOIN administrador a ON u.idUsuario = c.idCliente WHERE c.idCliente = _idUsuario AND u.activo = 1;
+    
+    -- En caso hayan puesto mal sus credenciales
     ELSE
         SELECT 0 AS idUsuario;
     END IF;
@@ -670,8 +828,39 @@ BEGIN
     ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
         SELECT 'administrador' as rol FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
 
-    -- En caso de que sea cliente o usuario no encontrado
+    -- En caso de que sea cliente
+	ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM cliente WHERE idCliente = _idUsuario) THEN
+        SELECT 'cliente' as rol FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE c.idCliente = _idUsuario AND u.activo = 1;
+	
+	-- En caso el usuario no se encuentre
     ELSE
         SELECT 'denegado' AS rol;
     END IF;
 END$
+
+CREATE PROCEDURE VERIFICAR_CONTRASENHA(
+	IN _idUsuario INT,
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	SELECT 1 AS resultado FROM usuario WHERE idUsuario = _idUsuario AND contrasenha = MD5(_contrasenha) AND activo = 1;
+END$
+
+CREATE PROCEDURE CAMBIAR_CONTRASENHA(
+	IN _idUsuario INT,
+    IN _contrasenhaNueva VARCHAR(50)
+)
+BEGIN
+	UPDATE usuario SET contrasenha = MD5(_contrasenhaNueva) WHERE idUsuario = _idUsuario AND activo = 1;
+END$
+
+
+-- ------------------------------------------------------------------------------------------
+-- Inserts
+INSERT INTO ordencompra(fidCliente, fidCupon, fidCarrito, fechaRegistro, fechaProcesado, fechaEntregado, fechaAnulado, estado, dni, correo, subtotal) 
+VALUES
+(5, NULL, NULL, '2024-01-10', NULL, NULL, NULL, 'Registrado', '32457612', 'jp@gmail.com', 150.00),
+(6, NULL, NULL, '2024-01-08', '2024-01-09', NULL, NULL, 'Procesado', '98765432', 'fmontenegro@gmail.com', 250.50),
+(5, NULL, NULL, '2024-01-05', '2024-01-06', '2024-01-07', NULL, 'Entregado', '32457612', 'jp@gmail.com', 320.75),
+(6, NULL, NULL, '2024-01-12', NULL, NULL, '2024-02-12', 'Anulado', '98765432', 'fmontenegro@gmail.com', 100.00),
+(5, NULL, NULL, '2024-01-15', '2024-01-16', NULL, NULL, 'Procesado', '32457612', 'jp@gmail.com', 210.00);

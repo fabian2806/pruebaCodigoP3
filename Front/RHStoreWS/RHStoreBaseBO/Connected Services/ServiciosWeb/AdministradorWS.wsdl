@@ -11,11 +11,11 @@
   <message name="eliminarAdministradorResponse">
     <part name="parameters" element="tns:eliminarAdministradorResponse" />
   </message>
-  <message name="listarAdministradoresTodos">
-    <part name="parameters" element="tns:listarAdministradoresTodos" />
+  <message name="insetarAdministrador">
+    <part name="parameters" element="tns:insetarAdministrador" />
   </message>
-  <message name="listarAdministradoresTodosResponse">
-    <part name="parameters" element="tns:listarAdministradoresTodosResponse" />
+  <message name="insetarAdministradorResponse">
+    <part name="parameters" element="tns:insetarAdministradorResponse" />
   </message>
   <message name="obtenerAdministradorPorId">
     <part name="parameters" element="tns:obtenerAdministradorPorId" />
@@ -23,11 +23,11 @@
   <message name="obtenerAdministradorPorIdResponse">
     <part name="parameters" element="tns:obtenerAdministradorPorIdResponse" />
   </message>
-  <message name="insetarAdministrador">
-    <part name="parameters" element="tns:insetarAdministrador" />
+  <message name="listarAdministradoresTodos">
+    <part name="parameters" element="tns:listarAdministradoresTodos" />
   </message>
-  <message name="insetarAdministradorResponse">
-    <part name="parameters" element="tns:insetarAdministradorResponse" />
+  <message name="listarAdministradoresTodosResponse">
+    <part name="parameters" element="tns:listarAdministradoresTodosResponse" />
   </message>
   <message name="modificarAdministrador">
     <part name="parameters" element="tns:modificarAdministrador" />
@@ -40,17 +40,17 @@
       <input wsam:Action="softrh.services/AdministradorWS/eliminarAdministradorRequest" message="tns:eliminarAdministrador" />
       <output wsam:Action="softrh.services/AdministradorWS/eliminarAdministradorResponse" message="tns:eliminarAdministradorResponse" />
     </operation>
-    <operation name="listarAdministradoresTodos">
-      <input wsam:Action="softrh.services/AdministradorWS/listarAdministradoresTodosRequest" message="tns:listarAdministradoresTodos" />
-      <output wsam:Action="softrh.services/AdministradorWS/listarAdministradoresTodosResponse" message="tns:listarAdministradoresTodosResponse" />
+    <operation name="insetarAdministrador">
+      <input wsam:Action="softrh.services/AdministradorWS/insetarAdministradorRequest" message="tns:insetarAdministrador" />
+      <output wsam:Action="softrh.services/AdministradorWS/insetarAdministradorResponse" message="tns:insetarAdministradorResponse" />
     </operation>
     <operation name="obtenerAdministradorPorId">
       <input wsam:Action="softrh.services/AdministradorWS/obtenerAdministradorPorIdRequest" message="tns:obtenerAdministradorPorId" />
       <output wsam:Action="softrh.services/AdministradorWS/obtenerAdministradorPorIdResponse" message="tns:obtenerAdministradorPorIdResponse" />
     </operation>
-    <operation name="insetarAdministrador">
-      <input wsam:Action="softrh.services/AdministradorWS/insetarAdministradorRequest" message="tns:insetarAdministrador" />
-      <output wsam:Action="softrh.services/AdministradorWS/insetarAdministradorResponse" message="tns:insetarAdministradorResponse" />
+    <operation name="listarAdministradoresTodos">
+      <input wsam:Action="softrh.services/AdministradorWS/listarAdministradoresTodosRequest" message="tns:listarAdministradoresTodos" />
+      <output wsam:Action="softrh.services/AdministradorWS/listarAdministradoresTodosResponse" message="tns:listarAdministradoresTodosResponse" />
     </operation>
     <operation name="modificarAdministrador">
       <input wsam:Action="softrh.services/AdministradorWS/modificarAdministradorRequest" message="tns:modificarAdministrador" />
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarAdministradoresTodos">
+    <operation name="insetarAdministrador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insetarAdministrador">
+    <operation name="listarAdministradoresTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

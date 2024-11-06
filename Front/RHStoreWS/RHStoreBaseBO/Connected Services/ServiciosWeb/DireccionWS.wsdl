@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/DireccionWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
+  <message name="eliminarDireccion">
+    <part name="parameters" element="tns:eliminarDireccion" />
+  </message>
+  <message name="eliminarDireccionResponse">
+    <part name="parameters" element="tns:eliminarDireccionResponse" />
+  </message>
   <message name="insetarDireccion">
     <part name="parameters" element="tns:insetarDireccion" />
   </message>
@@ -16,12 +22,6 @@
   </message>
   <message name="modificarDireccionResponse">
     <part name="parameters" element="tns:modificarDireccionResponse" />
-  </message>
-  <message name="eliminarDireccion">
-    <part name="parameters" element="tns:eliminarDireccion" />
-  </message>
-  <message name="eliminarDireccionResponse">
-    <part name="parameters" element="tns:eliminarDireccionResponse" />
   </message>
   <message name="obtenerDireccionPorId">
     <part name="parameters" element="tns:obtenerDireccionPorId" />
@@ -36,6 +36,10 @@
     <part name="parameters" element="tns:listarDireccionesTodasResponse" />
   </message>
   <portType name="DireccionWS">
+    <operation name="eliminarDireccion">
+      <input wsam:Action="softrh.services/DireccionWS/eliminarDireccionRequest" message="tns:eliminarDireccion" />
+      <output wsam:Action="softrh.services/DireccionWS/eliminarDireccionResponse" message="tns:eliminarDireccionResponse" />
+    </operation>
     <operation name="insetarDireccion">
       <input wsam:Action="softrh.services/DireccionWS/insetarDireccionRequest" message="tns:insetarDireccion" />
       <output wsam:Action="softrh.services/DireccionWS/insetarDireccionResponse" message="tns:insetarDireccionResponse" />
@@ -43,10 +47,6 @@
     <operation name="modificarDireccion">
       <input wsam:Action="softrh.services/DireccionWS/modificarDireccionRequest" message="tns:modificarDireccion" />
       <output wsam:Action="softrh.services/DireccionWS/modificarDireccionResponse" message="tns:modificarDireccionResponse" />
-    </operation>
-    <operation name="eliminarDireccion">
-      <input wsam:Action="softrh.services/DireccionWS/eliminarDireccionRequest" message="tns:eliminarDireccion" />
-      <output wsam:Action="softrh.services/DireccionWS/eliminarDireccionResponse" message="tns:eliminarDireccionResponse" />
     </operation>
     <operation name="obtenerDireccionPorId">
       <input wsam:Action="softrh.services/DireccionWS/obtenerDireccionPorIdRequest" message="tns:obtenerDireccionPorId" />
@@ -59,6 +59,15 @@
   </portType>
   <binding name="DireccionWSPortBinding" type="tns:DireccionWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarDireccion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insetarDireccion">
       <soap:operation soapAction="" />
       <input>
@@ -69,15 +78,6 @@
       </output>
     </operation>
     <operation name="modificarDireccion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarDireccion">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
