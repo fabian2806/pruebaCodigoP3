@@ -194,6 +194,9 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerDireccionPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerImagenPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerPrendaPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

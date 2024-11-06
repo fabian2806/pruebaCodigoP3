@@ -38,5 +38,11 @@ namespace RHStorePrendasBO
         {
 			return new BindingList<prenda>(PrendaWS.listarPrendasPorNombre(nombre));
 		}
+
+        public byte[] ObtenerImagen(int idPrenda)
+        {
+            return PrendaWS.obtenerImagenPorId(idPrenda);
+        }
+
     }
 }

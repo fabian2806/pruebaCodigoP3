@@ -200,19 +200,20 @@
 
     <!-- Sección de Productos -->
     <div class="products">
-        <asp:Repeater ID="RepeaterPrendas" runat="server">
-            <ItemTemplate>
-                <div class="product">
-                    <div class="add-to-cart">
-                        <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
-                    </div>
-                    <img src='<%# Eval("imagen", "{0}") %>' alt='<%# Eval("nombre") %>' />
-                    <p><%# Eval("nombre") %></p>
-                    <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
-                    <p>Colores disponibles: <%# Eval("color") %></p>
+    <asp:Repeater ID="RepeaterPrendas" runat="server">
+        <ItemTemplate>
+            <div class="product">
+                <div class="add-to-cart">
+                    <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
                 </div>
-            </ItemTemplate>
-        </asp:Repeater>
+                <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
+                <p><%# Eval("nombre") %></p>
+                <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
+                <p>Colores disponibles: <%# Eval("color") %></p>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+
     </div>
 
     <!-- Pie de página -->

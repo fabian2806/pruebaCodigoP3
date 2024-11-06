@@ -11,17 +11,17 @@
   <message name="eliminarClienteResponse">
     <part name="parameters" element="tns:eliminarClienteResponse" />
   </message>
-  <message name="modificarCliente">
-    <part name="parameters" element="tns:modificarCliente" />
-  </message>
-  <message name="modificarClienteResponse">
-    <part name="parameters" element="tns:modificarClienteResponse" />
-  </message>
   <message name="insertarCliente">
     <part name="parameters" element="tns:insertarCliente" />
   </message>
   <message name="insertarClienteResponse">
     <part name="parameters" element="tns:insertarClienteResponse" />
+  </message>
+  <message name="modificarCliente">
+    <part name="parameters" element="tns:modificarCliente" />
+  </message>
+  <message name="modificarClienteResponse">
+    <part name="parameters" element="tns:modificarClienteResponse" />
   </message>
   <message name="obtenerClientePorId">
     <part name="parameters" element="tns:obtenerClientePorId" />
@@ -40,13 +40,13 @@
       <input wsam:Action="softrh.services/ClienteWS/eliminarClienteRequest" message="tns:eliminarCliente" />
       <output wsam:Action="softrh.services/ClienteWS/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
     </operation>
-    <operation name="modificarCliente">
-      <input wsam:Action="softrh.services/ClienteWS/modificarClienteRequest" message="tns:modificarCliente" />
-      <output wsam:Action="softrh.services/ClienteWS/modificarClienteResponse" message="tns:modificarClienteResponse" />
-    </operation>
     <operation name="insertarCliente">
       <input wsam:Action="softrh.services/ClienteWS/insertarClienteRequest" message="tns:insertarCliente" />
       <output wsam:Action="softrh.services/ClienteWS/insertarClienteResponse" message="tns:insertarClienteResponse" />
+    </operation>
+    <operation name="modificarCliente">
+      <input wsam:Action="softrh.services/ClienteWS/modificarClienteRequest" message="tns:modificarCliente" />
+      <output wsam:Action="softrh.services/ClienteWS/modificarClienteResponse" message="tns:modificarClienteResponse" />
     </operation>
     <operation name="obtenerClientePorId">
       <input wsam:Action="softrh.services/ClienteWS/obtenerClientePorIdRequest" message="tns:obtenerClientePorId" />
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCliente">
+    <operation name="insertarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarCliente">
+    <operation name="modificarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

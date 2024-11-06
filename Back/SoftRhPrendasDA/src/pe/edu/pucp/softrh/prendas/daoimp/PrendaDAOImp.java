@@ -143,7 +143,7 @@ public class PrendaDAOImp implements PrendaDAO {
         Object[] parameters = new Object[1];
         parameters[0] = nombre;
 
-        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_X_NOMBRE", parameters);
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_X_NOMBRE_o_DESCRIPCION", parameters);
         try{
             while(rs.next()){
                 Prenda prenda = new Prenda();

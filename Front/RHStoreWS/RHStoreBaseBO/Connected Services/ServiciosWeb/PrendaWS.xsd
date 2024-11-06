@@ -10,6 +10,8 @@
   <xs:element name="listarPrendasTodasResponse" type="tns:listarPrendasTodasResponse" />
   <xs:element name="modificarPrenda" type="tns:modificarPrenda" />
   <xs:element name="modificarPrendaResponse" type="tns:modificarPrendaResponse" />
+  <xs:element name="obtenerImagenPorId" type="tns:obtenerImagenPorId" />
+  <xs:element name="obtenerImagenPorIdResponse" type="tns:obtenerImagenPorIdResponse" />
   <xs:element name="obtenerPrendaPorId" type="tns:obtenerPrendaPorId" />
   <xs:element name="obtenerPrendaPorIdResponse" type="tns:obtenerPrendaPorIdResponse" />
   <xs:complexType name="listarPrendasTodas">
@@ -35,6 +37,16 @@
       <xs:element minOccurs="0" name="stock" type="xs:int" />
       <xs:element minOccurs="0" name="talla" type="tns:talla" />
       <xs:element minOccurs="0" name="tipo" type="tns:tipoPrenda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerImagenPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerImagenPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPrendasPorNombre">

@@ -37,6 +37,17 @@ namespace RHStoreWS.Cliente
             RepeaterPrendas.DataSource = listaDePrendas;
             RepeaterPrendas.DataBind();
         }
+        protected string ObtenerImagen(int idPrenda)
+        {
+            // Obtener la imagen como bytes desde la base de datos
+            byte[] imagenBytes = prendaBO.ObtenerImagen(idPrenda); // Implementa este método en PrendaBO
+            if (imagenBytes != null)
+            {
+                // Convertir a Base64 para poder usar en src
+                return "data:image/jpeg;base64," + Convert.ToBase64String(imagenBytes);
+            }
+            return string.Empty; // Devuelve una cadena vacía si no hay imagen
+        }
         protected void lbBuscar_Click(object sender, EventArgs e)
         {
             string nombreBuscado = txtBuscar.Text.Trim();

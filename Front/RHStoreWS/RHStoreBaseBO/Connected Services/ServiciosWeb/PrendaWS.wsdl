@@ -5,17 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/PrendaWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
+  <message name="modificarPrenda">
+    <part name="parameters" element="tns:modificarPrenda" />
+  </message>
+  <message name="modificarPrendaResponse">
+    <part name="parameters" element="tns:modificarPrendaResponse" />
+  </message>
+  <message name="eliminarPrenda">
+    <part name="parameters" element="tns:eliminarPrenda" />
+  </message>
+  <message name="eliminarPrendaResponse">
+    <part name="parameters" element="tns:eliminarPrendaResponse" />
+  </message>
   <message name="insertarPrenda">
     <part name="parameters" element="tns:insertarPrenda" />
   </message>
   <message name="insertarPrendaResponse">
     <part name="parameters" element="tns:insertarPrendaResponse" />
-  </message>
-  <message name="listarPrendasPorNombre">
-    <part name="parameters" element="tns:listarPrendasPorNombre" />
-  </message>
-  <message name="listarPrendasPorNombreResponse">
-    <part name="parameters" element="tns:listarPrendasPorNombreResponse" />
   </message>
   <message name="listarPrendasTodas">
     <part name="parameters" element="tns:listarPrendasTodas" />
@@ -29,26 +35,30 @@
   <message name="obtenerPrendaPorIdResponse">
     <part name="parameters" element="tns:obtenerPrendaPorIdResponse" />
   </message>
-  <message name="eliminarPrenda">
-    <part name="parameters" element="tns:eliminarPrenda" />
+  <message name="listarPrendasPorNombre">
+    <part name="parameters" element="tns:listarPrendasPorNombre" />
   </message>
-  <message name="eliminarPrendaResponse">
-    <part name="parameters" element="tns:eliminarPrendaResponse" />
+  <message name="listarPrendasPorNombreResponse">
+    <part name="parameters" element="tns:listarPrendasPorNombreResponse" />
   </message>
-  <message name="modificarPrenda">
-    <part name="parameters" element="tns:modificarPrenda" />
+  <message name="obtenerImagenPorId">
+    <part name="parameters" element="tns:obtenerImagenPorId" />
   </message>
-  <message name="modificarPrendaResponse">
-    <part name="parameters" element="tns:modificarPrendaResponse" />
+  <message name="obtenerImagenPorIdResponse">
+    <part name="parameters" element="tns:obtenerImagenPorIdResponse" />
   </message>
   <portType name="PrendaWS">
+    <operation name="modificarPrenda">
+      <input wsam:Action="softrh.services/PrendaWS/modificarPrendaRequest" message="tns:modificarPrenda" />
+      <output wsam:Action="softrh.services/PrendaWS/modificarPrendaResponse" message="tns:modificarPrendaResponse" />
+    </operation>
+    <operation name="eliminarPrenda">
+      <input wsam:Action="softrh.services/PrendaWS/eliminarPrendaRequest" message="tns:eliminarPrenda" />
+      <output wsam:Action="softrh.services/PrendaWS/eliminarPrendaResponse" message="tns:eliminarPrendaResponse" />
+    </operation>
     <operation name="insertarPrenda">
       <input wsam:Action="softrh.services/PrendaWS/insertarPrendaRequest" message="tns:insertarPrenda" />
       <output wsam:Action="softrh.services/PrendaWS/insertarPrendaResponse" message="tns:insertarPrendaResponse" />
-    </operation>
-    <operation name="listarPrendasPorNombre">
-      <input wsam:Action="softrh.services/PrendaWS/listarPrendasPorNombreRequest" message="tns:listarPrendasPorNombre" />
-      <output wsam:Action="softrh.services/PrendaWS/listarPrendasPorNombreResponse" message="tns:listarPrendasPorNombreResponse" />
     </operation>
     <operation name="listarPrendasTodas">
       <input wsam:Action="softrh.services/PrendaWS/listarPrendasTodasRequest" message="tns:listarPrendasTodas" />
@@ -58,18 +68,18 @@
       <input wsam:Action="softrh.services/PrendaWS/obtenerPrendaPorIdRequest" message="tns:obtenerPrendaPorId" />
       <output wsam:Action="softrh.services/PrendaWS/obtenerPrendaPorIdResponse" message="tns:obtenerPrendaPorIdResponse" />
     </operation>
-    <operation name="eliminarPrenda">
-      <input wsam:Action="softrh.services/PrendaWS/eliminarPrendaRequest" message="tns:eliminarPrenda" />
-      <output wsam:Action="softrh.services/PrendaWS/eliminarPrendaResponse" message="tns:eliminarPrendaResponse" />
+    <operation name="listarPrendasPorNombre">
+      <input wsam:Action="softrh.services/PrendaWS/listarPrendasPorNombreRequest" message="tns:listarPrendasPorNombre" />
+      <output wsam:Action="softrh.services/PrendaWS/listarPrendasPorNombreResponse" message="tns:listarPrendasPorNombreResponse" />
     </operation>
-    <operation name="modificarPrenda">
-      <input wsam:Action="softrh.services/PrendaWS/modificarPrendaRequest" message="tns:modificarPrenda" />
-      <output wsam:Action="softrh.services/PrendaWS/modificarPrendaResponse" message="tns:modificarPrendaResponse" />
+    <operation name="obtenerImagenPorId">
+      <input wsam:Action="softrh.services/PrendaWS/obtenerImagenPorIdRequest" message="tns:obtenerImagenPorId" />
+      <output wsam:Action="softrh.services/PrendaWS/obtenerImagenPorIdResponse" message="tns:obtenerImagenPorIdResponse" />
     </operation>
   </portType>
   <binding name="PrendaWSPortBinding" type="tns:PrendaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarPrenda">
+    <operation name="modificarPrenda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -78,7 +88,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPrendasPorNombre">
+    <operation name="eliminarPrenda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPrenda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +124,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPrenda">
+    <operation name="listarPrendasPorNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +133,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPrenda">
+    <operation name="obtenerImagenPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

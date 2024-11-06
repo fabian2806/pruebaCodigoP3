@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F4EB0220-E059-4EDA-BA38-37FD0A357519}|RHStorePrendasBO\\RHStorePrendasBO.csproj|c:\\users\\pelem\\onedrive\\escritorio\\percyleon\\ciclo 2024-2\\programaci\u00F3n 3\\ta\\final ta\\pruebacodigop3\\front\\rhstorews\\rhstoreprendasbo\\prendabo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EB0220-E059-4EDA-BA38-37FD0A357519}|RHStorePrendasBO\\RHStorePrendasBO.csproj|solutionrelative:rhstoreprendasbo\\prendabo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\pelem\\onedrive\\escritorio\\percyleon\\ciclo 2024-2\\programaci\u00F3n 3\\ta\\final ta\\pruebacodigop3\\front\\rhstorews\\rhstorews\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\cliente\\clientehome.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\cliente\\clientehome.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\cliente\\clientehome.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\cliente\\clientehome.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\pelem\\onedrive\\escritorio\\percyleon\\ciclo 2024-2\\programaci\u00F3n 3\\ta\\final ta\\pruebacodigop3\\front\\rhstorews\\rhstorews\\admin\\gestionarprendas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\admin\\gestionarprendas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\cliente\\cliente.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\cliente\\mujer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|c:\\users\\pelem\\onedrive\\escritorio\\percyleon\\ciclo 2024-2\\programaci\u00F3n 3\\ta\\final ta\\pruebacodigop3\\front\\rhstorews\\rhstorews\\cliente\\unisex.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\cliente\\unisex.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\cliente\\unisex.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -53,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\cliente\\carrito.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\cliente\\carrito.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|solutionrelative:rhstorews\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1DB3557B-1A55-4D0C-BF74-6A5F2B3945D8}|RHStoreWS\\RHStoreWS.csproj|C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\rhstorews\\cliente\\cliente.master.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,46 +102,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PrendaBO.cs",
+              "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStorePrendasBO\\PrendaBO.cs",
+              "RelativeDocumentMoniker": "RHStorePrendasBO\\PrendaBO.cs",
+              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStorePrendasBO\\PrendaBO.cs",
+              "RelativeToolTip": "RHStorePrendasBO\\PrendaBO.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAIwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T23:38:19.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ClienteHome.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\ClienteHome.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\ClienteHome.aspx.cs",
               "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\ClienteHome.aspx.cs",
               "RelativeToolTip": "RHStoreWS\\Cliente\\ClienteHome.aspx.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAqwDYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T20:54:25.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Hombre.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Hombre.aspx.cs",
-              "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Hombre.aspx.cs",
-              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Hombre.aspx.cs",
-              "RelativeToolTip": "RHStoreWS\\Cliente\\Hombre.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T01:20:47.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ClienteHome.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\ClienteHome.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\ClienteHome.aspx",
-              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\ClienteHome.aspx*",
-              "RelativeToolTip": "RHStoreWS\\Cliente\\ClienteHome.aspx*",
+              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\ClienteHome.aspx",
+              "RelativeToolTip": "RHStoreWS\\Cliente\\ClienteHome.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-11-04T20:44:17.336Z",
@@ -141,7 +153,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Web.config",
+              "RelativeDocumentMoniker": "RHStoreWS\\Web.config",
+              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Web.config",
+              "RelativeToolTip": "RHStoreWS\\Web.config",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-04T21:02:20.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GestionarPrendas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\GestionarPrendas.aspx.cs",
+              "RelativeDocumentMoniker": "RHStoreWS\\Admin\\GestionarPrendas.aspx.cs",
+              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\GestionarPrendas.aspx.cs",
+              "RelativeToolTip": "RHStoreWS\\Admin\\GestionarPrendas.aspx.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T23:46:31.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Hombre.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Hombre.aspx.cs",
+              "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Hombre.aspx.cs",
+              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Hombre.aspx.cs",
+              "RelativeToolTip": "RHStoreWS\\Cliente\\Hombre.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T01:20:47.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Hombre.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Hombre.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Hombre.aspx",
@@ -149,12 +199,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Hombre.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-04T22:07:51.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T22:07:51.232Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Cliente.Master.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Cliente.Master.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Cliente.Master.cs",
@@ -162,12 +211,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Cliente.Master.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAmwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T20:39:55.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T20:39:55.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Unisex.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Unisex.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Unisex.aspx",
@@ -175,12 +223,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Unisex.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-04T22:08:27.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T22:08:27.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Mujer.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Mujer.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Mujer.aspx",
@@ -188,12 +235,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Mujer.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-04T22:08:09.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T22:08:09.265Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Cliente.Master",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Cliente.Master",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Cliente.Master",
@@ -206,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Unisex.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Unisex.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Unisex.aspx.cs",
@@ -214,12 +260,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Unisex.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T01:40:01.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T01:40:01.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Mujer.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Mujer.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Mujer.aspx.cs",
@@ -227,12 +272,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Mujer.aspx.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T01:39:21.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T01:39:21.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Carrito.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Carrito.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Carrito.aspx",
@@ -244,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "ClienteHome.aspx.designer.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\ClienteHome.aspx.designer.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\ClienteHome.aspx.designer.cs",
@@ -257,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "CrudPrendas.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\CrudPrendas.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\CrudPrendas.aspx.cs",
@@ -265,25 +309,11 @@
               "RelativeToolTip": "RHStoreWS\\Admin\\CrudPrendas.aspx.cs",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAmwA4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T07:17:19.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-03T07:17:19.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Web.config",
-              "RelativeDocumentMoniker": "RHStoreWS\\Web.config",
-              "ToolTip": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Web.config",
-              "RelativeToolTip": "RHStoreWS\\Web.config",
-              "ViewState": "AgIAADgAAAAAAAAAAAAtwFUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-04T21:02:20.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Cliente.Master.designer.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Cliente\\Cliente.Master.designer.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Cliente\\Cliente.Master.designer.cs",
@@ -291,12 +321,11 @@
               "RelativeToolTip": "RHStoreWS\\Cliente\\Cliente.Master.designer.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T20:57:43.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T20:57:43.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "GestionarClientes.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\GestionarClientes.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\GestionarClientes.aspx.cs",
@@ -308,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "CrudPrendas.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\CrudPrendas.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\CrudPrendas.aspx",
@@ -320,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "CrudPromociones.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\CrudPromociones.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\CrudPromociones.aspx.cs",
@@ -332,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "CrudPromociones.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\CrudPromociones.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\CrudPromociones.aspx",
@@ -344,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "GestionarClientes.aspx",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\GestionarClientes.aspx",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\GestionarClientes.aspx",
@@ -356,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "GestionarPromociones.aspx.cs",
               "DocumentMoniker": "C:\\Users\\pelem\\OneDrive\\Escritorio\\PercyLeon\\CICLO 2024-2\\PROGRAMACI\u00D3N 3\\TA\\FINAL TA\\pruebaCodigoP3\\Front\\RHStoreWS\\RHStoreWS\\Admin\\GestionarPromociones.aspx.cs",
               "RelativeDocumentMoniker": "RHStoreWS\\Admin\\GestionarPromociones.aspx.cs",

@@ -48,4 +48,12 @@ public class PrendaWS {
 	public ArrayList<Prenda> listarPrendasPorNombre(String nombre) {
 		return prendaBO.listarPorNombre(nombre);
 	}
+        
+        //Añadido por Percy
+        @WebMethod(operationName = "obtenerImagenPorId")
+        public byte[] obtenerImagenPorId(Integer idPrenda) {
+            Prenda prenda = prendaBO.obtenerPorId(idPrenda);
+            return prenda != null ? prenda.getImagen() : null; // Asegúrate de que el método getImagen() exista en tu modelo Prenda
+        }
+
 }

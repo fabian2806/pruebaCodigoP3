@@ -359,7 +359,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RHStoreBaseBO\RHStoreBaseBO.csproj">
       <Project>{3ea7a1f1-525b-4f2f-bc4e-d6127161260f}</Project>

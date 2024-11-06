@@ -14,5 +14,5 @@ public interface PrendaDAO {
 
     Prenda obtenerPorId(int idPrenda);
 
-	ArrayList<Prenda> listarPorNombre(String nombre);
+    ArrayList<Prenda> listarPorNombre(String nombre);
 }
