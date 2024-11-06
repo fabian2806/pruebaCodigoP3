@@ -1,5 +1,8 @@
-﻿using System;
+﻿using RHStoreBaseBO.ServiciosWeb;
+using RHStorePrendasBO;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,13 +12,11 @@ namespace RHStoreWS.Cliente
 {
     public partial class Hombre : System.Web.UI.Page
     {
+        private PrendaBO prendaBO = new PrendaBO();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void RedirectToPage(string pageName)
-        {
-            Response.Redirect(pageName);
+   
         }
 
     }

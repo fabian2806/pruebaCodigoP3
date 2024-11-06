@@ -5,6 +5,24 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/DireccionWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
+  <message name="listarDireccionesTodas">
+    <part name="parameters" element="tns:listarDireccionesTodas" />
+  </message>
+  <message name="listarDireccionesTodasResponse">
+    <part name="parameters" element="tns:listarDireccionesTodasResponse" />
+  </message>
+  <message name="obtenerDireccionPorId">
+    <part name="parameters" element="tns:obtenerDireccionPorId" />
+  </message>
+  <message name="obtenerDireccionPorIdResponse">
+    <part name="parameters" element="tns:obtenerDireccionPorIdResponse" />
+  </message>
+  <message name="modificarDireccion">
+    <part name="parameters" element="tns:modificarDireccion" />
+  </message>
+  <message name="modificarDireccionResponse">
+    <part name="parameters" element="tns:modificarDireccionResponse" />
+  </message>
   <message name="eliminarDireccion">
     <part name="parameters" element="tns:eliminarDireccion" />
   </message>
@@ -17,25 +35,19 @@
   <message name="insetarDireccionResponse">
     <part name="parameters" element="tns:insetarDireccionResponse" />
   </message>
-  <message name="modificarDireccion">
-    <part name="parameters" element="tns:modificarDireccion" />
-  </message>
-  <message name="modificarDireccionResponse">
-    <part name="parameters" element="tns:modificarDireccionResponse" />
-  </message>
-  <message name="obtenerDireccionPorId">
-    <part name="parameters" element="tns:obtenerDireccionPorId" />
-  </message>
-  <message name="obtenerDireccionPorIdResponse">
-    <part name="parameters" element="tns:obtenerDireccionPorIdResponse" />
-  </message>
-  <message name="listarDireccionesTodas">
-    <part name="parameters" element="tns:listarDireccionesTodas" />
-  </message>
-  <message name="listarDireccionesTodasResponse">
-    <part name="parameters" element="tns:listarDireccionesTodasResponse" />
-  </message>
   <portType name="DireccionWS">
+    <operation name="listarDireccionesTodas">
+      <input wsam:Action="softrh.services/DireccionWS/listarDireccionesTodasRequest" message="tns:listarDireccionesTodas" />
+      <output wsam:Action="softrh.services/DireccionWS/listarDireccionesTodasResponse" message="tns:listarDireccionesTodasResponse" />
+    </operation>
+    <operation name="obtenerDireccionPorId">
+      <input wsam:Action="softrh.services/DireccionWS/obtenerDireccionPorIdRequest" message="tns:obtenerDireccionPorId" />
+      <output wsam:Action="softrh.services/DireccionWS/obtenerDireccionPorIdResponse" message="tns:obtenerDireccionPorIdResponse" />
+    </operation>
+    <operation name="modificarDireccion">
+      <input wsam:Action="softrh.services/DireccionWS/modificarDireccionRequest" message="tns:modificarDireccion" />
+      <output wsam:Action="softrh.services/DireccionWS/modificarDireccionResponse" message="tns:modificarDireccionResponse" />
+    </operation>
     <operation name="eliminarDireccion">
       <input wsam:Action="softrh.services/DireccionWS/eliminarDireccionRequest" message="tns:eliminarDireccion" />
       <output wsam:Action="softrh.services/DireccionWS/eliminarDireccionResponse" message="tns:eliminarDireccionResponse" />
@@ -44,21 +56,36 @@
       <input wsam:Action="softrh.services/DireccionWS/insetarDireccionRequest" message="tns:insetarDireccion" />
       <output wsam:Action="softrh.services/DireccionWS/insetarDireccionResponse" message="tns:insetarDireccionResponse" />
     </operation>
-    <operation name="modificarDireccion">
-      <input wsam:Action="softrh.services/DireccionWS/modificarDireccionRequest" message="tns:modificarDireccion" />
-      <output wsam:Action="softrh.services/DireccionWS/modificarDireccionResponse" message="tns:modificarDireccionResponse" />
-    </operation>
-    <operation name="obtenerDireccionPorId">
-      <input wsam:Action="softrh.services/DireccionWS/obtenerDireccionPorIdRequest" message="tns:obtenerDireccionPorId" />
-      <output wsam:Action="softrh.services/DireccionWS/obtenerDireccionPorIdResponse" message="tns:obtenerDireccionPorIdResponse" />
-    </operation>
-    <operation name="listarDireccionesTodas">
-      <input wsam:Action="softrh.services/DireccionWS/listarDireccionesTodasRequest" message="tns:listarDireccionesTodas" />
-      <output wsam:Action="softrh.services/DireccionWS/listarDireccionesTodasResponse" message="tns:listarDireccionesTodasResponse" />
-    </operation>
   </portType>
   <binding name="DireccionWSPortBinding" type="tns:DireccionWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarDireccionesTodas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerDireccionPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarDireccion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarDireccion">
       <soap:operation soapAction="" />
       <input>
@@ -69,33 +96,6 @@
       </output>
     </operation>
     <operation name="insetarDireccion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarDireccion">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerDireccionPorId">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarDireccionesTodas">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

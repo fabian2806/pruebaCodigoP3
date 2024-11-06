@@ -43,6 +43,11 @@ namespace RHStorePrendasBO
         {
             return PrendaWS.obtenerImagenPorId(idPrenda);
         }
+        public BindingList<prenda> listarPrendasFiltradas(double minPrice, double maxPrice, bool filterHombre, bool filterMujer, bool filterUnisex, string tallas, string colores)
+        {
+            // Llama al método del servicio web que corresponde al procedimiento almacenado
+            return new BindingList<prenda>(PrendaWS.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores));
+        }
 
     }
 }

@@ -11,21 +11,9 @@ namespace RHStoreWS.Cliente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void RedirectToPage(string pageName)
-        {
-            Response.Redirect(pageName);
-        }
-        protected void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            // Redirige a la página de inicio de sesión en Admin
-            Response.Redirect("~/Admin/IniciarSesion.aspx");
+     
         }
 
-        protected void btnCarrito_Click(object sender, EventArgs e)
-        {
-            RedirectToPage("Carrito.aspx");
-        }
+
     }
 }

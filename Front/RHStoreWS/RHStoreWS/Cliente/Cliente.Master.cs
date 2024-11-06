@@ -15,19 +15,18 @@ namespace RHStoreWS.Cliente
     {
         private PrendaBO prendaBO;
         private BindingList<prenda> listaDePrendas;
+
         public Cliente()
         {
             prendaBO = new PrendaBO();
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!IsPostBack)
-            {
-                CargarDatosUsuario();
-            }*/
             if (!IsPostBack)
             {
-                CargarPrendas();
+                string genero = GetGenderFromPage(); // Obtener género desde la página actual
+                CargarPrendas(genero);
             }
         }
 
@@ -40,14 +39,37 @@ namespace RHStoreWS.Cliente
                 // Aquí puedes actualizar el encabezado o cualquier otro control con el nombre del usuario
             }
         }
-        private void CargarPrendas()
-        {
-            // Cargar todas las prendas usando el procedimiento almacenado
-            listaDePrendas = new BindingList<prenda>(prendaBO.listarTodos());
 
-            // Enlazar los datos al control de visualización, como un Repeater o un GridView
+        public void CargarPrendas(string genero)
+        {
+            if (string.IsNullOrEmpty(genero))
+            {
+                listaDePrendas = new BindingList<prenda>(prendaBO.listarTodos());
+            }
+            else
+            {
+                bool filterHombre = genero.Equals("Hombre", StringComparison.OrdinalIgnoreCase);
+                bool filterMujer = genero.Equals("Mujer", StringComparison.OrdinalIgnoreCase);
+                bool filterUnisex = genero.Equals("Unisex", StringComparison.OrdinalIgnoreCase);
+
+                // Cambiar los valores de tallas y colores a cadenas vacías si son nulos
+                string tallasSeleccionadas = "";
+                string coloresSeleccionados = "";
+
+                listaDePrendas = new BindingList<prenda>(prendaBO.listarPrendasFiltradas(0, double.MaxValue, filterHombre, filterMujer, filterUnisex, tallasSeleccionadas, coloresSeleccionados));
+            }
+
             RepeaterPrendas.DataSource = listaDePrendas;
             RepeaterPrendas.DataBind();
+        }
+
+        private string GetGenderFromPage()
+        {
+            // Obtener el tipo de página actual
+            if (this is Hombre) return "Hombre";
+            if (this is Mujer) return "Mujer";
+            if (this is Unisex) return "Unisex";
+            return null;
         }
         protected string ObtenerImagen(int idPrenda)
         {
@@ -60,6 +82,7 @@ namespace RHStoreWS.Cliente
             }
             return string.Empty; // Devuelve una cadena vacía si no hay imagen
         }
+
         protected void lbBuscar_Click(object sender, EventArgs e)
         {
             string nombreBuscado = txtBuscar.Text.Trim();
@@ -73,9 +96,10 @@ namespace RHStoreWS.Cliente
             else
             {
                 // Si no hay texto, cargar todas las prendas
-                CargarPrendas();
+                CargarPrendas(null);
             }
         }
+
         protected void RedirectToPage(string pageName)
         {
             Response.Redirect(pageName);
@@ -112,5 +136,62 @@ namespace RHStoreWS.Cliente
             RedirectToPage("Carrito.aspx");
         }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            double minPrice = double.TryParse(minPriceTextBox.Text, out double min) ? min : 0;
+            double maxPrice = double.TryParse(maxPriceTextBox.Text, out double max) ? max : double.MaxValue;
+
+            bool filterHombre = hombreCheckBox.Checked;
+            bool filterMujer = mujerCheckBox.Checked;
+            bool filterUnisex = unisexCheckBox.Checked;
+
+            // Verificar tallas seleccionadas
+            string tallasSeleccionadas = string.IsNullOrEmpty(string.Join(",", GetSelectedTallas())) ? "" : string.Join(",", GetSelectedTallas());
+            // Verificar colores seleccionados
+            string coloresSeleccionados = string.IsNullOrEmpty(string.Join(",", GetSelectedColores())) ? "" : string.Join(",", GetSelectedColores());
+
+            // Llamar al método para obtener prendas filtradas
+            BindingList<prenda> prendasFiltradas = prendaBO.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallasSeleccionadas, coloresSeleccionados);
+
+            // Asegúrate de que RepeaterPrendas no sea null
+            if (RepeaterPrendas != null)
+            {
+                RepeaterPrendas.DataSource = prendasFiltradas;
+                RepeaterPrendas.DataBind();
+            }
+            else
+            {
+                throw new Exception("El RepeaterPrendas no está inicializado en el Master.");
+            }
+        }
+
+
+        private List<string> GetSelectedTallas()
+        {
+            List<string> tallas = new List<string>();
+            if (tallaXS.Checked) tallas.Add("XS");
+            if (tallaS.Checked) tallas.Add("S");
+            if (tallaM.Checked) tallas.Add("M");
+            if (tallaL.Checked) tallas.Add("L");
+            if (tallaXL.Checked) tallas.Add("XL");
+            if (tallaXXL.Checked) tallas.Add("XXL");
+            return tallas;
+        }
+
+        private List<string> GetSelectedColores()
+        {
+            List<string> colores = new List<string>();
+            if (colorBlanco.Checked) colores.Add("Blanco");
+            if (colorAzul.Checked) colores.Add("Azul");
+            if (colorCian.Checked) colores.Add("Cian");
+            if (colorRojo.Checked) colores.Add("Rojo");
+            if (colorAmarillo.Checked) colores.Add("Amarillo");
+            if (colorNegro.Checked) colores.Add("Negro");
+            if (colorMorado.Checked) colores.Add("Morado");
+            if (colorRosa.Checked) colores.Add("Rosa");
+            if (colorNaranja.Checked) colores.Add("Naranja");
+            if (colorVerde.Checked) colores.Add("Verde");
+            return colores;
+        }
     }
 }

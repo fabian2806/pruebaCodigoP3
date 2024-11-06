@@ -22,6 +22,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #e6e6e6;
         }
         .logo {
             position: absolute;
@@ -117,17 +118,31 @@
             color: #538f95;
         }
 
+        .container {
+            display: flex;
+            margin: 20px; /* Espacio alrededor de la contenedor */
+        }
+
+        .filters {
+            width: 25%; /* Ancho de los filtros */
+            padding: 20px;
+            border: 1px solid #ddd; /* Opcional: borde alrededor de los filtros */
+            border-radius: 5px; /* Opcional: bordes redondeados */
+            background-color: #e6e6e6; /* Opcional: color de fondo */
+            margin-right: 20px; /* Espacio entre filtros y productos */
+        }
+
         .products {
+            width: 70%; /* Ancho de los productos */
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 40px 0;
-            width: 100%;
         }
 
         .product {
             position: relative;
             text-align: center;
+            margin-bottom: 20px; /* Espacio entre productos */
         }
 
         .product img {
@@ -201,20 +216,54 @@
             </div>
         </header>
 
-        <div class="products">
-            <asp:Repeater ID="RepeaterPrendas" runat="server">
-                <ItemTemplate>
-                    <div class="product">
-                        <div class="add-to-cart">
-                            <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
+        <div class="container">
+            <div class="filters">
+                <h4>Filters</h4>
+                <h5>PRECIO</h5>
+                <label>Desde:</label>
+                <asp:TextBox ID="minPriceTextBox" runat="server" placeholder="Precio mínimo" style="width: 100%; margin-bottom: 10px;" />
+                <label>Hasta:</label>
+                <asp:TextBox ID="maxPriceTextBox" runat="server" placeholder="Precio máximo" style="width: 100%;" /><br /><br />
+                <h5>CATEGORIA</h5>
+                <label><asp:CheckBox ID="hombreCheckBox" runat="server" Text="HOMBRE" Checked="True" /></label><br />
+                <label><asp:CheckBox ID="mujerCheckBox" runat="server" Text="MUJER" /></label><br />
+                <label><asp:CheckBox ID="unisexCheckBox" runat="server" Text="UNISEX" /></label><br />
+                <h5>TALLA</h5>
+                <label><asp:CheckBox ID="tallaXS" runat="server" Text="Extra Small" /></label><br />
+                <label><asp:CheckBox ID="tallaS" runat="server" Text="Small" /></label><br />
+                <label><asp:CheckBox ID="tallaM" runat="server" Text="Medium" /></label><br />
+                <label><asp:CheckBox ID="tallaL" runat="server" Text="Large" Checked="True" /></label><br />
+                <label><asp:CheckBox ID="tallaXL" runat="server" Text="X Large" /></label><br />
+                <label><asp:CheckBox ID="tallaXXL" runat="server" Text="XXL" /></label><br />
+                <h5>COLOR</h5>
+                <label><asp:CheckBox ID="colorBlanco" runat="server" Text="Blanco" /></label><br />
+                <label><asp:CheckBox ID="colorAzul" runat="server" Text="Azul" /></label><br />
+                <label><asp:CheckBox ID="colorCian" runat="server" Text="Cian" /></label><br />
+                <label><asp:CheckBox ID="colorRojo" runat="server" Text="Rojo" /></label><br />
+                <label><asp:CheckBox ID="colorAmarillo" runat="server" Text="Amarillo" /></label><br />
+                <label><asp:CheckBox ID="colorNegro" runat="server" Text="Negro" /></label><br />
+                <label><asp:CheckBox ID="colorMorado" runat="server" Text="Morado" /></label><br />
+                <label><asp:CheckBox ID="colorRosa" runat="server" Text="Rosa" /></label><br />
+                <label><asp:CheckBox ID="colorNaranja" runat="server" Text="Naranja" /></label><br />
+                <label><asp:CheckBox ID="colorVerde" runat="server" Text="Verde" /></label><br />
+                <asp:LinkButton ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" CssClass="btn btn-info" />
+            </div>
+
+            <div class="products">
+                <asp:Repeater ID="RepeaterPrendas" runat="server">
+                    <ItemTemplate>
+                        <div class="product">
+                            <div class="add-to-cart">
+                                <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
+                            </div>
+                            <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
+                            <p><%# Eval("nombre") %></p>
+                            <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
+                            <p>Colores disponibles: <%# Eval("color") %></p>
                         </div>
-                        <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
-                        <p><%# Eval("nombre") %></p>
-                        <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
-                        <p>Colores disponibles: <%# Eval("color") %></p>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
         </div>
 
         <main>

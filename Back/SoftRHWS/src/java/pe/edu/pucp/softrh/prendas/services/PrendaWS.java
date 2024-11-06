@@ -55,5 +55,10 @@ public class PrendaWS {
             Prenda prenda = prendaBO.obtenerPorId(idPrenda);
             return prenda != null ? prenda.getImagen() : null; // Asegúrate de que el método getImagen() exista en tu modelo Prenda
         }
+        @WebMethod(operationName = "listarPrendasFiltradas")
+        public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, boolean filterHombre, boolean filterMujer, boolean filterUnisex, String tallas, String colores) {
+            return prendaBO.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores);
+        }
+
 
 }

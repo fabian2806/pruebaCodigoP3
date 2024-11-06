@@ -4,6 +4,8 @@
   <xs:element name="eliminarPrendaResponse" type="tns:eliminarPrendaResponse" />
   <xs:element name="insertarPrenda" type="tns:insertarPrenda" />
   <xs:element name="insertarPrendaResponse" type="tns:insertarPrendaResponse" />
+  <xs:element name="listarPrendasFiltradas" type="tns:listarPrendasFiltradas" />
+  <xs:element name="listarPrendasFiltradasResponse" type="tns:listarPrendasFiltradasResponse" />
   <xs:element name="listarPrendasPorNombre" type="tns:listarPrendasPorNombre" />
   <xs:element name="listarPrendasPorNombreResponse" type="tns:listarPrendasPorNombreResponse" />
   <xs:element name="listarPrendasTodas" type="tns:listarPrendasTodas" />
@@ -95,6 +97,22 @@
   <xs:complexType name="eliminarPrendaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasFiltradas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:double" />
+      <xs:element minOccurs="0" name="arg1" type="xs:double" />
+      <xs:element name="arg2" type="xs:boolean" />
+      <xs:element name="arg3" type="xs:boolean" />
+      <xs:element name="arg4" type="xs:boolean" />
+      <xs:element minOccurs="0" name="arg5" type="xs:string" />
+      <xs:element minOccurs="0" name="arg6" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasFiltradasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:prenda" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarPrenda">

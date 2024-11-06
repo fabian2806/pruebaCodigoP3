@@ -176,6 +176,52 @@ public class PrendaDAOImp implements PrendaDAO {
             }
         }
 
-            return prendas;
+        return prendas;
+    }
+    //Percy
+    @Override
+    public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, Boolean filterHombre, Boolean filterMujer, Boolean filterUnisex, String tallas, String colores) {
+        ArrayList<Prenda> prendas = new ArrayList<>();
+        Object[] parameters = new Object[7];
+        parameters[0] = minPrice;
+        parameters[1] = maxPrice;
+        parameters[2] = filterHombre;
+        parameters[3] = filterMujer;
+        parameters[4] = filterUnisex;
+        parameters[5] = tallas;
+        parameters[6] = colores;
+
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_FILTRADAS", parameters);
+        try {
+            if (rs != null && rs.next()) { // Verifica si rs es null antes de llamar a next()
+                do {
+                    Prenda prenda = new Prenda();
+                    prenda.setIdPrenda(rs.getInt("idPrenda"));
+                    prenda.setNombre(rs.getString("nombre"));
+                    prenda.setDescripcion(rs.getString("descripcion"));
+                    prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
+                    prenda.setImagen(rs.getBytes("imagen"));
+                    prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+                    prenda.setGenero(Genero.valueOf(rs.getString("genero")));
+                    prenda.setColor(rs.getString("color"));
+                    prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
+                    prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
+                    prenda.setStock(rs.getInt("stock"));
+                    prenda.setCantVendida(rs.getInt("cantVendida"));
+                    prenda.setActivo(true);
+                    prendas.add(prenda);
+                } while (rs.next());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(PrendaDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        return prendas;
+    }
+
 }

@@ -5,24 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/ClienteWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
-  <message name="eliminarCliente">
-    <part name="parameters" element="tns:eliminarCliente" />
-  </message>
-  <message name="eliminarClienteResponse">
-    <part name="parameters" element="tns:eliminarClienteResponse" />
-  </message>
-  <message name="insertarCliente">
-    <part name="parameters" element="tns:insertarCliente" />
-  </message>
-  <message name="insertarClienteResponse">
-    <part name="parameters" element="tns:insertarClienteResponse" />
-  </message>
-  <message name="modificarCliente">
-    <part name="parameters" element="tns:modificarCliente" />
-  </message>
-  <message name="modificarClienteResponse">
-    <part name="parameters" element="tns:modificarClienteResponse" />
-  </message>
   <message name="listarClientesTodos">
     <part name="parameters" element="tns:listarClientesTodos" />
   </message>
@@ -35,19 +17,25 @@
   <message name="obtenerClientePorIdResponse">
     <part name="parameters" element="tns:obtenerClientePorIdResponse" />
   </message>
+  <message name="insertarCliente">
+    <part name="parameters" element="tns:insertarCliente" />
+  </message>
+  <message name="insertarClienteResponse">
+    <part name="parameters" element="tns:insertarClienteResponse" />
+  </message>
+  <message name="eliminarCliente">
+    <part name="parameters" element="tns:eliminarCliente" />
+  </message>
+  <message name="eliminarClienteResponse">
+    <part name="parameters" element="tns:eliminarClienteResponse" />
+  </message>
+  <message name="modificarCliente">
+    <part name="parameters" element="tns:modificarCliente" />
+  </message>
+  <message name="modificarClienteResponse">
+    <part name="parameters" element="tns:modificarClienteResponse" />
+  </message>
   <portType name="ClienteWS">
-    <operation name="eliminarCliente">
-      <input wsam:Action="softrh.services/ClienteWS/eliminarClienteRequest" message="tns:eliminarCliente" />
-      <output wsam:Action="softrh.services/ClienteWS/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
-    </operation>
-    <operation name="insertarCliente">
-      <input wsam:Action="softrh.services/ClienteWS/insertarClienteRequest" message="tns:insertarCliente" />
-      <output wsam:Action="softrh.services/ClienteWS/insertarClienteResponse" message="tns:insertarClienteResponse" />
-    </operation>
-    <operation name="modificarCliente">
-      <input wsam:Action="softrh.services/ClienteWS/modificarClienteRequest" message="tns:modificarCliente" />
-      <output wsam:Action="softrh.services/ClienteWS/modificarClienteResponse" message="tns:modificarClienteResponse" />
-    </operation>
     <operation name="listarClientesTodos">
       <input wsam:Action="softrh.services/ClienteWS/listarClientesTodosRequest" message="tns:listarClientesTodos" />
       <output wsam:Action="softrh.services/ClienteWS/listarClientesTodosResponse" message="tns:listarClientesTodosResponse" />
@@ -56,10 +44,31 @@
       <input wsam:Action="softrh.services/ClienteWS/obtenerClientePorIdRequest" message="tns:obtenerClientePorId" />
       <output wsam:Action="softrh.services/ClienteWS/obtenerClientePorIdResponse" message="tns:obtenerClientePorIdResponse" />
     </operation>
+    <operation name="insertarCliente">
+      <input wsam:Action="softrh.services/ClienteWS/insertarClienteRequest" message="tns:insertarCliente" />
+      <output wsam:Action="softrh.services/ClienteWS/insertarClienteResponse" message="tns:insertarClienteResponse" />
+    </operation>
+    <operation name="eliminarCliente">
+      <input wsam:Action="softrh.services/ClienteWS/eliminarClienteRequest" message="tns:eliminarCliente" />
+      <output wsam:Action="softrh.services/ClienteWS/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
+    </operation>
+    <operation name="modificarCliente">
+      <input wsam:Action="softrh.services/ClienteWS/modificarClienteRequest" message="tns:modificarCliente" />
+      <output wsam:Action="softrh.services/ClienteWS/modificarClienteResponse" message="tns:modificarClienteResponse" />
+    </operation>
   </portType>
   <binding name="ClienteWSPortBinding" type="tns:ClienteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarCliente">
+    <operation name="listarClientesTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerClientePorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,25 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="eliminarCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="modificarCliente">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarClientesTodos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerClientePorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
