@@ -75,7 +75,7 @@
         }
 
         .search-container {
-            margin-right: 20px;
+            margin-right: 240px;
             display: flex;
             align-items: center;
             margin-top: 40px; /* Espacio debajo del logo */
@@ -134,19 +134,20 @@
 
         .products {
             width: 70%; /* Ancho de los productos */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid; /* Usamos grid en lugar de flex */
+            grid-template-columns: repeat(3, 1fr); /* Esto divide el contenedor en 3 columnas de igual tamaño */
+            gap: 20px; /* Espacio entre los elementos (productos) */
+            padding: 20px; /* Opcional: para agregar un poco de espacio dentro del contenedor */
         }
 
         .product {
             position: relative;
             text-align: center;
-            margin-bottom: 20px; /* Espacio entre productos */
         }
 
         .product img {
             width: 200px;
+            height: auto; /* Mantener la relación de aspecto */
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
@@ -194,6 +195,9 @@
             <div class="logo">
                 <a href="ClienteHome.aspx"><img src="../Images/logo2.png" alt="Logo" class="logo" /></a>
             </div>
+
+            <!-- Conditional navigation based on ShowFullNav -->
+            <asp:Panel ID="navContainer" runat="server">
             <div class="nav-container">
                 <nav>
                     <ul>
@@ -209,13 +213,17 @@
                     <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control" placeholder="Buscar productos..." />
                     <asp:LinkButton ID="lbBuscar" runat="server" CssClass="btn btn-info" Text="Buscar" OnClick="lbBuscar_Click" />
                 </div>
+            </div>
+            </asp:Panel>
+
+            <div class="header-content">
                 <div class="user-options">
                     <asp:LinkButton ID="btnIniciarSesion" runat="server" OnClick="btnIniciarSesion_Click">INICIAR SESIÓN</asp:LinkButton>
                     <a href="javascript:void(0);" onclick="toggleCartSummary()">CARRITO</a>
                 </div>
             </div>
         </header>
-
+       <asp:Panel ID="filtersContainer" runat="server">
         <div class="container">
             <div class="filters">
                 <h4>Filters</h4>
@@ -224,10 +232,6 @@
                 <asp:TextBox ID="minPriceTextBox" runat="server" placeholder="Precio mínimo" style="width: 100%; margin-bottom: 10px;" />
                 <label>Hasta:</label>
                 <asp:TextBox ID="maxPriceTextBox" runat="server" placeholder="Precio máximo" style="width: 100%;" /><br /><br />
-                <h5>CATEGORIA</h5>
-                <label><asp:CheckBox ID="hombreCheckBox" runat="server" Text="HOMBRE" Checked="True" /></label><br />
-                <label><asp:CheckBox ID="mujerCheckBox" runat="server" Text="MUJER" /></label><br />
-                <label><asp:CheckBox ID="unisexCheckBox" runat="server" Text="UNISEX" /></label><br />
                 <h5>TALLA</h5>
                 <label><asp:CheckBox ID="tallaXS" runat="server" Text="Extra Small" /></label><br />
                 <label><asp:CheckBox ID="tallaS" runat="server" Text="Small" /></label><br />
@@ -256,7 +260,10 @@
                             <div class="add-to-cart">
                                 <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
                             </div>
-                            <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
+                                <!-- Enlace que redirige a la página de detalles de la prenda -->
+                                <a href='<%# "ProductoDetalle.aspx?idPrenda=" + Eval("idPrenda") %>'>
+                                    <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
+                                </a>
                             <p><%# Eval("nombre") %></p>
                             <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
                             <p>Colores disponibles: <%# Eval("color") %></p>
@@ -265,7 +272,7 @@
                 </asp:Repeater>
             </div>
         </div>
-
+        </asp:Panel>
         <main>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

@@ -15,6 +15,8 @@ namespace RHStoreWS.Cliente
     {
         private PrendaBO prendaBO;
         private BindingList<prenda> listaDePrendas;
+        // En Cliente.master.cs
+        public bool ShowFullNav { get; set; } = true;
 
         public Cliente()
         {
@@ -25,8 +27,20 @@ namespace RHStoreWS.Cliente
         {
             if (!IsPostBack)
             {
-                string genero = GetGenderFromPage(); // Obtener género desde la página actual
-                CargarPrendas(genero);
+                // Detectar si estamos en la página principal, para cargar todas las prendas.
+                if (Request.Url.AbsolutePath.ToLower().Contains("clientehome"))
+                {
+                    CargarPrendas(null); // Cargar todas las prendas
+                }
+                else
+                {
+                    // Cargar prendas según el género detectado en la página actual
+                    string genero = GetGenderFromPage();
+                    CargarPrendas(genero);
+                }
+
+                navContainer.Visible = ShowFullNav;
+                filtersContainer.Visible = ShowFullNav;
             }
         }
 
@@ -39,7 +53,17 @@ namespace RHStoreWS.Cliente
                 // Aquí puedes actualizar el encabezado o cualquier otro control con el nombre del usuario
             }
         }
-
+        protected string ObtenerImagen(int idPrenda)
+        {
+            // Obtener la imagen como bytes desde la base de datos
+            byte[] imagenBytes = prendaBO.ObtenerImagen(idPrenda); // Implementa este método en PrendaBO
+            if (imagenBytes != null)
+            {
+                // Convertir a Base64 para poder usar en src
+                return "data:image/jpeg;base64," + Convert.ToBase64String(imagenBytes);
+            }
+            return string.Empty; // Devuelve una cadena vacía si no hay imagen
+        }
         public void CargarPrendas(string genero)
         {
             if (string.IsNullOrEmpty(genero))
@@ -52,11 +76,7 @@ namespace RHStoreWS.Cliente
                 bool filterMujer = genero.Equals("Mujer", StringComparison.OrdinalIgnoreCase);
                 bool filterUnisex = genero.Equals("Unisex", StringComparison.OrdinalIgnoreCase);
 
-                // Cambiar los valores de tallas y colores a cadenas vacías si son nulos
-                string tallasSeleccionadas = "";
-                string coloresSeleccionados = "";
-
-                listaDePrendas = new BindingList<prenda>(prendaBO.listarPrendasFiltradas(0, double.MaxValue, filterHombre, filterMujer, filterUnisex, tallasSeleccionadas, coloresSeleccionados));
+                listaDePrendas = new BindingList<prenda>(prendaBO.listarPrendasFiltradas(0, 1000, filterHombre, filterMujer, filterUnisex, "", ""));
             }
 
             RepeaterPrendas.DataSource = listaDePrendas;
@@ -65,22 +85,11 @@ namespace RHStoreWS.Cliente
 
         private string GetGenderFromPage()
         {
-            // Obtener el tipo de página actual
-            if (this is Hombre) return "Hombre";
-            if (this is Mujer) return "Mujer";
-            if (this is Unisex) return "Unisex";
+            string currentPage = Request.Url.AbsolutePath.ToLower();
+            if (currentPage.Contains("hombre")) return "Hombre";
+            if (currentPage.Contains("mujer")) return "Mujer";
+            if (currentPage.Contains("unisex")) return "Unisex";
             return null;
-        }
-        protected string ObtenerImagen(int idPrenda)
-        {
-            // Obtener la imagen como bytes desde la base de datos
-            byte[] imagenBytes = prendaBO.ObtenerImagen(idPrenda); // Implementa este método en PrendaBO
-            if (imagenBytes != null)
-            {
-                // Convertir a Base64 para poder usar en src
-                return "data:image/jpeg;base64," + Convert.ToBase64String(imagenBytes);
-            }
-            return string.Empty; // Devuelve una cadena vacía si no hay imagen
         }
 
         protected void lbBuscar_Click(object sender, EventArgs e)
@@ -107,23 +116,29 @@ namespace RHStoreWS.Cliente
 
         protected void btnInicio_Click(object sender, EventArgs e)
         {
+            ShowFullNav = true;
             RedirectToPage("ClienteHome.aspx");
         }
 
         protected void btnHombre_Click(object sender, EventArgs e)
         {
+            ShowFullNav = true;
             RedirectToPage("Hombre.aspx");
         }
 
         protected void btnMujer_Click(object sender, EventArgs e)
         {
+            ShowFullNav = true;
             RedirectToPage("Mujer.aspx");
         }
 
         protected void btnUnisex_Click(object sender, EventArgs e)
         {
+            ShowFullNav = true;
             RedirectToPage("Unisex.aspx");
         }
+
+
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -141,9 +156,12 @@ namespace RHStoreWS.Cliente
             double minPrice = double.TryParse(minPriceTextBox.Text, out double min) ? min : 0;
             double maxPrice = double.TryParse(maxPriceTextBox.Text, out double max) ? max : double.MaxValue;
 
-            bool filterHombre = hombreCheckBox.Checked;
+            /*bool filterHombre = hombreCheckBox.Checked;
             bool filterMujer = mujerCheckBox.Checked;
-            bool filterUnisex = unisexCheckBox.Checked;
+            bool filterUnisex = unisexCheckBox.Checked;*/
+            bool filterHombre = true;
+            bool filterMujer = true;
+            bool filterUnisex = true;
 
             // Verificar tallas seleccionadas
             string tallasSeleccionadas = string.IsNullOrEmpty(string.Join(",", GetSelectedTallas())) ? "" : string.Join(",", GetSelectedTallas());

@@ -33,6 +33,15 @@ namespace RHStoreWS.Cliente
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control navContainer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel navContainer;
+
+        /// <summary>
         /// Control btnInicio.
         /// </summary>
         /// <remarks>
@@ -96,6 +105,15 @@ namespace RHStoreWS.Cliente
         protected global::System.Web.UI.WebControls.LinkButton btnIniciarSesion;
 
         /// <summary>
+        /// Control filtersContainer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel filtersContainer;
+
+        /// <summary>
         /// Control minPriceTextBox.
         /// </summary>
         /// <remarks>
@@ -112,33 +130,6 @@ namespace RHStoreWS.Cliente
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox maxPriceTextBox;
-
-        /// <summary>
-        /// Control hombreCheckBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox hombreCheckBox;
-
-        /// <summary>
-        /// Control mujerCheckBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox mujerCheckBox;
-
-        /// <summary>
-        /// Control unisexCheckBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox unisexCheckBox;
 
         /// <summary>
         /// Control tallaXS.

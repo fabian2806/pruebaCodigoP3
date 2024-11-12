@@ -127,6 +127,7 @@
     <Content Include="Images\PlaceHolder.jpg" />
     <Content Include="Content\styles.css" />
     <Content Include="Images\RHStoreLogo.jpg" />
+    <Content Include="Cliente\ProductoDetalle.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -323,6 +324,13 @@
     </Compile>
     <Compile Include="Cliente\Unisex.aspx.designer.cs">
       <DependentUpon>Unisex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\ProductoDetalle.aspx.cs">
+      <DependentUpon>ProductoDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\ProductoDetalle.aspx.designer.cs">
+      <DependentUpon>ProductoDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

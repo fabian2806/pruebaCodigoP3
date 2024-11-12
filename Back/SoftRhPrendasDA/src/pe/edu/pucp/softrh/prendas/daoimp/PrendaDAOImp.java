@@ -193,8 +193,8 @@ public class PrendaDAOImp implements PrendaDAO {
 
         rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_FILTRADAS", parameters);
         try {
-            if (rs != null && rs.next()) { // Verifica si rs es null antes de llamar a next()
-                do {
+            if (rs != null) { // Verifica si rs no es null
+                while (rs.next()) { // Recorre todos los resultados
                     Prenda prenda = new Prenda();
                     prenda.setIdPrenda(rs.getInt("idPrenda"));
                     prenda.setNombre(rs.getString("nombre"));
@@ -210,7 +210,7 @@ public class PrendaDAOImp implements PrendaDAO {
                     prenda.setCantVendida(rs.getInt("cantVendida"));
                     prenda.setActivo(true);
                     prendas.add(prenda);
-                } while (rs.next());
+                }
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -221,6 +221,8 @@ public class PrendaDAOImp implements PrendaDAO {
                 Logger.getLogger(PrendaDAOImp.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
+        // Siempre devuelve la lista, aunque esté vacía
         return prendas;
     }
 
