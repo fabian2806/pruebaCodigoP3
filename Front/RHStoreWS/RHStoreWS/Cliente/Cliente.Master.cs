@@ -211,5 +211,21 @@ namespace RHStoreWS.Cliente
             if (colorVerde.Checked) colores.Add("Verde");
             return colores;
         }
+        protected void btnGridView_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "SwitchView", "document.getElementById('productContainer').className = 'products grid-view';", true);
+        }
+
+        protected void btnDetailView_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "SwitchView", "document.getElementById('productContainer').className = 'products detail-view';", true);
+        }
+
+        protected void btnMosaicView_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "SwitchView", "document.getElementById('productContainer').className = 'products mosaic-view';", true);
+        }
+
+
     }
 }

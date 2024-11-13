@@ -8,34 +8,122 @@
     <link href="../Content/Fonts/css/all.css" rel="stylesheet" />
     
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #e6e6e6;
-        }
-        .container {
-            max-width: 800px;
+        .product-container {
+            display: flex;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-left: 200px;
+            margin-top: 180px;
+            margin-left: 30px;
+            margin-right: 30px;
         }
-        h2 {
-            color: #333;
+
+        .product-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .product-details img {
+
+        .product-image img {
             width: 100%;
-            max-width: 300px;
+            max-width: 400px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-details {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-sku {
+            color: #888;
+            font-size: 14px;
             margin-bottom: 20px;
         }
-        .product-details {
+
+        .product-description {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #e60000;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-discount {
+            color: #888;
+            text-decoration: line-through;
+            font-size: 16px;
+        }
+
+        .color-options, .size-options {
+            margin-top: 20px;
+        }
+
+        .color-options label, .size-options label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .color-options .color-box, .size-options .size-box {
+            display: inline-block;
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .quantity-section input {
+            width: 50px;
             text-align: center;
+            font-size: 18px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-to-cart-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b8ccce;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #538f95;
         }
     </style>
 
@@ -45,14 +133,41 @@
 </asp:Content>
 
 <asp:Content ID="bodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
-        <h2>Detalle del Producto</h2>
+    <div class="product-container">
+        <div class="product-image">
+            <asp:Image ID="imgProducto" runat="server" Width="300" Height="300" />
+        </div>
+        
         <div class="product-details">
-            <asp:Label ID="lblNombre" runat="server" CssClass="product-name"></asp:Label><br />
-            <asp:Image ID="imgProducto" runat="server" Width="300" Height="300" /><br />
-            <asp:Label ID="lblDescripcion" runat="server" CssClass="product-description"></asp:Label><br />
-            <asp:Label ID="lblPrecio" runat="server" CssClass="product-price"></asp:Label><br />
-            <!-- Puedes añadir más detalles del producto aquí -->
+            <div class="product-title">
+                <asp:Label ID="lblNombre" runat="server"></asp:Label>
+            </div>
+            <div class="product-description">
+                <asp:Label ID="lblDescripcion" runat="server"></asp:Label>
+            </div>
+            <div class="product-price">
+                <asp:Label ID="lblPrecio" runat="server"></asp:Label>
+                <span class="product-discount"><asp:Label ID="lblPrecioOriginal" runat="server"></asp:Label></span>
+            </div>
+            <div class="color-options">
+                <label>COLOR:</label>
+                <div class="color-box" style="background-color: #000;"></div>
+                <div class="color-box" style="background-color: #555;"></div>
+                <div class="color-box" style="background-color: #8ca9c3;"></div>
+            </div>
+            <div class="size-options">
+                <label>TALLA:</label>
+                <div class="size-box">S</div>
+                <div class="size-box">M</div>
+                <div class="size-box">L</div>
+                <div class="size-box">XL</div>
+            </div>
+            <div class="quantity-section">
+                <asp:Button ID="btnDecrease" runat="server" Text="-" />
+                <asp:TextBox ID="txtCantidad" runat="server" Width="50" Text="1" />
+                <asp:Button ID="btnIncrease" runat="server" Text="+" />
+            </div>
+            <asp:Button ID="btnAgregarCarrito" runat="server" CssClass="add-to-cart-button" Text="Agregar al carrito" OnClick="btnAgregarCarrito_Click" />
         </div>
     </div>
 </asp:Content>

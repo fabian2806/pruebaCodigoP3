@@ -34,10 +34,22 @@ namespace RHStoreWS.Cliente
             {
                 lblNombre.Text = prenda.nombre;
                 lblDescripcion.Text = prenda.descripcion;
-                lblPrecio.Text = "S/ " + prenda.precioDescontado.ToString("F2");
+                lblPrecio.Text = "S/ " + prenda.precioOriginal.ToString("F2");
                 imgProducto.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(prenda.imagen);
-                // Puedes agregar más información como talla, color, etc.
+                // Puedes agregar más información como talla, color, setc.
             }
+        }
+        protected void btnAgregarCarrito_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes manejar la lógica para agregar el producto al carrito.
+            string cantidad = txtCantidad.Text;
+
+            // Lógica para agregar el producto al carrito
+            // Ejemplo: Agregar el producto al carrito en la sesión o en la base de datos
+            // ...
+
+            // Redirigir a Carrito.aspx después de agregar el producto
+            Response.Redirect("Carrito.aspx");
         }
 
     }

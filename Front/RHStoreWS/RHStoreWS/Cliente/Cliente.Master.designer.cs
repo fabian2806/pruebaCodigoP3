@@ -114,6 +114,33 @@ namespace RHStoreWS.Cliente
         protected global::System.Web.UI.WebControls.Panel filtersContainer;
 
         /// <summary>
+        /// Control btnGridView.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGridView;
+
+        /// <summary>
+        /// Control btnDetailView.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDetailView;
+
+        /// <summary>
+        /// Control btnMosaicView.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMosaicView;
+
+        /// <summary>
         /// Control minPriceTextBox.
         /// </summary>
         /// <remarks>

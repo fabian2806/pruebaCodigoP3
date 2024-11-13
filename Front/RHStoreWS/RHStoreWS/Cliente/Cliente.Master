@@ -131,7 +131,28 @@
             background-color: #e6e6e6; /* Opcional: color de fondo */
             margin-right: 20px; /* Espacio entre filtros y productos */
         }
+        /*PARA LAS VISTAS*/
+         .view-toggle {
+            display: flex;
+            justify-content: right;
+            margin: 10px 0;
+            margin-right: 10px;
+        }
 
+        .btn-toggle {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background-color: #b8ccce;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-toggle:hover {
+            background-color: #538f95;
+        }
         .products {
             width: 70%; /* Ancho de los productos */
             display: grid; /* Usamos grid en lugar de flex */
@@ -139,7 +160,59 @@
             gap: 20px; /* Espacio entre los elementos (productos) */
             padding: 20px; /* Opcional: para agregar un poco de espacio dentro del contenedor */
         }
+        /*vistas*/
+        /* Vista de cuadrícula: Mostrar solo imágenes sin detalles */
+        .products.grid-view {
+            grid-template-columns: repeat(4, 1fr); /* Ajusta el número de columnas como prefieras */
+        }
+        .products.grid-view .product {
+            text-align: center;
+        }
+        .products.grid-view .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .products.grid-view .product p {
+            display: none; /* Ocultar texto */
+        }
 
+        /* Vista de detalle: Mostrar imagen con detalles */
+        .products.detail-view {
+            grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas como prefieras */
+        }
+        .products.detail-view .product {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .products.detail-view .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .products.detail-view .product p {
+            display: block; /* Mostrar detalles */
+            margin: 5px 0; /* Espacio entre las líneas de detalle */
+        }
+
+        /* Vista de mosaico: Imágenes más grandes, solo con precio */
+        .products.mosaic-view {
+            grid-template-columns: repeat(1, 1fr); /* Ajusta el número de columnas como prefieras */
+        }
+        .products.mosaic-view .product {
+            text-align: center;
+        }
+        .products.mosaic-view .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .products.mosaic-view .product p:not(:nth-child(2)) {
+            display: none; /* Mostrar solo el precio */
+        }
+        /*HASTA ACA*/
         .product {
             position: relative;
             text-align: center;
@@ -224,6 +297,12 @@
             </div>
         </header>
        <asp:Panel ID="filtersContainer" runat="server">
+                        <!-- View Toggle Buttons -->
+            <div class="view-toggle">
+                <asp:Button ID="btnGridView" runat="server" Text="Vista Cuadrícula" OnClick="btnGridView_Click" CssClass="btn-toggle" />
+                <asp:Button ID="btnDetailView" runat="server" Text="Vista Detalle" OnClick="btnDetailView_Click" CssClass="btn-toggle" />
+                <asp:Button ID="btnMosaicView" runat="server" Text="Vista Mosaico" OnClick="btnMosaicView_Click" CssClass="btn-toggle" />
+            </div>
         <div class="container">
             <div class="filters">
                 <h4>Filters</h4>
@@ -253,17 +332,17 @@
                 <asp:LinkButton ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" CssClass="btn btn-info" />
             </div>
 
-            <div class="products">
+             <div class="products" id="productContainer">
                 <asp:Repeater ID="RepeaterPrendas" runat="server">
                     <ItemTemplate>
                         <div class="product">
                             <div class="add-to-cart">
                                 <i class="fas fa-plus"></i> <!-- Icono de agregar al carrito -->
                             </div>
-                                <!-- Enlace que redirige a la página de detalles de la prenda -->
-                                <a href='<%# "ProductoDetalle.aspx?idPrenda=" + Eval("idPrenda") %>'>
-                                    <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
-                                </a>
+                            <!-- Enlace que redirige a la página de detalles de la prenda -->
+                            <a href='<%# "ProductoDetalle.aspx?idPrenda=" + Eval("idPrenda") %>'>
+                                <img src='<%# ObtenerImagen(Convert.ToInt32(Eval("idPrenda"))) %>' alt='<%# Eval("nombre") %>' />
+                            </a>
                             <p><%# Eval("nombre") %></p>
                             <p>S/ <%# Eval("precioDescontado", "{0:F2}") %> <s>S/ <%# Eval("precioOriginal", "{0:F2}") %></s></p>
                             <p>Colores disponibles: <%# Eval("color") %></p>
@@ -271,6 +350,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+
         </div>
         </asp:Panel>
         <main>
