@@ -14,13 +14,13 @@ public class ClienteBO{
 		this.clienteDAO = new ClienteDAOImp();
 	}
 
-	public Integer insertar(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaRegistro, Boolean recibePromociones) {
-		Usuario cliente = new Cliente(dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
+	public Integer insertar(String dni, String nombres, String apellidos, String correo, String contrasenha, String telefono, Date fechaRegistro, Boolean recibePromociones) {
+		Usuario cliente = new Cliente(dni, nombres, apellidos, correo, contrasenha, telefono, fechaRegistro, recibePromociones);
 		return clienteDAO.insertar((Cliente)cliente);
 	}
 
-	public Integer modificar(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaRegistro, Boolean recibePromociones) {
-		Usuario cliente = new Cliente(dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
+	public Integer modificar(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, String telefono, Date fechaRegistro, Boolean recibePromociones) {
+		Usuario cliente = new Cliente(dni, nombres, apellidos, correo, contrasenha, telefono, fechaRegistro, recibePromociones);
 		cliente.setIdUsuario(idUsuario);
 		return clienteDAO.modificar((Cliente)cliente);
 	}
@@ -35,5 +35,9 @@ public class ClienteBO{
 
 	public Cliente obtenerPorId(Integer idCliente) {
 		return clienteDAO.obtenerPorId(idCliente);
+	}
+
+	public ArrayList<Cliente> listarPorDniNombre(String cadena) {
+		return clienteDAO.listarPorDniNombre(cadena);
 	}
 }

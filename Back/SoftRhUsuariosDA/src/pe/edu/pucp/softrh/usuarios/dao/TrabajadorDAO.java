@@ -13,4 +13,6 @@ public interface TrabajadorDAO {
     ArrayList<Trabajador> listarTodos();
 
     Trabajador obtenerPorId(int idTrabajador);
+
+	ArrayList<Trabajador> listarPorDniNombre(String cadena);
 }

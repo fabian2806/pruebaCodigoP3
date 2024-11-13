@@ -12,7 +12,9 @@ namespace RHStoreWS.Admin
 {
 	public partial class CrudPrendas : System.Web.UI.Page
 	{
+		private prenda _prenda;
 		private PrendaBO prendaBO;
+		private bool estaModificando;
 
 		public CrudPrendas()
 		{
@@ -21,6 +23,17 @@ namespace RHStoreWS.Admin
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if (Session["administradorLogueado"] != null)
+			{
+				administrador _administrador = (administrador)Session["administradorLogueado"];
+				lblNombreUsuario.Text = _administrador.nombres + " " + _administrador.apellidos;
+			}
+			else if (Session["trabajadorLogueado"] != null)
+			{
+				trabajador _trabajador = (trabajador)Session["trabajadorLogueado"];
+				lblNombreUsuario.Text = _trabajador.nombres + " " + _trabajador.apellidos;
+			}
+
 			if (!IsPostBack)
 			{
 				ddlTalla.DataSource = Enum.GetValues(typeof(talla));
@@ -31,34 +44,35 @@ namespace RHStoreWS.Admin
 			if (accion != null && accion == "modificar")
 			{
 				lblTitulo.Text = "Modificación de Prenda";
-				prenda _prenda = (prenda)Session["prenda"];
-				cargarDatosDeLaBD(_prenda);
+				_prenda = (prenda)Session["prenda"];
+				cargarDatosDeLaBD();
 				cargarFoto(sender, e);
+				estaModificando = true;
 			}
 			else
 			{
 				lblTitulo.Text = "Registro de Prenda";
 				cargarFoto(sender, e);
+				estaModificando = false;
 			}
 		}
 
-		protected void cargarDatosDeLaBD(prenda _prenda)
+		protected void cargarDatosDeLaBD()
 		{
-			txtIdPrenda.Text = _prenda.idPrenda.ToString();
-			txtIdPrenda.Enabled = false;
-			txtNombrePrenda.Text = _prenda.nombre;
+			txtID.Text = _prenda.idPrenda.ToString();
+			txtID.Enabled = false;
+			txtNombre.Text = _prenda.nombre;
 			ddlTalla.SelectedValue = _prenda.talla.ToString();
 
-			if(_prenda.imagen != null)
+			if (_prenda.imagen != null)
 			{
 				Session["foto"] = _prenda.imagen;
 
 				string base64String = Convert.ToBase64String(_prenda.imagen);
 				string imageUrl = "data:image/jpeg;base64," + base64String;
-				imgImagenPrenda.ImageUrl = imageUrl;
+				imgImagen.ImageUrl = imageUrl;
 			}
-			
-			
+
 			if (_prenda.tipo.ToString().Equals("Polo"))
 				rbPolo.Checked = true;
 			else if (_prenda.tipo.ToString().Equals("Pantalon"))
@@ -67,14 +81,14 @@ namespace RHStoreWS.Admin
 				rbPolera.Checked = true;
 			else if (_prenda.tipo.ToString().Equals("Camisa"))
 				rbCamisa.Checked = true;
-			else if (_prenda.tipo.ToString().Equals("Casaca"))
+			else
 				rbCasaca.Checked = true;
-			
+
 			if (_prenda.genero.ToString().Equals("Hombre"))
 				rbHombre.Checked = true;
 			else if (_prenda.genero.ToString().Equals("Mujer"))
 				rbMujer.Checked = true;
-			else if (_prenda.genero.ToString().Equals("Unisex"))
+			else
 				rbUnisex.Checked = true;
 
 			txtColor.Text = _prenda.color;
@@ -87,16 +101,16 @@ namespace RHStoreWS.Admin
 
 		protected void cargarFoto(object sender, EventArgs e)
 		{
-			if (IsPostBack && fileUploadImagenPrenda.PostedFile != null && fileUploadImagenPrenda.HasFile)
+			if (IsPostBack && fileUploadImagen.PostedFile != null && fileUploadImagen.HasFile)
 			{
-				string extension = System.IO.Path.GetExtension(fileUploadImagenPrenda.FileName);
+				string extension = System.IO.Path.GetExtension(fileUploadImagen.FileName);
 				if (extension.ToLower() == ".jpg" || extension.ToLower() == ".jpeg" || extension.ToLower() == ".png" || extension.ToLower() == ".gif")
 				{
 					string filename = Guid.NewGuid().ToString() + extension;
 					string filePath = Server.MapPath("~/Uploads/") + filename;
-					fileUploadImagenPrenda.SaveAs(Server.MapPath("~/Uploads/") + filename);
-					imgImagenPrenda.ImageUrl = "~/Uploads/" + filename;
-					imgImagenPrenda.Visible = true;
+					fileUploadImagen.SaveAs(Server.MapPath("~/Uploads/") + filename);
+					imgImagen.ImageUrl = "~/Uploads/" + filename;
+					imgImagen.Visible = true;
 					FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
 					BinaryReader br = new BinaryReader(fs);
 					Session["foto"] = br.ReadBytes((int)fs.Length);
@@ -110,16 +124,16 @@ namespace RHStoreWS.Admin
 		}
 
 		protected void lbRegresar_Click(object sender, EventArgs e)
-        {
+		{
 			Response.Redirect("GestionarPrendas.aspx");
 		}
 
 		protected void lbGuardar_Click(object sender, EventArgs e)
 		{
 			int resultado;
-			string nombre = txtNombrePrenda.Text;
+			string nombre = txtNombre.Text;
 			string descripcion = txtDescripcion.Value;
-			
+
 			tipoPrenda tipo;
 			if (rbPolo.Checked == true)
 				tipo = tipoPrenda.Polo;
@@ -135,7 +149,7 @@ namespace RHStoreWS.Admin
 			byte[] imagen = (byte[])Session["foto"];
 
 			talla _talla = (talla)Enum.Parse(typeof(talla), ddlTalla.SelectedValue.ToString());
-			
+
 			genero _genero;
 			if (rbHombre.Checked == true)
 				_genero = genero.Hombre;
@@ -148,13 +162,10 @@ namespace RHStoreWS.Admin
 			double precioOriginal = Double.Parse(txtPrecioOriginal.Text);
 			int stock = Int32.Parse(txtStock.Text);
 
-			string accion = Request.QueryString["accion"];
-			if (accion != null && accion == "modificar")
+			if (estaModificando == true)
 			{
-				int idPrenda = Int32.Parse(txtIdPrenda.Text);
-				double precioDescontado = Double.Parse(txtPrecioDescontado.Text);
-				int cantVendida = Int32.Parse(txtCantVendida.Text);
-				resultado = prendaBO.modificar(idPrenda, nombre, descripcion, tipo, imagen, _talla, _genero, color, precioOriginal, precioDescontado, stock, cantVendida);
+				int idPrenda = Int32.Parse(txtID.Text);
+				resultado = prendaBO.modificar(idPrenda, nombre, descripcion, tipo, imagen, _talla, _genero, color, precioOriginal, stock);
 				if (resultado != 0)
 					Response.Redirect("GestionarPrendas.aspx");
 			}

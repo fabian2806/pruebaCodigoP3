@@ -15,22 +15,31 @@ namespace RHStoreWS.Admin
 	{
 
 		/// <summary>
-		/// Control lblNombre.
+		/// Control lblNombreUsuario.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblNombre;
+		protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
 
 		/// <summary>
-		/// Control txtNombre.
+		/// Control lblDniNombre.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtNombre;
+		protected global::System.Web.UI.WebControls.Label lblDniNombre;
+
+		/// <summary>
+		/// Control txtDniNombre.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtDniNombre;
 
 		/// <summary>
 		/// Control lbBuscar.
@@ -51,12 +60,12 @@ namespace RHStoreWS.Admin
 		protected global::System.Web.UI.WebControls.LinkButton lbRegistrar;
 
 		/// <summary>
-		/// Control dgvPrendas.
+		/// Control gvClientes.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView dgvPrendas;
+		protected global::System.Web.UI.WebControls.GridView gvClientes;
 	}
 }

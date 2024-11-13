@@ -15,6 +15,15 @@ namespace RHStoreWS.Admin
 	{
 
 		/// <summary>
+		/// Control lblNombreUsuario.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+
+		/// <summary>
 		/// Control lblTitulo.
 		/// </summary>
 		/// <remarks>
@@ -24,67 +33,67 @@ namespace RHStoreWS.Admin
 		protected global::System.Web.UI.WebControls.Label lblTitulo;
 
 		/// <summary>
-		/// Control lblImagenPrenda.
+		/// Control lblImagen.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblImagenPrenda;
+		protected global::System.Web.UI.WebControls.Label lblImagen;
 
 		/// <summary>
-		/// Control imgImagenPrenda.
+		/// Control imgImagen.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Image imgImagenPrenda;
+		protected global::System.Web.UI.WebControls.Image imgImagen;
 
 		/// <summary>
-		/// Control fileUploadImagenPrenda.
+		/// Control fileUploadImagen.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.FileUpload fileUploadImagenPrenda;
+		protected global::System.Web.UI.WebControls.FileUpload fileUploadImagen;
 
 		/// <summary>
-		/// Control lblIdPrenda.
+		/// Control lblID.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblIdPrenda;
+		protected global::System.Web.UI.WebControls.Label lblID;
 
 		/// <summary>
-		/// Control txtIdPrenda.
+		/// Control txtID.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtIdPrenda;
+		protected global::System.Web.UI.WebControls.TextBox txtID;
 
 		/// <summary>
-		/// Control lblNombrePrenda.
+		/// Control lblNombre.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblNombrePrenda;
+		protected global::System.Web.UI.WebControls.Label lblNombre;
 
 		/// <summary>
-		/// Control txtNombrePrenda.
+		/// Control txtNombre.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtNombrePrenda;
+		protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
 		/// <summary>
 		/// Control lblTalla.
@@ -105,13 +114,13 @@ namespace RHStoreWS.Admin
 		protected global::System.Web.UI.WebControls.DropDownList ddlTalla;
 
 		/// <summary>
-		/// Control lblTipoPrenda.
+		/// Control lblTipo.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblTipoPrenda;
+		protected global::System.Web.UI.WebControls.Label lblTipo;
 
 		/// <summary>
 		/// Control rbPolo.

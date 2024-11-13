@@ -19,12 +19,12 @@ public class TrabajadorWS {
 	}
 
 	@WebMethod(operationName = "insertarTrabajador")
-	public Integer insertarTrabajador(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, LocalTime horarioInicio, LocalTime horarioFin) {
+	public Integer insertarTrabajador(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, String horarioInicio, String horarioFin) {
 		return trabajadorBO.insertar(dni, nombres, apellidos, correo, contrasenha, puesto, sueldo, fechaIngreso, horarioInicio, horarioFin);
 	}
 
 	@WebMethod(operationName = "modificarTrabajador")
-	public Integer modificarTrabajador(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, LocalTime horarioInicio, LocalTime horarioFin) {
+	public Integer modificarTrabajador(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, String horarioInicio, String horarioFin) {
 		return trabajadorBO.modificar(idUsuario, dni, nombres, apellidos, correo, contrasenha, puesto, sueldo, fechaIngreso, horarioInicio, horarioFin);
 	}
 
@@ -41,5 +41,10 @@ public class TrabajadorWS {
 	@WebMethod(operationName = "obtenerTrabajadorPorId")
 	public Trabajador obtenerTrabajadorPorId(Integer idTrabajador) {
 		return trabajadorBO.obtenerPorId(idTrabajador);
+	}
+
+	@WebMethod(operationName = "listarTrabajadoresPorDniNombre")
+	public ArrayList<Trabajador> listarTrabajadoresPorDniNombre(String cadena) {
+		return trabajadorBO.listarPorDniNombre(cadena);
 	}
 }

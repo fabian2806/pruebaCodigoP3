@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="softrh.services" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="OrdenCompraWS" targetNamespace="softrh.services" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/OrdenCompraWS?xsd=1" namespace="softrh.services" />
+    </xsd:schema>
+  </types>
+  <message name="listarOrdenCompraTodos">
+    <part name="parameters" element="tns:listarOrdenCompraTodos" />
+  </message>
+  <message name="listarOrdenCompraTodosResponse">
+    <part name="parameters" element="tns:listarOrdenCompraTodosResponse" />
+  </message>
+  <message name="eliminarOrdenCompra">
+    <part name="parameters" element="tns:eliminarOrdenCompra" />
+  </message>
+  <message name="eliminarOrdenCompraResponse">
+    <part name="parameters" element="tns:eliminarOrdenCompraResponse" />
+  </message>
+  <message name="listarOrdenPorEstado">
+    <part name="parameters" element="tns:listarOrdenPorEstado" />
+  </message>
+  <message name="listarOrdenPorEstadoResponse">
+    <part name="parameters" element="tns:listarOrdenPorEstadoResponse" />
+  </message>
+  <message name="insertarOrdenCompra">
+    <part name="parameters" element="tns:insertarOrdenCompra" />
+  </message>
+  <message name="insertarOrdenCompraResponse">
+    <part name="parameters" element="tns:insertarOrdenCompraResponse" />
+  </message>
+  <message name="obtenerOrdenCompraPorId">
+    <part name="parameters" element="tns:obtenerOrdenCompraPorId" />
+  </message>
+  <message name="obtenerOrdenCompraPorIdResponse">
+    <part name="parameters" element="tns:obtenerOrdenCompraPorIdResponse" />
+  </message>
+  <message name="modificarOrdenCompra">
+    <part name="parameters" element="tns:modificarOrdenCompra" />
+  </message>
+  <message name="modificarOrdenCompraResponse">
+    <part name="parameters" element="tns:modificarOrdenCompraResponse" />
+  </message>
+  <portType name="OrdenCompraWS">
+    <operation name="listarOrdenCompraTodos">
+      <input wsam:Action="softrh.services/OrdenCompraWS/listarOrdenCompraTodosRequest" message="tns:listarOrdenCompraTodos" />
+      <output wsam:Action="softrh.services/OrdenCompraWS/listarOrdenCompraTodosResponse" message="tns:listarOrdenCompraTodosResponse" />
+    </operation>
+    <operation name="eliminarOrdenCompra">
+      <input wsam:Action="softrh.services/OrdenCompraWS/eliminarOrdenCompraRequest" message="tns:eliminarOrdenCompra" />
+      <output wsam:Action="softrh.services/OrdenCompraWS/eliminarOrdenCompraResponse" message="tns:eliminarOrdenCompraResponse" />
+    </operation>
+    <operation name="listarOrdenPorEstado">
+      <input wsam:Action="softrh.services/OrdenCompraWS/listarOrdenPorEstadoRequest" message="tns:listarOrdenPorEstado" />
+      <output wsam:Action="softrh.services/OrdenCompraWS/listarOrdenPorEstadoResponse" message="tns:listarOrdenPorEstadoResponse" />
+    </operation>
+    <operation name="insertarOrdenCompra">
+      <input wsam:Action="softrh.services/OrdenCompraWS/insertarOrdenCompraRequest" message="tns:insertarOrdenCompra" />
+      <output wsam:Action="softrh.services/OrdenCompraWS/insertarOrdenCompraResponse" message="tns:insertarOrdenCompraResponse" />
+    </operation>
+    <operation name="obtenerOrdenCompraPorId">
+      <input wsam:Action="softrh.services/OrdenCompraWS/obtenerOrdenCompraPorIdRequest" message="tns:obtenerOrdenCompraPorId" />
+      <output wsam:Action="softrh.services/OrdenCompraWS/obtenerOrdenCompraPorIdResponse" message="tns:obtenerOrdenCompraPorIdResponse" />
+    </operation>
+    <operation name="modificarOrdenCompra">
+      <input wsam:Action="softrh.services/OrdenCompraWS/modificarOrdenCompraRequest" message="tns:modificarOrdenCompra" />
+      <output wsam:Action="softrh.services/OrdenCompraWS/modificarOrdenCompraResponse" message="tns:modificarOrdenCompraResponse" />
+    </operation>
+  </portType>
+  <binding name="OrdenCompraWSPortBinding" type="tns:OrdenCompraWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarOrdenCompraTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarOrdenCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarOrdenPorEstado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarOrdenCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerOrdenCompraPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarOrdenCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="OrdenCompraWS">
+    <port name="OrdenCompraWSPort" binding="tns:OrdenCompraWSPortBinding">
+      <soap:address location="http://localhost:8080/SoftRHWS/OrdenCompraWS" />
+    </port>
+  </service>
+</definitions>

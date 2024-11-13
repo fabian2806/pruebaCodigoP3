@@ -14,7 +14,7 @@
     <AssemblyName>RHStoreWS</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -64,23 +64,28 @@
     <Content Include="Admin\CrudAdministradores.aspx" />
     <Content Include="Admin\CrudClientes.aspx" />
     <Content Include="Admin\CrudCupones.aspx" />
+    <Content Include="Admin\CrudOrdenes.aspx" />
     <Content Include="Admin\CrudPrendas.aspx" />
     <Content Include="Admin\CrudPromociones.aspx" />
     <Content Include="Admin\CrudTrabajadores.aspx" />
     <Content Include="Admin\GestionarAdministradores.aspx" />
     <Content Include="Admin\GestionarClientes.aspx" />
     <Content Include="Admin\GestionarCupones.aspx" />
+    <Content Include="Admin\GestionarOrdenes.aspx" />
     <Content Include="Admin\GestionarPrendas.aspx" />
     <Content Include="Admin\GestionarPromociones.aspx" />
     <Content Include="Admin\GestionarTrabajadores.aspx" />
     <Content Include="Admin\Home.aspx" />
     <Content Include="Admin\IniciarSesion.aspx" />
     <Content Include="Admin\ModificarContrasenha.aspx" />
+    <Content Include="Admin\Perfil.aspx" />
     <Content Include="Admin\RecuperarContrasenha.aspx" />
+    <Content Include="Admin\Registrarse.aspx" />
     <Content Include="Cliente\Carrito.aspx" />
     <Content Include="Cliente\ClienteHome.aspx" />
     <Content Include="Cliente\Hombre.aspx" />
     <Content Include="Cliente\Mujer.aspx" />
+    <Content Include="Cliente\ProductoDetalle.aspx" />
     <Content Include="Cliente\Unisex.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -122,12 +127,13 @@
     <Content Include="Content\Fonts\css\v4-shims.min.css" />
     <Content Include="Content\Fonts\css\v5-font-face.css" />
     <Content Include="Content\Fonts\css\v5-font-face.min.css" />
-    <Content Include="Images\fondo.jpg" />
-    <Content Include="Images\logo2.png" />
+    <Content Include="Images\grafica.jpg" />
+    <Content Include="Images\Paw.gif" />
+    <Content Include="Images\penguin.jpg" />
     <Content Include="Images\PlaceHolder.jpg" />
     <Content Include="Content\styles.css" />
     <Content Include="Images\RHStoreLogo.jpg" />
-    <Content Include="Cliente\ProductoDetalle.aspx" />
+    <Content Include="Scripts\RHStore\CrudPromociones.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -192,6 +198,13 @@
     <Compile Include="Admin\CrudCupones.aspx.designer.cs">
       <DependentUpon>CrudCupones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CrudOrdenes.aspx.cs">
+      <DependentUpon>CrudOrdenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CrudOrdenes.aspx.designer.cs">
+      <DependentUpon>CrudOrdenes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CrudPrendas.aspx.cs">
       <DependentUpon>CrudPrendas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -233,6 +246,13 @@
     </Compile>
     <Compile Include="Admin\GestionarCupones.aspx.designer.cs">
       <DependentUpon>GestionarCupones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GestionarOrdenes.aspx.cs">
+      <DependentUpon>GestionarOrdenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GestionarOrdenes.aspx.designer.cs">
+      <DependentUpon>GestionarOrdenes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\GestionarPrendas.aspx.cs">
       <DependentUpon>GestionarPrendas.aspx</DependentUpon>
@@ -276,12 +296,26 @@
     <Compile Include="Admin\ModificarContrasenha.aspx.designer.cs">
       <DependentUpon>ModificarContrasenha.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\RecuperarContrasenha.aspx.cs">
       <DependentUpon>RecuperarContrasenha.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\RecuperarContrasenha.aspx.designer.cs">
       <DependentUpon>RecuperarContrasenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cliente\Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
@@ -318,19 +352,19 @@
     <Compile Include="Cliente\Mujer.aspx.designer.cs">
       <DependentUpon>Mujer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\Unisex.aspx.cs">
-      <DependentUpon>Unisex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cliente\Unisex.aspx.designer.cs">
-      <DependentUpon>Unisex.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Cliente\ProductoDetalle.aspx.cs">
       <DependentUpon>ProductoDetalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Cliente\ProductoDetalle.aspx.designer.cs">
       <DependentUpon>ProductoDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Unisex.aspx.cs">
+      <DependentUpon>Unisex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente\Unisex.aspx.designer.cs">
+      <DependentUpon>Unisex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -367,12 +401,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\RHStoreBaseBO\RHStoreBaseBO.csproj">
-      <Project>{3ea7a1f1-525b-4f2f-bc4e-d6127161260f}</Project>
+      <Project>{42b8f628-0913-4ceb-b209-042422b2bd93}</Project>
       <Name>RHStoreBaseBO</Name>
     </ProjectReference>
     <ProjectReference Include="..\RHStoreComprasBO\RHStoreComprasBO.csproj">

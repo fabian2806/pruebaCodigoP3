@@ -98,7 +98,7 @@ namespace RHStoreWS.Cliente
             if (!string.IsNullOrEmpty(nombreBuscado))
             {
                 // Llamar al procedimiento almacenado para buscar prendas
-                listaDePrendas = new BindingList<prenda>(prendaBO.listarPorNombre(nombreBuscado)); // Cambia por tu método
+                listaDePrendas = new BindingList<prenda>(prendaBO.listarPorNombreDescripcion(nombreBuscado)); // Cambia por tu método
                 RepeaterPrendas.DataSource = listaDePrendas;
                 RepeaterPrendas.DataBind();
             }

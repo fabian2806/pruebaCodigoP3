@@ -16,13 +16,13 @@ public class PromocionBO {
         this.promocionDAO = new PromocionDAOImp();
     }
 
-    public Integer insertar(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
-        Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador, prenda);
+    public Integer insertar(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador){
+        Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador);
         return this.promocionDAO.insertar(promocion);
     }
 
-    public Integer modificar(Integer idPromocion, String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda){
-		Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador, prenda);
+    public Integer modificar(Integer idPromocion, String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador){
+		Promocion promocion = new Promocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador);
 		promocion.setIdPromocion(idPromocion);
         return this.promocionDAO.modificar(promocion);
     }
@@ -39,7 +39,7 @@ public class PromocionBO {
         return this.promocionDAO.obtenerPorId(idPromocion);
     }
 
-	public ArrayList<Promocion> listarPorNombre(String nombre) {
-        return this.promocionDAO.listarPorNombre(nombre);
+	public ArrayList<Promocion> listarPorNombreDescripcion(String cadena) {
+        return this.promocionDAO.listarPorNombreDescripcion(cadena);
     }
 }

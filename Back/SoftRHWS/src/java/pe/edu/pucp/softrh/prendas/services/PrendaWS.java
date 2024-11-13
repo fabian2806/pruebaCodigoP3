@@ -25,8 +25,8 @@ public class PrendaWS {
 	}
 
 	@WebMethod(operationName = "modificarPrenda")
-	public Integer modificarPrenda(Integer idPrenda, String nombre, String descripcion, TipoPrenda tipo, byte[] imagen, Talla talla, Genero genero, String color, Double precioOriginal, Double precioDescontado, Integer stock, Integer cantVendida) {
-		return prendaBO.modificar(idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida);
+	public Integer modificarPrenda(Integer idPrenda, String nombre, String descripcion, TipoPrenda tipo, byte[] imagen, Talla talla, Genero genero, String color, Double precioOriginal, Integer stock) {
+		return prendaBO.modificar(idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, stock);
 	}
 
 	@WebMethod(operationName = "eliminarPrenda")
@@ -44,21 +44,19 @@ public class PrendaWS {
 		return prendaBO.obtenerPorId(idPrenda);
 	}
 
-	@WebMethod(operationName = "listarPrendasPorNombre")
-	public ArrayList<Prenda> listarPrendasPorNombre(String nombre) {
-		return prendaBO.listarPorNombre(nombre);
+	@WebMethod(operationName = "listarPrendasPorNombreDescripcion")
+	public ArrayList<Prenda> listarPrendasPorNombreDescripcion(String cadena) {
+		return prendaBO.listarPorNombreDescripcion(cadena);
 	}
-        
-        //Añadido por Percy
-        @WebMethod(operationName = "obtenerImagenPorId")
-        public byte[] obtenerImagenPorId(Integer idPrenda) {
-            Prenda prenda = prendaBO.obtenerPorId(idPrenda);
-            return prenda != null ? prenda.getImagen() : null; // Asegúrate de que el método getImagen() exista en tu modelo Prenda
-        }
-        @WebMethod(operationName = "listarPrendasFiltradas")
-        public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, boolean filterHombre, boolean filterMujer, boolean filterUnisex, String tallas, String colores) {
-            return prendaBO.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores);
-        }
 
+	@WebMethod(operationName = "listarPrendasFiltradas")
+	public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, boolean filterHombre, boolean filterMujer, boolean filterUnisex, String tallas, String colores) {
+		return prendaBO.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores);
+	}
 
+	@WebMethod(operationName = "obtenerImagenPorId")
+	public byte[] obtenerImagenPorId(Integer idPrenda) {
+		Prenda prenda = prendaBO.obtenerPorId(idPrenda);
+		return prenda != null ? prenda.getImagen() : null;
+	}
 }

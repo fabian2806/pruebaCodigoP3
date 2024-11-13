@@ -18,13 +18,13 @@ public class ClienteWS {
 	}
 
 	@WebMethod(operationName = "insertarCliente")
-	public Integer insertarCliente(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaRegistro, Boolean recibePromociones) {
-		return clienteBO.insertar(dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
+	public Integer insertarCliente(String dni, String nombres, String apellidos, String correo, String contrasenha, String telefono, Date fechaRegistro, Boolean recibePromociones) {
+		return clienteBO.insertar(dni, nombres, apellidos, correo, contrasenha, telefono, fechaRegistro, recibePromociones);
 	}
 
 	@WebMethod(operationName = "modificarCliente")
-	public Integer modificarCliente(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaRegistro, Boolean recibePromociones) {
-		return clienteBO.modificar(idUsuario, dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
+	public Integer modificarCliente(Integer idUsuario, String dni, String nombres, String apellidos, String correo, String contrasenha, String telefono, Date fechaRegistro, Boolean recibePromociones) {
+		return clienteBO.modificar(idUsuario, dni, nombres, apellidos, correo, contrasenha, telefono, fechaRegistro, recibePromociones);
 	}
 
 	@WebMethod(operationName = "eliminarCliente")
@@ -40,5 +40,10 @@ public class ClienteWS {
 	@WebMethod(operationName = "obtenerClientePorId")
 	public Cliente obtenerClientePorId(Integer idCliente) {
 		return clienteBO.obtenerPorId(idCliente);
+	}
+
+	@WebMethod(operationName = "listarClientesPorDniNombre")
+	public ArrayList<Cliente> listarClientesPorDniNombre(String cadena) {
+		return clienteBO.listarPorDniNombre(cadena);
 	}
 }

@@ -35,5 +35,10 @@ namespace RHStoreUsuariosBO
         {
             return AdministradorWS.obtenerAdministradorPorId(idAdministrador);
         }
-    }
+
+		public BindingList<administrador> listarPorDniNombre(string cadena)
+		{
+			return new BindingList<administrador>(AdministradorWS.listarAdministradoresPorDniNombre(cadena));
+		}
+	}
 }

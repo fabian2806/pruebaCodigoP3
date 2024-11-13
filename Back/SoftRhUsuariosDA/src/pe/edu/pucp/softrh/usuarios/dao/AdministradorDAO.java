@@ -13,4 +13,6 @@ public interface AdministradorDAO {
     ArrayList<Administrador> listarTodos();
 
     Administrador obtenerPorId(int idAdministrador);
+
+	ArrayList<Administrador> listarPorDniNombre(String cadena);
 }

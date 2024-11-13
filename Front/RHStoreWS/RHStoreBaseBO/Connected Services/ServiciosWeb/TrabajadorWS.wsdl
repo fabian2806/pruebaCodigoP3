@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/TrabajadorWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
-  <message name="obtenerTrabajadorPorId">
-    <part name="parameters" element="tns:obtenerTrabajadorPorId" />
-  </message>
-  <message name="obtenerTrabajadorPorIdResponse">
-    <part name="parameters" element="tns:obtenerTrabajadorPorIdResponse" />
-  </message>
   <message name="listarTrabajadoresTodos">
     <part name="parameters" element="tns:listarTrabajadoresTodos" />
   </message>
   <message name="listarTrabajadoresTodosResponse">
     <part name="parameters" element="tns:listarTrabajadoresTodosResponse" />
+  </message>
+  <message name="obtenerTrabajadorPorId">
+    <part name="parameters" element="tns:obtenerTrabajadorPorId" />
+  </message>
+  <message name="obtenerTrabajadorPorIdResponse">
+    <part name="parameters" element="tns:obtenerTrabajadorPorIdResponse" />
   </message>
   <message name="modificarTrabajador">
     <part name="parameters" element="tns:modificarTrabajador" />
@@ -35,14 +35,20 @@
   <message name="eliminarTrabajadorResponse">
     <part name="parameters" element="tns:eliminarTrabajadorResponse" />
   </message>
+  <message name="listarTrabajadoresPorDniNombre">
+    <part name="parameters" element="tns:listarTrabajadoresPorDniNombre" />
+  </message>
+  <message name="listarTrabajadoresPorDniNombreResponse">
+    <part name="parameters" element="tns:listarTrabajadoresPorDniNombreResponse" />
+  </message>
   <portType name="TrabajadorWS">
-    <operation name="obtenerTrabajadorPorId">
-      <input wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest" message="tns:obtenerTrabajadorPorId" />
-      <output wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse" message="tns:obtenerTrabajadorPorIdResponse" />
-    </operation>
     <operation name="listarTrabajadoresTodos">
       <input wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosRequest" message="tns:listarTrabajadoresTodos" />
       <output wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresTodosResponse" message="tns:listarTrabajadoresTodosResponse" />
+    </operation>
+    <operation name="obtenerTrabajadorPorId">
+      <input wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdRequest" message="tns:obtenerTrabajadorPorId" />
+      <output wsam:Action="softrh.services/TrabajadorWS/obtenerTrabajadorPorIdResponse" message="tns:obtenerTrabajadorPorIdResponse" />
     </operation>
     <operation name="modificarTrabajador">
       <input wsam:Action="softrh.services/TrabajadorWS/modificarTrabajadorRequest" message="tns:modificarTrabajador" />
@@ -56,10 +62,14 @@
       <input wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorRequest" message="tns:eliminarTrabajador" />
       <output wsam:Action="softrh.services/TrabajadorWS/eliminarTrabajadorResponse" message="tns:eliminarTrabajadorResponse" />
     </operation>
+    <operation name="listarTrabajadoresPorDniNombre">
+      <input wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresPorDniNombreRequest" message="tns:listarTrabajadoresPorDniNombre" />
+      <output wsam:Action="softrh.services/TrabajadorWS/listarTrabajadoresPorDniNombreResponse" message="tns:listarTrabajadoresPorDniNombreResponse" />
+    </operation>
   </portType>
   <binding name="TrabajadorWSPortBinding" type="tns:TrabajadorWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="obtenerTrabajadorPorId">
+    <operation name="listarTrabajadoresTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -68,7 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarTrabajadoresTodos">
+    <operation name="obtenerTrabajadorPorId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +106,15 @@
       </output>
     </operation>
     <operation name="eliminarTrabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTrabajadoresPorDniNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

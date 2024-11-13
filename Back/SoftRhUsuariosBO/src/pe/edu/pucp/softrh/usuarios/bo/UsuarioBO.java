@@ -16,8 +16,8 @@ public class UsuarioBO {
 		return usuarioDAO.insertar(usuario);
 	}
 
-	public Integer modificar(Usuario usuario) {
-		return usuarioDAO.modificar(usuario);
+	public Integer modificar(Integer idUsuario, String nombres, String apellidos) {
+		return usuarioDAO.modificar(idUsuario, nombres, apellidos);
 	}
 
 	public Integer eliminar(Integer idUsuario) {
@@ -38,5 +38,17 @@ public class UsuarioBO {
 
 	public String obtenerRolUsuario(String correo, String contrasenha) {
 		return usuarioDAO.obtenerRolUsuario(correo, contrasenha);
+	}
+
+	public Integer verificarContrasenha(Integer idUsuario, String contrasenha) {
+		return usuarioDAO.verificarContrasenha(idUsuario, contrasenha);
+	}
+
+	public Integer cambiarContrasenha(Integer idUsuario, String contrasenhaNueva) {
+		return usuarioDAO.cambiarContrasenha(idUsuario, contrasenhaNueva);
+	}
+
+	public Integer resetearContrasenha(Integer idUsuario) {
+		return usuarioDAO.resetearContrasenha(idUsuario);
 	}
 }

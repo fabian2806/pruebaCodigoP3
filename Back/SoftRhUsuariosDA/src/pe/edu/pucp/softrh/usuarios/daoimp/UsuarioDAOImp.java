@@ -18,8 +18,17 @@ public class UsuarioDAOImp implements UsuarioDAO{
     }
 
     @Override
-    public int modificar(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Integer idUsuario, String nombres, String apellidos) {
+        int resultado = 0;
+
+		Object[] parameters = new Object[3];
+        parameters[0] = idUsuario;
+        parameters[1] = nombres;
+        parameters[2] = apellidos;
+
+        resultado = dbManager.EjecutarProcedimiento("MODIFICAR_USUARIO", parameters, false);
+
+        return resultado;
     }
 
     @Override
@@ -91,5 +100,58 @@ public class UsuarioDAOImp implements UsuarioDAO{
         }
 
 		return rol;
+	}
+
+	@Override
+	public int verificarContrasenha(Integer idUsuario, String contrasenha) {
+		Integer resultado = 0;
+
+		Object[] parameters = new Object[2];
+        parameters[0] = idUsuario;
+		parameters[1] = contrasenha;
+
+        rs = dbManager.EjecutarProcedimientoLectura("VERIFICAR_CONTRASENHA", parameters);
+
+        try {
+            if(rs.next()) {
+                resultado = rs.getInt("resultado");
+            }
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ClienteDAOImp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                java.util.logging.Logger.getLogger(ClienteDAOImp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            }
+        }
+
+        return resultado;
+	}
+
+	@Override
+	public int cambiarContrasenha(Integer idUsuario, String nuevaContrasenha) {
+		int resultado = 0;
+
+		Object[] parameters = new Object[2];
+        parameters[0] = idUsuario;
+        parameters[1] = nuevaContrasenha;
+
+        resultado = dbManager.EjecutarProcedimiento("CAMBIAR_CONTRASENHA", parameters, false);
+
+        return resultado;
+	}
+
+	@Override
+	public int resetearContrasenha(Integer idUsuario) {
+		int resultado = 0;
+
+		Object[] parameters = new Object[1];
+        parameters[0] = idUsuario;
+
+        resultado = dbManager.EjecutarProcedimiento("RESETEAR_CONTRASENHA", parameters, false);
+
+        return resultado;
 	}
 }

@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrdenCompraBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RHStoreBaseBO\RHStoreBaseBO.csproj">
-      <Project>{3ea7a1f1-525b-4f2f-bc4e-d6127161260f}</Project>
+      <Project>{42b8f628-0913-4ceb-b209-042422b2bd93}</Project>
       <Name>RHStoreBaseBO</Name>
     </ProjectReference>
   </ItemGroup>

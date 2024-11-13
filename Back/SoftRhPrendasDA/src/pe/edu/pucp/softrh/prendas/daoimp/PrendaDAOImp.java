@@ -79,14 +79,14 @@ public class PrendaDAOImp implements PrendaDAO {
             prenda.setDescripcion(rs.getString("descripcion"));
             prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
             prenda.setImagen(rs.getBytes("imagen"));
-            prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+			prenda.setTalla(Talla.valueOf(rs.getString("talla")));
             prenda.setGenero(Genero.valueOf(rs.getString("genero")));
             prenda.setColor(rs.getString("color"));
             prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
             prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
             prenda.setStock(rs.getInt("stock"));
             prenda.setCantVendida(rs.getInt("cantVendida"));
-            //prenda.setActivo(rs.getBoolean("activo"));
+            prenda.setActivo(true);
 
             prendas.add(prenda);
             }
@@ -126,7 +126,7 @@ public class PrendaDAOImp implements PrendaDAO {
             prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
             prenda.setStock(rs.getInt("stock"));
             prenda.setCantVendida(rs.getInt("cantVendida"));
-            //prenda.setActivo(rs.getBoolean("activo"));
+            prenda.setActivo(true);
             }
         }
         catch (SQLException ex){
@@ -136,33 +136,33 @@ public class PrendaDAOImp implements PrendaDAO {
         return prenda;
     }
 
-    @Override
-    public ArrayList<Prenda> listarPorNombre(String nombre) {
-        ArrayList<Prenda> prendas = new ArrayList<Prenda>();
+	@Override
+	public ArrayList<Prenda> listarPorNombreDescripcion(String cadena) {
+		ArrayList<Prenda> prendas = new ArrayList<Prenda>();
 
-        Object[] parameters = new Object[1];
-        parameters[0] = nombre;
+		Object[] parameters = new Object[1];
+        parameters[0] = cadena;
 
-        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_X_NOMBRE_o_DESCRIPCION", parameters);
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PRENDAS_X_NOMBRE_O_DESCRIPCION", parameters);
         try{
             while(rs.next()){
-                Prenda prenda = new Prenda();
+				Prenda prenda = new Prenda();
 
-                prenda.setIdPrenda(rs.getInt("idPrenda"));
-                prenda.setNombre(rs.getString("nombre"));
-                prenda.setDescripcion(rs.getString("descripcion"));
-                prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
-                prenda.setImagen(rs.getBytes("imagen"));
-                prenda.setTalla(Talla.valueOf(rs.getString("talla")));
-                prenda.setGenero(Genero.valueOf(rs.getString("genero")));
-                prenda.setColor(rs.getString("color"));
-                prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
-                prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
-                prenda.setStock(rs.getInt("stock"));
-                prenda.setCantVendida(rs.getInt("cantVendida"));
-                prenda.setActivo(true);
+				prenda.setIdPrenda(rs.getInt("idPrenda"));
+				prenda.setNombre(rs.getString("nombre"));
+				prenda.setDescripcion(rs.getString("descripcion"));
+				prenda.setTipo(TipoPrenda.valueOf(rs.getString("tipo")));
+				prenda.setImagen(rs.getBytes("imagen"));
+				prenda.setTalla(Talla.valueOf(rs.getString("talla")));
+				prenda.setGenero(Genero.valueOf(rs.getString("genero")));
+				prenda.setColor(rs.getString("color"));
+				prenda.setPrecioOriginal(rs.getDouble("precioOriginal"));
+				prenda.setPrecioDescontado(rs.getDouble("precioDescontado"));
+				prenda.setStock(rs.getInt("stock"));
+				prenda.setCantVendida(rs.getInt("cantVendida"));
+				prenda.setActivo(true);
 
-                prendas.add(prenda);
+				prendas.add(prenda);
             }
         }
         catch (SQLException ex){
@@ -175,10 +175,9 @@ public class PrendaDAOImp implements PrendaDAO {
                 Logger.getLogger(PrendaDAOImp.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+		return prendas;
+	}
 
-        return prendas;
-    }
-    //Percy
     @Override
     public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, Boolean filterHombre, Boolean filterMujer, Boolean filterUnisex, String tallas, String colores) {
         ArrayList<Prenda> prendas = new ArrayList<>();
@@ -225,5 +224,4 @@ public class PrendaDAOImp implements PrendaDAO {
         // Siempre devuelve la lista, aunque esté vacía
         return prendas;
     }
-
 }

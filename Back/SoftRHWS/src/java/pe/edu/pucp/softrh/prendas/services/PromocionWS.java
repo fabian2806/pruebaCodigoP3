@@ -21,13 +21,13 @@ public class PromocionWS {
 	}
 
 	@WebMethod(operationName = "insertarPromocion")
-	public Integer insertarPromocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda) {
-		return promocionBO.insertar(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador, prenda);
+	public Integer insertarPromocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		return promocionBO.insertar(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador);
 	}
 
 	@WebMethod(operationName = "modificarPromocion")
-	public Integer modificarPromocion(Integer idPromocion, String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda) {
-		return promocionBO.modificar(idPromocion, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador, prenda);
+	public Integer modificarPromocion(Integer idPromocion, String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		return promocionBO.modificar(idPromocion, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, trabajador);
 	}
 
 	@WebMethod(operationName = "eliminarPromocion")
@@ -45,8 +45,8 @@ public class PromocionWS {
 		return promocionBO.obtenerPorId(idPromocion);
 	}
 
-	@WebMethod(operationName = "listarPromocionesPorNombre")
-	public ArrayList<Promocion> listarPromocionesPorNombre(String nombre) {
-		return promocionBO.listarPorNombre(nombre);
+	@WebMethod(operationName = "listarPromocionesPorNombreDescripcion")
+	public ArrayList<Promocion> listarPromocionesPorNombreDescripcion(String cadena) {
+		return promocionBO.listarPorNombreDescripcion(cadena);
 	}
 }

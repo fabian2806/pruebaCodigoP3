@@ -7,6 +7,7 @@ public class Cupon {
 	private Integer idCupon;
 	private String codigo;
 	private String descripcion;
+	private Double valorDescuento;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private Boolean activo;
@@ -17,6 +18,7 @@ public class Cupon {
 		this.idCupon = null;
 		this.codigo = null;
 		this.descripcion = null;
+		this.valorDescuento = null;
 		this.fechaInicio = null;
 		this.fechaFin = null;
 		this.activo = null;
@@ -24,9 +26,10 @@ public class Cupon {
 		this.clientes = new ArrayList<>();
 	}
 
-	public Cupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+	public Cupon(String codigo, String descripcion, Double valorDescuento, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
+		this.valorDescuento = valorDescuento;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.activo = true;
@@ -38,7 +41,7 @@ public class Cupon {
 		return idCupon;
 	}
 
-	public void setIdCupon(int idCupon) {
+	public void setIdCupon(Integer idCupon) {
 		this.idCupon = idCupon;
 	}
 
@@ -56,6 +59,14 @@ public class Cupon {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public Double getValorDescuento() {
+		return valorDescuento;
+	}
+
+	public void setValorDescuento(Double valorDescuento) {
+		this.valorDescuento = valorDescuento;
 	}
 
 	public Date getFechaInicio() {
@@ -96,6 +107,6 @@ public class Cupon {
 
 	@Override
 	public String toString() {
-		return "idCupon=" + idCupon + ", idTrabajador=" + trabajador.getIdUsuario() + ", codigo=" + codigo + ", descripcion=" + descripcion + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ".";
+		return "idCupon=" + idCupon + ", idTrabajador=" + trabajador.getIdUsuario() + ", codigo=" + codigo + ", descripcion=" + descripcion + ", valorDescuento=" + valorDescuento + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ".";
 	}
 }

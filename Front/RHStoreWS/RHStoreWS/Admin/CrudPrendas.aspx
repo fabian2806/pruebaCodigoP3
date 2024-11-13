@@ -1,41 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="CrudPrendas.aspx.cs" Inherits="RHStoreWS.Admin.CrudPrendas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
-	Registrar Prenda
+	Registro o modificación de prenda
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="cphNombreUsuario" runat="server">
+	<asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphContenido" runat="server">
 	<div class="container">
 		<div class="card">
 			<div class="card-header">
 				<h2>
 					<!-- Cambiar el titulo dependiendo de si se registran o muestran datos -->
-					<asp:Label ID="lblTitulo" runat="server" Text="lblTitulo"></asp:Label>
+					<asp:Label ID="lblTitulo" runat="server" Text="lblTitulo" />
 				</h2>
 			</div>
 			<div class="card-body pb-2">
 				<div class="row">
 					<div class="col-md-6">
-						<asp:Label ID="lblImagenPrenda" runat="server" Text="Agregue una imagen referencial:" CssClass="col-form-label fw-bold"></asp:Label>
-						<asp:Image ID="imgImagenPrenda" runat="server" CssClass="img-fluid img-thumbnail" ImageUrl="../Images/PlaceHolder.jpg" Height="550" Width="675" />
-						<asp:FileUpload ID="fileUploadImagenPrenda" CssClass="form-control mb-2" runat="server" onchange="this.form.submit()" ClientIDMode="Static" />
+						<asp:Label ID="lblImagen" runat="server" Text="Agregue una imagen referencial:" CssClass="col-form-label fw-bold" />
+						<asp:Image ID="imgImagen" runat="server" CssClass="img-fluid img-thumbnail" ImageUrl="../Images/PlaceHolder.jpg" Height="550" Width="675" />
+						<asp:FileUpload ID="fileUploadImagen" CssClass="form-control mb-2" runat="server" onchange="this.form.submit()" ClientIDMode="Static" />
 					</div>
 					<div class="col-md-6">
 						<div class="col-md-6 pb-md-3">
-							<asp:Label ID="lblIdPrenda" runat="server" Text="ID:" CssClass="col-form-label fw-bold"></asp:Label>
-							<asp:TextBox ID="txtIdPrenda" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+							<asp:Label ID="lblID" runat="server" Text="ID:" CssClass="col-form-label fw-bold" />
+							<asp:TextBox ID="txtID" runat="server" CssClass="form-control" Enabled="false" />
 						</div>
 						<div class="col-md-12 pb-md-3">
-							<asp:Label ID="lblNombrePrenda" runat="server" Text="Nombre:" CssClass="col-form-label fw-bold"></asp:Label>
-							<asp:TextBox ID="txtNombrePrenda" runat="server" CssClass="form-control"></asp:TextBox>
+							<asp:Label ID="lblNombre" runat="server" Text="Nombre:" CssClass="col-form-label fw-bold" />
+							<asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" />
 						</div>
 						<div class="col-md-12 pb-md-3">
-							<asp:Label ID="lblTalla" runat="server" Text="Talla:" CssClass="col-form-label fw-bold"></asp:Label>
-							<asp:DropDownList ID="ddlTalla" runat="server" AutoPostBack="true" CssClass="form-select"></asp:DropDownList>
+							<asp:Label ID="lblTalla" runat="server" Text="Talla:" CssClass="col-form-label fw-bold" />
+							<asp:DropDownList ID="ddlTalla" runat="server" AutoPostBack="true" CssClass="form-select" />
 						</div>
 						<div class="col-md-12 pb-md-3">
-							<asp:Label ID="lblTipoPrenda" runat="server" Text="Tipo:" CssClass="col-form-label fw-bold"></asp:Label>
+							<asp:Label ID="lblTipo" runat="server" Text="Tipo:" CssClass="col-form-label fw-bold" />
 							<div class="form-control">
 								<div class="form-check form-check-inline">
 									<input id="rbPolo" class="form-check-input" type="radio" runat="server" name="tipoPrenda" />
@@ -60,7 +63,7 @@
 							</div>
 						</div>
 						<div class="col-md-12 pb-md-3">
-							<asp:Label ID="lblGenero" runat="server" Text="Género:" CssClass="col-form-label fw-bold"></asp:Label>
+							<asp:Label ID="lblGenero" runat="server" Text="Género:" CssClass="col-form-label fw-bold" />
 							<div class="form-control">
 								<div class="form-check form-check-inline">
 									<input id="rbHombre" class="form-check-input" type="radio" runat="server" name="genero" />
@@ -77,26 +80,26 @@
 							</div>
 						</div>
 						<div class="col-md-12 pb-md-3">
-							<asp:Label ID="lblColor" runat="server" Text="Color:" CssClass="col-form-label fw-bold"></asp:Label>
-							<asp:TextBox ID="txtColor" runat="server" CssClass="form-control"></asp:TextBox>
+							<asp:Label ID="lblColor" runat="server" Text="Color:" CssClass="col-form-label fw-bold" />
+							<asp:TextBox ID="txtColor" runat="server" CssClass="form-control" />
 						</div>
 						<div class="row">
 							<div class="col-md-6 pb-md-3">
-								<asp:Label ID="lblPrecioOriginal" runat="server" Text="Precio Original (S/.):" CssClass="col-form-label fw-bold"></asp:Label>
-								<asp:TextBox ID="txtPrecioOriginal" runat="server" CssClass="form-control"></asp:TextBox>
+								<asp:Label ID="lblPrecioOriginal" runat="server" Text="Precio Original (S/.):" CssClass="col-form-label fw-bold" />
+								<asp:TextBox ID="txtPrecioOriginal" runat="server" CssClass="form-control" />
 							</div>
 							<div class="col-md-6 pb-md-3">
-								<asp:Label ID="lblPrecioDescontado" runat="server" Text="Precio Descontado (S/.):" CssClass="col-form-label fw-bold"></asp:Label>
+								<asp:Label ID="lblPrecioDescontado" runat="server" Text="Precio Descontado (S/.):" CssClass="col-form-label fw-bold" />
 								<asp:TextBox ID="txtPrecioDescontado" runat="server" CssClass="form-control" Enabled="false">0.00</asp:TextBox>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 pb-md-3">
-								<asp:Label ID="lblStock" runat="server" Text="Stock" CssClass="col-form-label fw-bold"></asp:Label>
-								<asp:TextBox ID="txtStock" runat="server" CssClass="form-control"></asp:TextBox>
+								<asp:Label ID="lblStock" runat="server" Text="Stock" CssClass="col-form-label fw-bold" />
+								<asp:TextBox ID="txtStock" runat="server" CssClass="form-control" />
 							</div>
 							<div class="col-md-6 pb-md-3">
-								<asp:Label ID="lblCantVendida" runat="server" Text="Cantidad Vendida:" CssClass="col-form-label fw-bold"></asp:Label>
+								<asp:Label ID="lblCantVendida" runat="server" Text="Cantidad Vendida:" CssClass="col-form-label fw-bold" />
 								<asp:TextBox ID="txtCantVendida" runat="server" CssClass="form-control" Enabled="false">0</asp:TextBox>
 							</div>
 						</div>
@@ -104,8 +107,8 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<asp:Label ID="lblDescripcion" runat="server" Text="Descripción:" CssClass="col-form-label fw-bold"></asp:Label>
-						<textarea id="txtDescripcion" runat="server" class="form-control" cols="20" rows="3"></textarea>
+						<asp:Label ID="lblDescripcion" runat="server" Text="Descripción:" CssClass="col-form-label fw-bold" />
+						<textarea id="txtDescripcion" runat="server" class="form-control" cols="20" rows="3" />
 					</div>
 				</div>
 			</div>

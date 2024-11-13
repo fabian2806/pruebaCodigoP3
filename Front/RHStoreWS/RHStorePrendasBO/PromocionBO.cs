@@ -11,13 +11,13 @@ namespace RHStorePrendasBO
 {
 	public class PromocionBO : BaseBO
 	{
-        public int insertar(string nombre, string descripcion, double valorDescuento, tipoPromocion tipo, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador, prenda _prenda)
+        public int insertar(string nombre, string descripcion, double valorDescuento, tipoPromocion tipo, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador)
         {
-            return PromocionWS.insertarPromocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, _trabajador, _prenda);
+            return PromocionWS.insertarPromocion(nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, _trabajador);
         }
         public int modificar(int idPromocion, string nombre, string descripcion, double valorDescuento, tipoPromocion tipo, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador, prenda _prenda)
         {
-            return PromocionWS.modificarPromocion(idPromocion, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, _trabajador, _prenda);
+            return PromocionWS.modificarPromocion(idPromocion, nombre, descripcion, valorDescuento, tipo, fechaInicio, fechaFin, _trabajador);
         }
         public int eliminar(int idPromocion)
         {
@@ -34,9 +34,9 @@ namespace RHStorePrendasBO
             return PromocionWS.obtenerPromocionPorId(idPromocion);
         }
 
-		public BindingList<promocion> listarPorNombre(string nombre)
+		public BindingList<promocion> listarPorNombreDescripcion(string cadena)
 		{
-			return new BindingList<promocion>(PromocionWS.listarPromocionesPorNombre(nombre));
+			return new BindingList<promocion>(PromocionWS.listarPromocionesPorNombreDescripcion(cadena));
 		}
 	}
 }

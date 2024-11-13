@@ -19,13 +19,13 @@ public class CuponWS {
 	}
 
 	@WebMethod(operationName = "insertarCupon")
-	public Integer insertarCupon(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
-		return cuponBO.insertar(codigo, descripcion, fechaInicio, fechaFin, trabajador);
+	public Integer insertarCupon(String codigo, String descripcion, Double valorDescuento, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		return cuponBO.insertar(codigo, descripcion, valorDescuento, fechaInicio, fechaFin, trabajador);
 	}
 
 	@WebMethod(operationName = "modificarCupon")
-	public Integer modificarCupon(Integer idCupon, String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
-		return cuponBO.modificar(idCupon, codigo, descripcion, fechaInicio, fechaFin, trabajador);
+	public Integer modificarCupon(Integer idCupon, String codigo, String descripcion, Double valorDescuento, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		return cuponBO.modificar(idCupon, codigo, descripcion, valorDescuento, fechaInicio, fechaFin, trabajador);
 	}
 
 	@WebMethod(operationName = "eliminarCupon")
@@ -41,5 +41,10 @@ public class CuponWS {
 	@WebMethod(operationName = "obtenerCuponPorId")
 	public Cupon obtenerCuponPorId(Integer idCupon) {
 		return cuponBO.obtenerPorId(idCupon);
+	}
+
+	@WebMethod(operationName = "listarCuponesPorCodigoDescripcion")
+	public ArrayList<Cupon> listarCuponesPorCodigoDescripcion(String cadena) {
+		return cuponBO.listarPorCodigoDescripcion(cadena);
 	}
 }

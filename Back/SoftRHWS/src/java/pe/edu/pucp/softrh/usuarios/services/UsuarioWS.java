@@ -14,6 +14,11 @@ public class UsuarioWS {
 		usuarioBO = new UsuarioBO();
 	}
 
+	@WebMethod(operationName = "modificarUsuario")
+	public Integer modificarUsuario(Integer idUsuario, String nombres, String apellidos) {
+		return usuarioBO.modificar(idUsuario, nombres, apellidos);
+	}
+
 	@WebMethod(operationName = "verificarIngresoUsuario")
 	public Integer verificarIngresoUsuario(String correo, String contrasenha) {
 		return usuarioBO.verificarIngresoUsuario(correo, contrasenha);
@@ -22,5 +27,20 @@ public class UsuarioWS {
 	@WebMethod(operationName = "obtenerRolUsuario")
 	public String obtenerRolUsuario(String correo, String contrasenha) {
 		return usuarioBO.obtenerRolUsuario(correo, contrasenha);
+	}
+
+	@WebMethod(operationName = "verificarContrasenha")
+	public Integer verificarContrasenha(Integer idUsuario, String contrasenha) {
+		return usuarioBO.verificarContrasenha(idUsuario, contrasenha);
+	}
+
+	@WebMethod(operationName = "cambiarContrasenha")
+	public Integer cambiarContrasenha(Integer idUsuario, String contrasenhaNueva) {
+		return usuarioBO.cambiarContrasenha(idUsuario, contrasenhaNueva);
+	}
+
+	@WebMethod(operationName = "resetearContrasenha")
+	public Integer resetearContrasenha(Integer idUsuario) {
+		return usuarioBO.resetearContrasenha(idUsuario);
 	}
 }

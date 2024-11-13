@@ -11,25 +11,16 @@ namespace RHStoreWS.Admin
 {
 	public partial class Home : System.Web.UI.Page
 	{
-		private trabajador _trabajador;
-		private administrador _administrador;
-
-		protected void Page_Init(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
 		{
-			string rol = Request.QueryString["rol"];
-            if(rol == "administrador" && Session["administrador"] != null)
+            if(Session["administradorLogueado"] != null)
 			{
-				_administrador = new administrador();
-				_administrador = (administrador)Session["administrador"];
-				lblRol.Text = "Perfil de Administrador";
-				lblNombre.Text = _administrador.nombres;
-				
-			} else if(rol == "trabajador" && Session["trabajador"] != null)
+				administrador _administrador = (administrador)Session["administradorLogueado"];
+				lblNombreUsuario.Text = _administrador.nombres + " " + _administrador.apellidos;
+			} else if(Session["trabajadorLogueado"] != null)
 			{
-				_trabajador = new trabajador();
-				_trabajador = (trabajador)Session["trabajador"];                                          
-				lblRol.Text = "Perfil de Trabajador";
-				lblNombre.Text = _trabajador.nombres;
+				trabajador _trabajador = (trabajador)Session["trabajadorLogueado"];
+				lblNombreUsuario.Text = _trabajador.nombres + " " + _trabajador.apellidos;
 			}
         }
 	}

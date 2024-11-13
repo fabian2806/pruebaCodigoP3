@@ -14,14 +14,14 @@ public class CuponBO {
 		this.cuponDAO = new CuponDAOImp();
 	}
 
-	public Integer insertar(String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
-		Cupon cupon = new Cupon(codigo, descripcion, fechaInicio, fechaFin, trabajador);
+	public Integer insertar(String codigo, String descripcion, Double valorDescuento, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		Cupon cupon = new Cupon(codigo, descripcion, valorDescuento, fechaInicio, fechaFin, trabajador);
 		cupon.setIdCupon(cuponDAO.insertar(cupon));
 		return cupon.getIdCupon();
 	}
 
-	public Integer modificar(Integer idCupon, String codigo, String descripcion, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
-		Cupon cupon = new Cupon(codigo, descripcion, fechaInicio, fechaFin, trabajador);
+	public Integer modificar(Integer idCupon, String codigo, String descripcion, Double valorDescuento, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
+		Cupon cupon = new Cupon(codigo, descripcion, valorDescuento, fechaInicio, fechaFin, trabajador);
 		cupon.setIdCupon(idCupon);
 		return cuponDAO.modificar(cupon);
 	}
@@ -36,5 +36,9 @@ public class CuponBO {
 
 	public Cupon obtenerPorId(Integer idCupon) {
 		return cuponDAO.obtenerPorId(idCupon);
+	}
+
+	public ArrayList<Cupon> listarPorCodigoDescripcion(String cadena) {
+		return cuponDAO.listarPorCodigoDescripcion(cadena);
 	}
 }

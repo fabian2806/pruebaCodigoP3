@@ -41,4 +41,9 @@ public class AdministradorWS {
 	public Administrador obtenerAdministradorPorId(Integer idAdministrador) {
 		return administradorBO.obtenerPorId(idAdministrador);
 	}
+
+	@WebMethod(operationName = "listarAdministradoresPorDniNombre")
+	public ArrayList<Administrador> listarAdministradoresPorDniNombre(String cadena) {
+		return administradorBO.listarPorDniNombre(cadena);
+	}
 }

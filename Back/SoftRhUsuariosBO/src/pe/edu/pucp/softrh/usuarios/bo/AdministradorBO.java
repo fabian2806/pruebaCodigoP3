@@ -38,4 +38,8 @@ public class AdministradorBO{
 	public Administrador obtenerPorId(Integer idAdministrador) {
 		return administradorDAO.obtenerPorId(idAdministrador);
 	}
+
+	public ArrayList<Administrador> listarPorDniNombre(String cadena) {
+		return administradorDAO.listarPorDniNombre(cadena);
+	}
 }

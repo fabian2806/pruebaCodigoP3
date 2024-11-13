@@ -30,7 +30,7 @@ public class Promocion {
         this.prendas = new ArrayList<>();
     }
 
-    public Promocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador, Prenda prenda) {
+    public Promocion(String nombre, String descripcion, Double valorDescuento, TipoPromocion tipo, Date fechaInicio, Date fechaFin, Trabajador trabajador) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.valorDescuento = valorDescuento;
@@ -40,7 +40,6 @@ public class Promocion {
         this.activo = true;
         this.trabajador = trabajador;
         this.prendas = new ArrayList<>();
-        this.agregarPrenda(prenda);
     }
 
     public Integer getIdPromocion() {
@@ -67,7 +66,7 @@ public class Promocion {
         this.descripcion = descripcion;
     }
 
-    public double getValorDescuento() {
+    public Double getValorDescuento() {
         return valorDescuento;
     }
 
@@ -119,10 +118,14 @@ public class Promocion {
         prendas.add(prenda);
         prenda.aplicarPromocion(this);
     }
-    
+
     public Prenda getPrenda(int indice){
         return prendas.get(indice);
     }
+
+	public ArrayList<Prenda> getPrendas() {
+		return this.prendas;
+	}
 
     @Override
     public String toString() {

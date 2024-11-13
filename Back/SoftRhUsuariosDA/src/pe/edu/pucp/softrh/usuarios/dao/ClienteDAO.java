@@ -13,4 +13,6 @@ public interface ClienteDAO {
     ArrayList<Cliente> listarTodos();
 
     Cliente obtenerPorId(int idCliente);
+
+	ArrayList<Cliente> listarPorDniNombre(String cadena);
 }

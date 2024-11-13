@@ -11,12 +11,12 @@ namespace RHStoreUsuariosBO
 {
 	public class TrabajadorBO : BaseBO
 	{
-        public int insertar(string dni, string nombres, string apellidos, string correo, string contrasenha, string puesto, double sueldo, DateTime fechaIngreso, localTime horarioInicio, localTime horarioFin)
+        public int insertar(string dni, string nombres, string apellidos, string correo, string contrasenha, string puesto, double sueldo, DateTime fechaIngreso, string horarioInicio, string horarioFin)
         {
             return TrabajadorWS.insertarTrabajador(dni, nombres, apellidos, correo, contrasenha, puesto, sueldo, fechaIngreso, horarioInicio, horarioFin);
         }
 
-        public int modificar(int idUsuario, string dni, string nombres, string apellidos, string correo, string contrasenha, string puesto, double sueldo, DateTime fechaIngreso, localTime horarioInicio, localTime horarioFin)
+        public int modificar(int idUsuario, string dni, string nombres, string apellidos, string correo, string contrasenha, string puesto, double sueldo, DateTime fechaIngreso, string horarioInicio, string horarioFin)
         {
             return TrabajadorWS.modificarTrabajador(idUsuario, dni, nombres, apellidos, correo, contrasenha, puesto, sueldo, fechaIngreso, horarioInicio, horarioFin);
         }
@@ -35,5 +35,10 @@ namespace RHStoreUsuariosBO
         {
             return TrabajadorWS.obtenerTrabajadorPorId(idTrabajador);
         }
-    }
+
+		public BindingList<trabajador> listarPorDniNombre(string cadena)
+		{
+			return new BindingList<trabajador>(TrabajadorWS.listarTrabajadoresPorDniNombre(cadena));
+		}
+	}
 }

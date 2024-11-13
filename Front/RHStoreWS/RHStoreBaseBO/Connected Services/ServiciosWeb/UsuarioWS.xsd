@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="softrh.services" targetNamespace="softrh.services" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cambiarContrasenha" type="tns:cambiarContrasenha" />
+  <xs:element name="cambiarContrasenhaResponse" type="tns:cambiarContrasenhaResponse" />
+  <xs:element name="modificarUsuario" type="tns:modificarUsuario" />
+  <xs:element name="modificarUsuarioResponse" type="tns:modificarUsuarioResponse" />
   <xs:element name="obtenerRolUsuario" type="tns:obtenerRolUsuario" />
   <xs:element name="obtenerRolUsuarioResponse" type="tns:obtenerRolUsuarioResponse" />
+  <xs:element name="resetearContrasenha" type="tns:resetearContrasenha" />
+  <xs:element name="resetearContrasenhaResponse" type="tns:resetearContrasenhaResponse" />
+  <xs:element name="verificarContrasenha" type="tns:verificarContrasenha" />
+  <xs:element name="verificarContrasenhaResponse" type="tns:verificarContrasenhaResponse" />
   <xs:element name="verificarIngresoUsuario" type="tns:verificarIngresoUsuario" />
   <xs:element name="verificarIngresoUsuarioResponse" type="tns:verificarIngresoUsuarioResponse" />
   <xs:complexType name="verificarIngresoUsuario">
@@ -15,6 +23,28 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="modificarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resetearContrasenha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resetearContrasenhaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="obtenerRolUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
@@ -24,6 +54,28 @@
   <xs:complexType name="obtenerRolUsuarioResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarContrasenha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarContrasenhaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambiarContrasenha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambiarContrasenhaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

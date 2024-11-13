@@ -14,8 +14,8 @@ public interface PrendaDAO {
 
     Prenda obtenerPorId(int idPrenda);
 
-    ArrayList<Prenda> listarPorNombre(String nombre);
-    //Percy
-    ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, Boolean filterHombre, Boolean filterMujer, Boolean filterUnisex, String tallas, String colores);
+	ArrayList<Prenda> listarPorNombreDescripcion(String cadena);
+
+	ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, Boolean filterHombre, Boolean filterMujer, Boolean filterUnisex, String tallas, String colores);
 
 }

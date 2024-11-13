@@ -4,6 +4,8 @@
   <xs:element name="eliminarAdministradorResponse" type="tns:eliminarAdministradorResponse" />
   <xs:element name="insetarAdministrador" type="tns:insetarAdministrador" />
   <xs:element name="insetarAdministradorResponse" type="tns:insetarAdministradorResponse" />
+  <xs:element name="listarAdministradoresPorDniNombre" type="tns:listarAdministradoresPorDniNombre" />
+  <xs:element name="listarAdministradoresPorDniNombreResponse" type="tns:listarAdministradoresPorDniNombreResponse" />
   <xs:element name="listarAdministradoresTodos" type="tns:listarAdministradoresTodos" />
   <xs:element name="listarAdministradoresTodosResponse" type="tns:listarAdministradoresTodosResponse" />
   <xs:element name="modificarAdministrador" type="tns:modificarAdministrador" />
@@ -36,14 +38,14 @@
       <xs:element minOccurs="0" name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerAdministradorPorId">
+  <xs:complexType name="listarAdministradoresPorDniNombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="obtenerAdministradorPorIdResponse">
+  <xs:complexType name="listarAdministradoresPorDniNombreResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:administrador" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:administrador" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="administrador">
@@ -64,6 +66,16 @@
       <xs:element minOccurs="0" name="dni" type="xs:string" />
       <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerAdministradorPorId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerAdministradorPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:administrador" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarAdministradoresTodos">

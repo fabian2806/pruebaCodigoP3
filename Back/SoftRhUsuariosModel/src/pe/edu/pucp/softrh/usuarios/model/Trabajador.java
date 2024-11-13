@@ -1,6 +1,7 @@
 package pe.edu.pucp.softrh.usuarios.model;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,6 +13,8 @@ public class Trabajador extends Usuario implements Funciones {
 	private LocalTime horarioFin;
 	private ArrayList<Cupon> cupones;
 
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+
 	public Trabajador() {
 		super();
 		this.puesto = null;
@@ -22,13 +25,13 @@ public class Trabajador extends Usuario implements Funciones {
 		this.cupones = new ArrayList<>();
 	}
 
-	public Trabajador(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, LocalTime horarioInicio, LocalTime horarioFin) {
+	public Trabajador(String dni, String nombres, String apellidos, String correo, String contrasenha, String puesto, Double sueldo, Date fechaIngreso, String horarioInicio, String horarioFin) {
 		super(dni, nombres, apellidos, correo, contrasenha);
 		this.puesto = puesto;
 		this.sueldo = sueldo;
 		this.fechaIngreso = fechaIngreso;
-		this.horarioInicio = horarioInicio;
-		this.horarioFin = horarioFin;
+		this.horarioInicio = LocalTime.parse(horarioInicio, dtf);
+		this.horarioFin = LocalTime.parse(horarioFin, dtf);
 		this.cupones = new ArrayList<>();
 	}
 
@@ -56,20 +59,22 @@ public class Trabajador extends Usuario implements Funciones {
 		this.fechaIngreso = fechaIngreso;
 	}
 
-	public LocalTime getHorarioInicio() {
-		return horarioInicio;
+	public String getHorarioInicio() {
+		String horaInicio = this.horarioInicio.format(dtf);
+		return horaInicio;
 	}
 
-	public void setHorarioInicio(LocalTime horarioInicio) {
-		this.horarioInicio = horarioInicio;
+	public void setHorarioInicio(String horarioInicio) {
+		this.horarioInicio = LocalTime.parse(horarioInicio, dtf);
 	}
 
-	public LocalTime getHorarioFin() {
-		return horarioFin;
+	public String getHorarioFin() {
+		String horaFin = this.horarioFin.format(dtf);
+		return horaFin;
 	}
 
-	public void setHorarioFin(LocalTime horarioFin) {
-		this.horarioFin = horarioFin;
+	public void setHorarioFin(String horarioFin) {
+		this.horarioFin = LocalTime.parse(horarioFin, dtf);
 	}
 
 	public void agregarCupon(Cupon cupon) {

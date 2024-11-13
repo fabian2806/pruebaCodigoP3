@@ -76,6 +76,7 @@ CREATE TABLE cupon(
     fidTrabajador INT,
     codigo VARCHAR(10),
     descripcion VARCHAR(150),
+	valorDescuento DECIMAL(10, 2),
     fechaInicio DATE,
     fechaFin DATE,
     activo BOOLEAN DEFAULT 1,
@@ -152,7 +153,7 @@ CREATE TABLE prendaseleccionada(
     fidCarrito INT,
 	cantidad INT,
     precio DECIMAL(10, 2),
-    PRIMARY KEY(idPrendaSeleccionada),
+    PRIMARY KEY(idPrendaSeleccionada, fidCarrito),
     FOREIGN KEY(idPrendaSeleccionada) REFERENCES prenda(idPrenda),
     FOREIGN KEY(fidCarrito) REFERENCES carrito(idCarrito)
 )ENGINE = InnoDB;
@@ -213,6 +214,13 @@ CREATE TABLE factura(
 
 -- ------------------------------------------------------------------------------------------
 -- Drop de procedimientos almacenados
+DROP PROCEDURE IF EXISTS MODIFICAR_USUARIO;
+DROP PROCEDURE IF EXISTS VERIFICAR_INGRESO_USUARIO;
+DROP PROCEDURE IF EXISTS OBTENER_ROL_USUARIO;
+DROP PROCEDURE IF EXISTS VERIFICAR_CONTRASENHA;
+DROP PROCEDURE IF EXISTS CAMBIAR_CONTRASENHA;
+DROP PROCEDURE IF EXISTS RESETEAR_CONTRASENHA;
+
 DROP PROCEDURE IF EXISTS INSERTAR_ADMINISTRADOR;
 DROP PROCEDURE IF EXISTS MODIFICAR_ADMINISTRADOR;
 DROP PROCEDURE IF EXISTS ELIMINAR_ADMINISTRADOR;
@@ -254,6 +262,7 @@ DROP PROCEDURE IF EXISTS MODIFICAR_PRENDA;
 DROP PROCEDURE IF EXISTS ELIMINAR_PRENDA;
 DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_TODAS;
 DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_X_NOMBRE_O_DESCRIPCION;
+DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_FILTRADAS;
 DROP PROCEDURE IF EXISTS LISTAR_PRENDA_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_PROMOCION;
@@ -264,29 +273,111 @@ DROP PROCEDURE IF EXISTS LISTAR_PROMOCIONES_X_NOMBRE_O_DESCRIPCION;
 DROP PROCEDURE IF EXISTS LISTAR_PROMOCION_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_PRENDA_X_PROMOCION;
+DROP PROCEDURE IF EXISTS LISTAR_PRENDAS_X_PROMOCION;
 
 DROP PROCEDURE IF EXISTS INSERTAR_ORDENCOMPRA;
 DROP PROCEDURE IF EXISTS MODIFICAR_ORDENCOMPRA;
 DROP PROCEDURE IF EXISTS ELIMINAR_ORDENCOMPRA;
 DROP PROCEDURE IF EXISTS LISTAR_ORDENESCOMPRA_TODAS;
+DROP PROCEDURE IF EXISTS LISTAR_ORDENESCOMPRA_X_ESTADO;
 DROP PROCEDURE IF EXISTS LISTAR_ORDENCOMPRA_X_ID;
 
 DROP PROCEDURE IF EXISTS INSERTAR_CARRITO;
 DROP PROCEDURE IF EXISTS MODIFICAR_CARRITO;
 DROP PROCEDURE IF EXISTS LISTAR_CARRITO_X_ID;
+
 DROP PROCEDURE IF EXISTS INSERTAR_PRENDASELECCIONADA;
 DROP PROCEDURE IF EXISTS MODIFICAR_PRENDASELECCIONADA;
+DROP PROCEDURE IF EXISTS ELIMINAR_PRENDASELECCIONADA;
 DROP PROCEDURE IF EXISTS LISTAR_PRENDASELECCIONADA_X_ID;
-
-DROP PROCEDURE IF EXISTS VERIFICAR_INGRESO_USUARIO;
-DROP PROCEDURE IF EXISTS OBTENER_ROL_USUARIO;
-DROP PROCEDURE IF EXISTS VERIFICAR_CONTRASENHA;
-DROP PROCEDURE IF EXISTS CAMBIAR_CONTRASENHA;
 
 
 -- ------------------------------------------------------------------------------------------
 -- Procedimientos almacenados del paquete Usuarios
 DELIMITER $
+CREATE PROCEDURE MODIFICAR_USUARIO(
+	IN _idUsuario INT,
+    IN _nombres VARCHAR(50),
+    IN _apellidos VARCHAR(50)
+)
+BEGIN
+	UPDATE usuario SET nombres = _nombres, apellidos = _apellidos WHERE idUsuario = _idUsuario;
+END$
+CREATE PROCEDURE VERIFICAR_INGRESO_USUARIO(
+	IN _correo VARCHAR(50),
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	DECLARE _idUsuario INT;
+
+    -- Obtener idUsuario si cumple con las credenciales y está activo
+    SELECT idUsuario INTO _idUsuario FROM usuario WHERE correo = _correo AND contrasenha = MD5(_contrasenha) AND activo = 1;
+    
+    -- Verificar si el idUsuario está en la tabla trabajador
+    IF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM trabajador WHERE idTrabajador = _idUsuario) THEN
+        SELECT u.idUsuario FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idUsuario AND u.activo = 1;
+
+    -- Verificar si el idUsuario está en la tabla administrador
+    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
+        SELECT u.idUsuario FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
+
+    -- En caso de que sea cliente 
+    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM cliente WHERE idCliente = _idUsuario) THEN
+        SELECT u.idUsuario FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE c.idCliente = _idUsuario AND u.activo = 1;
+    
+    -- En caso hayan puesto mal sus credenciales
+    ELSE
+        SELECT 0 AS idUsuario;
+    END IF;
+END$
+CREATE PROCEDURE OBTENER_ROL_USUARIO(
+	IN _correo VARCHAR(50),
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	DECLARE _idUsuario INT;
+
+    -- Obtener idUsuario si cumple con las credenciales y está activo
+    SELECT idUsuario INTO _idUsuario FROM usuario WHERE correo = _correo AND contrasenha = MD5(_contrasenha) AND activo = 1;
+    
+    -- Verificar si el idUsuario está en la tabla trabajador
+    IF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM trabajador WHERE idTrabajador = _idUsuario) THEN
+        SELECT 'trabajador' as rol FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idUsuario AND u.activo = 1;
+
+    -- Verificar si el idUsuario está en la tabla administrador
+    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
+        SELECT 'administrador' as rol FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
+
+    -- En caso de que sea cliente
+	ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM cliente WHERE idCliente = _idUsuario) THEN
+        SELECT 'cliente' as rol FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE c.idCliente = _idUsuario AND u.activo = 1;
+	
+	-- En caso el usuario no se encuentre
+    ELSE
+        SELECT 'denegado' AS rol;
+    END IF;
+END$
+CREATE PROCEDURE VERIFICAR_CONTRASENHA(
+	IN _idUsuario INT,
+    IN _contrasenha VARCHAR(50)
+)
+BEGIN
+	SELECT 1 AS resultado FROM usuario WHERE idUsuario = _idUsuario AND contrasenha = MD5(_contrasenha) AND activo = 1;
+END$
+CREATE PROCEDURE CAMBIAR_CONTRASENHA(
+	IN _idUsuario INT,
+    IN _contrasenhaNueva VARCHAR(50)
+)
+BEGIN
+	UPDATE usuario SET contrasenha = MD5(_contrasenhaNueva) WHERE idUsuario = _idUsuario AND activo = 1;
+END$
+CREATE PROCEDURE RESETEAR_CONTRASENHA(
+	IN _idUsuario INT
+)
+BEGIN
+	UPDATE usuario SET contrasenha = MD5('RHStore2024') WHERE idUsuario = _idUsuario;
+END$
+
 CREATE PROCEDURE INSERTAR_ADMINISTRADOR(
     OUT _idAdministrador INT,
     IN _dni VARCHAR(8),
@@ -307,11 +398,10 @@ CREATE PROCEDURE MODIFICAR_ADMINISTRADOR(
     IN _nombres VARCHAR(50),
     IN _apellidos VARCHAR(50),
     IN _correo VARCHAR(50),
-    IN _contrasenha VARCHAR(50),
     IN _fechaCreacion DATE
 )
 BEGIN
-	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo, contrasenha = MD5(_contrasenha) WHERE idUsuario = _idAdministrador;
+	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo WHERE idUsuario = _idAdministrador;
     UPDATE administrador SET fechaCreacion = _fechaCreacion WHERE idAdministrador = _idAdministrador;
 END$
 CREATE PROCEDURE ELIMINAR_ADMINISTRADOR(
@@ -361,7 +451,6 @@ CREATE PROCEDURE MODIFICAR_TRABAJADOR(
     IN _nombres VARCHAR(50),
     IN _apellidos VARCHAR(50),
     IN _correo VARCHAR(50),
-    IN _contrasenha VARCHAR(50),
     IN _puesto VARCHAR(50),
     IN _sueldo DECIMAL(10, 2),
     IN _fechaIngreso DATE,
@@ -369,7 +458,7 @@ CREATE PROCEDURE MODIFICAR_TRABAJADOR(
     IN _horarioFin TIME
 )
 BEGIN
-	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo, contrasenha = MD5(_contrasenha) WHERE idUsuario = _idTrabajador;
+	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo WHERE idUsuario = _idTrabajador;
     UPDATE trabajador SET puesto = _puesto, sueldo = _sueldo, fechaIngreso = _fechaIngreso, horarioInicio = _horarioInicio, horarioFin = _horarioFin WHERE idTrabajador = _idTrabajador;
 END$
 CREATE PROCEDURE ELIMINAR_TRABAJADOR(
@@ -425,7 +514,7 @@ CREATE PROCEDURE MODIFICAR_CLIENTE(
     IN _recibePromociones BOOLEAN
 )
 BEGIN
-	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo, contrasenha = MD5(_contrasenha) WHERE idUsuario = _idCliente;
+	UPDATE usuario SET dni = _dni, nombres = _nombres, apellidos = _apellidos, correo = _correo WHERE idUsuario = _idCliente;
     UPDATE cliente SET telefono = _telefono, fechaRegistro = _fechaRegistro, recibePromociones = _recibePromociones WHERE idCliente = _idCliente;
 END$
 CREATE PROCEDURE ELIMINAR_CLIENTE(
@@ -499,22 +588,24 @@ CREATE PROCEDURE INSERTAR_CUPON(
     IN _fidTrabajador INT,
     IN _codigo VARCHAR(10),
     IN _descripcion VARCHAR(150),
+	IN _valorDescuento DECIMAL(10, 2),
     IN _fechaInicio DATE,
     IN _fechaFin DATE
 )
 BEGIN
-    INSERT INTO cupon(fidTrabajador, codigo, descripcion, fechaInicio, fechaFin, activo) VALUES (_fidTrabajador, _codigo, _descripcion, _fechaInicio, _fechaFin, 1);
+    INSERT INTO cupon(fidTrabajador, codigo, descripcion, valorDescuento, fechaInicio, fechaFin, activo) VALUES (_fidTrabajador, _codigo, _descripcion, _valorDescuento, _fechaInicio, _fechaFin, 1);
     SET _idCupon = @@last_insert_id;
 END$
 CREATE PROCEDURE MODIFICAR_CUPON(
 	IN _idCupon INT,
     IN _codigo VARCHAR(10),
     IN _descripcion VARCHAR(150),
+	IN _valorDescuento DECIMAL(10, 2),
     IN _fechaInicio DATE,
     IN _fechaFin DATE
 )
 BEGIN
-	UPDATE cupon SET codigo = _codigo, descripcion = _descripcion, fechaInicio = _fechaInicio, fechaFin = _fechaFin WHERE idCupon = _idCupon;
+	UPDATE cupon SET codigo = _codigo, descripcion = _descripcion, valorDescuento = _valorDescuento, fechaInicio = _fechaInicio, fechaFin = _fechaFin WHERE idCupon = _idCupon;
 END$
 CREATE PROCEDURE ELIMINAR_CUPON(
 	IN _idCupon INT
@@ -524,19 +615,19 @@ BEGIN
 END$
 CREATE PROCEDURE LISTAR_CUPONES_TODOS()
 BEGIN
-	SELECT idCupon, fidTrabajador, codigo, descripcion, fechaInicio, fechaFin FROM cupon WHERE activo = 1;
+	SELECT idCupon, fidTrabajador, codigo, descripcion, valorDescuento, fechaInicio, fechaFin FROM cupon WHERE activo = 1;
 END$
 CREATE PROCEDURE LISTAR_CUPONES_X_CODIGO_O_DESCRIPCION(
 	IN _codigo VARCHAR(50)
 )
 BEGIN
-	SELECT idCupon, fidTrabajador, codigo, descripcion, fechaInicio, fechaFin FROM cupon WHERE activo = 1 AND (codigo LIKE CONCAT('%', _codigo, '%') OR descripcion LIKE CONCAT('%', _codigo, '%'));
+	SELECT idCupon, fidTrabajador, codigo, descripcion, valorDescuento, fechaInicio, fechaFin FROM cupon WHERE activo = 1 AND (codigo LIKE CONCAT('%', _codigo, '%') OR descripcion LIKE CONCAT('%', _codigo, '%'));
 END$
 CREATE PROCEDURE LISTAR_CUPON_X_ID(
 	IN _idCupon INT
 )
 BEGIN
-	SELECT idCupon, fidTrabajador, codigo, descripcion, fechaInicio, fechaFin FROM cupon WHERE idCupon = _idCupon AND activo = 1;
+	SELECT idCupon, fidTrabajador, codigo, descripcion, valorDescuento, fechaInicio, fechaFin FROM cupon WHERE idCupon = _idCupon AND activo = 1;
 END$
 
 CREATE PROCEDURE INSERTAR_CLIENTE_X_CUPON(
@@ -590,19 +681,55 @@ BEGIN
 END$
 CREATE PROCEDURE LISTAR_PRENDAS_TODAS()
 BEGIN
-	SELECT idPrenda, nombre, descripcion, tipo, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1;
+	SELECT idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1;
 END$
 CREATE PROCEDURE LISTAR_PRENDAS_X_NOMBRE_O_DESCRIPCION(
 	IN _nombre VARCHAR(50)
 )
 BEGIN
-	SELECT idPrenda, nombre, descripcion, tipo, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1 AND (nombre LIKE CONCAT('%', _nombre, '%') OR descripcion LIKE CONCAT('%', _nombre, '%'));
+	SELECT idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE activo = 1 AND (nombre LIKE CONCAT('%', _nombre, '%') OR descripcion LIKE CONCAT('%', _nombre, '%'));
+END$
+CREATE PROCEDURE LISTAR_PRENDAS_FILTRADAS (
+    IN _minPrice DECIMAL(10, 2),
+    IN _maxPrice DECIMAL(10, 2),
+    IN _filterHombre BOOLEAN,
+    IN _filterMujer BOOLEAN,
+    IN _filterUnisex BOOLEAN,
+    IN _tallas VARCHAR(255),
+    IN _colores VARCHAR(255)
+)
+BEGIN
+    SET @sql = CONCAT('SELECT * FROM prenda WHERE precioOriginal BETWEEN ', _minPrice, ' AND ', _maxPrice, ' AND activo = 1');
+
+    IF _filterHombre THEN
+        SET @sql = CONCAT(@sql, ' AND genero = ''Hombre''');
+    END IF;
+
+    IF _filterMujer THEN
+        SET @sql = CONCAT(@sql, ' AND genero = ''Mujer''');
+    END IF;
+
+    IF _filterUnisex THEN
+        SET @sql = CONCAT(@sql, ' AND genero = ''Unisex''');
+    END IF;
+
+    IF _tallas <> '' THEN
+        SET @sql = CONCAT(@sql, ' AND FIND_IN_SET(talla, ''', _tallas, ''') > 0');
+    END IF;
+
+    IF _colores <> '' THEN
+        SET @sql = CONCAT(@sql, ' AND FIND_IN_SET(color, ''', _colores, ''') > 0');
+    END IF;
+
+    PREPARE stmt FROM @sql;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
 END$
 CREATE PROCEDURE LISTAR_PRENDA_X_ID(
 	IN _idPrenda INT
 )
 BEGIN
-	SELECT idPrenda, nombre, descripcion, tipo, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE idPrenda = _idPrenda AND activo = 1;
+	SELECT idPrenda, nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, precioDescontado, stock, cantVendida FROM prenda WHERE idPrenda = _idPrenda AND activo = 1;
 END$
 
 CREATE PROCEDURE INSERTAR_PROMOCION(
@@ -677,7 +804,12 @@ BEGIN
     
     UPDATE prenda SET precioDescontado = _precioDescontado WHERE idPrenda = _idPrenda;
 END$
-
+CREATE PROCEDURE LISTAR_PRENDAS_X_PROMOCION(
+	IN _idPromocion INT
+)
+BEGIN
+	SELECT idPrenda, fechaAsignada FROM prendaxpromocion WHERE idPromocion = _idPromocion AND activo = 1;
+END$
 
 -- ------------------------------------------------------------------------------------------
 -- Procedimientos almacenados del paquete Compras
@@ -722,6 +854,12 @@ CREATE PROCEDURE LISTAR_ORDENESCOMPRA_TODAS()
 BEGIN
 	SELECT idOrden,fidCliente,fechaRegistro,fechaProcesado,fechaEntregado,fechaAnulado,estado,dni,correo,subtotal FROM ordencompra;
 END$
+CREATE PROCEDURE LISTAR_ORDENESCOMPRA_X_ESTADO(
+    IN _estado ENUM('Registrado', 'Procesado', 'Entregado', 'Anulado')
+)
+BEGIN
+    SELECT idOrden, fidCliente, fechaRegistro, fechaProcesado, fechaEntregado, fechaAnulado, estado, dni, correo, subtotal FROM ordencompra WHERE estado = _estado;
+END$
 CREATE PROCEDURE LISTAR_ORDENCOMPRA_X_ID(
 	IN _idOrden INT
 )
@@ -741,117 +879,53 @@ BEGIN
 END$
 CREATE PROCEDURE MODIFICAR_CARRITO(
 	IN _idCarrito INT,
+    IN _fidCliente INT,
     IN _cantidadTotal INT,
     IN _precioTotal DECIMAL(10, 2)
 )
 BEGIN
-	UPDATE carrito SET cantidadTotal = _cantidadTotal, precioTotal = _precioTotal WHERE idCarrito = _idCarrito;
+	UPDATE carrito SET cantidadTotal = _cantidadTotal, precioTotal = _precioTotal WHERE idCarrito = _idCarrito AND fidCliente = _fidCliente;
 END$
 CREATE PROCEDURE LISTAR_CARRITO_X_ID(
-	IN _idCarrito INT
+	IN _idCliente INT
 )
 BEGIN
-	SELECT idCarrito, fidCliente, cantidadTotal, precioTotal FROM carrito WHERE idCarrito = _idCarrito;
+	SELECT idCarrito, fidCliente, cantidadTotal, precioTotal FROM carrito WHERE fidCliente = _idCliente;
 END$
 
 CREATE PROCEDURE INSERTAR_PRENDASELECCIONADA(
-    OUT _idPrendaSeleccionada INT,
+    IN _idPrendaSeleccionada INT,
     IN _fidCarrito INT,
 	IN _cantidad INT,
     IN _precio DECIMAL(10, 2)
 )
 BEGIN
-    INSERT INTO prendaseleccionada(fidCarrito, cantidad, precio) VALUES (_fidCarrito, _cantidad, _precio);
-    SET _idPrendaSeleccionada = @@last_insert_id;
+	DECLARE _cantActual INT;
+    DECLARE _precioActual DECIMAL(10, 2);
+    
+    INSERT INTO prendaseleccionada(idPrendaSeleccionada, fidCarrito, cantidad, precio) VALUES (_idPrendaSeleccionada, _fidCarrito, _cantidad, _precio);
 END$
 CREATE PROCEDURE MODIFICAR_PRENDASELECCIONADA(
 	IN _idPrendaSeleccionada INT,
+    IN _fidCarrito INT,
 	IN _cantidad INT,
     IN _precio DECIMAL(10, 2)
 )
 BEGIN
-	UPDATE prendaseleccionada SET cantidad = _cantidad, precio = _precio WHERE idPrendaSeleccionada = _idPrendaSeleccionada;
+	UPDATE prendaseleccionada SET cantidad = _cantidad, precio = _precio WHERE idPrendaSeleccionada = _idPrendaSeleccionada AND fidCarrito = _fidCarrito;
+END$
+CREATE PROCEDURE ELIMINAR_PRENDASELECCIONADA(
+	IN _idPrendaSeleccionada INT,
+    IN _fidCarrito INT
+)
+BEGIN
+	DELETE FROM prendaseleccionada WHERE idPrendaSeleccionada = _idPrendaSeleccionada AND fidCarrito = _fidCarrito;
 END$
 CREATE PROCEDURE LISTAR_PRENDASELECCIONADA_X_ID(
-	IN _idPrendaSeleccionada INT
+    IN _fidCarrito INT
 )
 BEGIN
-	SELECT idPrendaSeleccionada, fidCarrito, cantidad, preciocliente FROM prendaseleccionada WHERE idPrendaSeleccionada = idPrendaSeleccionada;
-END$
-
-
--- ------------------------------------------------------------------------------------------
--- Procedimientos almacenados adicionales
-CREATE PROCEDURE VERIFICAR_INGRESO_USUARIO(
-	IN _correo VARCHAR(50),
-    IN _contrasenha VARCHAR(50)
-)
-BEGIN
-	DECLARE _idUsuario INT;
-
-    -- Obtener idUsuario si cumple con las credenciales y está activo
-    SELECT idUsuario INTO _idUsuario FROM usuario WHERE correo = _correo AND contrasenha = MD5(_contrasenha) AND activo = 1;
-    
-    -- Verificar si el idUsuario está en la tabla trabajador
-    IF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM trabajador WHERE idTrabajador = _idUsuario) THEN
-        SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, t.puesto, t.sueldo, t.fechaIngreso, t.horarioInicio, t.horarioFin FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idUsuario AND u.activo = 1;
-
-    -- Verificar si el idUsuario está en la tabla administrador
-    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
-        SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, a.fechaCreacion FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
-
-    -- En caso de que sea cliente 
-    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM cliente WHERE idCliente = _idUsuario) THEN
-        SELECT u.idUsuario, u.dni, u.nombres, u.apellidos, u.correo, u.contrasenha, c.telefono, c.fechaRegistro, c.recibePromociones FROM cliente c INNER JOIN administrador a ON u.idUsuario = c.idCliente WHERE c.idCliente = _idUsuario AND u.activo = 1;
-    
-    -- En caso hayan puesto mal sus credenciales
-    ELSE
-        SELECT 0 AS idUsuario;
-    END IF;
-END$
-
-CREATE PROCEDURE OBTENER_ROL_USUARIO(
-	IN _correo VARCHAR(50),
-    IN _contrasenha VARCHAR(50)
-)
-BEGIN
-	DECLARE _idUsuario INT;
-
-    -- Obtener idUsuario si cumple con las credenciales y está activo
-    SELECT idUsuario INTO _idUsuario FROM usuario WHERE correo = _correo AND contrasenha = MD5(_contrasenha) AND activo = 1;
-    
-    -- Verificar si el idUsuario está en la tabla trabajador
-    IF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM trabajador WHERE idTrabajador = _idUsuario) THEN
-        SELECT 'trabajador' as rol FROM usuario u INNER JOIN trabajador t ON u.idUsuario = t.idTrabajador WHERE t.idTrabajador = _idUsuario AND u.activo = 1;
-
-    -- Verificar si el idUsuario está en la tabla administrador
-    ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM administrador WHERE idAdministrador = _idUsuario) THEN
-        SELECT 'administrador' as rol FROM usuario u INNER JOIN administrador a ON u.idUsuario = a.idAdministrador WHERE a.idAdministrador = _idUsuario AND u.activo = 1;
-
-    -- En caso de que sea cliente
-	ELSEIF _idUsuario IS NOT NULL AND EXISTS (SELECT 1 FROM cliente WHERE idCliente = _idUsuario) THEN
-        SELECT 'cliente' as rol FROM usuario u INNER JOIN cliente c ON u.idUsuario = c.idCliente WHERE c.idCliente = _idUsuario AND u.activo = 1;
-	
-	-- En caso el usuario no se encuentre
-    ELSE
-        SELECT 'denegado' AS rol;
-    END IF;
-END$
-
-CREATE PROCEDURE VERIFICAR_CONTRASENHA(
-	IN _idUsuario INT,
-    IN _contrasenha VARCHAR(50)
-)
-BEGIN
-	SELECT 1 AS resultado FROM usuario WHERE idUsuario = _idUsuario AND contrasenha = MD5(_contrasenha) AND activo = 1;
-END$
-
-CREATE PROCEDURE CAMBIAR_CONTRASENHA(
-	IN _idUsuario INT,
-    IN _contrasenhaNueva VARCHAR(50)
-)
-BEGIN
-	UPDATE usuario SET contrasenha = MD5(_contrasenhaNueva) WHERE idUsuario = _idUsuario AND activo = 1;
+	SELECT idPrendaSeleccionada, fidCarrito, cantidad, precio FROM prendaseleccionada WHERE fidCarrito = _fidCarrito;
 END$
 
 
@@ -864,3 +938,175 @@ VALUES
 (5, NULL, NULL, '2024-01-05', '2024-01-06', '2024-01-07', NULL, 'Entregado', '32457612', 'jp@gmail.com', 320.75),
 (6, NULL, NULL, '2024-01-12', NULL, NULL, '2024-02-12', 'Anulado', '98765432', 'fmontenegro@gmail.com', 100.00),
 (5, NULL, NULL, '2024-01-15', '2024-01-16', NULL, NULL, 'Procesado', '32457612', 'jp@gmail.com', 210.00);
+
+-------------------------------------------------------------------------------------------------
+-- Totales y modificaciones
+DELIMITER $
+CREATE PROCEDURE MODIFICAR_ORDENCOMPRA(
+    IN _idOrden INT,
+    IN _fechaRegistro DATE,
+    IN _fechaProcesado DATE,
+    IN _fechaEntregado DATE,
+    IN _fechaAnulado DATE,
+    IN _estado ENUM('Registrado', 'Procesado', 'Entregado', 'Anulado'),
+    IN _dni VARCHAR(8),
+    IN _correo VARCHAR(50),
+    IN _subtotal DECIMAL(10, 2)
+)
+BEGIN
+    UPDATE ordencompra 
+    SET 
+        fechaRegistro = CASE WHEN _fechaRegistro IS NOT NULL THEN _fechaRegistro ELSE fechaRegistro END,
+        fechaProcesado = CASE WHEN _fechaProcesado IS NOT NULL THEN _fechaProcesado ELSE fechaProcesado END,
+        fechaEntregado = CASE WHEN _fechaEntregado IS NOT NULL THEN _fechaEntregado ELSE fechaEntregado END,
+        fechaAnulado = CASE WHEN _fechaAnulado IS NOT NULL THEN _fechaAnulado ELSE fechaAnulado END,
+        estado = _estado,
+        dni = _dni,
+        correo = _correo,
+        subtotal = _subtotal
+    WHERE idOrden = _idOrden;
+END;
+
+CREATE TABLE totales(
+    idTotal INT AUTO_INCREMENT PRIMARY KEY,
+    totalPrendas INT DEFAULT 0,
+    promocionesActivas INT DEFAULT 0,
+    cuponesActivos INT DEFAULT 0,
+    clientesActivos INT DEFAULT 0,
+    fechaRegistro DATE
+) ENGINE = InnoDB;
+
+
+INSERT INTO totales (totalPrendas, promocionesActivas, cuponesActivos, clientesActivos, fechaRegistro)
+VALUES (117, 1, 4, 8, CURDATE());
+//////////////////////////////////////////////////////////////////////////////////////////
+CREATE TRIGGER actualizar_total_prendas
+AFTER INSERT ON prenda
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET totalPrendas = (SELECT SUM(stock) FROM prenda)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_total_prendas_update
+AFTER UPDATE ON prenda
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET totalPrendas = (SELECT SUM(stock) FROM prenda)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_total_prendas_delete
+AFTER DELETE ON prenda
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET totalPrendas = (SELECT SUM(stock) FROM prenda)
+    WHERE idTotal = 1;
+END;
+///////////////////////////////////////////////////////////////////////////////////////
+CREATE TRIGGER actualizar_promociones_activas
+AFTER INSERT ON promocion
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET promocionesActivas = (SELECT COUNT(*) FROM promocion WHERE activo = 1)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_promociones_activas_update
+AFTER UPDATE ON promocion
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET promocionesActivas = (SELECT COUNT(*) FROM promocion WHERE activo = 1)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_promociones_activas_delete
+AFTER DELETE ON promocion
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET promocionesActivas = (SELECT COUNT(*) FROM promocion WHERE activo = 1)
+    WHERE idTotal = 1;
+END;
+//////////////////////////////////////////////////////////////////////////////////////////
+CREATE TRIGGER actualizar_cupones_activos
+AFTER INSERT ON cupon
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET cuponesActivos = (SELECT COUNT(*) FROM cupon WHERE activo = 1)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_cupones_activos_update
+AFTER UPDATE ON cupon
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET cuponesActivos = (SELECT COUNT(*) FROM cupon WHERE activo = 1)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_cupones_activos_delete
+AFTER DELETE ON cupon
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET cuponesActivos = (SELECT COUNT(*) FROM cupon WHERE activo = 1)
+    WHERE idTotal = 1;
+END;
+//////////////////////////////////////////////////////////////////////////////////////////
+CREATE TRIGGER actualizar_clientes_activos
+AFTER INSERT ON cliente
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET clientesActivos = (SELECT COUNT(*) FROM cliente)
+    WHERE idTotal = 1;
+END;
+-------------------------------------------------------------
+CREATE TRIGGER actualizar_clientes_activos_delete
+AFTER DELETE ON cliente
+FOR EACH ROW
+BEGIN
+    UPDATE totales
+    SET clientesActivos = (SELECT COUNT(*) FROM cliente)
+    WHERE idTotal = 1;
+END;
+//////////////////////////////////////////////////////////////////////////////////////////
+DELIMITER $
+CREATE PROCEDURE obtener_valores_actuales()
+BEGIN
+    SELECT * FROM totales WHERE idTotal = 1;
+END $
+
+
+DELIMITER $
+CREATE PROCEDURE obtener_valores_por_mes(IN anho INT, IN mes INT)
+BEGIN
+    SELECT * FROM totales
+    WHERE YEAR(fechaRegistro) = anho AND MONTH(fechaRegistro) = mes;
+END $
+
+
+-- Creamos el evento
+CREATE EVENT IF NOT EXISTS agregar_totales_mensuales
+ON SCHEDULE EVERY 1 MONTH
+STARTS '2024-12-01 00:00:00'
+DO
+BEGIN
+    INSERT INTO totales (totalPrendas, promocionesActivas, cuponesActivos, clientesActivos, fechaRegistro)
+    SELECT totalPrendas, promocionesActivas, cuponesActivos, clientesActivos, CURDATE()
+    FROM totales
+    WHERE idTotal = 1;  -- Suponiendo que la primera fila es la que contiene los datos actuales
+    
+    -- Esto insertará una copia de los valores de la fila 1 con la fecha actual.
+END;
+
+
+

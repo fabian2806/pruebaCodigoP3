@@ -19,9 +19,9 @@ public class Cliente extends Usuario {
 		this.cupones = new ArrayList<>();
 	}
 
-	public Cliente(String dni, String nombres, String apellidos, String correo, String contrasenha, Date fechaRegistro, Boolean recibePromociones) {
+	public Cliente(String dni, String nombres, String apellidos, String correo, String contrasenha, String telefono, Date fechaRegistro, Boolean recibePromociones) {
 		super(dni, nombres, apellidos, correo, contrasenha);
-		this.telefono = null;
+		this.telefono = telefono;
 		this.fechaRegistro = fechaRegistro;
 		this.recibePromociones = recibePromociones;
 		this.direcciones = new ArrayList<>();

@@ -11,14 +11,14 @@ namespace RHStoreUsuariosBO
 {
 	public class ClienteBO : BaseBO
 	{
-        public int insertar(string dni, string nombres, string apellidos, string correo, string contrasenha, DateTime fechaRegistro, bool recibePromociones)
+        public int insertar(string dni, string nombres, string apellidos, string correo, string contrasenha, string telefono, DateTime fechaRegistro, bool recibePromociones)
         {
-            return ClienteWS.insertarCliente(dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
+            return ClienteWS.insertarCliente(dni, nombres, apellidos, correo, contrasenha, telefono, fechaRegistro, recibePromociones);
         }
 
-        public int modificar(int idUsuario, string dni, string nombres, string apellidos, string correo, string contrasenha, DateTime fechaRegistro, bool recibePromociones)
+        public int modificar(int idUsuario, string dni, string nombres, string apellidos, string correo, string contrasenha, string telefono, DateTime fechaRegistro, bool recibePromociones)
         {
-            return ClienteWS.modificarCliente(idUsuario, dni, nombres, apellidos, correo, contrasenha, fechaRegistro, recibePromociones);
+            return ClienteWS.modificarCliente(idUsuario, dni, nombres, apellidos, correo, contrasenha, telefono, fechaRegistro, recibePromociones);
         }
 
         public int eliminar(int idCliente)
@@ -35,5 +35,10 @@ namespace RHStoreUsuariosBO
         {
             return ClienteWS.obtenerClientePorId(idCliente);
         }
-    }
+
+		public BindingList<cliente> listarPorDniNombre(string cadena)
+		{
+			return new BindingList<cliente>(ClienteWS.listarClientesPorDniNombre(cadena));
+		}
+	}
 }

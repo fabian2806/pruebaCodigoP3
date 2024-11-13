@@ -11,14 +11,14 @@ namespace RHStoreUsuariosBO
 {
 	public class CuponBO : BaseBO
 	{
-        public int insertar(string codigo, string descripcion, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador)
+        public int insertar(string codigo, string descripcion, double valorDescuento, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador)
         {
-            return CuponWS.insertarCupon(codigo, descripcion, fechaInicio, fechaFin, _trabajador);
+            return CuponWS.insertarCupon(codigo, descripcion, valorDescuento, fechaInicio, fechaFin, _trabajador);
         }
 
-        public int modificar(int idCupon, string codigo, string descripcion, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador)
+        public int modificar(int idCupon, string codigo, string descripcion, double valorDescuento, DateTime fechaInicio, DateTime fechaFin, trabajador _trabajador)
         {
-            return CuponWS.modificarCupon(idCupon, codigo, descripcion, fechaInicio, fechaFin, _trabajador);
+            return CuponWS.modificarCupon(idCupon, codigo, descripcion, valorDescuento, fechaInicio, fechaFin, _trabajador);
         }
 
         public int eliminar(int idCupon)
@@ -35,5 +35,10 @@ namespace RHStoreUsuariosBO
         {
             return CuponWS.obtenerCuponPorId(idCupon);
         }
-    }
+
+		public BindingList<cupon> listarPorCodigoDescripcion(string cadena)
+		{
+			return new BindingList<cupon>(CuponWS.listarCuponesPorCodigoDescripcion(cadena));
+		}
+	}
 }

@@ -11,14 +11,14 @@ namespace RHStoreUsuariosBO
 {
 	public class DireccionBO : BaseBO
 	{
-        public int insertar(string direc, string distrito, string provincia, string departamento, string codigoPostal, string referencia, cliente _cliente)
+        public int insertar(string direccion, string distrito, string provincia, string departamento, string codigoPostal, string referencia, cliente _cliente)
         {
-            return DireccionWS.insetarDireccion(direc, distrito, provincia, departamento, codigoPostal, referencia, _cliente);
+            return DireccionWS.insetarDireccion(direccion, distrito, provincia, departamento, codigoPostal, referencia, _cliente);
         }
 
-        public int modificar(int idDireccion, string direc, string distrito, string provincia, string departamento, string codigoPostal, string referencia, cliente _cliente)
+        public int modificar(int idDireccion, string direccion, string distrito, string provincia, string departamento, string codigoPostal, string referencia, cliente _cliente)
         {
-            return DireccionWS.modificarDireccion(idDireccion, direc, distrito, provincia, departamento, codigoPostal, referencia, _cliente);
+            return DireccionWS.modificarDireccion(idDireccion, direccion, distrito, provincia, departamento, codigoPostal, referencia, _cliente);
         }
 
         public int eliminar(int idDireccion)

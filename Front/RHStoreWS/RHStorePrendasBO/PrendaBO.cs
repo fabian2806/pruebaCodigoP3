@@ -15,9 +15,9 @@ namespace RHStorePrendasBO
         {
             return PrendaWS.insertarPrenda(nombre, descripcion, tipo, imagen, _talla, _genero, color, precioOriginal, stock);
         }
-        public int modificar(int idPrenda, string nombre, string descripcion, tipoPrenda tipo, byte[] imagen, talla _talla, genero _genero, string color, double precioOriginal, double precioDescontado, int stock, int cantVendida)
+        public int modificar(int idPrenda, string nombre, string descripcion, tipoPrenda tipo, byte[] imagen, talla _talla, genero _genero, string color, double precioOriginal, int stock)
         {
-            return PrendaWS.modificarPrenda(idPrenda, nombre, descripcion, tipo, imagen, _talla, _genero, color, precioOriginal, precioDescontado, stock, cantVendida);
+            return PrendaWS.modificarPrenda(idPrenda, nombre, descripcion, tipo, imagen, _talla, _genero, color, precioOriginal, stock);
         }
         public int eliminar(int idPrenda)
         {
@@ -34,20 +34,20 @@ namespace RHStorePrendasBO
             return PrendaWS.obtenerPrendaPorId(idPrenda);
         }
 
-        public BindingList<prenda> listarPorNombre(string nombre)
+        public BindingList<prenda> listarPorNombreDescripcion(string cadena)
         {
-			return new BindingList<prenda>(PrendaWS.listarPrendasPorNombre(nombre));
+			return new BindingList<prenda>(PrendaWS.listarPrendasPorNombreDescripcion(cadena));
 		}
 
-        public byte[] ObtenerImagen(int idPrenda)
-        {
-            return PrendaWS.obtenerImagenPorId(idPrenda);
-        }
-        public BindingList<prenda> listarPrendasFiltradas(double minPrice, double maxPrice, bool filterHombre, bool filterMujer, bool filterUnisex, string tallas, string colores)
-        {
-            // Llama al método del servicio web que corresponde al procedimiento almacenado
-            return new BindingList<prenda>(PrendaWS.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores));
-        }
+		public BindingList<prenda> listarPrendasFiltradas(double minPrice, double maxPrice, bool filterHombre, bool filterMujer, bool filterUnisex, string tallas, string colores)
+		{
+			// Llama al método del servicio web que corresponde al procedimiento almacenado
+			return new BindingList<prenda>(PrendaWS.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores));
+		}
 
-    }
+		public byte[] ObtenerImagen(int idPrenda)
+		{
+			return PrendaWS.obtenerImagenPorId(idPrenda);
+		}
+	}
 }

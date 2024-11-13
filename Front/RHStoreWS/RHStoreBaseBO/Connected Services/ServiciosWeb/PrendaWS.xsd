@@ -6,8 +6,8 @@
   <xs:element name="insertarPrendaResponse" type="tns:insertarPrendaResponse" />
   <xs:element name="listarPrendasFiltradas" type="tns:listarPrendasFiltradas" />
   <xs:element name="listarPrendasFiltradasResponse" type="tns:listarPrendasFiltradasResponse" />
-  <xs:element name="listarPrendasPorNombre" type="tns:listarPrendasPorNombre" />
-  <xs:element name="listarPrendasPorNombreResponse" type="tns:listarPrendasPorNombreResponse" />
+  <xs:element name="listarPrendasPorNombreDescripcion" type="tns:listarPrendasPorNombreDescripcion" />
+  <xs:element name="listarPrendasPorNombreDescripcionResponse" type="tns:listarPrendasPorNombreDescripcionResponse" />
   <xs:element name="listarPrendasTodas" type="tns:listarPrendasTodas" />
   <xs:element name="listarPrendasTodasResponse" type="tns:listarPrendasTodasResponse" />
   <xs:element name="modificarPrenda" type="tns:modificarPrenda" />
@@ -49,16 +49,6 @@
   <xs:complexType name="obtenerImagenPorIdResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPrendasPorNombre">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPrendasPorNombreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:prenda" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerPrendaPorId">
@@ -126,14 +116,22 @@
       <xs:element minOccurs="0" name="arg6" type="tns:genero" />
       <xs:element minOccurs="0" name="arg7" type="xs:string" />
       <xs:element minOccurs="0" name="arg8" type="xs:double" />
-      <xs:element minOccurs="0" name="arg9" type="xs:double" />
-      <xs:element minOccurs="0" name="arg10" type="xs:int" />
-      <xs:element minOccurs="0" name="arg11" type="xs:int" />
+      <xs:element minOccurs="0" name="arg9" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarPrendaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasPorNombreDescripcion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPrendasPorNombreDescripcionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:prenda" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="genero">

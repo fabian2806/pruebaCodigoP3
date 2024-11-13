@@ -11,6 +11,8 @@ public interface OrdenCompraDAO {
     int eliminar(int idOrden);
 
     ArrayList<OrdenCompra> listarTodos();
-
+    
     OrdenCompra obtenerPorId(int idOrden);
+
+    ArrayList<OrdenCompra> listarPorEstado(String cadena);
 }

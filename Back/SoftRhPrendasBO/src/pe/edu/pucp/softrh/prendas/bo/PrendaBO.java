@@ -20,11 +20,9 @@ public class PrendaBO {
         return this.prendaDAO.insertar(prenda);
     }
 
-    public Integer modificar(Integer idPrenda, String nombre, String descripcion, TipoPrenda tipo, byte[] imagen, Talla talla, Genero genero, String color, Double precioOriginal, Double precioDescontado, Integer stock, Integer cantVendida){
+    public Integer modificar(Integer idPrenda, String nombre, String descripcion, TipoPrenda tipo, byte[] imagen, Talla talla, Genero genero, String color, Double precioOriginal, Integer stock){
         Prenda prenda = new Prenda(nombre, descripcion, tipo, imagen, talla, genero, color, precioOriginal, stock);
 		prenda.setIdPrenda(idPrenda);
-		prenda.setPrecioDescontado(precioDescontado);
-		prenda.setCantVendida(cantVendida);
 		return this.prendaDAO.modificar(prenda);
     }
 
@@ -40,12 +38,11 @@ public class PrendaBO {
         return this.prendaDAO.obtenerPorId(idPrenda);
     }
 
-    public ArrayList<Prenda> listarPorNombre(String nombre) {
-            return this.prendaDAO.listarPorNombre(nombre);
-    }
-    
-    //Percy
-    public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, Boolean filterHombre, Boolean filterMujer, Boolean filterUnisex, String tallas, String colores) {
+	public ArrayList<Prenda> listarPorNombreDescripcion(String cadena) {
+		return this.prendaDAO.listarPorNombreDescripcion(cadena);
+	}
+
+	public ArrayList<Prenda> listarPrendasFiltradas(Double minPrice, Double maxPrice, Boolean filterHombre, Boolean filterMujer, Boolean filterUnisex, String tallas, String colores) {
         return this.prendaDAO.listarPrendasFiltradas(minPrice, maxPrice, filterHombre, filterMujer, filterUnisex, tallas, colores);
     }
 

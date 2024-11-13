@@ -5,6 +5,18 @@
       <xsd:import schemaLocation="http://localhost:8080/SoftRHWS/UsuarioWS?xsd=1" namespace="softrh.services" />
     </xsd:schema>
   </types>
+  <message name="verificarContrasenha">
+    <part name="parameters" element="tns:verificarContrasenha" />
+  </message>
+  <message name="verificarContrasenhaResponse">
+    <part name="parameters" element="tns:verificarContrasenhaResponse" />
+  </message>
+  <message name="resetearContrasenha">
+    <part name="parameters" element="tns:resetearContrasenha" />
+  </message>
+  <message name="resetearContrasenhaResponse">
+    <part name="parameters" element="tns:resetearContrasenhaResponse" />
+  </message>
   <message name="verificarIngresoUsuario">
     <part name="parameters" element="tns:verificarIngresoUsuario" />
   </message>
@@ -17,7 +29,27 @@
   <message name="obtenerRolUsuarioResponse">
     <part name="parameters" element="tns:obtenerRolUsuarioResponse" />
   </message>
+  <message name="cambiarContrasenha">
+    <part name="parameters" element="tns:cambiarContrasenha" />
+  </message>
+  <message name="cambiarContrasenhaResponse">
+    <part name="parameters" element="tns:cambiarContrasenhaResponse" />
+  </message>
+  <message name="modificarUsuario">
+    <part name="parameters" element="tns:modificarUsuario" />
+  </message>
+  <message name="modificarUsuarioResponse">
+    <part name="parameters" element="tns:modificarUsuarioResponse" />
+  </message>
   <portType name="UsuarioWS">
+    <operation name="verificarContrasenha">
+      <input wsam:Action="softrh.services/UsuarioWS/verificarContrasenhaRequest" message="tns:verificarContrasenha" />
+      <output wsam:Action="softrh.services/UsuarioWS/verificarContrasenhaResponse" message="tns:verificarContrasenhaResponse" />
+    </operation>
+    <operation name="resetearContrasenha">
+      <input wsam:Action="softrh.services/UsuarioWS/resetearContrasenhaRequest" message="tns:resetearContrasenha" />
+      <output wsam:Action="softrh.services/UsuarioWS/resetearContrasenhaResponse" message="tns:resetearContrasenhaResponse" />
+    </operation>
     <operation name="verificarIngresoUsuario">
       <input wsam:Action="softrh.services/UsuarioWS/verificarIngresoUsuarioRequest" message="tns:verificarIngresoUsuario" />
       <output wsam:Action="softrh.services/UsuarioWS/verificarIngresoUsuarioResponse" message="tns:verificarIngresoUsuarioResponse" />
@@ -26,9 +58,35 @@
       <input wsam:Action="softrh.services/UsuarioWS/obtenerRolUsuarioRequest" message="tns:obtenerRolUsuario" />
       <output wsam:Action="softrh.services/UsuarioWS/obtenerRolUsuarioResponse" message="tns:obtenerRolUsuarioResponse" />
     </operation>
+    <operation name="cambiarContrasenha">
+      <input wsam:Action="softrh.services/UsuarioWS/cambiarContrasenhaRequest" message="tns:cambiarContrasenha" />
+      <output wsam:Action="softrh.services/UsuarioWS/cambiarContrasenhaResponse" message="tns:cambiarContrasenhaResponse" />
+    </operation>
+    <operation name="modificarUsuario">
+      <input wsam:Action="softrh.services/UsuarioWS/modificarUsuarioRequest" message="tns:modificarUsuario" />
+      <output wsam:Action="softrh.services/UsuarioWS/modificarUsuarioResponse" message="tns:modificarUsuarioResponse" />
+    </operation>
   </portType>
   <binding name="UsuarioWSPortBinding" type="tns:UsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="verificarContrasenha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="resetearContrasenha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="verificarIngresoUsuario">
       <soap:operation soapAction="" />
       <input>
@@ -39,6 +97,24 @@
       </output>
     </operation>
     <operation name="obtenerRolUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cambiarContrasenha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

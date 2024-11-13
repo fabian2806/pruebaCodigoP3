@@ -18,13 +18,33 @@ E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStoreP
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStoreP.9EB0946B.Up2Date
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.dll
 E:\Documentos\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.pdb
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.dll
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.pdb
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.pdb
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll.config
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.AssemblyReference.cache
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.CoreCompileInputs.cache
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStoreP.9EB0946B.Up2Date
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.dll
-C:\Users\pelem\OneDrive\Escritorio\PercyLeon\CICLO 2024-2\PROGRAMACIÓN 3\TA\FINAL TA\pruebaCodigoP3\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.pdb
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.dll
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.pdb
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.pdb
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll.config
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.AssemblyReference.cache
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.CoreCompileInputs.cache
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStoreP.9EB0946B.Up2Date
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.dll
+E:\Descargas\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.pdb
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.dll
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.pdb
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.pdb
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll.config
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.AssemblyReference.cache
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.CoreCompileInputs.cache
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStoreP.9EB0946B.Up2Date
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.dll
+D:\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.pdb
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.dll
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStorePrendasBO.pdb
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.pdb
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\bin\Debug\RHStoreBaseBO.dll.config
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.AssemblyReference.cache
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.csproj.CoreCompileInputs.cache
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStoreP.9EB0946B.Up2Date
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.dll
+C:\Users\pelem\Downloads\Aplicacion Web\Aplicacion Web\Front\RHStoreWS\RHStorePrendasBO\obj\Debug\RHStorePrendasBO.pdb

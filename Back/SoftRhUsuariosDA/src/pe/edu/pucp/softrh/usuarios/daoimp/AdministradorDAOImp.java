@@ -10,7 +10,7 @@ import pe.edu.pucp.softrh.usuarios.dao.AdministradorDAO;
 import pe.edu.pucp.softrh.usuarios.model.Administrador;
 
 public class AdministradorDAOImp implements AdministradorDAO {
-    
+
     private ResultSet rs;
     private DBManager dbManager = DBManager.obtenerInstancia();
 
@@ -25,27 +25,26 @@ public class AdministradorDAOImp implements AdministradorDAO {
         parameters[4] = administrador.getCorreo();
         parameters[5] = administrador.getContrasenha();
         parameters[6] = administrador.getFechaCreacion();
-        
+
         administrador.setIdUsuario(dbManager.EjecutarProcedimiento("INSERTAR_ADMINISTRADOR", parameters, true));
         resultado = administrador.getIdUsuario();
-        
+
         return resultado;
     }
 
     @Override
     public int modificar(Administrador administrador) {
         int resultado = 0;
-        Object[] parameters = new Object[7];
+        Object[] parameters = new Object[6];
         parameters[0] = administrador.getIdUsuario();
         parameters[1] = administrador.getDni();
         parameters[2] = administrador.getNombres();
         parameters[3] = administrador.getApellidos();
         parameters[4] = administrador.getCorreo();
-        parameters[5] = administrador.getContrasenha();
-        parameters[6] = administrador.getFechaCreacion();
-        
+        parameters[5] = administrador.getFechaCreacion();
+
         resultado = dbManager.EjecutarProcedimiento("MODIFICAR_ADMINISTRADOR", parameters, false);
-        
+
         return resultado;
     }
 
@@ -72,7 +71,7 @@ public class AdministradorDAOImp implements AdministradorDAO {
                 administrador.setCorreo(rs.getString("correo"));
                 administrador.setContrasenha(rs.getString("contrasenha"));
                 administrador.setFechaCreacion(rs.getDate("fechaCreacion"));
-                
+				administrador.setActivo(true);
                 administradores.add(administrador);
             }
         } catch (SQLException ex) {
@@ -85,8 +84,8 @@ public class AdministradorDAOImp implements AdministradorDAO {
                 Logger.getLogger(AdministradorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        
+
+
         return administradores;
     }
 
@@ -105,6 +104,7 @@ public class AdministradorDAOImp implements AdministradorDAO {
                 administrador.setCorreo(rs.getString("correo"));
                 administrador.setContrasenha(rs.getString("contrasenha"));
                 administrador.setFechaCreacion(rs.getDate("fechaCreacion"));
+				administrador.setActivo(true);
             }
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
@@ -116,9 +116,43 @@ public class AdministradorDAOImp implements AdministradorDAO {
                 Logger.getLogger(AdministradorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        
         return administrador;
     }
-    
+
+	@Override
+	public ArrayList<Administrador> listarPorDniNombre(String cadena) {
+		ArrayList<Administrador> administradores = new ArrayList<Administrador>();
+
+		Object[] parameters = new Object[1];
+        parameters[0] = cadena;
+
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_ADMINISTRADORES_X_DNI_O_NOMBRE", parameters);
+        try{
+            while(rs.next()){
+				Administrador administrador = new Administrador();
+
+				administrador.setIdUsuario(rs.getInt("idUsuario"));
+                administrador.setDni(rs.getString("dni"));
+                administrador.setNombres(rs.getString("nombres"));
+                administrador.setApellidos(rs.getString("apellidos"));
+                administrador.setCorreo(rs.getString("correo"));
+                administrador.setContrasenha(rs.getString("contrasenha"));
+                administrador.setFechaCreacion(rs.getDate("fechaCreacion"));
+				administrador.setActivo(true);
+				administradores.add(administrador);
+            }
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        finally{
+            try {
+                dbManager.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(AdministradorDAOImp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+		return administradores;
+	}
 }

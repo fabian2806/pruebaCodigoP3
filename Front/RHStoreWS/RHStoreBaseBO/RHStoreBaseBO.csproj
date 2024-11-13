@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3EA7A1F1-525B-4F2F-BC4E-D6127161260F}</ProjectGuid>
+    <ProjectGuid>{42B8F628-0913-4CEB-B209-042422B2BD93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RHStoreBaseBO</RootNamespace>
@@ -72,6 +72,10 @@
     <None Include="Connected Services\ServiciosWeb\DireccionWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiciosWeb\OrdenCompraWS.wsdl" />
+    <None Include="Connected Services\ServiciosWeb\OrdenCompraWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiciosWeb\PrendaWS.wsdl" />
     <None Include="Connected Services\ServiciosWeb\PrendaWS.xsd">
       <SubType>Designer</SubType>
@@ -81,6 +85,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.administrador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.cambiarContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.cliente.datasource">
@@ -104,6 +111,9 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.eliminarDireccionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.eliminarOrdenCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.eliminarPrendaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -117,6 +127,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.insertarCuponResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.insertarOrdenCompraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.insertarPrendaResponse.datasource">
@@ -134,10 +147,19 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.insetarDireccionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarAdministradoresPorDniNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarAdministradoresTodosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarClientesPorDniNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarClientesTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarCuponesPorCodigoDescripcionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarCuponesTodosResponse.datasource">
@@ -146,19 +168,28 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarDireccionesTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarOrdenCompraTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarOrdenPorEstadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPrendasFiltradasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPrendasPorNombreResponse.datasource">
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPrendasPorNombreDescripcionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPrendasTodasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPromocionesPorNombreResponse.datasource">
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPromocionesPorNombreDescripcionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarPromocionesTodasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarTrabajadoresPorDniNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.listarTrabajadoresTodosResponse.datasource">
@@ -176,6 +207,9 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.modificarDireccionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.modificarOrdenCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.modificarPrendaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -183,6 +217,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.modificarTrabajadorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.modificarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerAdministradorPorIdResponse.datasource">
@@ -200,6 +237,9 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerImagenPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerOrdenCompraPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerPrendaPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -212,13 +252,22 @@
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.obtenerTrabajadorPorIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.ordenCompra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.prenda.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.promocion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.resetearContrasenhaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.trabajador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.verificarContrasenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosWeb\RHStoreBaseBO.ServiciosWeb.verificarIngresoUsuarioResponse.datasource">

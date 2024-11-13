@@ -13,4 +13,6 @@ public interface CuponDAO {
     ArrayList<Cupon> listarTodos();
 
     Cupon obtenerPorId(int idCupon);
+
+	ArrayList<Cupon> listarPorCodigoDescripcion(String cadena);
 }

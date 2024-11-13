@@ -9,26 +9,28 @@ import pe.edu.pucp.softrh.database.config.DBManager;
 import pe.edu.pucp.softrh.prendas.dao.PromocionDAO;
 import pe.edu.pucp.softrh.prendas.model.Promocion;
 import pe.edu.pucp.softrh.prendas.model.TipoPromocion;
+import pe.edu.pucp.softrh.usuarios.dao.TrabajadorDAO;
+import pe.edu.pucp.softrh.usuarios.daoimp.TrabajadorDAOImp;
 import pe.edu.pucp.softrh.usuarios.model.Trabajador;
 
 public class PromocionDAOImp implements PromocionDAO {
 
+	private TrabajadorDAO trabajadorDAO = new TrabajadorDAOImp();
     private ResultSet rs;
     private DBManager dbManager = DBManager.obtenerInstancia();
 
     @Override
     public int insertar(Promocion promocion) {
         int resultado = 0;
-        Object[] parameters = new Object[9];
+        Object[] parameters = new Object[8];
         parameters[0] = promocion.getIdPromocion();
         parameters[1] = promocion.getTrabajador().getIdUsuario();
-        parameters[2] = promocion.getPrenda(0).getIdPrenda();
-        parameters[3] = promocion.getNombre();
-        parameters[4] = promocion.getDescripcion();
-        parameters[5] = promocion.getValorDescuento();
-        parameters[6] = promocion.getTipo().name();
-        parameters[7] = promocion.getFechaInicio();
-        parameters[8] = promocion.getFechaFin();
+        parameters[2] = promocion.getNombre();
+        parameters[3] = promocion.getDescripcion();
+        parameters[4] = promocion.getValorDescuento();
+        parameters[5] = promocion.getTipo().name();
+        parameters[6] = promocion.getFechaInicio();
+        parameters[7] = promocion.getFechaFin();
 
         promocion.setIdPromocion(dbManager.EjecutarProcedimiento("INSERTAR_PROMOCION", parameters, true));
         resultado = promocion.getIdPromocion();
@@ -73,8 +75,7 @@ public class PromocionDAOImp implements PromocionDAO {
             while (rs.next()){
                 Promocion promocion = new Promocion();
                 promocion.setIdPromocion(rs.getInt("idPromocion"));
-                Trabajador trabajador = new Trabajador();
-                trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+                Trabajador trabajador = trabajadorDAO.obtenerPorId(rs.getInt("fidTrabajador"));
                 promocion.setTrabajador(trabajador);
                 promocion.setNombre(rs.getString("nombre"));
                 promocion.setDescripcion(rs.getString("descripcion"));
@@ -107,8 +108,7 @@ public class PromocionDAOImp implements PromocionDAO {
         try {
             while (rs.next()){
                 promocion.setIdPromocion(rs.getInt("idPromocion"));
-                Trabajador trabajador = new Trabajador();
-                trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+                Trabajador trabajador = trabajadorDAO.obtenerPorId(rs.getInt("fidTrabajador"));
                 promocion.setTrabajador(trabajador);
                 promocion.setNombre(rs.getString("nombre"));
                 promocion.setDescripcion(rs.getString("descripcion"));
@@ -131,20 +131,19 @@ public class PromocionDAOImp implements PromocionDAO {
     }
 
 	@Override
-	public ArrayList<Promocion> listarPorNombre(String nombre) {
+	public ArrayList<Promocion> listarPorNombreDescripcion(String cadena) {
 		ArrayList<Promocion> promociones = new ArrayList<Promocion>();
 
 		Object[] parameters = new Object[1];
-        parameters[0] = nombre;
+        parameters[0] = cadena;
 
-        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PROMOCIONES_X_NOMBRE", parameters);
+        rs = dbManager.EjecutarProcedimientoLectura("LISTAR_PROMOCIONES_X_NOMBRE_O_DESCRIPCION", parameters);
         try{
             while(rs.next()){
 				Promocion promocion = new Promocion();
 
                 promocion.setIdPromocion(rs.getInt("idPromocion"));
-                Trabajador trabajador = new Trabajador();
-                trabajador.setIdUsuario(rs.getInt("fidTrabajador"));
+                Trabajador trabajador = trabajadorDAO.obtenerPorId(rs.getInt("fidTrabajador"));
                 promocion.setTrabajador(trabajador);
                 promocion.setNombre(rs.getString("nombre"));
                 promocion.setDescripcion(rs.getString("descripcion"));
